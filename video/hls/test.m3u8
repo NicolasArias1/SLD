@@ -1,0 +1,7 @@
+#EXTM3U
+#EXT-X-TARGETDURATION:5
+#EXT-X-MEDIA-SEQUENCE:448
+#EXTINF:5,
+http://127.0.0.1/video/hls/test-00000448.ts
+#EXTINF:5,
+http://127.0.0.1/video/hls/test-00000449.ts

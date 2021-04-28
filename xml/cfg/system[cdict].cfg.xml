@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<config>
+<account><user>admin</user><passwd>4fdddc28a3fc58b13bc9938ef57b07d5</passwd></account>
+<authenticate><db>1</db><nt>0</nt><solicit>0</solicit></authenticate>
+<ldap><server>10.12.1.1</server><port>389</port><dn>DC=uclv,DC=edu,DC=cu</dn></ldap>
+<domain><name>uclv</name><name>fie</name><name>mfc</name><name>sociales</name><name>fce</name></domain>
+<mysql><table>area</table><table>categories</table><table>comments</table><table>directories</table><table>formats</table><table>languages</table><table>resources</table><table>subcategories</table><table>tags</table><table>users</table><table>workgroup</table><server>localhost</server><db>cronos</db><user>cronos</user><passwd>cronos,ok</passwd></mysql>
+<contribution><suggestions>1</suggestions><votes>1</votes><comments>1</comments></contribution>
+<path><root>C:\www\</root></path>
+</config>

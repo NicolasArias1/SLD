@@ -1,0 +1,1 @@
+<?php  $host='localhost';  $user_name='root';  $password='SeM!N@R!01';  $database_name='web36db2'; ?>

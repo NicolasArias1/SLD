@@ -1,0 +1,152 @@
+body {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	text-align: left;
+	width: 768px;
+	padding: 0px;
+	margin: 3px auto;
+	vertical-align: top;
+	height: auto;
+	color: #003333;
+	border-top: 8px solid #003333;
+	border-bottom: 8px solid #003333;
+}
+
+/* Caja de banner */
+#banner_box {
+	height: 115px;
+	background-image: url(../img/banner.jpg);
+	border: 1px solid #CCCCCC;
+	background-repeat: no-repeat;
+	padding: 0px;
+	margin: 0px;
+}
+
+/* Caja de autentificación */
+#authenticate_box {
+	width: 185px;
+	float: right;
+	height: 100px;
+	padding: 0px 15px 15px 15px;
+}
+.authenticate_celd {
+	height: 20px;
+}
+.authenticate_text {
+	width: 70px;
+	margin: 0px;
+	font-size: 11px;
+	font-weight: normal;
+	float: left;
+	padding: 3px 1px 0px 2px;
+}
+.authenticate_field {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #003333;
+	border: 1px solid #003333;
+	background-color: #F5F5F5;
+	vertical-align: middle;
+}
+.authenticate_button {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	border: 1px solid #003333;
+	font-size: 11px;
+	color: #003333;
+	background-color: #DDDDDD;
+	vertical-align: middle;
+	margin: 0px;
+	padding: 0px;
+}
+
+/* Estilos de Formularios */
+.form_field {
+	font-size: 13px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #003333;
+	border: 1px solid #003333;
+	background-color: #F5F5F5;
+	vertical-align: middle;
+	margin: 0px;
+}
+.form_button {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	border: 1px solid #003333;
+	font-size: 13px;
+	color: #003333;
+	background-color: #DDDDDD;
+	margin: 0px;
+	vertical-align: middle;
+	padding: 0px;
+	height: 20px;
+}
+
+/* Estilos de Enlaces */
+a.linka, a.linka:link, a.linka:active, a.linka:visited {
+	font-weight: bold;
+	color: #003333;
+	text-decoration: none;
+}
+a.linka:hover {
+	font-weight: bold;
+	color: #003333;
+	text-decoration: underline;
+}
+a.linkb, a.linkb:link, a.linkb:active, a.linkb:visited {
+	font-weight: normal;
+	color: #003333;
+	text-decoration: none;
+}
+a.linkb:hover {
+	font-weight: normal;
+	color: #003333;
+	text-decoration: underline;
+}
+a.linkc, a.linkc:link, a.linkc:active, a.linkc:visited, a.linkc:hover {
+	font-weight: bold;
+	color: #003333;
+	text-decoration: none;
+}
+
+/* Estilos de los resultados de las búsquedas */
+#results_box {
+	padding: 0px 15px;
+	border: 1px solid #CCCCCC;
+	clear: both;
+	margin: 3px 0px 0px 0px;
+}
+.resource_title {
+	width: 701px;
+	float: left;
+	font-weight: bold;
+	margin: 0px;
+	padding: 3px 3px 3px 0px;
+}
+
+/* Estilos de la barra de menus */
+#list_order_option {
+	display: none;
+	background-color: #FFFFFF;
+	width: 136px;
+	margin: 0px;
+	padding: 0px;
+	border-right: 1px solid #003333;
+	border-bottom: 1px solid #003333;
+	border-left: 1px solid #003333;
+	list-style-type: none;
+	position: absolute;
+}
+#list_show_option {
+	display: none;
+	background-color: #FFFFFF;
+	width: 89px;
+	margin: 0px;
+	padding: 0px;
+	border-right: 1px solid #003333;
+	border-bottom: 1px solid #003333;
+	border-left: 1px solid #003333;
+	list-style-type: none;
+	position: absolute;
+}

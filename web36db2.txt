@@ -1,0 +1,469 @@
+-- phpMyAdmin SQL Dump
+-- version 2.11.3
+-- http://www.phpmyadmin.net
+--
+-- Servidor: localhost
+-- Tiempo de generación: 28-03-2019 a las 15:56:44
+-- Versión del servidor: 5.0.51
+-- Versión de PHP: 5.2.5
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+--
+-- Base de datos: `web36db2`
+--
+CREATE DATABASE `web36db2` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `web36db2`;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `calendar_tasks`
+--
+
+CREATE TABLE `calendar_tasks` (
+  `taskID` int(11) NOT NULL auto_increment,
+  `id` int(11) NOT NULL default '0',
+  `groupID` int(11) default NULL,
+  `description` varchar(200) NOT NULL default '',
+  `entryDate` datetime NOT NULL default '0000-00-00 00:00:00',
+  `startDateTime` datetime default NULL,
+  `endDateTime` datetime default NULL,
+  `priority` varchar(10) NOT NULL default '',
+  `isCompleted` tinyint(4) default NULL,
+  `task_workrelated` tinyint(4) NOT NULL default '0',
+  PRIMARY KEY  (`taskID`),
+  UNIQUE KEY `taskID` (`taskID`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Volcar la base de datos para la tabla `calendar_tasks`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `comments`
+--
+
+CREATE TABLE `comments` (
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `rid` int(10) NOT NULL default '0',
+  `uid` int(10) unsigned NOT NULL default '0',
+  `ulogin` varchar(255) NOT NULL default '',
+  `comment` text NOT NULL,
+  `sdate` datetime NOT NULL default '0000-00-00 00:00:00',
+  `publisher` varchar(255) default NULL,
+  `pdate` datetime default '0000-00-00 00:00:00',
+  `new` int(1) unsigned default '1',
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `id` (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Volcar la base de datos para la tabla `comments`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `sld_practices`
+--
+
+CREATE TABLE `sld_practices` (
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `sid` int(10) unsigned NOT NULL,
+  `uid` int(11) NOT NULL,
+  `ulogin` varchar(255) NOT NULL,
+  `pname` varchar(100) NOT NULL,
+  `pcname` varchar(255) NOT NULL,
+  `date` varchar(12) NOT NULL,
+  `edate` varchar(12) NOT NULL,
+  `vars` varchar(255) default NULL,
+  `regpath` varchar(255) NOT NULL,
+  `regurl` varchar(255) NOT NULL,
+  `resurl` varchar(255) NOT NULL,
+  `sturl` varchar(255) NOT NULL,
+  `files` varchar(255) NOT NULL,
+  `error` varchar(255) default NULL,
+  `ok` int(1) unsigned default '0',
+  `tlogin` varchar(255) default 'null',
+  `rdate` varchar(12) default 'null',
+  `comments` text,
+  `ncomments` text,
+  `votes` text,
+  `ranks` int(1) unsigned default NULL,
+  `revisar` int(11) NOT NULL,
+  `exectime` int(11) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `id` (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=203 ;
+
+--
+-- Volcar la base de datos para la tabla `sld_practices`
+--
+
+INSERT INTO `sld_practices` (`id`, `sid`, `uid`, `ulogin`, `pname`, `pcname`, `date`, `edate`, `vars`, `regpath`, `regurl`, `resurl`, `sturl`, `files`, `error`, `ok`, `tlogin`, `rdate`, `comments`, `ncomments`, `votes`, `ranks`, `revisar`, `exectime`) VALUES
+(103, 1, 5, 'Ernesto Rubio', 'm_CP_Testr', 'Modelo de prueba', '041117002759', '041117002836', 'Te=1;', '', 'null', 'http://192.168.2.106/results/5/m_CP_Testr041117002759', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(102, 1, 5, 'Ernesto Rubio', 'm_CP_Testr', 'Modelo de prueba', '041117002248', '041117002307', 'Te=1;', '', 'null', 'http://192.168.2.106/results/5/m_CP_Testr041117002248', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(101, 1, 5, 'Ernesto Rubio', 'm_CP_Testr', 'Modelo de prueba', '041117002126', '041117002205', 'Te=1;', '', 'null', 'http://192.168.2.106/results/5/m_CP_Testr041117002126', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(100, 1, 5, 'Ernesto Rubio', 'm_CP_Testr', 'Modelo de prueba', '041117001719', '', 'Te=1;', '', 'null', 'http://192.168.2.106/results/5/m_CP_Testr041117001719', '', '', NULL, 0, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(98, 1, 5, 'Ernesto Rubio', 'm_CP_Testr', 'Modelo de prueba', '041117000604', '', 'Te=1;', '', 'null', 'http://192.168.2.106/results/5/m_CP_Testr041117000604', '', '', NULL, 0, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(99, 1, 5, 'Ernesto Rubio', 'm_CP_Testr', 'Modelo de prueba', '041117000913', '041117000934', 'Te=1;', '', 'null', 'http://192.168.2.106/results/5/m_CP_Testr041117000913', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(97, 1, 5, 'Ernesto Rubio', 'm_CP_Testr', 'Modelo de prueba', '041117000153', '', 'Te=1;', '', 'null', 'http://192.168.2.106/results/5/m_CP_Testr041117000153', '', '', NULL, 0, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(96, 1, 5, 'Ernesto Rubio', 'm_CP_Testr', 'Modelo de prueba', '041117000044', '', 'Te=1;', '', 'null', 'http://192.168.2.106/results/5/m_CP_Testr041117000044', '', '', NULL, 0, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(95, 1, 5, 'Ernesto Rubio', 'm_CP_Testr', 'Modelo de prueba', '031117235832', '031117235907', 'Te=1;', '', 'null', 'http://192.168.2.106/results/5/m_CP_Testr031117235832', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(93, 1, 5, 'Ernesto Rubio', 'm_CP_Testr', 'Modelo de prueba', '031117235422', '', 'Te=20;', '', 'null', 'http://192.168.2.106/results/5/m_CP_Testr031117235422', '', '', NULL, 0, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(94, 1, 5, 'Ernesto Rubio', 'm_CP_Testr', 'Modelo de prueba', '031117235541', '031117235627', 'Te=10;', '', 'null', 'http://192.168.2.106/results/5/m_CP_Testr031117235541', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(91, 1, 5, 'Ernesto Rubio', 'm_CP_Testr', 'Modelo de prueba', '031117235023', '', 'Te=20;', '', 'null', 'http://192.168.2.106/results/5/m_CP_Testr031117235023', '', '', NULL, 0, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(89, 1, 5, 'Ernesto Rubio', 'm_CP_Testr', 'Modelo de prueba', '031117200216', '', 'Te=1;', '', 'null', 'http://192.168.2.106/results/5/m_CP_Testr031117200216', '', '', NULL, 0, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(90, 1, 5, 'Ernesto Rubio', 'm_CP_Testr', 'Modelo de prueba', '031117200546', '031117200604', 'Te=1;', '', 'null', 'http://192.168.2.106/results/5/m_CP_Testr031117200546', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(88, 1, 5, 'Ernesto Rubio', 'm_CP_Testr', 'Modelo de prueba', '031117195154', '', 'Te=50;', '', 'null', 'http://192.168.2.106/results/5/m_CP_Testr031117195154', '', '', NULL, 0, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(87, 1, 5, 'Ernesto Rubio', 'm_CP_Testr', 'Modelo de prueba', '031117195116', '031117195143', 'Te=10;', '', 'null', 'http://192.168.2.106/results/5/m_CP_Testr031117195116', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(86, 1, 5, 'Ernesto Rubio', 'm_CP_Testr', 'Modelo de prueba', '031117195030', '031117195051', 'Te=1;', '', 'null', 'http://192.168.2.106/results/5/m_CP_Testr031117195030', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(85, 1, 5, 'Ernesto Rubio', 'm_CP_Testr', 'Modelo de prueba', '031117194744', '', 'Te=1;', '', 'null', 'http://192.168.2.106/results/5/m_CP_Testr031117194744', '', '', NULL, 0, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(84, 1, 5, 'Ernesto Rubio', 'm_CP_Testr', 'Modelo de prueba', '031117193302', '', 'Te=50;', '', 'null', 'http://192.168.2.106/results/5/m_CP_Testr031117193302', '', '', NULL, 0, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(82, 1, 5, 'Ernesto Rubio', 'm_CP_Testr', 'Modelo de prueba', '031117192634', '031117192732', 'Te=40;', '', 'null', 'http://192.168.2.106/results/5/m_CP_Testr031117192634', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(83, 1, 5, 'Ernesto Rubio', 'm_CP_Testr', 'Modelo de prueba', '031117192816', '', 'Te=50;', '', 'null', 'http://192.168.2.106/results/5/m_CP_Testr031117192816', '', '', NULL, 0, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(81, 1, 5, 'Ernesto Rubio', 'm_CP_Testr', 'Modelo de prueba', '031117192546', '031117192615', 'Te=10;', '', 'null', 'http://192.168.2.106/results/5/m_CP_Testr031117192546', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(80, 1, 5, 'Ernesto Rubio', 'm_CP_Testr', 'Modelo de prueba', '031117192333', '031117192415', 'Te=1;', '', 'null', 'http://192.168.2.106/results/5/m_CP_Testr031117192333', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(79, 1, 5, 'Ernesto Rubio', 'm_CS_IDr', 'Identificaci&oacute;n por respuesta al paso', '031117163534', '', 'Tm=0.1;Te=50;Tp=0;Vi=0;Vf=1;', '', 'null', 'http://192.168.2.106/results/5/m_CS_IDr031117163534', '', '', NULL, 0, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(78, 1, 5, 'Ernesto Rubio', 'm_CS_IDr', 'Identificaci&oacute;n por respuesta al paso', '031117163410', '031117163432', 'Tm=0.1;Te=50;Tp=0;Vi=0;Vf=1;', '', 'null', 'http://192.168.2.106/results/5/m_CS_IDr031117163410', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(77, 1, 5, 'Ernesto Rubio', 'm_CS_IDr', 'Identificaci&oacute;n por respuesta al paso', '031117162958', '031117163015', 'Tm=0.1;Te=50;Tp=0;Vi=0;Vf=1;', '', 'null', 'http://192.168.2.106/results/5/m_CS_IDr031117162958', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(76, 1, 5, 'Ernesto Rubio', 'm_CS_IDr', 'Identificaci&oacute;n por respuesta al paso', '031117141137', '031117141202', 'Tm=0.1;Te=1;Tp=0;Vi=0;Vf=1;', '', 'null', 'http://192.168.2.106/results/5/m_CS_IDr031117141137', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(104, 1, 5, 'Ernesto Rubio', 'm_CS_IDr', 'Identificaci&oacute;n por respuesta al paso', '150118165226', '', 'Tm=0.1;Te=1;Tp=0;Vi=0;Vf=1;', '', 'null', 'http://localhost/results/5/m_CS_IDr150118165226', '', '', NULL, 0, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(105, 1, 5, 'Ernesto Rubio', 'm_CS_IDr', 'Identificaci&oacute;n por respuesta al paso', '150118165556', '', 'Tm=0.1;Te=1;Tp=0;Vi=0;Vf=1;', '', 'null', 'http://localhost/results/5/m_CS_IDr150118165556', '', '', NULL, 0, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(106, 1, 5, 'Ernesto Rubio', 'm_CS_IDr', 'Identificaci&oacute;n por respuesta al paso', '150118165838', '', 'Tm=0.1;Te=1;Tp=0;Vi=0;Vf=1;', '', 'null', 'http://localhost/results/5/m_CS_IDr150118165838', '', '', NULL, 0, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(111, 1, 5, 'Ernesto Rubio', 'm_CS_IDr', 'Identificaci&oacute;n por respuesta al paso', '160118230828', '160118230838', 'Tm=0.1;Te=1;Tp=0;Vi=0;Vf=1;', '', 'null', 'http://127.0.0.1/results/5/m_CS_IDr160118230828', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(112, 1, 5, 'Ernesto Rubio', 'm_CS_IDr', 'Identificaci&oacute;n por respuesta al paso', '160118234632', '160118234642', 'Tm=0.1;Te=1;Tp=0;Vi=0;Vf=1;', '', 'null', 'http://127.0.0.1/results/5/m_CS_IDr160118234632', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(116, 1, 5, 'Ernesto Rubio', 'm_CS_IDr', 'Identificaci&oacute;n por respuesta al paso', '170118000319', '170118000329', 'Tm=0.1;Te=1;Tp=0;Vi=0;Vf=1;', '', 'null', 'http://127.0.0.1/results/5/m_CS_IDr170118000319', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(117, 1, 5, 'Ernesto Rubio', 'm_CS_FILr', 'Ajuste de filtro', '170118011839', '170118011848', 'Tm=0.5;Nv=1;Fcv=0.1;Np=1;Fcp=0.1;', '', 'null', 'http://127.0.0.1/results/5/m_CS_FILr170118011839', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(118, 1, 5, 'Ernesto Rubio', 'm_CS_FILr', 'Ajuste de filtro', '170118011936', '170118011946', 'Tm=0.5;Nv=1;Fcv=0.1;Np=1;Fcp=0.1;', '', 'null', 'http://127.0.0.1/results/5/m_CS_FILr170118011936', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(119, 1, 5, 'Ernesto Rubio', 'm_CS_Cr', 'Control de posici&oacute;n y velocidad con controlador definido por el usuario', '170118015635', '170118015649', '', 'C:\\SLD/results/5/m_CS_Cr170118015635//ureg.mdl', 'http://127.0.0.1/results/5/m_CS_Cr170118015635//ureg.mdl', 'http://127.0.0.1/results/5/m_CS_Cr170118015635', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(120, 1, 5, 'Ernesto Rubio', 'm_CS_Cr', 'Control de posici&oacute;n y velocidad con controlador definido por el usuario', '170118015909', '170118015923', '', 'C:\\SLD/results/5/m_CS_Cr170118015909//ureg.mdl', 'http://127.0.0.1/results/5/m_CS_Cr170118015909//ureg.mdl', 'http://127.0.0.1/results/5/m_CS_Cr170118015909', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(121, 1, 5, 'Ernesto Rubio', 'm_CS_IDr', 'Identificaci&oacute;n por respuesta al paso', '170118112453', '170118112504', 'Tm=0.1;Te=1;Tp=0;Vi=0;Vf=1;', '', 'null', 'http://127.0.0.1/results/5/m_CS_IDr170118112453', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(122, 1, 5, 'Ernesto Rubio', 'm_CS_IDr', 'Identificaci&oacute;n por respuesta al paso', '170118112600', '170118112611', 'Tm=0.1;Te=1;Tp=0;Vi=0;Vf=1;', '', 'null', 'http://127.0.0.1/results/5/m_CS_IDr170118112600', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(123, 1, 5, 'Ernesto Rubio', 'm_CS_FILr', 'Ajuste de filtro (con video)', '170118112647', '170118112657', 'Tm=0.5;Nv=1;Fcv=0.1;Np=1;Fcp=0.1;', '', 'null', 'http://127.0.0.1/results/5/m_CS_FILr170118112647', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(124, 1, 5, 'Ernesto Rubio', 'm_CS_Cr', 'Control de posici&oacute;n y velocidad con controlador definido por el usuario', '170118112731', '170118112744', '', 'C:\\SLD/results/5/m_CS_Cr170118112731//ureg.mdl', 'http://127.0.0.1/results/5/m_CS_Cr170118112731//ureg.mdl', 'http://127.0.0.1/results/5/m_CS_Cr170118112731', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(125, 1, 5, 'Ernesto Rubio', 'm_CS_PVr', 'Control PV Cascada (SP: step & jtraj)', '170118123114', '170118123151', 'Tm=0.5;Pp=0.1;Ip=0;Dp=0;Kbp=0;Fcdp=1;SWp=0;Np=1;Fcp=0.1;Pv=0.1;Iv=0;Dv=0;Kbv=0;Fcdv=1;SWv=0;Nv=1;Fcv=0.1;', '', 'null', 'http://127.0.0.1/results/5/m_CS_PVr170118123114', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(126, 1, 5, 'Ernesto Rubio', 'm_CS_PVr', 'Control PV Cascada (SP: step & jtraj)', '170118123614', '170118123621', 'Tm=0.5;Pp=0.1;Ip=0;Dp=0;Kbp=0;Fcdp=1;SWp=0;Np=1;Fcp=0.1;Pv=0.1;Iv=0;Dv=0;Kbv=0;Fcdv=1;SWv=0;Nv=1;Fcv=0.1;', '', 'null', 'http://127.0.0.1/results/5/m_CS_PVr170118123614', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(131, 1, 5, 'Ernesto Rubio', 'm_CS_PV2SPr', 'Control PV Cascada (SP: step & jtraj)', '170118141527', '170118141534', 'Tm=0.5;SWsp=0;Kv=0;Ka=0;Pp=0.1;Ip=0;Dp=0;Kbp=0;Fcdp=1;SWp=0;Np=1;Fcp=0.1;Pv=0.1;Iv=0;Dv=0;Kbv=0;Fcdv=1;SWv=0;Nv=1;Fcv=0.1;', '', 'null', 'http://127.0.0.1/results/5/m_CS_PV2SPr170118141527', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(130, 1, 5, 'Ernesto Rubio', 'm_CS_PV2SPr', 'Control PV Cascada (SP: step & jtraj)', '170118141215', '170118141222', 'Tm=0.5;SWsp=0;Kv=0;Ka=0;Pp=0.1;Ip=0;Dp=0;Kbp=0;Fcdp=1;SWp=0;Np=1;Fcp=0.1;Pv=0.1;Iv=0;Dv=0;Kbv=0;Fcdv=1;SWv=0;Nv=1;Fcv=0.1;', '', 'null', 'http://127.0.0.1/results/5/m_CS_PV2SPr170118141215', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(132, 1, 5, 'Ernesto Rubio', 'm_CS_PV2SPr', 'Control PV Cascada (SP: step & jtraj)', '170118141717', '170118141724', 'Tm=0.5;SWsp=0;Kv=0;Ka=0;Pp=0.1;Ip=0;Dp=0;Kbp=0;Fcdp=1;SWp=0;Np=1;Fcp=0.1;Pv=0.1;Iv=0;Dv=0;Kbv=0;Fcdv=1;SWv=0;Nv=1;Fcv=0.1;', '', 'null', 'http://127.0.0.1/results/5/m_CS_PV2SPr170118141717', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(133, 1, 5, 'Ernesto Rubio', 'm_CS_PV2SPr', 'Control PV Cascada (SP: step & jtraj)', '170118141958', '170118142006', 'Tm=0.5;SWsp=0;Kv=0;Ka=0;Pp=0.1;Ip=0;Dp=0;Kbp=0;Fcdp=1;SWp=0;Np=1;Fcp=0.1;Pv=0.1;Iv=0;Dv=0;Kbv=0;Fcdv=1;SWv=0;Nv=1;Fcv=0.1;', '', 'null', 'http://127.0.0.1/results/5/m_CS_PV2SPr170118141958', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(134, 1, 5, 'Ernesto Rubio', 'm_CS_PV2SPr', 'Control PV Cascada (SP: step & jtraj)', '170118142241', '170118142248', 'Tm=0.5;SWsp=0;Kv=0;Ka=0;Pp=0.1;Ip=0;Dp=0;Kbp=0;Fcdp=1;SWp=0;Np=1;Fcp=0.1;Pv=0.1;Iv=0;Dv=0;Kbv=0;Fcdv=1;SWv=0;Nv=1;Fcv=0.1;', '', 'null', 'http://127.0.0.1/results/5/m_CS_PV2SPr170118142241', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(136, 1, 5, 'Ernesto Rubio', 'm_CS_PV2SPr', 'Control PV Cascada (SP: step & jtraj)', '170118143041', '170118143048', 'Tm=0.5;SWsp=0;Kv=0;Ka=0;Pp=0.1;Ip=0;Dp=0;Kbp=0;Fcdp=1;SWp=0;Np=1;Fcp=0.1;Pv=0.1;Iv=0;Dv=0;Kbv=0;Fcdv=1;SWv=0;Nv=1;Fcv=0.1;', '', 'null', 'http://127.0.0.1/results/5/m_CS_PV2SPr170118143041', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(137, 1, 5, 'Ernesto Rubio', 'm_CS_PV2SPr', 'Control PV Cascada (SP: step & jtraj)', '170118154400', '170118154407', 'Tm=0.01;SWsp=1;Kv=0.31;Ka=0.049;Pp=0.52;Ip=0;Dp=0;Kbp=0;Fcdp=5;SWp=1;Np=2;Fcp=5;Pv=0.31;Iv=0.63;Dv=0;Kbv=1;Fcdv=5;SWv=1;Nv=2;Fcv=5;', '', 'null', 'http://127.0.0.1/results/5/m_CS_PV2SPr170118154400', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(138, 1, 5, 'Ernesto Rubio', 'm_CS_PV2SPr', 'Control PV Cascada (SP: step & jtraj)', '170118154441', '170118154448', 'Tm=0.5;SWsp=0;Kv=0;Ka=0;Pp=0.1;Ip=0;Dp=0;Kbp=0;Fcdp=1;SWp=0;Np=1;Fcp=0.1;Pv=0.1;Iv=0;Dv=0;Kbv=0;Fcdv=1;SWv=0;Nv=1;Fcv=0.1;', '', 'null', 'http://127.0.0.1/results/5/m_CS_PV2SPr170118154441', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(139, 1, 5, 'Ernesto Rubio', 'm_CS_Cr', 'Control de posici&oacute;n y velocidad con controlador definido por el usuario', '180118095826', '180118095856', '', 'C:\\SLD/results/5/m_CS_Cr180118095826//ureg.mdl', 'http://127.0.0.1/results/5/m_CS_Cr180118095826//ureg.mdl', 'http://127.0.0.1/results/5/m_CS_Cr180118095826', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(141, 1, 5, 'Ernesto Rubio', 'm_CS_Cr', 'Control de posici&oacute;n y velocidad con controlador definido por el usuario', '180118102454', '180118102506', '', 'C:\\SLD/results/5/m_CS_Cr180118102454//ureg.mdl', 'http://127.0.0.1/results/5/m_CS_Cr180118102454//ureg.mdl', 'http://127.0.0.1/results/5/m_CS_Cr180118102454', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(142, 1, 5, 'Ernesto Rubio', 'm_CS_Cr', 'Control de posici&oacute;n y velocidad con controlador definido por el usuario', '180118102811', '180118102823', '', 'C:\\SLD/results/5/m_CS_Cr180118102811//ureg.mdl', 'http://127.0.0.1/results/5/m_CS_Cr180118102811//ureg.mdl', 'http://127.0.0.1/results/5/m_CS_Cr180118102811', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(144, 1, 5, 'Ernesto Rubio', 'm_CS_Cr', 'Control de posici&oacute;n y velocidad con controlador definido por el usuario', '180118102922', '180118102933', '', 'C:\\SLD/results/5/m_CS_Cr180118102922//ureg.mdl', 'http://127.0.0.1/results/5/m_CS_Cr180118102922//ureg.mdl', 'http://127.0.0.1/results/5/m_CS_Cr180118102922', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(145, 1, 5, 'Ernesto Rubio', 'm_CS_PIDVr', 'Control de velocidad con PID real y Filtro', '180118144328', '', 'Tm=0.5;P=0.1;I=0;D=0;Kb=0;Fcd=1;SW=0;Nv=1;Fcv=0.1;', '', 'null', 'http://127.0.0.1/results/5/m_CS_PIDVr180118144328', '', '', NULL, 0, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(146, 1, 5, 'Ernesto Rubio', 'm_CS_IDr', 'Identificaci&oacute;n por respuesta al paso', '180118144411', '', 'Tm=0.1;Te=1;Tp=0;Vi=0;Vf=1;', '', 'null', 'http://127.0.0.1/results/5/m_CS_IDr180118144411', '', '', NULL, 0, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(147, 1, 5, 'Ernesto Rubio', 'm_CS_IDr', 'Identificaci&oacute;n por respuesta al paso', '180118144500', '180118144528', 'Tm=0.1;Te=1;Tp=0;Vi=0;Vf=1;', '', 'null', 'http://127.0.0.1/results/5/m_CS_IDr180118144500', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(149, 1, 5, 'Ernesto Rubio', 'm_CS_PIDVr', 'Control de velocidad con PID real y Filtro', '180118144712', '180118144723', 'Tm=0.5;P=0.1;I=0;D=0;Kb=0;Fcd=1;SW=0;Nv=1;Fcv=0.1;', '', 'null', 'http://127.0.0.1/results/5/m_CS_PIDVr180118144712', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(151, 1, 5, 'Ernesto Rubio', 'm_CS_PIDPr', 'Control de posici&oacute;n con PID real y Filtro', '180118144837', '180118144849', 'Tm=0.5;P=0.1;I=0;D=0;Kb=0;Fcd=1;SW=0;Np=1;Fcp=0.1;', '', 'null', 'http://127.0.0.1/results/5/m_CS_PIDPr180118144837', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(152, 1, 5, 'Ernesto Rubio', 'm_CS_PIDVr', 'Control de velocidad con PID real y Filtro', '180118154352', '180118154404', 'Tm=0.5;P=0.1;I=0;D=0;Kb=0;Fcd=1;SW=0;Nv=1;Fcv=0.1;', '', 'null', 'http://127.0.0.1/results/5/m_CS_PIDVr180118154352', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(153, 1, 5, 'Ernesto Rubio', 'm_CS_PIDPr', 'Control de posici&oacute;n con PID real y Filtro', '180118154418', '180118154430', 'Tm=0.5;P=0.1;I=0;D=0;Kb=0;Fcd=1;SW=0;Np=1;Fcp=0.1;', '', 'null', 'http://127.0.0.1/results/5/m_CS_PIDPr180118154418', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(154, 1, 5, 'Ernesto Rubio', 'm_CS_PV2SPr', 'Control PV Cascada (SP: step & jtraj)', '180118154844', '180118154857', 'Tm=0.5;SWsp=0;Kv=0;Ka=0;Pp=0.1;Ip=0;Dp=0;Kbp=0;Fcdp=1;SWp=0;Np=1;Fcp=0.1;Pv=0.1;Iv=0;Dv=0;Kbv=0;Fcdv=1;SWv=0;Nv=1;Fcv=0.1;', '', 'null', 'http://127.0.0.1/results/5/m_CS_PV2SPr180118154844', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(155, 1, 5, 'Ernesto Rubio', 'm_CS_PV2SPr', 'Control PV Cascada (SP: step & jtraj)', '180118154917', '180118154929', 'Tm=0.5;SWsp=1;Kv=0;Ka=0;Pp=0.1;Ip=0;Dp=0;Kbp=0;Fcdp=1;SWp=0;Np=1;Fcp=0.1;Pv=0.1;Iv=0;Dv=0;Kbv=0;Fcdv=1;SWv=0;Nv=1;Fcv=0.1;', '', 'null', 'http://127.0.0.1/results/5/m_CS_PV2SPr180118154917', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(156, 1, 5, 'Ernesto Rubio', 'm_CS_PV2SPr', 'Control PV Cascada (SP: step & jtraj)', '180118162645', '180118162658', 'Tm=0.01;SWsp=1;Kv=0.3151;Ka=0.0496;Pp=0.529;Ip=0;Dp=0;Kbp=0;Fcdp=5;SWp=1;Np=2;Fcp=5;Pv=0.3173;Iv=0.6346;Dv=0;Kbv=1;Fcdv=5;SWv=1;Nv=2;Fcv=5;', '', 'null', 'http://127.0.0.1/results/5/m_CS_PV2SPr180118162645', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(157, 1, 5, 'Ernesto Rubio', 'm_CS_Cr', 'Control de posici&oacute;n y velocidad con controlador definido por el usuario', '180118175524', '', '', 'C:\\SLD/results/5/m_CS_Cr180118175524//ureg.mdl', 'http://127.0.0.1/results/5/m_CS_Cr180118175524//ureg.mdl', 'http://127.0.0.1/results/5/m_CS_Cr180118175524', '', '', NULL, 0, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(158, 1, 5, 'Ernesto Rubio', 'm_CS_Cr', 'Control de posici&oacute;n y velocidad con controlador definido por el usuario', '180118175629', '180118175702', '', 'C:\\SLD/results/5/m_CS_Cr180118175629//ureg.mdl', 'http://127.0.0.1/results/5/m_CS_Cr180118175629//ureg.mdl', 'http://127.0.0.1/results/5/m_CS_Cr180118175629', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(159, 1, 5, 'Ernesto Rubio', 'm_CS_PIDVr', 'Control de velocidad con PID real y Filtro', '190118235236', '190118235308', 'Tm=0.5;P=0.1;I=0;D=0;Kb=0;Fcd=1;SW=0;Nv=1;Fcv=0.1;', '', 'null', 'http://127.0.0.1/results/5/m_CS_PIDVr190118235236', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(160, 1, 5, 'Ernesto Rubio', 'm_CS_PIDVr', 'Control de velocidad con PID real y Filtro', '200118000056', '200118000111', 'Tm=0.01;P=0.15;I=0.3;D=0;Kb=0;Fcd=1;SW=1;Nv=2;Fcv=3;', '', 'null', 'http://127.0.0.1/results/5/m_CS_PIDVr200118000056', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(161, 1, 5, 'Ernesto Rubio', 'm_CS_PIDVr', 'Control de velocidad con PID real y Filtro', '200118004103', '200118004116', 'Tm=0.01;P=0.15;I=0.3;D=0;Kb=0;Fcd=1;SW=1;Nv=2;Fcv=3;', '', 'null', 'http://127.0.0.1/results/5/m_CS_PIDVr200118004103', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(162, 1, 5, 'Ernesto Rubio', 'm_CS_PIDVr', 'Control de velocidad con PID real y Filtro', '200118004148', '200118004201', 'Tm=0.01;P=0.15;I=0.3;D=0;Kb=1;Fcd=1;SW=1;Nv=2;Fcv=3;', '', 'null', 'http://127.0.0.1/results/5/m_CS_PIDVr200118004148', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(163, 1, 5, 'Ernesto Rubio', 'm_CS_PIDVr', 'Control de velocidad con PID real y Filtro', '200118004238', '200118004251', 'Tm=0.01;P=0.15;I=0.3;D=0;Kb=1;Fcd=1;SW=0;Nv=2;Fcv=3;', '', 'null', 'http://127.0.0.1/results/5/m_CS_PIDVr200118004238', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(164, 1, 5, 'Ernesto Rubio', 'm_CS_PIDVr', 'Control de velocidad con PID real y Filtro', '200118004634', '200118004648', 'Tm=0.01;P=0.15;I=0.3;D=0;Kb=0;Fcd=1;SW=0;Nv=2;Fcv=3;', '', 'null', 'http://127.0.0.1/results/5/m_CS_PIDVr200118004634', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(165, 1, 5, 'Ernesto Rubio', 'm_CS_PIDVr', 'Control de velocidad con PID real y Filtro', '200118013954', '200118014027', 'Tm=0.01;P=0.3;I=0.6;D=0;Kb=1;Fcd=1;SW=0;Nv=2;Fcv=5;', '', 'null', 'http://127.0.0.1/results/5/m_CS_PIDVr200118013954', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(166, 1, 5, 'Ernesto Rubio', 'm_CS_PIDVr', 'Control de velocidad con PID real y Filtro', '200118014209', '200118014222', 'Tm=0.01;P=0.5;I=1;D=0;Kb=1;Fcd=1;SW=0;Nv=2;Fcv=5;', '', 'null', 'http://127.0.0.1/results/5/m_CS_PIDVr200118014209', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(167, 1, 5, 'Ernesto Rubio', 'm_CS_PIDVr', 'Control de velocidad con PID real y Filtro', '200118014351', '200118014405', 'Tm=0.01;P=0.3;I=0.6;D=0;Kb=1;Fcd=1;SW=1;Nv=2;Fcv=5;', '', 'null', 'http://127.0.0.1/results/5/m_CS_PIDVr200118014351', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(168, 1, 5, 'Ernesto Rubio', 'm_CS_PIDVr', 'Control de velocidad con PID real y Filtro', '200118015323', '200118015336', 'Tm=0.01;P=0.15;I=0.3;D=0;Kb=1;Fcd=1;SW=1;Nv=2;Fcv=5;', '', 'null', 'http://127.0.0.1/results/5/m_CS_PIDVr200118015323', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(169, 1, 5, 'Ernesto Rubio', 'm_CS_PIDVr', 'Control de velocidad con PID real y Filtro', '200118015404', '200118015417', 'Tm=0.01;P=0.15;I=0.3;D=0;Kb=1;Fcd=1;SW=0;Nv=2;Fcv=5;', '', 'null', 'http://127.0.0.1/results/5/m_CS_PIDVr200118015404', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(170, 1, 5, 'Ernesto Rubio', 'm_CS_PIDVr', 'Control de velocidad con PID real y Filtro', '200118015746', '200118015800', 'Tm=0.01;P=0.15;I=0.3;D=0;Kb=1;Fcd=1;SW=1;Nv=2;Fcv=5;', '', 'null', 'http://127.0.0.1/results/5/m_CS_PIDVr200118015746', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(171, 1, 5, 'Ernesto Rubio', 'm_CS_IDr', 'Identificaci&oacute;n por respuesta al paso', '230118131217', '230118131234', 'Tm=0.1;Te=1;Tp=0;Vi=0;Vf=1;', '', 'null', 'http://127.0.0.1/results/5/m_CS_IDr230118131217', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(172, 1, 5, 'Ernesto Rubio', 'm_CS_IDr', 'Identificaci&oacute;n por respuesta al paso', '230118131250', '230118131303', 'Tm=0.1;Te=1;Tp=0;Vi=0;Vf=1;', '', 'null', 'http://127.0.0.1/results/5/m_CS_IDr230118131250', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(173, 1, 5, 'Ernesto Rubio', 'm_CS_IDr', 'Identificaci&oacute;n por respuesta al paso', '230118131527', '230118131542', 'Tm=0.1;Te=10;Tp=5;Vi=0;Vf=1;', '', 'null', 'http://127.0.0.1/results/5/m_CS_IDr230118131527', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(174, 1, 5, 'Ernesto Rubio', 'm_CS_IDr', 'Identificaci&oacute;n por respuesta al paso', '230118131627', '230118131641', 'Tm=0.1;Te=10;Tp=5;Vi=0;Vf=1;', '', 'null', 'http://127.0.0.1/results/5/m_CS_IDr230118131627', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(175, 1, 5, 'Ernesto Rubio', 'm_CS_FILr', 'Ajuste de filtro (con video)', '230118131738', '230118131751', 'Tm=0.5;Nv=1;Fcv=0.1;Np=1;Fcp=0.1;', '', 'null', 'http://127.0.0.1/results/5/m_CS_FILr230118131738', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(176, 1, 5, 'Ernesto Rubio', 'm_CS_Cr', 'Control de posici&oacute;n y velocidad con controlador definido por el usuario', '230118132850', '230118132905', '', 'C:\\SLD/results/5/m_CS_Cr230118132850//ureg.mdl', 'http://127.0.0.1/results/5/m_CS_Cr230118132850//ureg.mdl', 'http://127.0.0.1/results/5/m_CS_Cr230118132850', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 1, NULL),
+(177, 1, 5, 'Ernesto Rubio', 'm_CS_PV2SPr', 'Control PV Cascada (SP: step & jtraj)', '230118224331', '230118224348', 'Tm=0.5;SWsp=0;Kv=0;Ka=0;Pp=0.1;Ip=0;Dp=0;Kbp=0;Fcdp=1;SWp=0;Np=1;Fcp=0.1;Pv=0.1;Iv=0;Dv=0;Kbv=0;Fcdv=1;SWv=0;Nv=1;Fcv=0.1;', '', 'null', 'http://127.0.0.1/results/5/m_CS_PV2SPr230118224331', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(179, 1, 5, 'Ernesto Rubio', 'm_CS_PIDVr', 'Control de velocidad con PID real y Filtro', '250118142929', '250118143001', 'Tm=0.5;P=0.1;I=0;D=0;Kb=0;Fcd=1;SW=0;Nv=1;Fcv=0.1;', '', 'null', 'http://127.0.0.1/results/5/m_CS_PIDVr250118142929', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(180, 1, 5, 'Ernesto Rubio', 'm_CS_Cr', 'Control de posici&oacute;n y velocidad con controlador definido por el usuario', '250118144011', '250118144026', '', 'C:\\SLD/results/5/m_CS_Cr250118144011//ureg.mdl', 'http://127.0.0.1/results/5/m_CS_Cr250118144011//ureg.mdl', 'http://127.0.0.1/results/5/m_CS_Cr250118144011', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(181, 1, 5, 'Ernesto Rubio', 'm_CS_IDr', 'Identificaci&oacute;n por respuesta al paso', '250118171632', '250118171646', 'Tm=0.1;Te=10;Tp=3;Vi=-3;Vf=5;', '', 'null', 'http://127.0.0.1/results/5/m_CS_IDr250118171632', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(182, 1, 5, 'Ernesto Rubio', 'm_CS_IDr', 'Identificaci&oacute;n por respuesta al paso', '250118172346', '250118172400', 'Tm=0.1;Te=1;Tp=0;Vi=0;Vf=1;', '', 'null', 'http://127.0.0.1/results/5/m_CS_IDr250118172346', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(184, 1, 5, 'Ernesto Rubio', 'm_CS_PIDVr', 'Control de velocidad con PID real y Filtro', '270118205710', '270118205724', 'Tm=0.01;P=0.5;I=1;D=0;Kb=0;Fcd=5;SW=1;Nv=2;Fcv=3;', '', 'null', 'http://127.0.0.1/results/5/m_CS_PIDVr270118205710', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(185, 1, 5, 'Ernesto Rubio', 'm_CS_PIDVr', 'Control de velocidad con PID real y Filtro', '270118205812', '270118205827', 'Tm=0.01;P=0.5;I=1;D=0;Kb=1;Fcd=5;SW=1;Nv=2;Fcv=3;', '', 'null', 'http://127.0.0.1/results/5/m_CS_PIDVr270118205812', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(186, 1, 5, 'Ernesto Rubio', 'm_CS_PIDVr', 'Control de velocidad con PID real y Filtro', '280118172503', '280118172540', 'Tm=0.01;P=0.3;I=0.6;D=0;Kb=0;Fcd=1;SW=1;Nv=2;Fcv=3;', '', 'null', 'http://127.0.0.1/results/5/m_CS_PIDVr280118172503', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(187, 1, 5, 'Ernesto Rubio', 'm_CS_PIDVr', 'Control de velocidad con PID real y Filtro', '280118172707', '280118172723', 'Tm=0.01;P=0.3;I=0.6;D=0;Kb=1;Fcd=1;SW=1;Nv=2;Fcv=3;', '', 'null', 'http://127.0.0.1/results/5/m_CS_PIDVr280118172707', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(188, 1, 5, 'Ernesto Rubio', 'm_CS_PIDPr', 'Control de posici&oacute;n con PID real y Filtro', '280118181742', '280118181802', 'Tm=0.01;P=0.03;I=0;D=0.015;Kb=0;Fcd=5;SW=1;Np=2;Fcp=5;', '', 'null', 'http://127.0.0.1/results/5/m_CS_PIDPr280118181742', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(189, 1, 5, 'Ernesto Rubio', 'm_CS_PIDPr', 'Control de posici&oacute;n con PID real y Filtro', '280118181920', '280118181936', 'Tm=0.01;P=0.03;I=0;D=0.015;Kb=0;Fcd=5;SW=0;Np=2;Fcp=5;', '', 'null', 'http://127.0.0.1/results/5/m_CS_PIDPr280118181920', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(190, 1, 5, 'Ernesto Rubio', 'm_CS_PIDPr', 'Control de posici&oacute;n con PID real y Filtro', '280118182221', '280118182237', 'Tm=0.01;P=0.03;I=0;D=0.015;Kb=0;Fcd=15;SW=0;Np=2;Fcp=5;', '', 'null', 'http://127.0.0.1/results/5/m_CS_PIDPr280118182221', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(191, 1, 5, 'Ernesto Rubio', 'm_CS_PIDPr', 'Control de posici&oacute;n con PID real y Filtro', '280118182255', '280118182312', 'Tm=0.01;P=0.03;I=0;D=0.015;Kb=0;Fcd=1;SW=0;Np=2;Fcp=5;', '', 'null', 'http://127.0.0.1/results/5/m_CS_PIDPr280118182255', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(192, 1, 5, 'Ernesto Rubio', 'm_CS_PIDPr', 'Control de posici&oacute;n con PID real y Filtro', '280118182408', '280118182424', 'Tm=0.01;P=0.03;I=0;D=0.015;Kb=0;Fcd=15;SW=1;Np=2;Fcp=5;', '', 'null', 'http://127.0.0.1/results/5/m_CS_PIDPr280118182408', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(193, 1, 5, 'Ernesto Rubio', 'm_CS_PIDPr', 'Control de posici&oacute;n con PID real y Filtro', '280118182501', '280118182518', 'Tm=0.01;P=0.03;I=0;D=0.015;Kb=0;Fcd=1;SW=1;Np=2;Fcp=5;', '', 'null', 'http://127.0.0.1/results/5/m_CS_PIDPr280118182501', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(194, 1, 5, 'Ernesto Rubio', 'm_CS_PIDPr', 'Control de posici&oacute;n con PID real y Filtro', '290118071711', '290118071725', 'Tm=0.01;P=0.1;I=0;D=0.05;Kb=0;Fcd=5;SW=1;Np=2;Fcp=5;', '', 'null', 'http://127.0.0.1/results/5/m_CS_PIDPr290118071711', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(195, 1, 5, 'Ernesto Rubio', 'm_CS_PIDPr', 'Control de posici&oacute;n con PID real y Filtro', '290118071844', '290118071858', 'Tm=0.01;P=0.1;I=0;D=0.05;Kb=0;Fcd=5;SW=0;Np=2;Fcp=5;', '', 'null', 'http://127.0.0.1/results/5/m_CS_PIDPr290118071844', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(196, 1, 5, 'Ernesto Rubio', 'm_CS_PIDPr', 'Control de posici&oacute;n con PID real y Filtro', '290118071925', '290118071939', 'Tm=0.01;P=0.1;I=0;D=0.05;Kb=0;Fcd=15;SW=1;Np=2;Fcp=5;', '', 'null', 'http://127.0.0.1/results/5/m_CS_PIDPr290118071925', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(197, 1, 5, 'Ernesto Rubio', 'm_CS_PIDPr', 'Control de posici&oacute;n con PID real y Filtro', '290118071955', '290118072011', 'Tm=0.01;P=0.1;I=0;D=0.05;Kb=0;Fcd=1;SW=1;Np=2;Fcp=5;', '', 'null', 'http://127.0.0.1/results/5/m_CS_PIDPr290118071955', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(198, 1, 5, 'Ernesto Rubio', 'm_CS_PIDPr', 'Control de posici&oacute;n con PID real y Filtro', '020218071319', '020218071440', 'Tm=0.01;P=0.1;I=0;D=0.05;Kb=0;Fcd=5;SW=1;Np=2;Fcp=5;', '', 'null', 'http://127.0.0.1/results/5/m_CS_PIDPr020218071319', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(199, 1, 5, 'Ernesto Rubio', 'm_CS_IDr', 'Identificaci&oacute;n por respuesta al paso', '280319151900', '', 'Tm=0.1;Te=1;Tp=0;Vi=0;Vf=1;', '', 'null', 'http://127.0.0.1/results/5/m_CS_IDr280319151900', '', '', NULL, 0, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(200, 1, 5, 'Ernesto Rubio', 'm_CS_IDr', 'Identificaci&oacute;n por respuesta al paso', '280319154111', '280319154311', 'Tm=0.1;Te=1;Tp=0;Vi=0;Vf=1;', '', 'null', 'http://127.0.0.1/results/5/m_CS_IDr280319154111', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(201, 1, 5, 'Ernesto Rubio', 'm_CS_IDr', 'Identificaci&oacute;n por respuesta al paso', '280319154345', '280319154358', 'Tm=0.01;Te=5;Tp=0;Vi=0;Vf=1;', '', 'null', 'http://127.0.0.1/results/5/m_CS_IDr280319154345', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL),
+(202, 1, 5, 'Ernesto Rubio', 'm_CS_FILr', 'Ajuste de filtro (con video)', '280319154412', '280319154427', 'Tm=0.5;Nv=1;Fcv=0.1;Np=1;Fcp=0.1;', '', 'null', 'http://127.0.0.1/results/5/m_CS_FILr280319154412', '', '', NULL, 1, 'null', 'null', NULL, NULL, NULL, NULL, 0, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `sld_practices_data`
+--
+
+CREATE TABLE `sld_practices_data` (
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `sid` varchar(2) NOT NULL,
+  `pname` varchar(100) NOT NULL,
+  `pcname` varchar(255) NOT NULL,
+  `categoria` varchar(100) default NULL,
+  `path` varchar(255) NOT NULL,
+  `stpath` varchar(255) default NULL,
+  `purl` varchar(255) NOT NULL,
+  `nfiles` int(2) NOT NULL,
+  `type` varchar(25) NOT NULL,
+  `visibilidad` varchar(15) default 'oculta',
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=51 ;
+
+--
+-- Volcar la base de datos para la tabla `sld_practices_data`
+--
+
+INSERT INTO `sld_practices_data` (`id`, `sid`, `pname`, `pcname`, `categoria`, `path`, `stpath`, `purl`, `nfiles`, `type`, `visibilidad`) VALUES
+(40, '1', 'm_CS_IDr', 'Identificaci&oacute;n por respuesta al paso', 'Pr&aacute;cticas con el servomecanismo', 'C:\\SLD\\SLDStation\\practicas\\CS_IDr', 'SLDStation/practicas/CS_IDr/out/', '', 0, 'real', 'visible'),
+(41, '1', 'm_CS_FILr', 'Ajuste de filtro (con video)', 'Pr&aacute;cticas con el servomecanismo', 'C:\\SLD\\SLDStation\\practicas\\CS_FILr', 'SLDStation/practicas/CS_FILr/out/', '', 0, 'real', 'visible'),
+(45, '1', 'm_CS_PV2SPr', 'Control PV Cascada (SP: step & jtraj)', 'Pr&aacute;cticas con el servomecanismo', 'C:\\SLD\\SLDStation\\practicas\\CS_PV2SPr', 'SLDStation/practicas/CS_PV2SPr/out/', '', 0, 'real', 'visible'),
+(46, '1', 'm_CS_Cr', 'Control de posici&oacute;n y velocidad con controlador definido por el usuario', 'Pr&aacute;cticas con el servomecanismo', 'C:\\SLD\\SLDStation\\practicas\\CS_Cr', 'SLDStation/practicas/CS_Cr/out/', '', 0, 'real', 'visible'),
+(43, '1', 'm_CS_PIDVr', 'Control de velocidad con PID real y Filtro', 'Pr&aacute;cticas con el servomecanismo', 'C:\\SLD\\SLDStation\\practicas\\CS_PIDVr', 'SLDStation/practicas/CS_PIDVr/out/', '', 0, 'real', 'visible'),
+(44, '1', 'm_CS_PIDPr', 'Control de posici&oacute;n con PID real y Filtro', 'Pr&aacute;cticas con el servomecanismo', 'C:\\SLD\\SLDStation\\practicas\\CS_PIDPr', 'SLDStation/practicas/CS_PIDPr/out/', '', 0, 'real', 'visible');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `sld_stations`
+--
+
+CREATE TABLE `sld_stations` (
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `sname` varchar(255) NOT NULL,
+  `url` varchar(255) NOT NULL,
+  `state` varchar(100) NOT NULL,
+  `pcount` int(10) default '0',
+  `practices` text NOT NULL,
+  `description` text,
+  `equipment` varchar(255) default NULL,
+  `tm` text,
+  `ip` varchar(25) NOT NULL,
+  `timerest` int(11) default NULL,
+  `lastaccess` text,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `ip` (`ip`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
+
+--
+-- Volcar la base de datos para la tabla `sld_stations`
+--
+
+INSERT INTO `sld_stations` (`id`, `sname`, `url`, `state`, `pcount`, `practices`, `description`, `equipment`, `tm`, `ip`, `timerest`, `lastaccess`) VALUES
+(2, 'EstacionServo', 'http://127.0.0.1/', 'wait', 0, 'm_CS_IDr;m_CS_FILr;m_CS_PIDVr;m_CS_PIDPr;m_CS_PVr;m_CS_Cr;m_CS_PV2SPr', 'Estación Servo UBB', 'Estación', NULL, '127.0.0.1', NULL, '280319154427');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `sld_users`
+--
+
+CREATE TABLE `sld_users` (
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `name` varchar(255) NOT NULL default '',
+  `login` varchar(255) NOT NULL default '',
+  `password` varchar(255) default NULL,
+  `domain` varchar(255) NOT NULL default '',
+  `mail` varchar(255) NOT NULL default '',
+  `level` int(1) unsigned NOT NULL default '3',
+  `type` int(1) unsigned NOT NULL default '1',
+  `status` varchar(10) NOT NULL default 'outline',
+  `date` varchar(10) default NULL,
+  `time` time default NULL,
+  `ip` varchar(15) default NULL,
+  `rvalued` text,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `id` (`id`),
+  UNIQUE KEY `mail` (`mail`),
+  UNIQUE KEY `login` (`login`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+
+--
+-- Volcar la base de datos para la tabla `sld_users`
+--
+
+INSERT INTO `sld_users` (`id`, `name`, `login`, `password`, `domain`, `mail`, `level`, `type`, `status`, `date`, `time`, `ip`, `rvalued`) VALUES
+(5, 'Ernesto Rubio', 'aerubio', '36da91eff498aedde118c4281cf34510', 'db', 'aerubio@ubiobio.cl', 3, 3, 'online', '2019-03-28', '15:44:45', NULL, NULL),
+(6, 'ivan', 'ischingx', 'e860533f2f031a32691d32e343e01f3a', 'db', 'ching@uclv.edu.cu', 3, 3, 'outline', '2018-01-18', '14:19:25', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `sld_users_groups`
+--
+
+CREATE TABLE `sld_users_groups` (
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `name` varchar(255) NOT NULL default '',
+  `cids` text NOT NULL,
+  `description` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `id` (`id`),
+  UNIQUE KEY `name` (`name`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Volcar la base de datos para la tabla `sld_users_groups`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `user_groups`
+--
+
+CREATE TABLE `user_groups` (
+  `groupId` int(11) NOT NULL auto_increment,
+  `Name` text,
+  `hours_per_day` time default NULL,
+  `hours_per_week` time default NULL,
+  `hours_per_month` time default NULL,
+  `hours_per_year` time default NULL,
+  `Task` text,
+  PRIMARY KEY  (`groupId`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Volcar la base de datos para la tabla `user_groups`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `uso_estaciones`
+--
+
+CREATE TABLE `uso_estaciones` (
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `pname` varchar(20) NOT NULL,
+  `ip` varchar(25) NOT NULL,
+  `pcount` int(10) NOT NULL,
+  `date` varchar(12) NOT NULL,
+  `edate` varchar(12) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=126 ;
+
+--
+-- Volcar la base de datos para la tabla `uso_estaciones`
+--
+
+INSERT INTO `uso_estaciones` (`id`, `pname`, `ip`, `pcount`, `date`, `edate`) VALUES
+(50, 'm_CP_Testr', '192.168.2.106', 1, '041117002759', '041117002836'),
+(49, 'm_CP_Testr', '192.168.2.106', 1, '041117002248', '041117002307'),
+(48, 'm_CP_Testr', '192.168.2.106', 1, '041117002126', '041117002205'),
+(47, 'm_CP_Testr', '192.168.2.106', 1, '041117000913', '041117000934'),
+(46, 'm_CP_Testr', '192.168.2.106', 1, '031117235832', '031117235907'),
+(45, 'm_CP_Testr', '192.168.2.106', 1, '031117235541', '031117235627'),
+(44, 'm_CP_Testr', '192.168.2.106', 1, '031117200546', '031117200604'),
+(43, 'm_CP_Testr', '192.168.2.106', 1, '031117195116', '031117195143'),
+(42, 'm_CP_Testr', '192.168.2.106', 1, '031117195030', '031117195051'),
+(41, 'm_CP_Testr', '192.168.2.106', 1, '031117192634', '031117192732'),
+(40, 'm_CP_Testr', '192.168.2.106', 1, '031117192546', '031117192615'),
+(39, 'm_CP_Testr', '192.168.2.106', 1, '031117192333', '031117192415'),
+(38, 'm_CS_IDr', '192.168.2.56', 1, '031117163410', '031117163432'),
+(37, 'm_CS_IDr', '192.168.2.56', 1, '031117162958', '031117163015'),
+(36, 'm_CS_IDr', '192.168.2.56', 1, '031117141137', '031117141202'),
+(51, 'm_CS_IDr', '127.0.0.1', 1, '160118230828', '160118230838'),
+(52, 'm_CS_IDr', '127.0.0.1', 1, '160118234632', '160118234642'),
+(53, 'm_CS_IDr', '127.0.0.1', 1, '170118000319', '170118000329'),
+(54, 'm_CS_FILr', '127.0.0.1', 1, '170118011839', '170118011848'),
+(55, 'm_CS_FILr', '127.0.0.1', 1, '170118011936', '170118011946'),
+(56, 'm_CS_Cr', '127.0.0.1', 1, '170118015635', '170118015649'),
+(57, 'm_CS_Cr', '127.0.0.1', 1, '170118015909', '170118015923'),
+(58, 'm_CS_IDr', '127.0.0.1', 1, '170118112453', '170118112504'),
+(59, 'm_CS_IDr', '127.0.0.1', 1, '170118112600', '170118112611'),
+(60, 'm_CS_FILr', '127.0.0.1', 1, '170118112647', '170118112657'),
+(61, 'm_CS_Cr', '127.0.0.1', 1, '170118112731', '170118112744'),
+(62, 'm_CS_PVr', '127.0.0.1', 1, '170118123114', '170118123151'),
+(63, 'm_CS_PVr', '127.0.0.1', 1, '170118123614', '170118123621'),
+(64, 'm_CS_PV2SPr', '', 0, '170118141215', '170118141222'),
+(65, 'm_CS_PV2SPr', '', 0, '170118141527', '170118141534'),
+(66, 'm_CS_PV2SPr', '', 0, '170118141717', '170118141724'),
+(67, 'm_CS_PV2SPr', '127.0.0.1', 1, '170118141958', '170118142006'),
+(68, 'm_CS_PV2SPr', '127.0.0.1', 1, '170118142241', '170118142248'),
+(69, 'm_CS_PV2SPr', '127.0.0.1', 1, '170118143041', '170118143048'),
+(70, 'm_CS_PV2SPr', '127.0.0.1', 1, '170118154400', '170118154407'),
+(71, 'm_CS_PV2SPr', '127.0.0.1', 1, '170118154441', '170118154448'),
+(72, 'm_CS_Cr', '127.0.0.1', 1, '180118095826', '180118095856'),
+(73, 'm_CS_Cr', '127.0.0.1', 1, '180118102454', '180118102506'),
+(74, 'm_CS_Cr', '127.0.0.1', 1, '180118102811', '180118102823'),
+(75, 'm_CS_Cr', '127.0.0.1', 1, '180118102922', '180118102933'),
+(76, 'm_CS_IDr', '127.0.0.1', 1, '180118144500', '180118144528'),
+(77, 'm_CS_PIDVr', '127.0.0.1', 1, '180118144712', '180118144723'),
+(78, 'm_CS_PIDPr', '127.0.0.1', 1, '180118144837', '180118144849'),
+(79, 'm_CS_PIDVr', '127.0.0.1', 1, '180118154352', '180118154404'),
+(80, 'm_CS_PIDPr', '127.0.0.1', 1, '180118154418', '180118154430'),
+(81, 'm_CS_PV2SPr', '127.0.0.1', 1, '180118154844', '180118154857'),
+(82, 'm_CS_PV2SPr', '127.0.0.1', 1, '180118154917', '180118154929'),
+(83, 'm_CS_PV2SPr', '127.0.0.1', 1, '180118162645', '180118162658'),
+(84, 'm_CS_Cr', '127.0.0.1', 1, '180118175629', '180118175702'),
+(85, 'm_CS_PIDVr', '127.0.0.1', 1, '190118235236', '190118235308'),
+(86, 'm_CS_PIDVr', '127.0.0.1', 1, '200118000056', '200118000111'),
+(87, 'm_CS_PIDVr', '127.0.0.1', 1, '200118004103', '200118004116'),
+(88, 'm_CS_PIDVr', '127.0.0.1', 1, '200118004148', '200118004201'),
+(89, 'm_CS_PIDVr', '127.0.0.1', 1, '200118004238', '200118004251'),
+(90, 'm_CS_PIDVr', '127.0.0.1', 1, '200118004634', '200118004648'),
+(91, 'm_CS_PIDVr', '127.0.0.1', 1, '200118013954', '200118014027'),
+(92, 'm_CS_PIDVr', '127.0.0.1', 1, '200118014209', '200118014222'),
+(93, 'm_CS_PIDVr', '127.0.0.1', 1, '200118014351', '200118014405'),
+(94, 'm_CS_PIDVr', '127.0.0.1', 1, '200118015323', '200118015336'),
+(95, 'm_CS_PIDVr', '127.0.0.1', 1, '200118015404', '200118015417'),
+(96, 'm_CS_PIDVr', '127.0.0.1', 1, '200118015746', '200118015800'),
+(97, 'm_CS_IDr', '127.0.0.1', 1, '230118131217', '230118131234'),
+(98, 'm_CS_IDr', '127.0.0.1', 1, '230118131250', '230118131303'),
+(99, 'm_CS_IDr', '127.0.0.1', 1, '230118131527', '230118131542'),
+(100, 'm_CS_IDr', '127.0.0.1', 1, '230118131627', '230118131641'),
+(101, 'm_CS_FILr', '127.0.0.1', 1, '230118131738', '230118131751'),
+(102, 'm_CS_Cr', '127.0.0.1', 1, '230118132850', '230118132905'),
+(103, 'm_CS_PV2SPr', '127.0.0.1', 1, '230118224331', '230118224348'),
+(104, 'm_CS_PIDVr', '127.0.0.1', 1, '250118142929', '250118143001'),
+(105, 'm_CS_Cr', '127.0.0.1', 1, '250118144011', '250118144026'),
+(106, 'm_CS_IDr', '127.0.0.1', 1, '250118171632', '250118171646'),
+(107, 'm_CS_IDr', '127.0.0.1', 1, '250118172346', '250118172400'),
+(108, 'm_CS_PIDVr', '127.0.0.1', 1, '270118205710', '270118205724'),
+(109, 'm_CS_PIDVr', '127.0.0.1', 1, '270118205812', '270118205827'),
+(110, 'm_CS_PIDVr', '127.0.0.1', 1, '280118172503', '280118172540'),
+(111, 'm_CS_PIDVr', '127.0.0.1', 1, '280118172707', '280118172723'),
+(112, 'm_CS_PIDPr', '127.0.0.1', 1, '280118181742', '280118181802'),
+(113, 'm_CS_PIDPr', '127.0.0.1', 1, '280118181920', '280118181936'),
+(114, 'm_CS_PIDPr', '127.0.0.1', 1, '280118182221', '280118182237'),
+(115, 'm_CS_PIDPr', '127.0.0.1', 1, '280118182255', '280118182312'),
+(116, 'm_CS_PIDPr', '127.0.0.1', 1, '280118182408', '280118182424'),
+(117, 'm_CS_PIDPr', '127.0.0.1', 1, '280118182501', '280118182518'),
+(118, 'm_CS_PIDPr', '127.0.0.1', 1, '290118071711', '290118071725'),
+(119, 'm_CS_PIDPr', '127.0.0.1', 1, '290118071844', '290118071858'),
+(120, 'm_CS_PIDPr', '127.0.0.1', 1, '290118071925', '290118071939'),
+(121, 'm_CS_PIDPr', '127.0.0.1', 1, '290118071955', '290118072011'),
+(122, 'm_CS_PIDPr', '127.0.0.1', 1, '020218071319', '020218071440'),
+(123, 'm_CS_IDr', '127.0.0.1', 1, '280319154111', '280319154311'),
+(124, 'm_CS_IDr', '127.0.0.1', 1, '280319154345', '280319154358'),
+(125, 'm_CS_FILr', '127.0.0.1', 1, '280319154412', '280319154427');

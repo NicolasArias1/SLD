@@ -1,0 +1,291 @@
+-- phpMyAdmin SQL Dump
+-- version 2.11.3
+-- http://www.phpmyadmin.net
+--
+-- Servidor: localhost
+-- Tiempo de generación: 17-06-2016 a las 10:41:55
+-- Versión del servidor: 5.0.51
+-- Versión de PHP: 5.2.5
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+--
+-- Base de datos: `web36db2`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `calendar_tasks`
+--
+
+CREATE TABLE `calendar_tasks` (
+  `taskID` int(11) NOT NULL auto_increment,
+  `id` int(11) NOT NULL default '0',
+  `groupID` int(11) default NULL,
+  `description` varchar(200) NOT NULL default '',
+  `entryDate` datetime NOT NULL default '0000-00-00 00:00:00',
+  `startDateTime` datetime default NULL,
+  `endDateTime` datetime default NULL,
+  `priority` varchar(10) NOT NULL default '',
+  `isCompleted` tinyint(4) default NULL,
+  `task_workrelated` tinyint(4) NOT NULL default '0',
+  PRIMARY KEY  (`taskID`),
+  UNIQUE KEY `taskID` (`taskID`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Volcar la base de datos para la tabla `calendar_tasks`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `comments`
+--
+
+CREATE TABLE `comments` (
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `rid` int(10) NOT NULL default '0',
+  `uid` int(10) unsigned NOT NULL default '0',
+  `ulogin` varchar(255) NOT NULL default '',
+  `comment` text NOT NULL,
+  `sdate` datetime NOT NULL default '0000-00-00 00:00:00',
+  `publisher` varchar(255) default NULL,
+  `pdate` datetime default '0000-00-00 00:00:00',
+  `new` int(1) unsigned default '1',
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `id` (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Volcar la base de datos para la tabla `comments`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `sld_practices`
+--
+
+CREATE TABLE `sld_practices` (
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `sid` int(10) unsigned NOT NULL,
+  `uid` int(11) NOT NULL,
+  `ulogin` varchar(255) NOT NULL,
+  `pname` varchar(100) NOT NULL,
+  `pcname` varchar(255) NOT NULL,
+  `date` varchar(12) NOT NULL,
+  `edate` varchar(12) NOT NULL,
+  `vars` varchar(255) default NULL,
+  `regpath` varchar(255) NOT NULL,
+  `regurl` varchar(255) NOT NULL,
+  `resurl` varchar(255) NOT NULL,
+  `sturl` varchar(255) NOT NULL,
+  `files` varchar(255) NOT NULL,
+  `error` varchar(255) default NULL,
+  `ok` int(1) unsigned default '0',
+  `tlogin` varchar(255) default 'null',
+  `rdate` varchar(12) default 'null',
+  `comments` text,
+  `ncomments` text,
+  `votes` text,
+  `ranks` int(1) unsigned default NULL,
+  `revisar` int(11) NOT NULL,
+  `exectime` int(11) default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Volcar la base de datos para la tabla `sld_practices`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `sld_practices_data`
+--
+
+CREATE TABLE `sld_practices_data` (
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `sid` varchar(2) NOT NULL,
+  `pname` varchar(100) NOT NULL,
+  `pcname` varchar(255) NOT NULL,
+  `categoria` varchar(100) default NULL,
+  `path` varchar(255) NOT NULL,
+  `stpath` varchar(255) default NULL,
+  `purl` varchar(255) NOT NULL,
+  `nfiles` int(2) NOT NULL,
+  `type` varchar(25) NOT NULL,
+  `visibilidad` varchar(15) default 'oculta',
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=26 ;
+
+--
+-- Volcar la base de datos para la tabla `sld_practices_data`
+--
+
+INSERT INTO `sld_practices_data` (`id`, `sid`, `pname`, `pcname`, `categoria`, `path`, `stpath`, `purl`, `nfiles`, `type`, `visibilidad`) VALUES
+(1, '1', 'm_controlvs', 'Control de velocidad de un motor de corriente directa con regulador PID', NULL, 'D:\\www\\SLDStation\\practicas\\ControlVS', 'SLDStation/practicas/ControlVS/out/', 'http://10.12.25.200/SLDStation/practicas/ControlVS/out/', 6, 'Simulada', 'oculta'),
+(2, '1', 'm_controlps', 'Control de posición de un motor de corriente directa con regulador PID ', NULL, 'D:\\www\\SLDStation\\practicas\\ControlPS', 'SLDStation/practicas/ControlPS/out/', 'http://10.12.25.200/SLDStation/practicas/ControlPS/out/', 6, 'Simulada', 'oculta'),
+(3, '1', 'm_controlpsc', 'Control de posición de un motor de corriente directa con posibilidad de cambio del regulador', NULL, 'D:\\www\\SLDStation\\practicas\\ControlPSC', 'SLDStation/practicas/ControlPSC/out/', 'http://10.12.25.200/SLDStation/practicas/ControlPSC/out/', 7, 'Simulada', 'oculta'),
+(4, '1', 'm_controlvr', 'Control de velocidad de un motor de corriente directa con regulador PID', NULL, 'D:\\www\\SLDStation\\practicas\\ControlVR', 'SLDStation/practicas/ControlVR/out/', '', 0, 'Real', 'oculta'),
+(5, '1', 'm_termicos', 'Control de un sistema t&eacute;rmico con regulador PID', 'Pr&aacute;cticas del sistema t&eacute;rmico', 'D:\\www\\SLDStation\\practicas\\termicos', 'SLDStation/practicas/termicos/out/', '', 0, 'Simulada', 'visible'),
+(6, '1', 'm_termicor', 'Control de un sistema t&eacute;rmico con regulador PID', 'Pr&aacute;cticas del sistema t&eacute;rmico', 'D:\\www\\SLDStation\\practicas\\termicor', 'SLDStation/practicas/termicor/out/', '', 0, 'Real', 'oculta'),
+(7, '1', 'm_controlpr', 'Control de posición de un motor de corriente directa con regulador PID ', NULL, 'D:\\www\\SLDStation\\practicas\\ControlPR', 'SLDStation/practicas/ControlPR/out/', '', 0, 'Real', 'oculta'),
+(8, '1', 'm_controlvspi', 'Control de velocidad de un motor de corriente directa con regulador PI', NULL, 'D:\\www\\SLDStation\\practicas\\ControlVSPI', 'SLDStation/practicas/ControlVSPI/out/', '', 0, 'Simulada', 'oculta'),
+(9, '1', 'm_controlvrpi', 'Control de velocidad de un motor de corriente directa con regulador PI', NULL, 'D:\\www\\SLDStation\\practicas\\ControlVRPI', 'SLDStation/practicas/ControlVRPI/out/', '', 0, 'Real', 'oculta'),
+(10, '1', 'm_controlvsc', 'Control de velocidad de un motor de corriente directa con posibilidad de cambio del regulador', NULL, 'D:\\www\\SLDStation\\practicas\\ControlVSC', 'SLDStation/practicas/ControlVSC/out/', 'http://10.12.25.200/SLDStation/practicas/ControlVSC/out/', 7, 'Real', 'oculta'),
+(11, '1', 'm_controlprc', 'Control de posici&oacute;n de un motor de corriente directa con posibilidad de cambio del regulador', NULL, 'D:\\www\\SLDStation\\practicas\\ControlPRC', 'SLDStation/practicas/ControlPRC/out/', '', 7, 'Real', 'oculta'),
+(12, '1', 'm_termicocs', 'Control de un sistema t&eacute;rmico con regulador discreto', 'Pr&aacute;cticas del sistema t&eacute;rmico', 'D:\\www\\SLDStation\\practicas\\termicocs', 'SLDStation/practicas/termicocs/out/', '', 0, 'Simulada', 'visible'),
+(15, '1', 'm_proyinteg', 'Proyecto Integrado Identificación de Sistemas', 'Proyecto integrado de Regulaci&oacute;n Autom&aacute;tica I', 'D:\\www\\SLDStation\\practicas\\proyinteg', 'SLDStation/practicas/proyinteg/out/', '', 0, 'Simulada', 'oculta'),
+(14, '1', 'm_proyinteg_ii', 'Proyecto Integrado Dise&ntilde;o de Reguladores', 'Proyecto integrado de Regulaci&oacute;n Autom&aacute;tica I', 'D:\\www\\SLDStation\\practicas\\proyinteg_ii', 'SLDStation/practicas/proyinteg_ii/out/', '', 1, 'Simulada', 'oculta'),
+(13, '1', 'm_identmotorr', 'Identificación de un motor de corriente continua', 'Pr&aacute;cticas del motor de corriente continua', 'D:\\www\\SLDStation\\practicas\\identmotorr', 'SLDStation/practicas/identmotorr/out/', '', 0, 'Real', 'visible'),
+(16, '1', 'm_termicocr', 'Control de un sistema t&eacute;rmico con regulador discreto', 'Pr&aacute;cticas del sistema t&eacute;rmico', 'D:\\www\\SLDStation\\practicas\\termicocr', 'SLDStation/practicas/termicocr/out/', '', 0, 'Real', 'oculta'),
+(17, '1', 'm_identtermicor', 'Identificación de un sistema térmico', 'Pr&aacute;cticas del sistema t&eacute;rmico', 'D:\\www\\SLDStation\\practicas\\identtermicor', 'SLDStation/practicas/identtermicor/out/', '', 0, 'Real', 'visible'),
+(18, '1', 'm_proyinteg_iii1', 'Proyecto Integrado Control de Realimentación Simple', 'Proyecto integrado de Regulaci&oacute;n Autom&aacute;tica I', 'D:\\www\\SLDStation\\practicas\\proyinteg_iii1', 'SLDStation/practicas/proyinteg_iii1/out/', '', 1, 'Simulada', 'oculta'),
+(19, '1', 'm_proyinteg_iii2', 'Proyecto Integrado Control Anticipativo', 'Proyecto integrado de Regulaci&oacute;n Autom&aacute;tica I', 'D:\\www\\SLDStation\\practicas\\proyinteg_iii2', 'SLDStation/practicas/proyinteg_iii2/out/', '', 1, 'Simulada', 'oculta'),
+(20, '1', 'm_proyinteg_iii3', 'Proyecto Integrado Control en Cascada', 'Proyecto integrado de Regulaci&oacute;n Autom&aacute;tica I', 'D:\\www\\SLDStation\\practicas\\proyinteg_iii3', 'SLDStation/practicas/proyinteg_iii3/out/', '', 1, 'Simulada', 'oculta'),
+(21, '1', 'm_ensayotermicor', 'Ensayo de un sistema térmico', 'Pr&aacute;cticas del sistema t&eacute;rmico', 'D:\\www\\SLDStation\\practicas\\ensayotermicor', 'SLDStation/practicas/ensayotermicor/out/', '', 1, 'Real', 'visible'),
+(22, '1', 'm_termicopertr', 'Control de un sistema t&eacute;rmico con regulador PID y perturbaci&oacute;n', 'Pr&aacute;cticas del sistema t&eacute;rmico', 'D:\\www\\SLDStation\\practicas\\termicopertr', 'SLDStation/practicas/termicopertr/out/', '', 0, 'real', 'visible'),
+(23, '1', 'm_pidmotorr', 'Control de posici&oacute;n de un motor de corriente continua', 'Pr&aacute;cticas del motor de corriente continua', 'D:\\www\\SLDStation\\practicas\\pidmotorr', 'SLDStation/practicas/pidmotorr/out/', '', 0, 'real', 'visible'),
+(24, '1', 'm_termicoanticipr', 'Control de un sistema t&eacute;rmico con perturbaci&oacute;n y regulador anticipativo ', 'Pr&aacute;cticas del sistema t&eacute;rmico', 'D:\\www\\SLDStation\\practicas\\termicoanticipr', 'SLDStation/practicas/termicoanticipr/out/', '', 0, 'real', 'visible'),
+(25, '1', 'm_termicoperts', 'Control de un sistema t&eacute;rmico con regulador PID y perturbaci&oacute;n', 'Pr&aacute;cticas del sistema t&eacute;rmico', 'D:\\www\\SLDStation\\practicas\\termicoperts', 'SLDStation/practicas/termicoperts/out/', '', 0, 'Simulada', 'oculta');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `sld_stations`
+--
+
+CREATE TABLE `sld_stations` (
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `sname` varchar(255) NOT NULL,
+  `url` varchar(255) NOT NULL,
+  `state` varchar(100) NOT NULL,
+  `pcount` int(10) default '0',
+  `practices` text NOT NULL,
+  `description` text,
+  `equipment` varchar(255) default NULL,
+  `tm` text,
+  `ip` varchar(25) NOT NULL,
+  `timerest` int(11) default NULL,
+  `lastaccess` text,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `ip` (`ip`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
+
+--
+-- Volcar la base de datos para la tabla `sld_stations`
+--
+
+INSERT INTO `sld_stations` (`id`, `sname`, `url`, `state`, `pcount`, `practices`, `description`, `equipment`, `tm`, `ip`, `timerest`, `lastaccess`) VALUES
+(7, 'Estacion4UPM', 'http://138.100.76.104/', 'wait', 0, 'm_termicor;m_identtermicor', 'Estacion 4\r\nm_termicor;m_termicocr;m_identtermicor;m_identmotorr', 'Sistema termico o motor dc', NULL, '138.100.76.104', NULL, '280212202430'),
+(3, 'ServerUPM', 'http://138.100.76.170/', 'wait', 0, 'm_termicos;m_termicocs;m_proyinteg;m_proyinteg_ii;m_proyinteg_iii1;m_proyinteg_iii2;m_proyinteg_iii3;m_termicoperts', 'Server SLD España', 'Servidor', NULL, '138.100.76.170', NULL, '10312021854'),
+(4, 'Estacion1UPM', 'http://138.100.76.101/', 'wait', 0, 'm_termicor;m_identtermicor', 'Estacion 1 con maqueta de sistema termico con perturbaciones\r\nm_termicor;m_termicocr;m_identtermicor;m_ensayotermicor;m_termicoanticipr;m_termicopertr', 'Sistema termico', NULL, '138.100.76.101', NULL, '290212172210'),
+(5, 'Estacion2UPM', 'http://138.100.76.102/', 'wait', 0, 'm_termicor;m_identtermicor;', 'Estacion 2 con maqueta de motor de corriente directa\r\nm_termicor;m_termicocr;m_identtermicor\r\n\r\nm_identmotorr', 'Motor DC', NULL, '138.100.76.102', NULL, '280212205510'),
+(6, 'Estacion3UPM', 'http://138.100.76.103/', 'wait', 0, 'm_termicor;m_identtermicor', 'Estacion 3\r\nm_termicor;m_termicocr;m_identtermicor\r\n\r\nm_identmotorr', 'Sistema termico o motor dc', NULL, '138.100.76.103', NULL, '290212094935'),
+(8, 'Estacion5UPM', 'http://138.100.76.105/', 'wait', 0, 'm_termicor;m_identtermicor', 'Estacion 5 con motor DC\r\nm_termicor;m_termicocr;m_identtermicor;m_identmotorr;m_pidmotorr', 'Sistema termico', NULL, '138.100.76.105', NULL, '280212184146'),
+(9, 'Estacion7UPM', 'http://138.100.76.107/', 'wait', 0, 'm_termicor;m_identtermicor', 'Estacion 7 con maqueta de sistema termico\r\nm_termicor;m_termicocr;m_identtermicor', 'Sistema termico', NULL, '138.100.76.107', NULL, '280212172301'),
+(10, 'Estacion8UPM', 'http://138.100.76.108/', 'wait', 0, 'm_termicor;m_identtermicor', 'Estacion 8 con maqueta de sistema termico\r\nm_termicor;m_termicocr;m_identtermicor', 'Sistema termico', NULL, '138.100.76.108', NULL, '280212192158'),
+(11, 'Estacion6UPM', 'http://138.100.76.106/', 'wait', 0, 'm_termicor;m_identtermicor', 'Estacion 6 con motor DC\r\nm_termicor;m_termicocr;m_identmotorr;m_pidmotorr;m_identtermicor', 'Motor DC', NULL, '138.100.76.106', NULL, '280212122840');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `sld_users`
+--
+
+CREATE TABLE `sld_users` (
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `name` varchar(255) NOT NULL default '',
+  `login` varchar(255) NOT NULL default '',
+  `password` varchar(255) default NULL,
+  `domain` varchar(255) NOT NULL default '',
+  `mail` varchar(255) NOT NULL default '',
+  `level` int(1) unsigned NOT NULL default '3',
+  `type` int(1) unsigned NOT NULL default '1',
+  `status` varchar(10) NOT NULL default 'outline',
+  `date` varchar(10) default NULL,
+  `time` time default NULL,
+  `ip` varchar(15) default NULL,
+  `rvalued` text,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `id` (`id`),
+  UNIQUE KEY `mail` (`mail`),
+  UNIQUE KEY `login` (`login`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Volcar la base de datos para la tabla `sld_users`
+--
+
+INSERT INTO `sld_users` (`id`, `name`, `login`, `password`, `domain`, `mail`, `level`, `type`, `status`, `date`, `time`, `ip`, `rvalued`) VALUES
+(1, 'Ivan Santana Ching', 'ischingx', 'e860533f2f031a32691d32e343e01f3a', 'db', 'ching@uclv.edu.cu', 1, 3, 'online', '2016-06-17', '10:38:32', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `sld_users_groups`
+--
+
+CREATE TABLE `sld_users_groups` (
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `name` varchar(255) NOT NULL default '',
+  `cids` text NOT NULL,
+  `description` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `id` (`id`),
+  UNIQUE KEY `name` (`name`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Volcar la base de datos para la tabla `sld_users_groups`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `user_groups`
+--
+
+CREATE TABLE `user_groups` (
+  `groupId` int(11) NOT NULL auto_increment,
+  `Name` text,
+  `hours_per_day` time default NULL,
+  `hours_per_week` time default NULL,
+  `hours_per_month` time default NULL,
+  `hours_per_year` time default NULL,
+  `Task` text,
+  PRIMARY KEY  (`groupId`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Volcar la base de datos para la tabla `user_groups`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `uso_estaciones`
+--
+
+CREATE TABLE `uso_estaciones` (
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `pname` varchar(20) NOT NULL,
+  `ip` varchar(25) NOT NULL,
+  `pcount` int(10) NOT NULL,
+  `date` varchar(12) NOT NULL,
+  `edate` varchar(12) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Volcar la base de datos para la tabla `uso_estaciones`
+--
+

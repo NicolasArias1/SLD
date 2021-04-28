@@ -1,0 +1,315 @@
+body {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	text-align: left;
+	width: 768px;
+	padding: 0px;
+	margin: 3px auto;
+	vertical-align: top;
+	height: auto;
+	color: #000000;
+	border-top: 8px solid #000000;
+	border-bottom: 8px solid #000000;
+}
+
+/* Caja de banner */
+#banner_box {
+	height: 115px;
+	background-image: url(../img/abanner.jpg);
+	border: 1px solid #CCCCCC;
+	background-repeat: no-repeat;
+	padding: 0px;
+	margin: 0px;
+}
+
+/* Estilos de Formularios */
+.form_field {
+	font-size: 13px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #000000;
+	border: 1px solid #000000;
+	background-color: #F5F5F5;
+	vertical-align: middle;
+	margin: 0px;
+}
+.form_button {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	border: 1px solid #000000;
+	font-size: 13px;
+	color: #000000;
+	background-color: #DDDDDD;
+	margin: 0px;
+	vertical-align: middle;
+	padding: 0px;
+	height: 20px;
+}
+.domains {
+	width: 200px;
+	background-color: #F5F5F5;
+	border: 1px solid #000000;
+}
+
+/* Estilos de Enlaces */
+a.linka, a.linka:link, a.linka:active, a.linka:visited {
+	font-weight: bold;
+	color: #000000;
+	text-decoration: none;
+}
+a.linka:hover {
+	font-weight: bold;
+	color: #000000;
+	text-decoration: underline;
+}
+a.linkb, a.linkb:link, a.linkb:active, a.linkb:visited {
+	font-weight: normal;
+	color: #000000;
+	text-decoration: none;
+}
+a.linkb:hover {
+	font-weight: normal;
+	color: #000000;
+	text-decoration: underline;
+}
+a.linkc, a.linkc:link, a.linkc:active, a.linkc:visited, a.linkc:hover {
+	font-weight: bold;
+	color: #000000;
+	text-decoration: none;
+}
+a.linkd, a.linkd:link, a.linkd:active, a.linkd:visited, a.linkd:hover {
+	font-weight: normal;
+	color: #000000;
+	text-decoration: none;
+}
+
+/* Estilos de los resultados de las búsquedas */
+#results_box {
+	padding: 0px;
+	clear: both;
+	margin: 0px;
+}
+.resource_title {
+	width: 475px;
+	float: left;
+	font-weight: bold;
+	margin: 0px;
+	padding: 2px 3px 2px 0px;
+}
+
+/* Estilos de los detalles */
+p.my_comment_text {
+	width: 665px;
+	float: left;
+	margin: 0px;
+	padding: 3px 3px 3px 0px;
+}
+
+/* Estilos de administrar categorias y subcategorias */
+#category_form {
+	margin: 15px 0px 0px 0px;
+	padding: 0px;
+	border-top: 1px solid #CCCCCC;
+}
+#subcategory_form {
+	margin: 15px 0px 0px 0px;
+	padding: 0px;
+	border-top: 1px solid #CCCCCC;
+}
+
+/* Estilos de formulario de usuario */
+#user_categories {	
+	height: auto;
+	display: none;
+	border-top: 1px solid #CCCCCC;
+	margin: 15px 0px 0px 0px;
+}
+.user_category_celd {
+	height: 20px;
+	width: 263px;
+	float: left;
+	padding: 0px 5px;
+}
+
+/* Estilos de directorios */
+.directory_name {
+	width: 310px;
+	float: left;
+	margin: 0px;
+	padding: 2px 3px 2px 0px;
+}
+.directory_date {
+	width: 76px;
+	float: left;
+	margin: 0px;
+	padding: 2px 3px 2px 0px;
+}
+.directory_items {
+	width: 116px;
+	float: left;
+	margin: 0px;
+	padding: 2px 3px 2px 0px;
+}
+
+/* Estilos de formulario de servidores */
+#mysql {
+	padding: 0px 0px 15px 0px;
+	margin: 0px;
+	border-bottom: 1px solid #CCCCCC;
+}
+.server_celd {	
+	height: 22px;
+}
+p.server_field {
+	padding: 3px 2px 0px 2px;
+	width: 160px;
+	margin: 0px;
+	font-size: 12px;
+	font-weight: normal;
+	float: left;
+}
+
+/* Estilos de formulario de areas */
+#area_categories {	
+	height: auto;
+	border-top: 1px solid #CCCCCC;
+	margin: 15px 0px 0px 0px;
+}
+.area_celd {
+	height: 22px;
+	clear: left;
+}
+p.area_field {
+	padding: 3px 2px 0px 2px;
+	width: 88px;
+	margin: 0px;
+	font-size: 12px;
+	font-weight: normal;
+	float: left;
+}
+
+/* Estilos de la barra de menus */
+#list_select_option {
+	display: none;
+	list-style-type: none;
+	background-color: #FFFFFF;
+	width: 85px;
+	position: absolute;
+	border-right: 1px solid #000000;
+	border-bottom: 1px solid #000000;
+	border-left: 1px solid #000000;
+	padding: 0px;
+	margin: 0px;
+	clear: left;
+}
+#list_month_option {
+	display: none;
+	list-style-type: none;
+	background-color: #FFFFFF;
+	width: 85px;
+	position: absolute;
+	border-right: 1px solid #000000;
+	border-bottom: 1px solid #000000;
+	border-left: 1px solid #000000;
+	padding: 0px;
+	margin: 0px;
+	clear: left;
+}
+#list_mark_option {
+	display: none;
+	list-style-type: none;
+	background-color: #FFFFFF;
+	width: 85px;
+	position: absolute;
+	border-right: 1px solid #000000;
+	border-bottom: 1px solid #000000;
+	border-left: 1px solid #000000;
+	padding: 0px;
+	margin: 0px;
+	clear: left;
+}
+#list_operation_option {
+	display: none;
+	background-color: #FFFFFF;
+	list-style-type: none;
+	width: 121px;
+	margin: 0px;
+	padding: 0px;
+	border-right: 1px solid #000000;
+	border-bottom: 1px solid #000000;
+	border-left: 1px solid #000000;
+	position: absolute;
+}
+#list_order_option {
+	display: none;
+	background-color: #FFFFFF;
+	width: 136px;
+	margin: 0px;
+	padding: 0px;
+	border-right: 1px solid #000000;
+	border-bottom: 1px solid #000000;
+	border-left: 1px solid #000000;
+	list-style-type: none;
+	position: absolute;
+}
+#list_show_option {
+	display: none;
+	background-color: #FFFFFF;
+	width: 89px;
+	margin: 0px;
+	padding: 0px;
+	border-right: 1px solid #000000;
+	border-bottom: 1px solid #000000;
+	border-left: 1px solid #000000;
+	list-style-type: none;
+	position: absolute;
+}
+
+/* Estilos de Estadisticas */
+.statistics_celd {
+	height: 20px;
+	border-bottom: 1px solid #EEEEEE;
+}
+.statistics_stxt {
+	width: 467px;
+	height: 14px;
+	float: left;
+	padding: 3px 0px 0px 1px;
+	margin: 0px;
+}
+.statistics_txt {
+	width: 460px;
+	height: 14px;
+	float: left;
+	padding: 3px 0px 0px 15px;
+	margin: 0px;
+}
+.statistics_num {
+	width: 70px;
+	float: right;
+	text-align: right;
+	padding: 3px 1px 0px 0px;
+	margin: 0px;
+}
+.statistics_hname {
+	width: 291px;
+	height: 14px;
+	float: left;
+	padding: 3px 0px 0px 1px;
+	margin: 0px;
+}
+.statistics_uname {
+	width: 277px;
+	height: 14px;
+	float: left;
+	padding: 3px 0px 0px 15px;
+	margin: 0px;
+}
+.statistics_unum {
+	font-size: 11px;
+	width: 50px;
+	float: left;
+	text-align: right;
+	padding: 3px 1px 0px 0px;
+	margin: 0px;
+}

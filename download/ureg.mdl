@@ -1,0 +1,956 @@
+Model {
+  Name			  "ureg"
+  Version		  5.0
+  SaveDefaultBlockParams  on
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ExecutionOrder	  off
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeVarName	  "covCumulativeData"
+  CovCumulativeReport	  off
+  DataTypeOverride	  "UseLocalSettings"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  BlockNameDataTip	  off
+  BlockParametersDataTip  on
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  Created		  "Mon Apr 09 09:29:55 2001"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "yidier"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Wed Dec 03 10:58:03 2008"
+  ModelVersionFormat	  "1.%<AutoIncrement:414>"
+  ConfigurationManager	  "none"
+  SimParamPage		  "Solver"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  ExtModeMexFile	  "ext_comm"
+  ExtModeBatchMode	  off
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "oneshot"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  off
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  BufferReuse		  on
+  RTWExpressionDepthLimit 5
+  SimulationMode	  "normal"
+  Solver		  "ode5"
+  SolverMode		  "Auto"
+  StartTime		  "0.0"
+  StopTime		  "25"
+  MaxOrder		  5
+  MaxStep		  "auto"
+  MinStep		  "auto"
+  MaxNumMinSteps	  "-1"
+  InitialStep		  "auto"
+  FixedStep		  ".001"
+  RelTol		  "1e-3"
+  AbsTol		  "auto"
+  OutputOption		  "RefineOutputTimes"
+  OutputTimes		  "[]"
+  Refine		  "1"
+  LoadExternalInput	  off
+  ExternalInput		  "[t, u]"
+  LoadInitialState	  off
+  InitialState		  "xInitial"
+  SaveTime		  on
+  TimeSaveName		  "tout"
+  SaveState		  off
+  StateSaveName		  "xout"
+  SaveOutput		  on
+  OutputSaveName	  "yout"
+  SaveFinalState	  off
+  FinalStateName	  "xFinal"
+  SaveFormat		  "Array"
+  Decimation		  "1"
+  LimitDataPoints	  off
+  MaxDataPoints		  "1000"
+  SignalLoggingName	  "sigsOut"
+  ConsistencyChecking	  "none"
+  ArrayBoundsChecking	  "none"
+  AlgebraicLoopMsg	  "warning"
+  BlockPriorityViolationMsg "warning"
+  MinStepSizeMsg	  "warning"
+  InheritedTsInSrcMsg	  "warning"
+  DiscreteInheritContinuousMsg "warning"
+  MultiTaskRateTransMsg	  "error"
+  SingleTaskRateTransMsg  "none"
+  CheckForMatrixSingularity "none"
+  IntegerOverflowMsg	  "warning"
+  Int32ToFloatConvMsg	  "warning"
+  ParameterDowncastMsg	  "error"
+  ParameterOverflowMsg	  "error"
+  ParameterPrecisionLossMsg "warning"
+  UnderSpecifiedDataTypeMsg "none"
+  UnnecessaryDatatypeConvMsg "none"
+  VectorMatrixConversionMsg "none"
+  InvalidFcnCallConnMsg	  "error"
+  SignalLabelMismatchMsg  "none"
+  UnconnectedInputMsg	  "warning"
+  UnconnectedOutputMsg	  "warning"
+  UnconnectedLineMsg	  "warning"
+  SfunCompatibilityCheckMsg "none"
+  RTWInlineParameters	  off
+  BlockReductionOpt	  on
+  BooleanDataType	  off
+  ConditionallyExecuteInputs on
+  ParameterPooling	  on
+  OptimizeBlockIOStorage  on
+  ZeroCross		  on
+  AssertionControl	  "UseLocalSettings"
+  ProdHWDeviceType	  "Microprocessor"
+  ProdHWWordLengths	  "8,16,32,32"
+  RTWSystemTargetFile	  "grt.tlc"
+  RTWTemplateMakefile	  "grt_default_tmf"
+  RTWMakeCommand	  "make_rtw"
+  RTWGenerateCodeOnly	  off
+  RTWRetainRTWFile	  off
+  TLCProfiler		  off
+  TLCDebug		  off
+  TLCCoverage		  off
+  TLCAssertion		  off
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Gain
+      Gain		      "1"
+      Multiplication	      "Element-wise(K.*u)"
+      ShowAdditionalParam     off
+      ParameterDataTypeMode   "Same as input"
+      ParameterDataType	      "sfix(16)"
+      ParameterScalingMode    "Best Precision: Matrix-wise"
+      ParameterScaling	      "2^0"
+      OutDataTypeMode	      "Same as input"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      ShowAdditionalParam     off
+      LatchInput	      off
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Integrator
+      ExternalReset	      "none"
+      InitialConditionSource  "internal"
+      InitialCondition	      "0"
+      LimitOutput	      off
+      UpperSaturationLimit    "inf"
+      LowerSaturationLimit    "-inf"
+      ShowSaturationPort      off
+      ShowStatePort	      off
+      AbsoluteTolerance	      "auto"
+      ZeroCross		      on
+    }
+    Block {
+      BlockType		      Mux
+      Inputs		      "4"
+      DisplayOption	      "none"
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      Product
+      Inputs		      "2"
+      Multiplication	      "Element-wise(.*)"
+      ShowAdditionalParam     off
+      InputSameDT	      on
+      OutDataTypeMode	      "Same as first input"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+    }
+    Block {
+      BlockType		      Saturate
+      UpperLimit	      "0.5"
+      LowerLimit	      "-0.5"
+      LinearizeAsGain	      on
+      ZeroCross		      on
+    }
+    Block {
+      BlockType		      Scope
+      Floating		      off
+      ModelBased	      off
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "on"
+      Grid		      "on"
+      TimeRange		      "auto"
+      YMin		      "-5"
+      YMax		      "5"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData"
+      LimitDataPoints	      on
+      MaxDataPoints	      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      SignalGenerator
+      WaveForm		      "sine"
+      Amplitude		      "1"
+      Frequency		      "1"
+      Units		      "Hertz"
+      VectorParams1D	      on
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      on
+      Permissions	      "ReadWrite"
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+    Block {
+      BlockType		      Sum
+      IconShape		      "rectangular"
+      Inputs		      "++"
+      ShowAdditionalParam     off
+      InputSameDT	      on
+      OutDataTypeMode	      "Same as first input"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+    }
+    Block {
+      BlockType		      Terminator
+    }
+    Block {
+      BlockType		      TransferFcn
+      Numerator		      "[1]"
+      Denominator	      "[1 2 1]"
+      AbsoluteTolerance	      "auto"
+      Realization	      "auto"
+    }
+    Block {
+      BlockType		      ZeroOrderHold
+      SampleTime	      "1"
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "ureg"
+    Location		    [176, 149, 795, 392]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      Saturate
+      Name		      "+-10V"
+      Position		      [190, 85, 210, 115]
+      UpperLimit	      "10"
+      LowerLimit	      "-10"
+    }
+    Block {
+      BlockType		      Mux
+      Name		      "Mux"
+      Ports		      [2, 1]
+      Position		      [450, 96, 455, 134]
+      ShowName		      off
+      Inputs		      "2"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Regulador"
+      Ports		      [3, 1]
+      Position		      [105, 81, 150, 119]
+      TreatAsAtomicUnit	      off
+      System {
+	Name			"Regulador"
+	Location		[2, 74, 790, 556]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "SP"
+	  Position		  [20, 73, 50, 87]
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "pos"
+	  Position		  [15, 23, 45, 37]
+	  Port			  "2"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "vel"
+	  Position		  [505, 83, 535, 97]
+	  Port			  "3"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain"
+	  Position		  [485, 175, 505, 195]
+	  Orientation		  "left"
+	  Gain			  "-5"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain1"
+	  Position		  [190, 120, 210, 140]
+	  Gain			  "-5"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain2"
+	  Position		  [370, 77, 410, 103]
+	  Gain			  "1/1000"
+	}
+	Block {
+	  BlockType		  Integrator
+	  Name			  "Integrator1"
+	  Ports			  [1, 1]
+	  Position		  [430, 175, 450, 195]
+	  Orientation		  "left"
+	  InitialCondition	  "-2"
+	}
+	Block {
+	  BlockType		  Integrator
+	  Name			  "Integrator2"
+	  Ports			  [1, 1]
+	  Position		  [220, 120, 240, 140]
+	  InitialCondition	  "2"
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product"
+	  Ports			  [2, 1]
+	  Position		  [385, 145, 410, 165]
+	  Orientation		  "left"
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product1"
+	  Ports			  [2, 1]
+	  Position		  [270, 75, 295, 95]
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product2"
+	  Ports			  [2, 1]
+	  Position		  [540, 175, 565, 195]
+	  Orientation		  "left"
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product3"
+	  Ports			  [2, 1]
+	  Position		  [174, 170, 201, 190]
+	  Orientation		  "up"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum"
+	  Ports			  [2, 1]
+	  Position		  [335, 80, 355, 100]
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum1"
+	  Ports			  [2, 1]
+	  Position		  [560, 230, 580, 250]
+	  Orientation		  "up"
+	  Inputs		  "-+"
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator"
+	  Position		  [60, 20, 80, 40]
+	}
+	Block {
+	  BlockType		  TransferFcn
+	  Name			  "Transfer Fcn1"
+	  Position		  [435, 258, 485, 292]
+	  Numerator		  "45"
+	  Denominator		  "[1 45]"
+	}
+	Block {
+	  BlockType		  ZeroOrderHold
+	  Name			  "Zero-Order\nHold1"
+	  Position		  [430, 68, 445, 112]
+	  SampleTime		  ".001"
+	}
+	Block {
+	  BlockType		  ZeroOrderHold
+	  Name			  "Zero-Order\nHold2"
+	  Position		  [565, 68, 580, 112]
+	  SampleTime		  ".001"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "man"
+	  Position		  [465, 83, 495, 97]
+	}
+	Line {
+	  SrcBlock		  "SP"
+	  SrcPort		  1
+	  Points		  [0, 0; 75, 0]
+	  Branch {
+	    DstBlock		    "Product1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 135; 20, 0]
+	    Branch {
+	      Points		      [0, 60]
+	      DstBlock		      "Transfer Fcn1"
+	      DstPort		      1
+	    }
+	    Branch {
+	      Points		      [30, 0]
+	      DstBlock		      "Product3"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "pos"
+	  SrcPort		  1
+	  DstBlock		  "Terminator"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Sum"
+	  SrcPort		  1
+	  DstBlock		  "Gain2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Product1"
+	  SrcPort		  1
+	  DstBlock		  "Sum"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Product"
+	  SrcPort		  1
+	  Points		  [-70, 0; 0, -60]
+	  DstBlock		  "Sum"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Gain"
+	  SrcPort		  1
+	  DstBlock		  "Integrator1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Product2"
+	  SrcPort		  1
+	  DstBlock		  "Gain"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Gain1"
+	  SrcPort		  1
+	  DstBlock		  "Integrator2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Sum1"
+	  SrcPort		  1
+	  Points		  [0, 0; 0, -10]
+	  Branch {
+	    Points		    [-375, 0]
+	    DstBlock		    "Product3"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [15, 0; 0, -25]
+	    DstBlock		    "Product2"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  SrcBlock		  "Product3"
+	  SrcPort		  1
+	  Points		  [0, -10; -20, 0; 0, -25]
+	  DstBlock		  "Gain1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Transfer Fcn1"
+	  SrcPort		  1
+	  Points		  [75, 0]
+	  DstBlock		  "Sum1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Integrator2"
+	  SrcPort		  1
+	  Points		  [10, 0]
+	  DstBlock		  "Product1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Integrator1"
+	  SrcPort		  1
+	  DstBlock		  "Product"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "vel"
+	  SrcPort		  1
+	  DstBlock		  "Zero-Order\nHold2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Gain2"
+	  SrcPort		  1
+	  DstBlock		  "Zero-Order\nHold1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Zero-Order\nHold1"
+	  SrcPort		  1
+	  DstBlock		  "man"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Zero-Order\nHold2"
+	  SrcPort		  1
+	  Points		  [-15, 0; 30, 0]
+	  Branch {
+	    Points		    [0, 60]
+	    DstBlock		    "Product"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [30, 0; 0, 90]
+	    Branch {
+	      DstBlock		      "Product2"
+	      DstPort		      1
+	    }
+	    Branch {
+	      Points		      [0, 95; -55, 0]
+	      DstBlock		      "Sum1"
+	      DstPort		      2
+	    }
+	  }
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "SetPoint"
+      Ports		      [0, 1]
+      Position		      [20, 74, 55, 106]
+      TreatAsAtomicUnit	      off
+      System {
+	Name			"SetPoint"
+	Location		[261, 121, 411, 207]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  SignalGenerator
+	  Name			  "Gen"
+	  Position		  [25, 28, 70, 62]
+	  Amplitude		  "3"
+	  Frequency		  "3"
+	  Units			  "rad/sec"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "SP"
+	  Position		  [95, 38, 125, 52]
+	}
+	Line {
+	  SrcBlock		  "Gen"
+	  SrcPort		  1
+	  DstBlock		  "SP"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Torque"
+      Ports		      [0, 1]
+      Position		      [20, 139, 55, 171]
+      TreatAsAtomicUnit	      off
+      System {
+	Name			"Torque"
+	Location		[261, 121, 411, 207]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  SignalGenerator
+	  Name			  "Gen"
+	  Position		  [25, 28, 70, 62]
+	  Amplitude		  "0"
+	  Frequency		  "3"
+	  Units			  "rad/sec"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "SP"
+	  Position		  [95, 38, 125, 52]
+	}
+	Line {
+	  SrcBlock		  "Gen"
+	  SrcPort		  1
+	  DstBlock		  "SP"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "man"
+      Ports		      [1]
+      Position		      [305, 35, 335, 65]
+      Location		      [5, 56, 1029, 737]
+      Open		      off
+      NumInputPorts	      "1"
+      TickLabels	      "on"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+      }
+      List {
+	ListType		SelectedSignals
+	axes1			""
+      }
+      TimeRange		      "25"
+      YMin		      "-1"
+      YMax		      "1"
+      SaveToWorkspace	      on
+      SaveName		      "man"
+      DataFormat	      "Array"
+      LimitDataPoints	      off
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "motor"
+      Ports		      [2, 2]
+      Position		      [260, 89, 325, 136]
+      TreatAsAtomicUnit	      off
+      System {
+	Name			"motor"
+	Location		[133, 216, 643, 369]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "v"
+	  Position		  [40, 63, 70, 77]
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "t"
+	  Position		  [240, 123, 270, 137]
+	  Port			  "2"
+	}
+	Block {
+	  BlockType		  TransferFcn
+	  Name			  "."
+	  Position		  [190, 52, 250, 88]
+	  Numerator		  "1"
+	  Denominator		  "[.024 1 ] "
+	}
+	Block {
+	  BlockType		  Integrator
+	  Name			  "Integrator"
+	  Ports			  [1, 1]
+	  Position		  [285, 55, 315, 85]
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Km"
+	  Position		  [115, 53, 175, 87]
+	  Gain			  "1560"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum"
+	  Ports			  [2, 1]
+	  Position		  [335, 60, 355, 80]
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|+-"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "p"
+	  Position		  [380, 63, 410, 77]
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "v1"
+	  Position		  [380, 18, 410, 32]
+	  Port			  "2"
+	}
+	Line {
+	  SrcBlock		  "Km"
+	  SrcPort		  1
+	  DstBlock		  "."
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "."
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  Branch {
+	    DstBlock		    "Integrator"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, -45]
+	    DstBlock		    "v1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "v"
+	  SrcPort		  1
+	  DstBlock		  "Km"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Integrator"
+	  SrcPort		  1
+	  DstBlock		  "Sum"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Sum"
+	  SrcPort		  1
+	  DstBlock		  "p"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "t"
+	  SrcPort		  1
+	  Points		  [70, 0]
+	  DstBlock		  "Sum"
+	  DstPort		  2
+	}
+      }
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "vel"
+      Ports		      [1]
+      Position		      [505, 100, 535, 130]
+      Location		      [6, 53, 806, 575]
+      Open		      off
+      NumInputPorts	      "1"
+      TickLabels	      "on"
+      ZoomMode		      "xonly"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+      }
+      List {
+	ListType		SelectedSignals
+	axes1			""
+      }
+      TimeRange		      "5"
+      YMin		      "-4"
+      YMax		      "4"
+      SaveToWorkspace	      on
+      SaveName		      "vel"
+      DataFormat	      "Array"
+      LimitDataPoints	      off
+      MaxDataPoints	      "50000"
+    }
+    Line {
+      SrcBlock		      "SetPoint"
+      SrcPort		      1
+      Points		      [15, 0]
+      Branch {
+	DstBlock		"Regulador"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, -70; 355, 0; 0, 85]
+	DstBlock		"Mux"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Regulador"
+      SrcPort		      1
+      DstBlock		      "+-10V"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "+-10V"
+      SrcPort		      1
+      Points		      [15, 0]
+      Branch {
+	Points			[0, -50]
+	DstBlock		"man"
+	DstPort			1
+      }
+      Branch {
+	DstBlock		"motor"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "motor"
+      SrcPort		      2
+      Points		      [20, 0]
+      Branch {
+	Points			[0, 75; -265, 0; 0, -90]
+	DstBlock		"Regulador"
+	DstPort			3
+      }
+      Branch {
+	DstBlock		"Mux"
+	DstPort			2
+      }
+    }
+    Line {
+      SrcBlock		      "motor"
+      SrcPort		      1
+      Points		      [45, 0; 0, 120; -300, 0; 0, -120]
+      DstBlock		      "Regulador"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Mux"
+      SrcPort		      1
+      DstBlock		      "vel"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Torque"
+      SrcPort		      1
+      Points		      [185, 0]
+      DstBlock		      "motor"
+      DstPort		      2
+    }
+    Annotation {
+      Name		      "mV"
+      Position		      [165, 88]
+    }
+    Annotation {
+      Name		      "grados"
+      Position		      [344, 88]
+    }
+  }
+}
