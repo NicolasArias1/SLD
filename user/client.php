@@ -32,6 +32,10 @@
 	$domain = $user->getDomain();
 	$level = $user->getPriority();
 	$_SESSION['user'] = serialize($user);
+	$fmdlname = "";
+	$fmatname = "";
+	$regpath = "";
+
 	
 	set_time_limit(0);
 	
@@ -40,7 +44,7 @@
 	
 	$err = $client->getError();
 	
-	
+	$vars = "";
 	
 	/*** Recibiendo variables ***/
 	foreach($_POST as $name => $value) {
@@ -49,8 +53,12 @@
 		else if($name == "mlmfile")
 			$pname = (string)$value;
 	}//end foreach
+
+
 	
-	if($_FILES['filemdl']['name']) {
+	if(isset($_FILES['filemdl']['name'])) {
+		print_r($vars);
+		print_r(die);
 		//$vars = "null";
 		$fmdlname = trim($_FILES['filemdl']['name']);
 		$fmdltmpn = $_FILES['filemdl']['tmp_name'];
@@ -60,8 +68,10 @@
 		$regurl = "null";
 	}//end else
 	
-    /*** Gestión ficheros mat, nuevo incorporado***/
-	if($_FILES['filemat']['name']) {
+
+
+    /*** Gestiï¿½n ficheros mat, nuevo incorporado***/
+	if(isset($_FILES['filemat']['name'])) {
 		//$vars = "null";
 		$fmatname = trim($_FILES['filemat']['name']);
 		$fmattmpn = $_FILES['filemat']['tmp_name'];
@@ -82,11 +92,11 @@
 	$rfolder1 = dirname(dirname(__FILE__))."/results";
 	$rfolder2 = dirname(dirname(__FILE__))."/results/".$uid;
 	
-	//Si no está la carpeta results, se crea
+	//Si no estï¿½ la carpeta results, se crea
 	if (!(is_dir($rfolder1)))
 		mkdir($rfolder1, 0777);
 	
-	//Si no está la carpeta del usuario, se crea	
+	//Si no estï¿½ la carpeta del usuario, se crea	
 	if (!(is_dir($rfolder2)))
 		mkdir($rfolder2, 0777);
 	
@@ -104,7 +114,7 @@
 		//Introduciendo extensiones permitidas
 		$file->setAllowedType(".mdl");
 		
-		//Introduciendo máximo tamaño permitido
+		//Introduciendo mï¿½ximo tamaï¿½o permitido
 		$file->setMaxFileSize("1048576");
 		
 		if(!$file->error) {
@@ -127,7 +137,7 @@
 		//Introduciendo extensiones permitidas
 		$file->setAllowedType(".mat");
 		
-		//Introduciendo máximo tamaño permitido
+		//Introduciendo mï¿½ximo tamaï¿½o permitido
 		$file->setMaxFileSize("1048576");
 		
 		if(!$file->error) {
@@ -172,7 +182,7 @@
 	//ejecutando consulta
 	$pid = $sql->SQLInsertID();
 	
-	/*** Gestionar la estación que ejecutará la practica ***/
+	/*** Gestionar la estaciï¿½n que ejecutarï¿½ la practica ***/
 	// Direccion IP de la estacion
 	$query = "SELECT ip, state, pcount FROM sld_stations WHERE (practices='".$pname."' OR practices LIKE '".$pname.";%' OR practices LIKE '%;".$pname.";%' OR practices LIKE '%;".$pname."') AND state!='off'";
 	
@@ -193,7 +203,7 @@
 			$ip = $wip[0]; //si hay estaciones libre, realiza un barajeo y coge una
 		}//end if
 		else {
-			asort($pcount);	//si no hay estaciones libres, escoge la de menor cantidad de prácticas ejecutándose		
+			asort($pcount);	//si no hay estaciones libres, escoge la de menor cantidad de prï¿½cticas ejecutï¿½ndose		
 			reset($pcount);			
 			$bip = key($pcount);			
 			$ip = $bip;
@@ -247,7 +257,7 @@
 	
     
 	if($err == "Response not of type text/xml: text/html"){				
-		$err = "Ha ocurrido un error en la conexión con la estación que ejecuta esta práctica. Por favor intente nuevamente en unos minutos.";
+		$err = "Ha ocurrido un error en la conexiï¿½n con la estaciï¿½n que ejecuta esta prï¿½ctica. Por favor intente nuevamente en unos minutos.";
 		header("Location: ../Errors/error.php?err=".$err);
     	
     	//Creando consulta
@@ -307,7 +317,7 @@
 //			//Ejecutando consulta
 //			$sql->SQLQuery($query);
 //			
-//			/*** Gestionar la estación que ejecutará la practica ***/
+//			/*** Gestionar la estaciï¿½n que ejecutarï¿½ la practica ***/
 //			// Direccion IP de la estacion
 //			$query = "SELECT ip, state, pcount FROM sld_stations WHERE (practices='".$pname."' OR practices LIKE '".$pname.";%' OR practices LIKE '%;".$pname.";%' OR practices LIKE '%;".$pname."') AND state!='off'";
 //			
@@ -519,7 +529,7 @@
     }
 	}
 	
-	//Guardar último acceso
+	//Guardar ï¿½ltimo acceso
 	$uaccess = date("dmyHis");
 	
 	//Actualizar valor de lastaccess
@@ -542,7 +552,7 @@
 		$query = "UPDATE sld_stations SET state='wait', pcount = 0 WHERE ip='$ip'";
 		
 	
-	//si hay error en conexión pongo la estación en off
+	//si hay error en conexiï¿½n pongo la estaciï¿½n en off
 	
 	if($err)
 		$query = "UPDATE sld_stations SET state='off', pcount = 0 WHERE ip='$ip'";						

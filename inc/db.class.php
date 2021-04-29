@@ -39,6 +39,7 @@
 			$this->error = "";
 			$this->errno = 0;
 			$this->errstr = "";
+			$this->connect = mysqli_connect($this->DBserver, $this->DBuser, $this->DBpasswd, $this->DBname);
 		}//end function
 		
 		//Funci�n de conexi�n
@@ -97,7 +98,7 @@
 		
 		//Funci�n para obtener el ID
 		function SQLInsertID() {
-			$this->id = mysql_insert_id();
+			$this->id = mysqli_insert_id($this->connect);
 			return $this->id;
 		}//end function
 		

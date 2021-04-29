@@ -70,7 +70,7 @@
 					<h1 class="content_l_hst1">Usuario</h1>
 					<ul>
 						<li><?php echo $name; ?></li>
-						<?php echo $usrHTML; ?>
+						<!--<?php echo $usrHTML; ?>-->
 						<li><a href="../logout.php" class="ast3">Logout</a></li>
 					</ul>
 					<h1 class="content_l_hst1">Navegaci&oacute;n</h1>
