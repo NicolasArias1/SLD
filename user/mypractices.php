@@ -24,15 +24,15 @@
 	$_SESSION['user'] = serialize($user);
 	
 	$method = $_SERVER['REQUEST_METHOD'];
-	$body = $_GET['body'];
-	$id = $_GET['id'];
-	$body = $_GET['body'];
-	$order = $_GET['order'];
-	$show = $_GET['show'];
-	$page = $_GET['page'];
-	$type = $_GET['type'];
-	$alert = $_GET['alert'];
-	$res = $_GET['res'];
+	$body = isset($_GET['body']);
+	$id = isset($_GET['id']);
+	$body = isset($_GET['body']);
+	$order = isset($_GET['order']);
+	$show = isset($_GET['show']);
+	$page = isset($_GET['page']);
+	$type = isset($_GET['type']);
+	$alert = isset($_GET['alert']);
+	$res = isset($_GET['res']);
 	
 	if($level == 1)
 		$usrHTML = "<li><a href=\"../admin/index.php\" class=\"ast3\">Administrar</a></li>";
