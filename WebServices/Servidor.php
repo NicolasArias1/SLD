@@ -1,11 +1,11 @@
 <?php
-require_once("lib/nusoap.php");
+require_once("../lib/nusoap.php");
 
 $server = new soap_server;
 
 function calcIVA ( $monto ) {
-  $in .= $monto;
-  $srt .= $monto;
+  $in = $monto;
+  $srt = $monto;
   
   $srt = substr($srt, 0, -2);
 	      
@@ -36,6 +36,7 @@ function calcIVA ( $monto ) {
 	$buf = '';
 	
 	// Leyendo del socket
+	$str = "";
 	while($buf = socket_read($socket, 1)) {
 	   $str .= $buf;
 	}//end while
@@ -44,7 +45,7 @@ function calcIVA ( $monto ) {
 
 	return $ip;
 }
-$ns="http://127.0.0.1/WebServices";
+$ns="http://192.168.0.11/WebServices";
 $server->configurewsdl('ApplicationServices',$ns);
 $server->wsdl->schematargetnamespace=$ns;
 $server->register('calcIVA',

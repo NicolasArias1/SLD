@@ -2,7 +2,7 @@
 	// Permitir que el script se ejecute por tiempo indefinido
 	set_time_limit(0);
 	
-	$address = '127.0.0.1';
+	$address = '192.168.0.11';
 	$port = 10000;   //10000
 	$str = '';
 	
@@ -135,7 +135,7 @@
 				//cambios
 				echo "Fin de la ejecucion en Matlab: ".date("h:i:s A")."\n";
 				
-				// con esto leo una variable varerror que debe estar en las prácticas del matlab
+				// con esto leo una variable varerror que debe estar en las prï¿½cticas del matlab
 				$varerror = $matlab->GetCharArray("varerror","base");
 				//$varerror = '0';
 				

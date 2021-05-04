@@ -15,7 +15,7 @@ $proxyport = isset($_POST['proxyport']) ? $_POST['proxyport'] : '';
 $proxyusername = isset($_POST['proxyusername']) ? $_POST['proxyusername'] : '';
 $proxypassword = isset($_POST['proxypassword']) ? $_POST['proxypassword'] : '';
 $useCURL = isset($_POST['usecurl']) ? $_POST['usecurl'] : '0';
-$client = new nusoap_client("http://api.google.com/search/beta2", false,
+$client = new nusoap_client("http://10.12.24.200/WebServices/Servidor.php?wsdl", true,
 						$proxyhost, $proxyport, $proxyusername, $proxypassword);
 $err = $client->getError();
 if ($err) {

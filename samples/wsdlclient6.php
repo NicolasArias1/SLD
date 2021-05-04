@@ -14,16 +14,16 @@ $proxyhost = isset($_POST['proxyhost']) ? $_POST['proxyhost'] : '';
 $proxyport = isset($_POST['proxyport']) ? $_POST['proxyport'] : '';
 $proxyusername = isset($_POST['proxyusername']) ? $_POST['proxyusername'] : '';
 $proxypassword = isset($_POST['proxypassword']) ? $_POST['proxypassword'] : '';
-echo 'You must change the source code to specify the location of the WSDL!'; exit();
-$client = new soapclient('file://f:/googleapi/GoogleSearch.wsdl', true,
+//echo 'You must change the source code to specify the location of the WSDL!'; exit();
+$client = new soapclient('http://api.google.com/GoogleSearch.wsdl', true,
 						$proxyhost, $proxyport, $proxyusername, $proxypassword);
 $err = $client->getError();
 if ($err) {
 	echo '<h2>Constructor error</h2><pre>' . $err . '</pre>';
 }
 $client->soap_defencoding = 'UTF-8';
-
-echo 'You must set your own Google key in the source code to run this client!'; exit();
+echo "hola";
+//echo 'You must set your own Google key in the source code to run this client!'; exit();
 $key = 'set your own Google key';
 $q = '"Lies and the Lying"';
 $start = 1;
