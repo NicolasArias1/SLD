@@ -247,8 +247,11 @@ else {
 	// Check for errors	
 	$err = $client->getError();
 
-	if ($err == "Response not of type text/xml: text/html") {
-		$err = "Ha ocurrido un error en la conexi�n con la estaci�n que ejecuta esta pr�ctica. Por favor intente nuevamente en unos minutos.";
+	if ($err == "XML error parsing SOAP payload on line 2: Invalid document end") {
+		$err = "Ha ocurrido un error en la conexión con la estación que ejecuta esta práctica. Por favor intente nuevamente en unos minutos.";
+		header("Location: ../Errors/error.php?err=" . $err);
+	}else if ($err) {
+		$err = "Ha ocurrido un error desconocido.";
 		header("Location: ../Errors/error.php?err=" . $err);
 	}
 
