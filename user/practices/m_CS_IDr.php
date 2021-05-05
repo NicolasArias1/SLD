@@ -73,10 +73,11 @@
 		
 	//Restriccion por tiempo
 	$permbytime = 1; // activo todo el tiempo, para limitar poner a 0 y cambiar horas debajo
-	$hora = Date(H);
-	$diaweek = Date(w);
-	if ($hora >= 9 && $hora < 21 && $diaweek > 0 && $diaweek < 6 ){
-		$permbytime = 1;}
+	// $hora = Date(H);
+	// $diaweek = Date(w);
+	// if ($hora >= 9 && $hora < 21 && $diaweek > 0 && $diaweek < 6 ){
+	// 	$permbytime = 1;
+	// }
 	
 		
 ?>

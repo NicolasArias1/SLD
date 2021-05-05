@@ -1,6 +1,5 @@
 <?php
 	include('../config/config.php');
-	
 	include('../inc/db.class.php');
 	include('../inc/sch.class.php');
 	include('../inc/useful.fns.php');
@@ -22,6 +21,7 @@
 	$domain = $user->getDomain();
 	$level = $user->getPriority();
 	$_SESSION['user'] = serialize($user);
+	$usrHTML = '';
 	
 	if(!$level)
 		header('Location: ../logout.php');
@@ -34,35 +34,42 @@
 		$usrHTML .= "<li><a href=\"users.php\" class=\"ast3\" title=\"Editar\">Editar Usuario</a></li>";
 	}//end if
 	
-	$rid = $_GET['rid'];
-	$alert = $_GET['alert'];
+	if(isset( $_GET['rid'])) $rid = $_GET['rid'];
 	$image = "../";
 	$advuser = FALSE;
-	$res = $_GET['res'];
 	
-	if($alert) {
-		switch($alert) {
-			case 1:
-				$atxt = "<strong>La operaci&oacute;n se realiz&oacute; con &eacute;xito:</strong> Su comentario fue recibido, ser&aacute; publicado luego de ser revisado.";
-				break;
-			case 2:
-				$atxt = "<strong>No se puede realizar la operaci&oacute;n:</strong> Verifique su comentario, hay campos vacios.";
-				break;
-			case 3:
-				$atxt = "<strong>No se puede realizar la operaci&oacute;n:</strong> Sus datos no se recibieron correctamente.";
-				break;
-		}//end switch
-	}//end if
-	
-	if($res) {
-		$path = "../results/".$res."/";
-		ob_start();
-		include($path.'salida.html');
-		$resHTML = ob_get_contents();
-		ob_end_clean();
-	}//end if
+	if(isset($_GET['alert'])){
+		$alert = $_GET['alert'];
+
+		if($alert) {
+			switch($alert) {
+				case 1:
+					$atxt = "<strong>La operaci&oacute;n se realiz&oacute; con &eacute;xito:</strong> Su comentario fue recibido, ser&aacute; publicado luego de ser revisado.";
+					break;
+				case 2:
+					$atxt = "<strong>No se puede realizar la operaci&oacute;n:</strong> Verifique su comentario, hay campos vacios.";
+					break;
+				case 3:
+					$atxt = "<strong>No se puede realizar la operaci&oacute;n:</strong> Sus datos no se recibieron correctamente.";
+					break;
+			}
+		}
+	}
+
+	if(isset($_GET['res'])){
+		$res = $_GET['res'];
+
+		if($res) {
+			$path = "../results/".$res."/";
+			ob_start();
+			include($path.'salida.html');
+			$resHTML = ob_get_contents();
+			ob_end_clean();
+		}
+	}
 	
 	include('../modules/details.mod.php');
+	
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -131,11 +138,11 @@
 			</div>
 			<div id="content_r">
 				<?php
-					if($alert) {
-						?>
-						<p class="alert"><?php echo $atxt; ?></p>
-						<?php
-					}//end if
+				if(isset($alert) && $alert){
+					?>
+					<p class="alert"><?php echo $atxt; ?></p>
+					<?php
+				}					
 				?>
 				<?php if(!$res) {?><h1 class="content_r_hst1"><?php echo $btxt; ?></h1><?php } ?>
 				<div id="results_box">

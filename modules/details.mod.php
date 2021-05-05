@@ -1,17 +1,18 @@
 <?php
-	if(!$call) {
+	$sql = new SQL();
+
+	if(isset($call)) {
 		
 //		//Creando objeto Configuration
 //  	$config = new ManageConfiguration();
 //	
-//	  //Cargando parámetros MySQL
+//	  //Cargando parï¿½metros MySQL
 //	  $config->getMySQLParameters();
 //	  
-//	  //Cargando parámetros de contribución
+//	  //Cargando parï¿½metros de contribuciï¿½n
 //	  $config->getContribution();
 	  
-	  //Creando objeto SQL
-		$sql = new SQL();
+
 	  
 	  //Conectando con el servidor
 		$sql->SQLConnection();
@@ -49,7 +50,7 @@
 			
 			$arvotes = explode(";",$results->Celd(0,'rvalued'));
 			
-			if(in_array($id,$arvotes))
+			if(isset($id) && in_array($id,$arvotes))
 				$vote = FALSE;
 			else
 				$vote = TRUE;
@@ -62,6 +63,7 @@
 		$query = "SELECT * FROM comments WHERE rid=$rid ORDER BY sdate DESC";
 	}//end if
 	else {
+		$sql = new SQL();
 		//Creando consulta
 		$query = "SELECT COUNT(*) FROM comments WHERE (rid=$rid AND ulogin='$login' AND new=0)";
 		
@@ -85,16 +87,19 @@
 		$adetails['Publicado'] = $comments->Celd(0,'publisher');
 	}//end if
 	
-	if(!$call) {	
+	if(isset($call)) {	
 		if($uid && $login && $domain) {
 			include('setonline.mod.php');
 			//include('writelog.mod.php');
 		}//end if
 		
-		//Cerrando conexión
+		//Cerrando conexiï¿½n
 		$sql->SQLClose();
 	
 		//Procesamiento del ranking del recurso	
+		$stars = '';
+		$image = '';
+		$prom = '';
 		for($i=0; $i < 5; $i++) {
 			if($rank && $i < $rank)
 				$stars .= "<img src=\"".$image."img/star.gif\" alt=\"Valorado: ".$prom."\" class=\"detail_star\" />";
@@ -251,6 +256,6 @@
 		ob_end_clean();
 	}//end if
 	
-	if($call)
+	if(isset($call))
 		echo $comHTML;
 ?>
