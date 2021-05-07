@@ -20,6 +20,7 @@
 	
 	$session = $_SESSION['user'];
 
+<<<<<<< Updated upstream
 	if(empty($session)) {
 		header('Location: ../index.php');
 	}//end if
@@ -56,6 +57,204 @@
 		$fmdltmpn = $_FILES['filemdl']['tmp_name'];
 		$fmdlsize = $_FILES['filemdl']['size'];
 	}//end if
+=======
+$prevpage = $_SERVER['HTTP_REFERER'];
+
+if ($prevpage == '') {
+	header('Location: ../index.php');
+	exit;
+} //end if
+
+include('../config/config.php');
+
+include('../inc/db.class.php');
+include('../inc/user.class.php');
+include('../inc/man.class.php');
+include('../inc/sch.class.php');
+include('../inc/useful.fns.php');
+include('../inc/upload.class.php');
+include('../lib/nusoap.php');
+
+session_start();
+
+$session = $_SESSION['user'];
+
+if (empty($session)) {
+	header('Location: ../index.php');
+} //end if
+
+$user = unserialize($session);
+$uid = $user->getUID();
+$uname = $user->getName();
+$login = $user->getLogin();
+$mail = $user->getEMail();
+$domain = $user->getDomain();
+$level = $user->getPriority();
+$_SESSION['user'] = serialize($user);
+$fmdlname = "";
+$fmatname = "";
+$regpath = "";
+
+set_time_limit(0);
+
+$wsdl = "http://192.168.1.128/WebServices/Servidor.php?wsdl"; //el nombre delo archivo anterior
+$client = new nusoap_client($wsdl, 'wsdl');
+
+$err = $client->getError();
+
+$vars = "";
+
+/*** Recibiendo variables ***/
+foreach ($_POST as $name => $value) {
+	if ($name != "mlmfile") //if(is_numeric($value) && $name != "mlmfile")
+		$vars .= "$name" . "=" . "$value" . ";";
+	else if ($name == "mlmfile")
+		$pname = (string)$value;
+} //end foreach
+
+if (isset($_FILES['filemdl']['name'])) {
+	//$vars = "null";
+	$fmdlname = trim($_FILES['filemdl']['name']);
+	$fmdltmpn = $_FILES['filemdl']['tmp_name'];
+	$fmdlsize = $_FILES['filemdl']['size'];
+} //end if
+else {
+	$regurl = "null";
+} //end else
+
+
+
+/*** Gesti�n ficheros mat, nuevo incorporado***/
+if ($_FILES['filemat']['name']) {
+	//$vars = "null";
+	$fmatname = trim($_FILES['filemat']['name']);
+	$fmattmpn = $_FILES['filemat']['tmp_name'];
+	$fmatsize = $_FILES['filemat']['size'];
+} //end if
+else {
+	$maturl = "null";
+} //end else
+
+
+/*** Creando carpeta de resultado ***/
+$date = date("dmyHis");
+
+$pfolder = $pname . $date;
+
+$resurl = "http://192.168.1.128/results/" . $uid . "/" . $pfolder;
+
+$rfolder1 = dirname(dirname(__FILE__)) . "/results";
+$rfolder2 = dirname(dirname(__FILE__)) . "/results/" . $uid;
+
+//Si no est� la carpeta results, se crea
+if (!(is_dir($rfolder1)))
+	mkdir($rfolder1, 0777);
+
+//Si no est� la carpeta del usuario, se crea	
+if (!(is_dir($rfolder2)))
+	mkdir($rfolder2, 0777);
+
+$rfolder = dirname(dirname(__FILE__)) . "/results/" . $uid . "/" . $pfolder;
+
+mkdir($rfolder, 0777);
+
+$rfolder = addslashes($rfolder);
+
+/*** Subiendo regulador ***/
+if ($fmdlname && $fmdltmpn && $fmdlsize) {
+	//Creando objeto FileUpLoad
+	$file = new FileUpload($fmdlname, $fmdltmpn, $fmdlsize);
+
+	//Introduciendo extensiones permitidas
+	$file->setAllowedType(".mdl");
+
+	//Introduciendo m�ximo tama�o permitido
+	$file->setMaxFileSize("1048576");
+
+	if (!$file->error) {
+		if ($file->getApprove()) {
+			$file->setOverwrite("Y");
+
+			$file->uploadFile($rfolder . "//", "ureg");
+
+			$regpath = $file->filelocation;
+			$regurl = $resurl . "//" . $file->filename;
+		} //end if
+	} //end if
+} //end if
+
+/*** Subiendo fichero mat, nuevo incorporado ***/
+if ($fmatname && $fmattmpn && $fmatsize) {
+	//Creando objeto FileUpLoad
+	$file = new FileUpload($fmatname, $fmattmpn, $fmatsize);
+
+	//Introduciendo extensiones permitidas
+	$file->setAllowedType(".mat");
+
+	//Introduciendo m�ximo tama�o permitido
+	$file->setMaxFileSize("1048576");
+
+	if (!$file->error) {
+		if ($file->getApprove()) {
+			$file->setOverwrite("Y");
+
+			$file->uploadFile($rfolder . "//", "umat");
+
+			$matpath = $file->filelocation;
+			$maturl = $resurl . "//" . $file->filename;
+		} //end if
+	} //end if
+} //end if
+
+/*** Introduciendo practica en la base de datos ***/
+//Creando objeto SQL
+$sql = new SQL();
+
+//Conectando con el servidor
+$sql->SQLConnection();
+
+//Creando consulta
+$query = "SELECT pcname FROM sld_practices_data	WHERE pname='$pname'";
+
+//Ejecutando consulta
+$result = $sql->SQLQuery($query);
+
+$pcname = $result[0]['pcname'];
+
+//Creando consulta
+$query = "INSERT INTO sld_practices (sid, uid, ulogin, pname, pcname, date, vars, regpath, regurl, resurl)
+						VALUES ('1', '$uid', '$uname', '$pname', '$pcname', '$date', '$vars', '$regpath', '$regurl', '$resurl')"; // ulogin = $name X $login
+
+//echo $query."<br>";
+
+//Ejecutando consulta
+$sql->SQLQuery($query);
+//echo $sql->errstr;
+
+//ejecutando consulta
+$pid = $sql->SQLInsertID();
+
+/*** Gestionar la estaci�n que ejecutar� la practica ***/
+// Direccion IP de la estacion
+$query = "SELECT ip, state, pcount FROM sld_stations WHERE (practices='" . $pname . "' OR practices LIKE '" . $pname . ";%' OR practices LIKE '%;" . $pname . ";%' OR practices LIKE '%;" . $pname . "') AND state!='off'";
+
+//Ejecutando consulta
+$result = $sql->SQLQuery($query);
+
+if (count($result)) {
+	for ($i = 0, $j = 0; $i < count($result); $i++) {
+		if ($result[$i]['state'] == 'wait') {
+			$wip[$j] = $result[$i]['ip'];
+			$j++;
+		} //end if
+		$pcount[$result[$i]['ip']] = $result[$i]['pcount']; // Cuantas peticiones de hacer-práctica tiene por ip
+	} //end for
+
+	if ($wip) {
+		shuffle($wip);
+		$ip = $wip[0]; //si hay estaciones libre, realiza un barajeo y coge una
+	} //end if
+>>>>>>> Stashed changes
 	else {
 		$regurl = "null";
 	}//end else
@@ -223,6 +422,7 @@
 	/*echo "URL mat: ".$maturl;
 	echo "   URL mdl: ".$regurl;
 	echo "   in: ".$in;*/
+<<<<<<< Updated upstream
 		
 	
 	//$in = (string)"1@".$pid."@".$pname."~";
@@ -238,6 +438,23 @@
 	
 	if($client->fault) {
     echo '<h2>Fault</h2><pre>';
+=======
+
+//$in = (string)"1@".$pid."@".$pname."~";
+$in = str_replace("0", "*", $in);
+
+//echo "Cadena de entrada: ".$in;
+
+$param = array('monto' => $in,);
+
+//chequeo por error con el cliente
+$response = $client->call('calcIVA', $param);
+
+
+
+if ($client->fault) {
+	echo '<h2>Fault</h2><pre>';
+>>>>>>> Stashed changes
 	//print_r($response);
     echo '</pre>';
 	}//end if

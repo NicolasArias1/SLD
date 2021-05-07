@@ -44,7 +44,11 @@ function calcIVA ( $monto ) {
 
 	return $ip;
 }
+<<<<<<< Updated upstream
 $ns="http://127.0.0.1/WebServices";
+=======
+$ns="http://192.168.1.128/WebServices";
+>>>>>>> Stashed changes
 $server->configurewsdl('ApplicationServices',$ns);
 $server->wsdl->schematargetnamespace=$ns;
 $server->register('calcIVA',

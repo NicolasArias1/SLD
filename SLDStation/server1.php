@@ -2,7 +2,11 @@
 	// Permitir que el script se ejecute por tiempo indefinido
 	set_time_limit(0);
 	
+<<<<<<< Updated upstream
 	$address = '127.0.0.1';
+=======
+	$address = '192.168.1.128';
+>>>>>>> Stashed changes
 	$port = 10000;   //10000
 	$str = '';
 	
@@ -23,6 +27,7 @@
 	echo "ok";
 	
 	do {
+
 	  if(($msgsock = socket_accept($sock)) < 0) {
 	    echo "socket_accept() failed: reason: " . socket_strerror($msgsock) . "\n";
 	    break;
@@ -62,6 +67,8 @@
 	      $str = substr($str, 0, -1);
 	      
 	      $str = str_replace("*", "0", $str);
+
+
 	      
 	      list($vars, $path, $regurl, $maturl, $pname) = explode("@", $str);
 				
@@ -78,13 +85,15 @@
 				
 				$matlab->Execute($command);
 				
+
+		
 							
 				if($vars != "null") {
-					$strvarray = explode(";", substr($vars, 0, -1));
 					
+					$strvarray = explode(";", substr($vars, 0, -1));
+
 					for($i=0; $i < count($strvarray); $i++) {
-						list($key, $value) = explode("=", $strvarray[$i]);
-						
+						list($key, $value) = explode('=', $strvarray[$i].'=');
 						$strrep = "$".$key."$";
 						
 						$template = str_ireplace($strrep, $value, $template);
