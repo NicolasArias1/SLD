@@ -136,6 +136,7 @@ class adLDAP {
 				
 		if($domain != $bdn[0]) {
 			$this->_base_dn = "DC=$domain,".$this->_base_dn;
+			$strdn = '';
 			
 			$bdn = ldap_explode_dn($this->_base_dn, 1);
 			

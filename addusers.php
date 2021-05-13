@@ -7,8 +7,8 @@
 	include('inc/useful.fns.php');
 	include('inc/user.class.php');
 	
-	$alert = $_GET['alert'];
-	$error = explode(":", $_GET['error']);
+	$alert = isset($_GET['alert']);
+	$error = explode(":", isset($_GET['alert']));
 	
 	if(!SOLICIT_AUTH && !REGISTER_AUTH && $rfpage) {
 		header('Location: '.$rfpage);
@@ -34,7 +34,7 @@
 				if(SOLICIT_AUTH)
 					$atxt = "La operaci&oacute;n se realiz&oacute; con &eacute;xito: <span class=\"text\">Los datos se introdujeron correctamente, si es aprobada su solicitud se le comunicar&aacute; por su correo electr&oacute;nico.</span>";
 				else if(REGISTER_AUTH)
-					$atxt = "La operaci&oacute;n se realizó con &eacute;xito: <span class=\"text\">Los datos se introdujeron correctamente.</span>";
+					$atxt = "La operaci&oacute;n se realizï¿½ con &eacute;xito: <span class=\"text\">Los datos se introdujeron correctamente.</span>";
 				break;
 			case 2:
 				$efname = array('Nombre', 'Nombre de Usuario', 'EMail');

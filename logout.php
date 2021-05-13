@@ -39,10 +39,9 @@
 	
 	include('modules/setoutline.mod.php');
 	
-	//Cerrando conexión
+	//Cerrando conexiï¿½n
 	$sql->SQLClose();
 	
-	session_unregister('user');
 	session_destroy();
 	
 	//include('modules/writelog.mod.php');

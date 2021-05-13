@@ -26,7 +26,7 @@
 			$domain = (string)$_GET['udomain'];}*/
 		
 		if($password != '') //si ubb  no md5 entonces if($password != '' || $domain == 'ubb')    && $domain != 'ubb'
-			$password = md5($password);
+			$password = password_hash($password, PASSWORD_DEFAULT);
 			
 		/*if ($domain == 'ubb') // password de ubb con md5
 			$password = (string)$_POST['upassword_md5'];*/
@@ -38,7 +38,7 @@
 		//Creando objeto Configuration
 	  //$config = new ManageConfiguration();
 	
-	  //Cargando parámetros MySQL
+	  //Cargando parï¿½metros MySQL
   	//$config->getMySQLParameters();
 	  
 	  //Creando objeto SQL
@@ -74,7 +74,7 @@
 					//Ejecutando consulta
 					$sql->SQLQuery($query);
 				
-					//Tomando el ID resultante de la operación
+					//Tomando el ID resultante de la operaciï¿½n
 					$nuid = $sql->SQLInsertID();}
 					
 				if($domain == 'ubb' || $domain == 'uclv') {
@@ -88,12 +88,12 @@
 					//Ejecutando consulta y creando objeto Record
 					$results = new RecordSet($sql->SQLQuery($query));
 					
-					//Tomando el ID resultante de la operación					
+					//Tomando el ID resultante de la operaciï¿½n					
 					$nuid = $results->Celd(0,'id');	
 					}					
 									
 				
-				//Cerrando conexión
+				//Cerrando conexiï¿½n
 				$sql->SQLClose();
 				
 				if($nuid) {
