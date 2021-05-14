@@ -2,15 +2,15 @@
 	<table width="100%" cellpadding="0" cellspacing="0" class="form">
 	  <tr>
 			<td width="85"><img src="../img/aarrow.gif" alt="Obligatorio" /> Nombre:</td>
-		  <td><input id="name" name="name" type="text" class="input_field" size="40" value="<?php echo isset($usrdata['name']); ?>" autocomplete="off" /></td>
+		  <td><input id="name" name="name" type="text" class="input_field" size="40" value="<?php echo $usrdata['name']; ?>" autocomplete="off" /></td>
 		</tr>
 		<tr>
 		  <td><img src="../img/aarrow.gif" alt="Obligatorio" /> Login:</td>
-	    <td><input id="login" name="login" type="text" class="input_field" size="13" value="<?php echo isset($usrdata['login']); ?>"<?php echo isset($usrdata['readonly']); ?> autocomplete="off" /></td>
+	    <td><input id="login" name="login" type="text" class="input_field" size="13" value="<?php echo $usrdata['login']; ?>"<?php echo isset($usrdata['readonly']); ?> autocomplete="off" /></td>
 	  </tr>
 	  <tr>
 		  <td><img src="../img/aarrow.gif" alt="Obligatorio" /> EMail:</td>
-	    <td><input id="mail" name="mail" type="text" class="input_field" size="25" value="<?php echo isset($usrdata['mail']); ?>"<?php echo isset($usrdata['readonly']); ?> autocomplete="off" /></td>
+	    <td><input id="mail" name="mail" type="text" class="input_field" size="25" value="<?php echo $usrdata['mail']; ?>"<?php echo isset($usrdata['readonly']); ?> autocomplete="off" /></td>
 	  </tr>
 	  <tr style="display:none;">
 		  <td><img src="../img/aarrow.gif" alt="Obligatorio" /> Dominio:</td>

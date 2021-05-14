@@ -43,6 +43,7 @@
 	
 	if (isset($_GET['id'])){ $id = $_GET['id']; }
 	if (isset($_GET['body'])){ $body = $_GET['body']; }
+	if (isset($_GET['rbody'])){ $rbody = $_GET['rbody']; }
 	if (isset($_GET['alert'])){ $alert = $_GET['alert']; }
 	if (isset($_GET['page'])){ $page = $_GET['page']; }
 	if (isset($_GET['order'])){ $order = $_GET['order']; }

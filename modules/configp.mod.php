@@ -1,5 +1,5 @@
 <?php
-	if(!$call) {
+	if(!isset($call)) {
 		//Creando objeto SQL
 		$sql = new SQL();
 		
@@ -19,7 +19,7 @@
 	$sch = new aSearch($preferences, $level);
 	
 	//Introduciendo estado
-	$sch->setStatus($status);
+	$sch->setStatus(isset($status));
 	
 	//Introduciendo body
 	$sch->setBody($body);
@@ -27,7 +27,7 @@
 	if($body != 'new' && $body != 'edit') {
 		if($body == 'configp') {
 			//Búsqueda por usuarios
-			$query = $sch->schPconfig($pid);
+			$query = $sch->schPconfig(isset($pid));
 		}//end if
 		else if($body == 'profiles') {
 			//Búsqueda por perfiles
@@ -91,25 +91,25 @@
 		//Resultados procesados y listos para mostrarlos
 		$resHTML = $sch->showConfigp();
 		
-		if($call)
+		if(isset($call))
 			echo $resHTML;
 	}//end if
 	else if($body == 'new') {
 		ob_start();
 		include('../modules/configpdata.mod.php');
-		include('../html/configp_form.htm');
+		include('../html/configp_form.php');
 		$resHTML = ob_get_contents();
 		ob_end_clean();
 	}//end else if
 	else if($body == 'edit') {
 		ob_start();
 		include('../modules/configpdata.mod.php');
-		include('../html/configp_form.htm');
+		include('../html/configp_form.php');
 		$resHTML = ob_get_contents();
 		ob_end_clean();
 	}//end else if
 	
-	if(!$call) {
+	if(!isset($call)) {
 		include('setonline.mod.php');
 		//include('writelog.mod.php');
 		

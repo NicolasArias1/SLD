@@ -23,6 +23,14 @@
 	$domain = $user->getDomain();
 	$level = $user->getPriority();
 	$_SESSION['user'] = serialize($user);
+	$id = '';
+	$body = '';
+	$rbody = '';
+	$alert = '';
+	$page = '';
+	$order = '';
+	$show = '';
+	$type = '';
 	
 	if($level > 1) {
 		if($level == 2)
@@ -32,17 +40,19 @@
 		else
 			header('Location: ../logout.php');
 	}//end if
-	
-	$id = $_GET['id'];
-	$body = $_GET['body'];
-	$rbody = $_GET['rbody'];
-	$alert = $_GET['alert'];
-	$page = $_GET['page'];	
-	$order = $_GET['order'];
-	$show = $_GET['show'];
-	$page = $_GET['page'];
-	$type = $_GET['type'];
+
+
+	if (isset($_GET['id'])){ $id = $_GET['id']; }
+	if (isset($_GET['body'])){ $body = $_GET['body']; }
+	if (isset($_GET['rbody'])){ $rbody = $_GET['rbody']; }
+	if (isset($_GET['alert'])){ $alert = $_GET['alert']; }
+	if (isset($_GET['page'])){ $page = $_GET['page']; }
+	if (isset($_GET['order'])){ $order = $_GET['order']; }
+	if (isset($_GET['show'])){ $show = $_GET['show']; }
+	if (isset($_GET['type'])){ $type = $_GET['type']; }
+
 		
+
 	$usrHTML = "<li><a href=\"../user/index.php\" class=\"ast3\">Usar</a></li>";
 	
 	if($name == '')
@@ -116,7 +126,7 @@
 	<script language="JavaScript" src="../js/asld.js" type="text/javascript"></script>
 </head>
 
-<body<?php if($body == 'newp' || $body == 'editp') { ?> onLoad="usersLevel('<?php echo $usrdata['level']; ?>')"<?php }//end if ?>>
+<body <?php if($body == 'newp' || $body == 'editp') { ?> onLoad="usersLevel('<?php echo $usrdata['level']; ?>')"<?php }//end if ?>>
 	<div id="page">
 		<div id="header">
 			<div id="header_t">

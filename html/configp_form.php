@@ -6,19 +6,19 @@
 		</tr>
 		<tr>
 		  <td><img src="../img/aarrow.gif" alt="Obligatorio" /> Nombre corto:</td>
-		  <td><input id="pname" name="pname" type="text" class="input_field" size="13" value="<?php echo $pdata['pname']; ?>"<?php echo $pdata['readonly']; ?> autocomplete="off" /></td>
+		  <td><input id="pname" name="pname" type="text" class="input_field" size="13" value="<?php echo $pdata['pname']; ?>"<?php echo isset($pdata['readonly']); ?> autocomplete="off" /></td>
 		</tr>
 		<tr>
 		  <td><img src="../img/aarrow.gif" alt="Obligatorio" /> Nombre de la pr&aacute;ctica:</td>
-		  <td><input id="pcname" name="pcname" type="text" class="input_field" size="25" value="<?php echo $pdata['pcname']; ?>"<?php echo $pdata['readonly']; ?> autocomplete="off" /></td>
+		  <td><input id="pcname" name="pcname" type="text" class="input_field" size="25" value="<?php echo $pdata['pcname']; ?>"<?php echo isset($pdata['readonly']); ?> autocomplete="off" /></td>
 		</tr>
 		<tr>
 		  <td><img src="../img/aarrow.gif" alt="Obligatorio" /> Ubicaci&oacute;n en la estaci&oacute;n:</td>
-		  <td><input id="path" name="path" type="text" class="input_field" size="25" value="<?php echo $pdata['path']; ?>"<?php echo $pdata['readonly']; ?> autocomplete="off" /></td>
+		  <td><input id="path" name="path" type="text" class="input_field" size="25" value="<?php echo $pdata['path']; ?>"<?php echo isset($pdata['readonly']); ?> autocomplete="off" /></td>
 		</tr>
 		<tr>
 		  <td><img src="../img/aarrow.gif" alt="Obligatorio" /> URL de la respuesta en la estaci&oacute;n:</td>
-		  <td><input id="stpath" name="stpath" type="text" class="input_field" size="25" value="<?php echo $pdata['stpath']; ?>"<?php echo $pdata['readonly']; ?> autocomplete="off" /></td>
+		  <td><input id="stpath" name="stpath" type="text" class="input_field" size="25" value="<?php echo $pdata['stpath']; ?>"<?php echo isset($pdata['readonly']); ?> autocomplete="off" /></td>
 		</tr>
 		<tr>
 		  <td><img src="../img/aarrow.gif" alt="Obligatorio" /> Tipo de Pr&aacute;ctica:</td>
