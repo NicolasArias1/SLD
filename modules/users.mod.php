@@ -1,5 +1,5 @@
 <?php
-	if(!$call) {
+	if(!isset($call)) {
 		//Creando objeto SQL
 		$sql = new SQL();
 		
@@ -19,37 +19,37 @@
 	$sch = new aSearch($preferences, $level);
 	
 	//Introduciendo estado
-	$sch->setStatus($status);
-	
+	$sch->setStatus(isset($status));
+
 	//Introduciendo body
 	$sch->setBody($body);
 	
 	if($body != 'new' && $body != 'edit') {
 		if($body == 'users') {
-			//Búsqueda por usuarios
+			//Bï¿½squeda por usuarios
 			$query = $sch->schUsers($uid);
 		}//end if
 		else if($body == 'profiles') {
-			//Búsqueda por perfiles
+			//Bï¿½squeda por perfiles
 			$query = $sch->schProfiles();
 		}//end else if
 		else if($body == 'solicit') {
-			//Búsqueda por solicitudes
+			//Bï¿½squeda por solicitudes
 			$query = $sch->schSolicit();
 		}//end else if
 		else if($body == 'directories') {
-			//Búsqueda por directorios
+			//Bï¿½squeda por directorios
 			$query = $sch->schDirectories();
 		}//end else if
 		else if($body == 'groups') {
-			//Búsqueda por grupo de trabajo
+			//Bï¿½squeda por grupo de trabajo
 			$query = $sch->schWorkgroup();
 		}//end else if
 		
 		//Ejecutando consulta
 		$nresults = $sql->SQLQuery($query[0]);
 		
-		//Introduciendo número de resultados
+		//Introduciendo nï¿½mero de resultados
 		$sch->setNResults($nresults[0]['COUNT(*)']);
 		
 		if($page != 1 && $call) {
@@ -65,30 +65,30 @@
 				$sch->setPreferences($preferences);
 				
 				if($body == 'users') {
-					//Búsqueda por usuarios
+					//Bï¿½squeda por usuarios
 					$query = $sch->schUsers($uid);
 				}//end if
 				else if($body == 'profiles') {
-					//Búsqueda por perfiles
+					//Bï¿½squeda por perfiles
 					$query = $sch->schProfiles();
 				}//end else if
 				else if($body == 'solicit') {
-					//Búsqueda por solicitudes
+					//Bï¿½squeda por solicitudes
 					$query = $sch->schSolicit();
 				}//end else if
 				else if($body == 'directories') {
-					//Búsqueda por directorios
+					//Bï¿½squeda por directorios
 					$query = $sch->schDirectories();
 				}//end else if
 				else if($body == 'groups') {
-					//Búsqueda por grupo de trabajo
+					//Bï¿½squeda por grupo de trabajo
 					$query = $sch->schWorkgroup();
 				}//end else if
 				
 				//Ejecutando consulta
 				$nresults = $sql->SQLQuery($query[0]);
 				
-				//Introduciendo número de resultados
+				//Introduciendo nï¿½mero de resultados
 				$sch->setNResults($nresults[0]['COUNT(*)']);
 			}//end if
 		}//end if
@@ -142,7 +142,7 @@
 			$resHTML = $sch->showUsers();
 		}//end else
 		
-		if($call)
+		if(isset($call))
 			echo $resHTML;
 	}//end if
 	else if($body == 'new') {
@@ -160,11 +160,11 @@
 		ob_end_clean();
 	}//end else if
 	
-	if(!$call) {
+	if(!isset($call)) {
 		include('setonline.mod.php');
 		//include('writelog.mod.php');
 		
-		//Cerrando conexión
+		//Cerrando conexiï¿½n
 		$sql->SQLClose();
 	}//end if
 ?>

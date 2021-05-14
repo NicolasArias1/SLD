@@ -1,6 +1,7 @@
 <?php
-	if(!$call) {
+	if(!isset($call)) {
 		//Creando objeto SQL
+
 		$sql = new SQL();
 		
 		//Conectando con el servidor
@@ -9,7 +10,7 @@
 		if($sql->errno)
 			header('Location: ../logout.php');
 	}//end if
-	
+
 	$preferences = array("order"=>$order,
 											 "show"=>$show,
 											 "default_show"=>20,
@@ -32,16 +33,16 @@
 		else if($body == 'realizadas')
 			$condition = " WHERE (ok='1')";
 		
-		//Introduciendo condición
+		//Introduciendo condiciï¿½n
 		$sch->setCondition($condition);
 		
-		//Búsqueda por recursos publicados y sugeridos
+		//Bï¿½squeda por recursos publicados y sugeridos
 		$query = $sch->schGeneral();
 		
 		//Ejecutando consulta
 		$nresults = $sql->SQLQuery($query[0]);
 		
-		//Introduciendo número de resultados
+		//Introduciendo nï¿½mero de resultados
 		$sch->setNResults($nresults[0]['COUNT(*)']);
 		
 		if($page != 1 && $call) {
@@ -56,13 +57,13 @@
 				//Introduciendo preferencias
 				$sch->setPreferences($preferences);
 				
-				//Búsqueda por recursos publicados y sugeridos
+				//Bï¿½squeda por recursos publicados y sugeridos
 				$query = $sch->schGeneral($body);
 				
 				//Ejecutando consulta
 				$nresults = $sql->SQLQuery($query[0]);
 				
-				//Introduciendo número de resultados
+				//Introduciendo nï¿½mero de resultados
 				$sch->setNResults($nresults[0]['COUNT(*)']);
 			}//end if
 		}//end if
@@ -73,15 +74,15 @@
 		//Resultados procesados y listos para mostrarlos
 		$resHTML = $sch->showResults();
 		
-		if($call)
+		if(isset($call))
 			echo $resHTML;
 	}//end else if
 	
 	if($body == "servers") {
-		//Cargando parámetros MySQL
+		//Cargando parï¿½metros MySQL
 		//$mysql = $config->getMySQLParameters();
 		
-		//Cargando parámetros LDAP
+		//Cargando parï¿½metros LDAP
 		//$ldap = $config->getLDAPParameters();
 		
 		ob_start();
@@ -90,11 +91,11 @@
 		ob_end_clean();
 	}//end if
 	
-	if(!$call) {
+	if(!isset($call)) {
 		include('setonline.mod.php');
 		//include('writelog.mod.php');
 		
-		//Cerrando conexión
+		//Cerrando conexiï¿½n
 		$sql->SQLClose();
 	}//end if
 ?>

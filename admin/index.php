@@ -22,6 +22,14 @@
 	$domain = $user->getDomain();
 	$level = $user->getPriority();
 	$_SESSION['user'] = serialize($user);
+	$id = '';
+	$body = '';
+	$order = '';
+	$show = '';
+	$page = '';
+	$type = '';
+	$alert = '';
+	$res = '';
 	
 	if($level > 1) {
 		if($level == 2)
@@ -33,14 +41,15 @@
 	}//end if
 	
 	$method = $_SERVER['REQUEST_METHOD'];
-	$id = $_GET['id'];
-	$body = $_GET['body'];
-	$order = $_GET['order'];
-	$show = $_GET['show'];
-	$page = $_GET['page'];
-	$type = $_GET['type'];
-	$alert = $_GET['alert'];
-	$res = $_GET['res'];
+	if(isset($_GET['id'])){ $id = $_GET['id']; } 
+	if(isset($_GET['body'])){ $body = $_GET['body']; }
+	if(isset($_GET['order'])){ $order = $_GET['order']; }
+	if(isset($_GET['show'])){ $show = $_GET['show']; }
+	if(isset($_GET['page'])){ $page = $_GET['page']; }
+	if(isset($_GET['type'])){ $type = $_GET['type']; }
+	if(isset($_GET['alert'])){ $alert = $_GET['type']; }
+	if(isset($_GET['res'])){ $res = $_GET['res']; }
+
 	
 	$usrHTML = "<li><a href=\"../user/index.php\" class=\"ast3\">Usar</a></li>";
 	
