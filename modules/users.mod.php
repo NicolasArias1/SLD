@@ -148,14 +148,14 @@
 	else if($body == 'new') {
 		ob_start();
 		include('../modules/userdata.mod.php');
-		include('../html/user_form.htm');
+		include('../html/user_form.php');
 		$resHTML = ob_get_contents();
 		ob_end_clean();
 	}//end else if
 	else if($body == 'edit') {
 		ob_start();
 		include('../modules/userdata.mod.php');
-		include('../html/user_form.htm');
+		include('../html/user_form.php');
 		$resHTML = ob_get_contents();
 		ob_end_clean();
 	}//end else if

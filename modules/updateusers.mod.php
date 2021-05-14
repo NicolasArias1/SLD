@@ -56,7 +56,7 @@
 			$etype = $_POST['type'];
 			
 			if($epassword != '')
-				$epassword = md5($epassword);
+				$epassword = password_hash($epassword,PASSWORD_DEFAULT);
 			
 			if($elevel == 2) {
 				//Creando consulta
@@ -189,7 +189,7 @@
 							}//end if
 						}//end if
 						
-						//Actualizar los datos de la sessión en caso de que se este editando sus
+						//Actualizar los datos de la sessiï¿½n en caso de que se este editando sus
 						//propios datos.
 						if($uid == $eid) {
 							$user = unserialize($session);
@@ -229,7 +229,7 @@
 			include('setonline.mod.php');
 			//include('writelog.mod.php');
 			
-			//Cerrando conexión
+			//Cerrando conexiï¿½n
 			$sql->SQLClose();
 					
 			header('Location: '.$rpage.'&alert=1');
@@ -305,10 +305,10 @@
 		if($action != 'select')
 			include('users.mod.php');
 		
-		//Cerrando conexión
+		//Cerrando conexiï¿½n
 		$sql->SQLClose();
 		
-		//Salir de la sessión si el administrador se elimina a si mismo;
+		//Salir de la sessiï¿½n si el administrador se elimina a si mismo;
 		if($uid == $id) {
 			header('Location: ../logout.php');
 		}//end if
