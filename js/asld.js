@@ -1,4 +1,4 @@
-//Selección del privilegio
+//Selecciï¿½n del privilegio
 function usersLevel(level) {
 	if(document.getElementById('domain')) {
 		if(level == '1') {
@@ -24,7 +24,7 @@ function saveUser(act) {
 		if(act == 'new' && document.getElementById('password').value != '' && document.getElementById('confirm').value != '' && (document.getElementById('password').value == document.getElementById('confirm').value))
 			valid = true;
 		else if(act == 'new')
-			alert('No se puede realizar la operación:\nVerifique su usuario, las contraseñas no se han entrado o no coinciden.');
+			alert('No se puede realizar la operaciï¿½n:\nVerifique su usuario, las contraseï¿½as no se han entrado o no coinciden.');
 		
 		if(act == 'edit') {
 			if(document.getElementById('domain').value == 'db') {
@@ -32,7 +32,7 @@ function saveUser(act) {
 					if(document.getElementById('password').value == document.getElementById('confirm').value)	
 						valid = true;
 					else
-						alert('No se puede realizar la operación:\nVerifique su usuario, las contraseñas no se han entrado o no coinciden.');
+						alert('No se puede realizar la operaciï¿½n:\nVerifique su usuario, las contraseï¿½as no se han entrado o no coinciden.');
 				}//end if
 				else
 					valid = true;
@@ -45,11 +45,11 @@ function saveUser(act) {
 			if(validEmail)
 				document.getElementById('frmuser').submit();
 			else
-				alert('No se puede realizar la operación:\nVerifique su usuario, la dirección de correo no es correcta.');
+				alert('No se puede realizar la operaciï¿½n:\nVerifique su usuario, la direcciï¿½n de correo no es correcta.');
 		}//end if
   }//end if
  	else {
-  	alert('No se puede realizar la operación:\nVerifique su usuario, hay campos vacíos.');
+  	alert('No se puede realizar la operaciï¿½n:\nVerifique su usuario, hay campos vacï¿½os.');
 	}//end else
 }//function
 
@@ -62,17 +62,17 @@ function saveRegistration() {
 		if(document.getElementById('upassword').value == document.getElementById('uconfirm').value)
 			valid = true;
 		else
-			alert('No se puede realizar la operación:\nVerifique su usuario, las contraseñas no coinciden.');
+			alert('No se puede realizar la operaciï¿½n:\nVerifique su usuario, las contraseï¿½as no coinciden.');
 		
 		if(valid) {
 			if(validEmail)
 				document.getElementById('frmuser').submit();
 			else
-				alert('No se puede realizar la operación:\nVerifique sus datos, la dirección de correo no es correcta.');
+				alert('No se puede realizar la operaciï¿½n:\nVerifique sus datos, la direcciï¿½n de correo no es correcta.');
 		}//end if
   }//end if
  	else {
-  	alert('No se puede realizar la operación:\nVerifique sus datos, hay campos vacíos.');
+  	alert('No se puede realizar la operaciï¿½n:\nVerifique sus datos, hay campos vacï¿½os.');
 	}//end else
 }//function
 
@@ -85,7 +85,7 @@ function savePersonalData() {
 			if(document.getElementById('password').value == document.getElementById('confirm').value)
 				valid = true;
 			else
-				alert('No se puede realizar la operaci&oacute;n:\nVerifique su usuario, las contraseñas no coinciden.');
+				alert('No se puede realizar la operaci&oacute;n:\nVerifique su usuario, las contraseï¿½as no coinciden.');
 		}//end if
 		else if((document.getElementById('password').value != '' && document.getElementById('confirm').value == '') || (document.getElementById('password').value == '' && document.getElementById('confirm').value != ''))
 			alert('No se puede realizar la operaci&oacute;n:\nVerifique sus datos, hay campos vac&iacute;os.');
@@ -105,7 +105,7 @@ function savePersonalData() {
 }//function
 
 
-//Nueva área de trabajo
+//Nueva ï¿½rea de trabajo
 function newArea(ncategories) {
 	document.getElementById('name').value = "";
 	document.getElementById('description').value = "";
@@ -116,7 +116,7 @@ function newArea(ncategories) {
 	}//end for
 }//end function
 
-//Editar área de trabajo
+//Editar ï¿½rea de trabajo
 function editArea(id, lid, name, description) {
 	selectResource(lid);
 	
@@ -124,16 +124,16 @@ function editArea(id, lid, name, description) {
 	document.getElementById('description').value = description;
 	document.getElementById('id').value = id;
 	
-	myUrl = '../modules/updateconfiguration.mod.php?action=select&id='+id+'&rand='+myRand;
+	myUrl = '../../utilities/updateconfiguration.mod.php?action=select&id='+id+'&rand='+myRand;
 	
 	xmlHttp.open('GET', myUrl, true);
 	xmlHttp.onreadystatechange = getUserList;
 	xmlHttp.send(null);
 }//function
 
-//Seleccionar área
+//Seleccionar ï¿½rea
 function selectArea(id, lid, lopt) {
-	myUrl = '../modules/updateusers.mod.php?action=select&id='+id+'&rand='+myRand;
+	myUrl = '../../utilities/updateusers.mod.php?action=select&id='+id+'&rand='+myRand;
 	
 	xmlHttp.open('GET', myUrl, true);
 	xmlHttp.onreadystatechange = getCategories;
@@ -153,9 +153,9 @@ function getUserList() {
   }//end if
 }//end function
 
-//Borrar área
+//Borrar ï¿½rea
 function deleteArea(id, limit, order, show, page) {
-	myUrl = '../modules/updateconfiguration.mod.php?action=delete&order='+order+'&show='+show+'&page='+page+'&id=';
+	myUrl = '../../utilities/updateconfiguration.mod.php?action=delete&order='+order+'&show='+show+'&page='+page+'&id=';
 	checkedItems(id, limit);
 	
 	if(j != 0 && j > 1)
@@ -170,7 +170,7 @@ function deleteArea(id, limit, order, show, page) {
 	xmlHttp.send(null);
 }//function
 
-//Validar y enviar datos de área
+//Validar y enviar datos de ï¿½rea
 function validArea(ncategories) {
 	var valid = false;
 	if(document.getElementById('name') && document.getElementById('description')) {

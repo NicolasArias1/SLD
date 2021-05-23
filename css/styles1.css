@@ -1,0 +1,434 @@
+/* Caja de header */
+#header_box {
+	height: 56px;
+	padding: 0px;
+	margin: 0px;
+}
+.header_image {
+	float: left;
+	width: 375px;
+	height: 56px;
+	padding: 0px;
+	margin: 0px;
+}
+.header_date {
+	font-size: 10px;
+	text-align: right;
+	float: right;
+	width: 391px;
+	padding: 10px 0 2px 0;
+	height: 28px;
+}
+.header_navigator {
+	float: right;
+	width: 391px;
+	text-align: right;
+}
+
+/* Caja de usuario */
+#user_box {
+	width: 200px;
+	float: right;
+	height: 100px;
+	padding: 0px 15px 15px 15px;
+}
+
+/* Caja de contenidos */
+#content_box {
+	background-image: url(../img/bg1.gif);
+	background-repeat: repeat-y;
+	margin: 3px 0px 0px 0px;
+}
+#content_navigator {
+	float: left;
+	width: 156px;
+	margin: 0px;
+	padding: 0px 15px;
+	border-top: 1px solid #CCCCCC;
+}
+#content_body {
+	width: 547px;
+	padding: 0px 15px;
+	border-top: 1px solid #CCCCCC;
+	margin: 0px;
+	float: right;
+}
+.content_bottom {
+	background-image: url(../img/bg2.gif);
+	background-position: bottom;
+	height: 15px;
+	background-repeat: no-repeat;
+	float: none;
+	clear: both;
+}
+.images {
+	margin: 2px;
+	border: 1px solid #000000;
+}
+
+/* Caja de búsquedas */
+#search_box {
+	padding: 0px 0px 15px 0px;
+	margin: 0px;
+	border-bottom: 1px solid #CCCCCC;
+}
+.search_celd {
+	height: 22px;
+}
+.search_text {
+	margin: 0px;
+	float: left;
+	width: 140px;
+	font-weight: normal;
+	font-size: 12px;
+	padding: 2px 0px 0px 0px;
+}
+
+/* Estilos de Formularios */
+form {
+	margin: 0px;
+}
+.form_checkbox {
+	vertical-align: middle;
+}
+.form_radio {
+	margin: 5px 3px;
+	vertical-align: middle;
+}
+
+/* Estilos de las paginas de directorio */
+#content_categories_box {
+	float: left;
+	padding-bottom: 15px;
+	border-bottom: 1px solid #CCCCCC;
+	clear: both;
+}
+#content_subcategories_box {
+	clear: both;
+}
+#category_selected_box {
+	padding: 0px 15px 15px 15px;
+	margin: 3px 0px 0px 0px;
+	border: 1px solid #CCCCCC;
+}
+.directory_left {
+	width: 257px;
+	border-right: 1px solid #CCCCCC;
+	float: left;
+	padding-right: 15px;
+}
+.directory_right {
+	width: 257px;
+	float: right;
+	padding-left: 15px;
+}
+
+/* Estilos comunes de textos */
+p.header {
+	font-weight: bold;
+	height: 17px;
+	margin: 3px 0px 0px 0px;
+	font-size: 12px;
+	clear: both;
+	padding: 0px;
+}
+p.alert {
+	font-weight: bold;
+	margin: 3px 0px 0px 0px;
+	font-size: 12px;
+	clear: both;
+	padding: 0px;
+	background-color: #FFFFCC;
+}
+p.info {
+	font-weight: bold;
+	height: 17px;
+	margin: 0px;
+	font-size: 12px;
+	padding: 3px 0px 0px 0px;
+	border-bottom: 1px solid #EEEEEE;
+}
+p.text {
+	text-indent: 15pt;
+	padding: 2px;
+	margin: 0px;
+}
+p.middle {
+	font-size: 11px;
+	padding: 2px;
+	margin: 0px;
+}
+p.text_middle {
+	text-indent: 15pt;
+	font-size: 11px;
+	padding: 2px;
+	margin: 0px;
+}
+p.user_navigator {
+	font-size: 11px;
+	padding: 2px 8px;
+	margin: 0px;
+}
+.text_b_u {
+	font-weight: bold;
+	text-decoration: underline;
+}
+span.text {
+	font-weight: normal;
+}
+
+/* Estilos de los resultados de las búsquedas */
+.results_info {
+	padding: 3px 0px;
+	border-bottom: 1px solid #EEEEEE;
+}
+.resource_box {	
+	border-bottom: 1px solid #EEEEEE;
+	clear: both;
+}
+.resource_check {
+	float: left;
+	margin: 0px;
+	padding: 0px;
+	display: block;
+}
+.resource_comments_title {
+	width: 511px;
+	float: left;
+	font-weight: bold;
+	margin: 0px;
+	padding: 3px 3px 3px 0px;
+}
+.resource_image {
+	width: 16px;
+	float: left;
+	margin: 0px;
+	padding: 0px;
+}
+.resource_abstract {
+	float: none;
+	padding: 0px;
+	margin: 0px;
+}
+.resource_other {
+	font-size: 11px;
+	margin: 0px;
+	padding: 2px 0px 0px 0px;
+}
+.resource_url {
+	font-size: 11px;
+	margin: 0px;
+	padding: 3px 0px;
+}
+.results_paginator {
+	font-size: 11px;
+	font-weight: bold;
+	text-align: center;
+	padding: 3px 0px 0px 0px;
+	margin: 0px;
+}
+.blank_celd {
+	height: 15px;
+}
+
+/* Estilos de los detalles */
+#details_message {
+	width: 175px;
+	float: right;
+	height: 100px;
+	padding: 0px 15px 15px 15px;
+}
+#details_box {
+	padding: 0px 15px 15px 15px;
+	border: 1px solid #CCCCCC;
+	margin: 3px 0px 0px 0px;
+}
+#adetails_box {
+	padding: 0px 15px 15px 15px;
+	border: 1px solid #CCCCCC;
+	margin: 3px 0px 0px 0px;
+}
+.detail_celd {
+	/* border: 1px solid #000000; */
+	padding: 3px 1px 0px 0px;
+	/* height: 15px; */
+	clear: both;
+}
+.detail_field {
+	margin: 0px;
+	font-weight: bold;
+	text-align: right;
+	width: 90px;
+	padding-right: 2px;
+	margin: 0px;
+	font-size: 12px;
+	float: left;
+}
+.detail_text {
+	width: 642px;
+	float: right;
+}
+.adetail_field {
+	font-weight: bold;
+	text-align: right;
+	width: 180px;
+	padding-right: 2px;
+	margin: 0px;
+	font-size: 12px;
+	float: left;
+}
+.adetail_text {
+	width: 552px;
+	float: right;	
+}
+.detail_star {
+	padding-top: 2px;
+}
+#vote_box {
+	padding: 0px 15px 15px 15px;
+	border: 1px solid #CCCCCC;
+	margin: 3px 0px 0px 0px;
+}
+#comments_box {
+	padding: 0px 15px 15px 15px;
+	border: 1px solid #CCCCCC;
+	margin: 3px 0px 0px 0px;
+}
+.comment {
+	clear: both;
+	border-bottom: 1px solid #EEEEEE;
+}
+p.comment_text {
+	margin: 0px;
+	padding: 0px 2px;
+}
+p.comment_data {
+	font-size: 11px;
+	margin: 0px;
+	padding: 2px;
+}
+p.my_comment_data {
+	font-size: 11px;
+	margin: 0px;
+	padding: 2px;
+}
+#comment_form_box {
+	padding: 0px 15px 15px 15px;
+	border: 1px solid #CCCCCC;
+	margin: 3px 0px 0px 0px;
+}
+
+/* Estilos del Footer */
+#footer_box {
+	font-size: 10px;
+	height: 40px;
+	clear: both;
+	margin: 3px 0px 0px 0px;
+	padding: 0px;
+}
+.footer_text {
+	text-align: left;
+	float: left;
+	width: 400px;
+	margin: 0px;
+	padding: 0px;
+}
+.footer_realized {
+	text-align: left;
+	float: right;
+	margin: 0px;
+	padding: 0px;
+	width: 368px;
+}
+
+/* Estilos de la barra de menus */
+#menu_list_box {
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+	border-bottom: 1px solid #EEEEEE;
+	float: left;
+	width: 100%;
+}
+#list_select {
+	float: left;
+	width: 86px;
+	border: 1px solid #FFFFFF;
+	cursor: default;
+	padding: 0px;
+	margin: 0px;
+}
+#list_month {
+	float: left;
+	width: 86px;
+	border: 1px solid #FFFFFF;
+	cursor: default;
+	padding: 0px;
+	margin: 0px;
+}
+#list_mark {
+	float: left;
+	width: 86px;
+	border: 1px solid #FFFFFF;
+	cursor: default;
+	padding: 0px;
+	margin: 0px;
+}
+#list_operation {
+	float: left;
+	width: 122px;
+	border: 1px solid #FFFFFF;
+	cursor: default;
+	padding: 0px;
+	margin: 0px;
+}
+#list_order {
+	float: left;
+	width: 137px;
+	border: 1px solid #FFFFFF;
+	cursor: default;
+	padding: 0px;
+	margin: 0px;
+}
+#list_show {
+	float: left;
+	width: 90px;
+	border: 1px solid #FFFFFF;
+	cursor: default;
+	padding: 0px;
+	margin: 0px;
+}
+li.list_element {
+	height: 17px;
+	padding: 3px 5px 0px 5px;
+	cursor: default;
+}
+
+/* Estilos de formulario de recurso */
+.resource_celd {	
+	height: 22px;
+}
+.resource_celd_abstract {	
+	height: auto;
+}
+p.resource_field {
+	padding: 3px 2px 0px 2px;
+	width: 110px;
+	margin: 0px;
+	font-size: 12px;
+	font-weight: normal;
+	float: left;
+}
+
+/* Estilos de formulario de usuario */
+.user_celd {	
+	height: 22px;
+}
+p.user_field {
+	padding: 3px 2px 0px 2px;
+	width: 80px;
+	margin: 0px;
+	font-size: 12px;
+	font-weight: normal;
+	float: left;
+}

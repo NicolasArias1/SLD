@@ -1,1 +1,1 @@
-c:\xampp\php\php.exe C:\SLD\SLDStation\server1.php
+c:\xampp\php\php.exe C:\SLD\modules\SLDStation\server1.php

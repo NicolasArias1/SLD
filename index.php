@@ -6,7 +6,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 	<title>Sistema de Laboratorios a Distancia : : Inicio</title>
-  <link href="styles.css" rel="stylesheet" type="text/css" />
+  <link href="css/styles.css" rel="stylesheet" type="text/css" />
   <script language="JavaScript" src="js/sld.js" type="text/javascript"></script>
 	<script language="JavaScript" src="js/osld.js" type="text/javascript"></script>
 	<script language="JavaScript" src="js/asld.js" type="text/javascript"></script>
@@ -33,9 +33,9 @@
 			<div id="nav_c">
 				<ul>
 					<li><a href="index.php">Inicio</a></li>
-					<li><a href="theory.php">Teor&iacute;a</a></li>
-					<li><a href="practices.php">Pr&aacute;cticas</a></li>
-					<li><a href="platform.php">Plataforma</a></li>					
+					<li><a href="general/theory.php">Teor&iacute;a</a></li>
+					<li><a href="general/practices.php">Pr&aacute;cticas</a></li>
+					<li><a href="general/platform.php">Plataforma</a></li>					
 				</ul>
 			</div>
 			<div id="nav_r"></div>
@@ -44,7 +44,7 @@
 			<div id="content_l">
 				<div id="content_l_t"></div>
 				<div id="content_l_c">
-					<form action="login.php" method="post" enctype="multipart/form-data">
+					<form action="general/login.php" method="post" enctype="multipart/form-data">
 						<h1 class="content_l_hst1">Autentificaci&oacute;n</h1>
 						<div class="input_celd">Nombre de usuario<br />
 						  <input name="login" type="text" size="15" class="input_field" />
@@ -63,7 +63,7 @@
 					</form>
 						<div>
 						  <ul>
-								<li><a href="addusers.php" class="ast3">Registrarse</a></li>
+								<li><a href="general/addusers.php" class="ast3">Registrarse</a></li>
 						  </ul>
 						</div>
 				</div>

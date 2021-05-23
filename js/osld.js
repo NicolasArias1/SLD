@@ -1,7 +1,7 @@
 //Borar recursos
 function deleteResources(id, limit, body, order, show, page, level, rpage, called) {
 	vUrl = rpage+'?body='+body+'&order='+order+'&show='+show+'&page='+page;
-	myUrl = '../modules/updatepractices.mod.php?action=delete&body='+body+'&order='+order+'&show='+show+'&page='+page+'&level='+level+'&id=';
+	myUrl = '../../utilities/updatepractices.mod.php?action=delete&body='+body+'&order='+order+'&show='+show+'&page='+page+'&level='+level+'&id=';
 	checkedItems(id, limit);
 	//prompt('url', myUrl);
 	if(j != 0 && j > 1)
@@ -18,7 +18,9 @@ function deleteResources(id, limit, body, order, show, page, level, rpage, calle
 		else
 			xmlHttp.onreadystatechange = getContent;
 		xmlHttp.send(null);
+		location.reload();
 	}//end if	
+	location.reload();
 }//function
 
 //Recargar contenido
@@ -32,7 +34,7 @@ function getContent() {
   }//end if
 }//end function
 
-//Recargar p·gina
+//Recargar pÔøΩgina
 function reloadContent() {
 	if(xmlHttp.readyState == 4) {
 		if(xmlHttp.status == 200) {
@@ -42,13 +44,13 @@ function reloadContent() {
 }//end function
 
 function deleteUsers(id, limit, body, order, show, page) {
-	myUrl = '../modules/updateusers.mod.php?action=delete&body='+body+'&order='+order+'&show='+show+'&page='+page+'&id=';
+	myUrl = '../../utilities/updateusers.mod.php?action=delete&body='+body+'&order='+order+'&show='+show+'&page='+page+'&id=';
 	checkedItems(id, limit);
 	
 	if(j != 0 && j > 1)
-		rs = confirm('Est· seguro que desea eliminar estos usuarios?');
+		rs = confirm('EstÔøΩ seguro que desea eliminar estos usuarios?');
 	else if(j != 0)
-		rs = confirm('Est· seguro que desea eliminar este usuario?');
+		rs = confirm('EstÔøΩ seguro que desea eliminar este usuario?');
 	else
 		rs = false;
 	
@@ -56,7 +58,9 @@ function deleteUsers(id, limit, body, order, show, page) {
 		xmlHttp.open('GET', myUrl, true);
 		xmlHttp.onreadystatechange = getContent;
 		xmlHttp.send(null);		
+		location.reload();
 	}//end if
+	location.reload();
 }//end function
 
 //Abrir comentario
@@ -65,7 +69,7 @@ function openComment(id, numBox) {
 		document.getElementById('id').value = id;
 		document.getElementById('action').value = 'edit';
 		
-		myUrl = '../modules/updatecontribution.mod.php?action=select&id='+id+'&rand='+myRand;
+		myUrl = '../../utilities/updatecontribution.mod.php?action=select&id='+id+'&rand='+myRand;
 		selectResource(numBox);
 		
 		xmlHttp.open('GET', myUrl, true);
@@ -86,13 +90,13 @@ function getComment() {
 
 //Borrar comentarios
 function deleteComments(id, rid, advuser, limit) {
-	myUrl = '../modules/updatecontribution.mod.php?action=delete&advuser='+advuser+'&rid='+rid+'&id=';
+	myUrl = '../../utilities/updatecontribution.mod.php?action=delete&advuser='+advuser+'&rid='+rid+'&id=';
 	checkedItems(id, limit);
 	
 	if(j != 0 && j > 1)
-		rs = confirm('Est· seguro que desea eliminar estos comentarios?');
+		rs = confirm('EstÔøΩ seguro que desea eliminar estos comentarios?');
 	else if(j != 0)
-		rs = confirm('Est· seguro que desea eliminar este comentario?');
+		rs = confirm('EstÔøΩ seguro que desea eliminar este comentario?');
 	else
 		rs = false;
 	
@@ -118,13 +122,13 @@ function getCommentsBox() {
 
 //Aceptar comentarios
 function acceptComments(id, rid, limit) {
-	myUrl = '../modules/updatecontribution.mod.php?&action=accept&rid='+rid+'&id=';
+	myUrl = '../../utilities/updatecontribution.mod.php?&action=accept&rid='+rid+'&id=';
 	checkedItems(id, limit);
 	
 	if(j != 0 && j > 1)
-		rs = confirm('Est· seguro que desea publicar estos comentarios?');
+		rs = confirm('Est√° seguro que desea publicar estos comentarios?');
 	else if(j != 0)
-		rs = confirm('Est· seguro que desea publicar este comentario?');
+		rs = confirm('Est√° seguro que desea publicar este comentario?');
 	else
 		rs = false;
 	

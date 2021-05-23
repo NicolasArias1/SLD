@@ -22,7 +22,7 @@
         $varerror = $_GET['err'];
 
 	if($level == 1)
-		$usrHTML = "<li><a href=\"../admin/index.php\" class=\"ast3\">Administrar</a></li>";
+		$usrHTML = "<li><a href=\"../modules/admin/index.php\" class=\"ast3\">Administrar</a></li>";
 	else if($level == 2)
 		$usrHTML = "<li>Operar</li>";
 ?>
@@ -31,7 +31,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 	<title>Sistema de Laboratorios a Distancia : : Inicio</title>
-  <link href="../styles.css" rel="stylesheet" type="text/css" />
+  <link href="../css/styles.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -54,10 +54,10 @@
 			<div id="nav_l"></div>
 			<div id="nav_c">
 				<ul>
-					<li><a href="../user/index.php">Inicio</a></li>
-					<li><a href="../user/theory.php">Teor&iacute;a</a></li>
-					<li><a href="../user/practices.php">Pr&aacute;cticas</a></li>
-					<li><a href="../user/platform.php">Plataforma</a></li>					
+					<li><a href="../modules/user/index.php">Inicio</a></li>
+					<li><a href="../modules/user/theory.php">Teoría</a></li>
+					<li><a href="../modules/user/practices.php">Prácticas</a></li>
+					<li><a href="../modules/user/platform.php ">Plataforma</a></li>					
 				</ul>
 			</div>
 			<div id="nav_r"></div>
@@ -70,15 +70,15 @@
 					<ul>
 						<li><?php echo $name; ?></li>
 						<?php echo $usrHTML; ?>
-						<li><a href="../logout.php" class="ast3">Logout</a></li>
+						<li><a href="../logout.php class="ast3">Logout</a></li>
 					</ul>
-					<h1 class="content_l_hst1">Navegaci&oacute;n</h1>
+					<h1 class="content_l_hst1">Navegación</h1>
 					<ul>
-						<li><a href="../user/index.php" class="ast3">Inicio</a></li>
-						<li><a href="../user/theory.php" class="ast3">Teoria</a></li>
-						<li><a href="../user/practices.php" class="ast3">Pr&aacute;cticas</a></li>
-						<li><a href="../user/platform.php" class="ast3">Plataforma</a></li>
-						<li><a href="../user/mypractices.php" class="ast3">Mis Pr&aacute;cticas</a></li>
+						<li><a href="../modules/user/index.php " class="ast3">Inicio</a></li>
+						<li><a href="../modules/user/theory.php" class="ast3">Teoria</a></li>
+						<li><a href="../modules/user/practices.php" class="ast3">Pr&aacute;cticas</a></li>
+						<li><a href="../modules/user/platform.php" class="ast3">Plataforma</a></li>
+						<li><a href="../modules/user/mypractices.php" class="ast3">Mis Pr&aacute;cticas</a></li>
 					</ul>
 				</div>
 				<div id="content_l_b"></div>
@@ -93,7 +93,7 @@
 				?>             
 			</div>
 			<div align="center">
-			   <p><a href="javascript:history.back()"><img name="Atras_r2_c2" src="../../Errors/images/Atras_r2_c2.jpg" width="71" height="21" border="0"></a>
+			   <p><a href="javascript:history.back()"><img name="Atras_r2_c2" src="../errors/images/Atras_r2_c2.jpg" width="71" height="21" border="0"></a>
 			</div>			
 		</div>
 		<div class="blank"></div>
