@@ -39,7 +39,7 @@ $regpath = "";
 
 set_time_limit(0);
 
-$wsdl = "http://192.168.1.128/modules/WebServices/Servidor.php?wsdl"; //el nombre delo archivo anterior
+$wsdl = "http://192.168.0.11/modules/WebServices/Servidor.php?wsdl"; //el nombre delo archivo anterior
 $client = new nusoap_client($wsdl, 'wsdl');
 
 $err = $client->getError();
@@ -83,7 +83,7 @@ $date = date("dmyHis");
 
 $pfolder = $pname . $date;
 
-$resurl = "http://192.168.1.128/modules/results/" . $uid . "/" . $pfolder;
+$resurl = "http://192.168.0.11/modules/results/" . $uid . "/" . $pfolder;
 
 $rfolder1 = dirname(dirname(__FILE__)) . "/results";
 $rfolder2 = dirname(dirname(__FILE__)) . "/results/" . $uid;
