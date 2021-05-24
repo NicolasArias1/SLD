@@ -47,7 +47,7 @@ function calcIVA ( $monto ) {
 
 	return $ip;
 }
-$ns="http://192.168.1.128/modules/WebServices";
+$ns="http://192.168.0.11/modules/WebServices";
 $server->configurewsdl('ApplicationServices',$ns);
 $server->wsdl->schematargetnamespace=$ns;
 $server->register('calcIVA',
