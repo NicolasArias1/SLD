@@ -1,11 +1,11 @@
 <?php
 /************************************************************
-Escrito por: Yidier Rodríguez Perez de Alejo.
-Año: 2005
-Descripción: Clases que se utilizan para construir las consultas
+Escrito por: Yidier Rodrï¿½guez Perez de Alejo.
+Aï¿½o: 2005
+Descripciï¿½n: Clases que se utilizan para construir las consultas
 						de busqueda en la base de datos de Cronos, asi como el 
 						procesamiento de los resultados obtenidos, 
-						con su correspondiente paginación.
+						con su correspondiente paginaciï¿½n.
 ************************************************************/
 
 class Search {
@@ -158,7 +158,7 @@ class Search {
 			$abstract = "abstract LIKE '%$this->keywords%' ";
 			for ($i=0; $i < $this->nwords; $i++) {
 		  	$ncharacters = strlen($this->words[$i]);
-		  	if($ncharacters > 1){  //más de un caracter
+		  	if($ncharacters > 1){  //mï¿½s de un caracter
 		  		if(($ncharacters == 2) || ($ncharacters == 3)) {  //para 2 o 3 caracteres
 		  			$title .= "OR title = '".$this->words[$i]."' ";
 		  			$topic .= "OR topic = '".$this->words[$i]."' ";
@@ -196,7 +196,7 @@ class Search {
 			$condition = "$field LIKE '%$this->keywords%' ";
 			for ($i=0; $i < $this->nwords; $i++) {
 		  	$ncharacters = strlen($this->words[$i]);
-		  	if($ncharacters > 1){  //más de un caracter
+		  	if($ncharacters > 1){  //mï¿½s de un caracter
 		  		if(($ncharacters == 2) || ($ncharacters == 3)) {  //para 2 o 3 caracteres
 		  			$condition .= "OR $field = '".$this->words[$i]."' ";
 		  		}//end if
@@ -287,9 +287,9 @@ class Search {
 		
 		ob_start();
 		if($this->user)			
-			include('../html/user_search_results.htm');
+			include('../../prints/user_search_results.php'); //No va
 		else
-			include('html/search_results.htm');
+			include('../../prints/search_results.php'); //No va
 		$searchHTML = ob_get_contents();
 		ob_end_clean();
 		
@@ -303,7 +303,7 @@ class Search {
 		$this->pageIn();
 		
 		ob_start();
-		include('../html/user_mydirectory.htm');
+		include('../../prints/user_mydirectory.php'); //No va
 		$mydirHTML = ob_get_contents();
 		ob_end_clean();
 		
@@ -432,9 +432,9 @@ function schPconfig($pid) {
 		
 		ob_start();
 		if($this->body == 'revisadas' || $this->body == 'revisar' || $this->body == 'realizadas')
-			include('../html/administrator_practices.htm');
+			include('../../prints/administrator_practices.php'); 
 		else if($this->body == 'mypractices' || $this->body == 'mprevisadas' || $this->body == 'mprevisar')
-			include('../html/user_mypractices.htm');
+			include('../../prints/user_mypractices.php'); 
 		
 		$schHTML = ob_get_contents();
 		ob_end_clean();
@@ -461,10 +461,10 @@ function schPconfig($pid) {
 				}//end for
 			}//end if
 			
-			include('../html/administrator_directories.htm');
+			include('../../prints/administrator_directories.php'); //No va
 		}//end if
 		else
-			include('../html/administrator_users.htm');
+			include('../../prints/administrator_users.php');
 		
 		$usrHTML = ob_get_contents();
 		ob_end_clean();
@@ -491,10 +491,10 @@ function showConfigp() {
 				}//end for
 			}//end if
 			
-			include('../html/administrator_directories.htm');
+			include('../../prints/administrator_directories.php'); //No va
 		}//end if
 		else
-			include('../html/config_practices.htm');
+			include('../../prints/config_practices.php'); 
 		
 		$usrHTML = ob_get_contents();
 		ob_end_clean();
@@ -508,7 +508,7 @@ function showConfigp() {
 		$this->pageIn();
 		
 		ob_start();
-		include('../html/administrator_contacts.htm');
+		include('../../prints/administrator_contacts.php'); //No va
 		$usrHTML = ob_get_contents();
 		ob_end_clean();
 		
@@ -521,31 +521,14 @@ function showConfigp() {
 		$this->pageIn();
 		
 		ob_start();
-		include('../html/administrator_logs.htm');
+		include('../../prints/administrator_logs.php'); //No va
 		$usrHTML = ob_get_contents();
 		ob_end_clean();
 		
 		return $usrHTML;
 	}//end function
 	
-	function showContributions() {
-		if($this->keywords)
-			$this->message .= "<br /><strong>Resultados de la B&uacute;squeda:</strong>";
-		
-		$this->message .= " ".$this->parameters[0]." - ".$this->parameters[1]." de ".$this->nresults." elemento(s) encontrado(s).";
-		$this->pageIn();
-		
-		ob_start();
-		if($this->body == "resources" || $this->body == "commented" || $this->body == "valued")
-			include('../html/contribution_resources.htm');
-		else if($this->body == "suggestions")
-			include('../html/contribution_suggestions.htm');
-		$schHTML = ob_get_contents();
-		ob_end_clean();
-		
-		return $schHTML;
-	}//end function
-	
+
 	function showGroups() {
 		$this->message .= " ".$this->parameters[0]." - ".$this->parameters[1]." de ".$this->nresults." elemento(s) encontrado(s).";			
 		$this->pageIn();
@@ -562,7 +545,7 @@ function showConfigp() {
 		}//end if
 		
 		ob_start();
-		include('../html/administrator_groups.htm');
+		include('../../prints/administrator_groups.php');
 		$usrHTML = ob_get_contents();
 		echo $usrHTML;
 		ob_end_clean();

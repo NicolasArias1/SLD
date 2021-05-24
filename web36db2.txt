@@ -242,12 +242,12 @@ CREATE TABLE `sld_practices_data` (
 --
 
 INSERT INTO `sld_practices_data` (`id`, `sid`, `pname`, `pcname`, `categoria`, `path`, `stpath`, `purl`, `nfiles`, `type`, `visibilidad`) VALUES
-(40, '1', 'm_CS_IDr', 'Identificaci&oacute;n por respuesta al paso', 'Pr&aacute;cticas con el servomecanismo', 'C:\\SLD\\SLDStation\\practicas\\CS_IDr', 'SLDStation/practicas/CS_IDr/out/', '', 0, 'real', 'visible'),
-(41, '1', 'm_CS_FILr', 'Ajuste de filtro (con video)', 'Pr&aacute;cticas con el servomecanismo', 'C:\\SLD\\SLDStation\\practicas\\CS_FILr', 'SLDStation/practicas/CS_FILr/out/', '', 0, 'real', 'visible'),
-(45, '1', 'm_CS_PV2SPr', 'Control PV Cascada (SP: step & jtraj)', 'Pr&aacute;cticas con el servomecanismo', 'C:\\SLD\\SLDStation\\practicas\\CS_PV2SPr', 'SLDStation/practicas/CS_PV2SPr/out/', '', 0, 'real', 'visible'),
-(46, '1', 'm_CS_Cr', 'Control de posici&oacute;n y velocidad con controlador definido por el usuario', 'Pr&aacute;cticas con el servomecanismo', 'C:\\SLD\\SLDStation\\practicas\\CS_Cr', 'SLDStation/practicas/CS_Cr/out/', '', 0, 'real', 'visible'),
-(43, '1', 'm_CS_PIDVr', 'Control de velocidad con PID real y Filtro', 'Pr&aacute;cticas con el servomecanismo', 'C:\\SLD\\SLDStation\\practicas\\CS_PIDVr', 'SLDStation/practicas/CS_PIDVr/out/', '', 0, 'real', 'visible'),
-(44, '1', 'm_CS_PIDPr', 'Control de posici&oacute;n con PID real y Filtro', 'Pr&aacute;cticas con el servomecanismo', 'C:\\SLD\\SLDStation\\practicas\\CS_PIDPr', 'SLDStation/practicas/CS_PIDPr/out/', '', 0, 'real', 'visible');
+(40, '1', 'm_CS_IDr', 'Identificaci&oacute;n por respuesta al paso', 'Pr&aacute;cticas con el servomecanismo', 'C:\\SLD\\modules\\SLDStation\\practicas\\CS_IDr', 'modules/SLDStation/practicas/CS_IDr/out/', '', 0, 'real', 'visible'),
+(41, '1', 'm_CS_FILr', 'Ajuste de filtro (con video)', 'Pr&aacute;cticas con el servomecanismo', 'C:\\SLD\\modules\\SLDStation\\practicas\\CS_FILr', 'modules/SLDStation/practicas/CS_FILr/out/', '', 0, 'real', 'visible'),
+(45, '1', 'm_CS_PV2SPr', 'Control PV Cascada (SP: step & jtraj)', 'Pr&aacute;cticas con el servomecanismo', 'C:\\SLD\\modules\\SLDStation\\practicas\\CS_PV2SPr', 'modules/SLDStation/practicas/CS_PV2SPr/out/', '', 0, 'real', 'visible'),
+(46, '1', 'm_CS_Cr', 'Control de posici&oacute;n y velocidad con controlador definido por el usuario', 'Pr&aacute;cticas con el servomecanismo', 'C:\\SLD\\modules\\SLDStation\\practicas\\CS_Cr', 'modules/SLDStation/practicas/CS_Cr/out/', '', 0, 'real', 'visible'),
+(43, '1', 'm_CS_PIDVr', 'Control de velocidad con PID real y Filtro', 'Pr&aacute;cticas con el servomecanismo', 'C:\\SLD\\modules\\SLDStation\\practicas\\CS_PIDVr', 'modules/SLDStation/practicas/CS_PIDVr/out/', '', 0, 'real', 'visible'),
+(44, '1', 'm_CS_PIDPr', 'Control de posici&oacute;n con PID real y Filtro', 'Pr&aacute;cticas con el servomecanismo', 'C:\\SLD\\modules\\SLDStation\\practicas\\CS_PIDPr', 'modules/SLDStation/practicas/CS_PIDPr/out/', '', 0, 'real', 'visible');
 
 -- --------------------------------------------------------
 
@@ -310,7 +310,7 @@ CREATE TABLE `sld_users` (
 --
 
 INSERT INTO `sld_users` (`id`, `name`, `login`, `password`, `domain`, `mail`, `level`, `type`, `status`, `date`, `time`, `ip`, `rvalued`) VALUES
-(5, 'Ernesto Rubio', 'aerubio', '36da91eff498aedde118c4281cf34510', 'db', 'aerubio@ubiobio.cl', 3, 3, 'online', '2019-03-28', '15:44:45', NULL, NULL),
+(5, 'Ernesto Rubio', 'aerubio', '$2y$10$Km9aW5eES/RKHr4CUqspYuPm1RxifMAWT3awXure2x9HSX35bWMzC', 'db', 'aerubio@ubiobio.cl', 3, 3, 'online', '2019-03-28', '15:44:45', NULL, NULL),
 (6, 'ivan', 'ischingx', 'e860533f2f031a32691d32e343e01f3a', 'db', 'ching@uclv.edu.cu', 3, 3, 'outline', '2018-01-18', '14:19:25', NULL, NULL);
 
 -- --------------------------------------------------------

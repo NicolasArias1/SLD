@@ -1,6 +1,6 @@
 <?php
 	function Date_Time() {
-		$day_name = array("Domingo", "Lunes","Martes","Miercoles","Jueves","Viernes","Sábado");
+		$day_name = array("Domingo", "Lunes","Martes","Miercoles","Jueves","Viernes","SÃ¡bado");
 	  $month = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
 	  
 	  $num_day_week = date("w");
@@ -52,7 +52,7 @@
 	}//end function
 	
 	function Date_Det() {
-		$day_name = array("Domingo", "Lunes","Martes","Miercoles","Jueves","Viernes","Sábado");
+		$day_name = array("Domingo", "Lunes","Martes","Miercoles","Jueves","Viernes","Sï¿½bado");
 		
 		$num_day_week = date("w");
 		$day = date("j");
@@ -64,12 +64,12 @@
 	}//function
 	
 	function xmlspecialchars($string) {
-		$sparray = array('Ã±'=>'ñ',
-										 'Ã¡'=>'á',
-										 'Ã©'=>'é',
-										 'Ã­'=>'í',
-										 'Ã³'=>'ó',
-										 'Ãº'=>'ú');
+		$sparray = array('Ã±'=>'ï¿½',
+										 'Ã¡'=>'ï¿½',
+										 'Ã©'=>'ï¿½',
+										 'Ã­'=>'ï¿½',
+										 'Ã³'=>'ï¿½',
+										 'Ãº'=>'ï¿½');
 		
 		while($chars = each($sparray)) {
 			$string = str_replace($chars["key"], $chars["value"], $string);
@@ -78,18 +78,18 @@
 	}//function
 	
 	function tildes($string) {
-		$sparray = array('Á'=>'&Aacute;',
-										 'á'=>'&aacute;',
-										 'É'=>'&Eacute;',
-										 'é'=>'&eacute;',
-										 'Í'=>'&Iacute;',
-										 'í'=>'&iacute;',
-										 'Ó'=>'&Oacute;',
-										 'ó'=>'&oacute;',
-										 'Ú'=>'&Uacute;',
-										 'ú'=>'&uacute;',
-										 'Ñ'=>'&Ntilde;',
-										 'ñ'=>'&ntilde;');
+		$sparray = array('ï¿½'=>'&Aacute;',
+										 'ï¿½'=>'&aacute;',
+										 'ï¿½'=>'&Eacute;',
+										 'ï¿½'=>'&eacute;',
+										 'ï¿½'=>'&Iacute;',
+										 'ï¿½'=>'&iacute;',
+										 'ï¿½'=>'&Oacute;',
+										 'ï¿½'=>'&oacute;',
+										 'ï¿½'=>'&Uacute;',
+										 'ï¿½'=>'&uacute;',
+										 'ï¿½'=>'&Ntilde;',
+										 'ï¿½'=>'&ntilde;');
 		
 		while($chars = each($sparray)) {
 			$string = str_replace($chars['key'], $chars['value'], $string);
