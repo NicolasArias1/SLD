@@ -238,8 +238,7 @@ $in = str_replace("0", "*", $in);
 
 $param = array('monto' => $in,);
 
-print_r($param);
-print_r(die);
+
 //chequeo por error con el cliente
 $response = $client->call('calcIVA', $param);
 
