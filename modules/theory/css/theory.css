@@ -1,0 +1,13 @@
+.content_theory{
+  width:800px;
+  font-size:16px;
+}
+
+
+@media only screen and (max-width:480px) {
+    
+    .content_theory{
+        padding:20px;
+    }
+   
+}

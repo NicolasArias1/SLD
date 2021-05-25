@@ -1,0 +1,204 @@
+
+    a:hover {
+        color: white;
+        text-decoration: none;
+    }
+
+    body,
+    html {
+        height: 100%;
+        
+    }
+
+  
+
+
+    /*---------------------------------
+sidebar
+----------------------*/
+
+
+
+    .sidebar-brand {
+        font-weight: 600;
+        font-size: 1.15rem;
+        padding: 1.15rem 1.5rem;
+        display: block;
+        color: #f8f9fa;
+    }
+
+
+
+    .navbar-nav>li>a,
+    .submenu-box ul li a {
+        font-family: 'Roboto', sans-serif;
+        color: whitesmoke !important;
+        font-size: 14px;
+        padding: 10px 10px 10px 20px !important;
+        display: block;
+        font-weight: 400;
+        position: relative;
+        z-index: 2;
+        letter-spacing: .2px;
+    }
+
+
+    /*---------------------------------
+sidebar
+----------------------*/
+
+    #content3{
+  
+        display: flex;
+        align-items: center ;
+        justify-content: center ;
+    }
+
+    #content_r{
+        box-sizing: border-box;
+        padding:50px;
+      
+    }
+
+    .content_r_hst1{
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom:50px;
+        text-transform: uppercase;
+        color: #FF9900;
+        padding-bottom: 5px;
+    }
+
+    .content_r_sst1{
+        
+        font-size: 17px;
+        text-transform: none;
+        color: #003366;
+    }
+
+   
+
+    /*---------------------------------
+  main-content
+----------------------*/
+
+
+
+
+    #page-content-wrapper {
+        width: 100%;
+        transition: all 0.5s ease;
+    }
+   
+
+    @media only screen and (min-width:992px) {
+      
+        
+        .content{
+            padding: 0px !important;
+        }
+    }
+
+    /*---------------------------------
+  main-content
+----------------------*/
+
+
+
+    /*---------------------------------
+cross-bar animation
+----------------------*/
+
+    .btnLogout{
+        display:flex;
+        align-items: center;
+        background-color: #960101;
+        justify-content: center;
+        cursor: pointer;
+        padding:12px;
+        margin: 40px 40px;
+        border-radius: 3px;
+    }
+
+    .btnLogout:hover{
+        transition: .5s;
+        background-color: #ce0000;
+        color:#000;
+    }
+
+    .btnLogout span{
+        font-size: 13px;
+        font-weight: 700;
+        color: whitesmoke;
+    }
+
+    .btnLog{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        width:100%;
+        padding:8px;
+        border: 2px solid #FF9900;
+        background-color: #FF9900;
+        border-radius:3px;
+
+    }
+
+    .btnLog span{
+        font-weight: 700;
+        color:whitesmoke;
+    }
+
+   .nav-link span{
+        color:whitesmoke ;
+    }
+
+    .hov:hover{
+        color: #FF9900;
+        transition: .5s;
+    }
+
+
+
+    /*---------------------------------
+cross-bar animation
+----------------------*/
+
+
+
+    /*---------------------------------
+header navbar design
+----------------------*/
+    .my-navbar {
+        padding: 0px;
+        background-color: #222e3c;
+        box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .16);
+    }
+
+
+    .badge-counter {
+        position: absolute;
+        transform: scale(.7);
+        transform-origin: top right;
+        right: 6px;
+        margin-top: 4px;
+    }
+
+    .navbar-expand .navbar-nav .dropdown-menu {
+        position: absolute;
+    }
+
+    .navbar-nav .dropdown-menu {
+        box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, .05);
+    }
+
+    .navbar-nav .dropdown-menu {
+        position: static;
+        float: none;
+    }
+
+    .dropdown-menu-lg {
+        min-width: 20rem;
+    }
+
+
