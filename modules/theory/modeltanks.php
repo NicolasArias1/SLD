@@ -31,9 +31,10 @@
                     <div class="container-fluid px-lg-4 content_g ">
                         <div class="row">
                             <div id="content3" class="col-md-12 mt-lg-4 mt-4">
-      
-                                    <div class="content_theory">
-                                        <h1 class="content_r_hst1">Maqueta de tanques acoplados</h1>
+
+                                <div class="content_theory">
+                                    <h1 class="content_r_hst1">Maqueta de tanques acoplados</h1>
+                                    <div class="contentp">
                                         <p>La unidad de tanques acoplados consiste en cuatro tanques interconectados
                                             como se
                                             muestra en la
@@ -56,14 +57,20 @@
                                             estrategias
                                             de control.
                                         </p>
-                                        <img class="img-fluid rounded mx-auto d-block" src="../../img/couptanks.jpg" />
+                                    </div>
 
-                                        <h1 class="content_r_hst1"> <br />Modelo din&aacute;mico</h1>
+                                    <img class="img-fluid rounded mx-auto d-block" src="../../img/couptanks.jpg" />
+
+                                    <h1 class="content_r_hst1"> <br />Modelo din&aacute;mico</h1>
+
+                                    <div class="contentp">
+
                                         <p>Configurando el sistema para que quede como dos tanques en cascada (válvulas
                                             MVB,
                                             MV1 y MV2:
                                             abiertas, el resto cerradas), el proceso a modelar sería el siguiente:</p>
-                                        <img class="img-fluid rounded mx-auto d-block" src="../../img/tankscascada.jpg" />
+                                        <img class="img-fluid rounded mx-auto d-block"
+                                            src="../../img/tankscascada.jpg" />
 
                                         <p> Donde h1(t) y h2(t) son el nivel en cada tanque [cm], u(t) el voltaje
                                             aplicado a
@@ -74,8 +81,13 @@
                                             sección transversal de los tanques y las tuberías respectivamente [cm^2] y g
                                             la
                                             aceleración de la gravedad [cm/s^2]</p>
+                                    </div>
 
-                                        <h1 class="content_r_hst1"> <br />Modelo No lineal</h1>
+
+                                    <h1 class="content_r_hst1"> <br />Modelo No lineal</h1>
+
+
+                                    <div class="contentp">
 
                                         <p>De acuerdo con el diagrama presentado, las ecuaciones del modelo no lineal
                                             son
@@ -96,8 +108,13 @@
                                             tuber&iacute;a, el
                                             tipo de fluido y la aceleraci&oacute;n de la gravedad:</p>
                                         <img class="img-fluid rounded mx-auto d-block" src="../../img/eqk.jpg" />
+                                    </div>
 
-                                        <h1 class="content_r_hst1"> <br />Modelo Lineal</h1>
+
+
+                                    <h1 class="content_r_hst1"> <br />Modelo Lineal</h1>
+
+                                    <div class="contentp">
 
                                         <p>Para determinar la funci&oacute;n de transferencia de este sistema es
                                             necesario
@@ -127,8 +144,14 @@
 
                                         <p>En bloques, este modelo queda de la siguiente forma:</p>
                                         <img class="img-fluid rounded mx-auto d-block" src="../../img/diagblk.jpg" />
+                                    </div>
 
-                                        <h1 class="content_r_hst1"> <br />Identificación experimental</h1>
+
+
+                                    <h1 class="content_r_hst1"> <br />Identificación experimental</h1>
+
+                                    <div class="contentp">
+
                                         <p>A continuación se muestra la respuesta temporal del sistema en lazo abierto,
                                             ante
                                             una entrada
@@ -148,15 +171,19 @@
                                         <p>Descargar datos de identificación.<a
                                                 href="../../../download/downloadidentnivel.php?path=../../../download/&file=datanivel.mat"><img
                                                     src="../../../img/download.gif" vspace="2"
-                                                    alt="Descargar Modelo de Simulink enviado" border="0" /></p>
+                                                    alt="Descargar Modelo de Simulink enviado" /></p>
 
-                                        <img class="img-fluid rounded mx-auto d-block" src="../../img/codidentnivel.jpg" />
-                                        <img class="img-fluid rounded mx-auto d-block" src="../../img/grafidentnivel.jpg" />
-
-
-
-
+                                        <img class="img-fluid rounded mx-auto d-block"
+                                            src="../../img/codidentnivel.jpg" />
+                                        <img class="img-fluid rounded mx-auto d-block"
+                                            src="../../img/grafidentnivel.jpg" />
                                     </div>
+
+
+
+
+
+                                </div>
 
 
                             </div>

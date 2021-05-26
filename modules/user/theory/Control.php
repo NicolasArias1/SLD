@@ -89,7 +89,7 @@
 			</div>
 			<div id="content_r">
 				<h1 class="content_r_hst1">Implementaci&oacute;n de controlador digital</h1>
-				<h2 class="content_r_hst1">1.1	Controlador PID en Tiempo Continuo.</h2>
+				<h2 class="content_r_hst2">1.1	Controlador PID en Tiempo Continuo.</h2>
 				<p>El control de sistemas f&iacute;sicos, qu&iacute;micos, el&eacute;ctricos y electr&oacute;nicos es muy importante en la industria, la medicina, transporte, comunicaci&oacute;n, donde cada vez el control digital va tomando m&aacute;s &eacute;nfasis.</p>
 				<p> Herramientas computacionales como Matlab, Matlab Simulink y Octave permiten el an&aacute;lisis de los sistemas antes descritos, y hacen de la sintonizaci&oacute;n mucho m&aacute;s c&oacute;moda.</p>
 				<p>Un controlador PID descrito en tiempo continuo y en funci&oacute;n de las ganancias de la acci&oacute;n proporcional, integral y derivativa de la forma </p>

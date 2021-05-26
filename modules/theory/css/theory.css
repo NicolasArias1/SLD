@@ -1,13 +1,109 @@
+/* Contenido general */
 .content_theory{
   width:800px;
-  font-size:16px;
+  margin-top:30px;
+}
+
+.content_theory .content_r_hst1{
+  font-size:24px;
+  font-weight: 900;
+}
+
+.content_theory .content_r_hst2{
+  font-size:20px;
+  text-transform: uppercase;
+  color: #003366;
+  font-weight: 900;
+}
+
+.content_theory .content_r_hst3{
+  font-size:17px;
+  text-transform: uppercase;
+  color: #004285;
+  font-weight: 700;
+}
+
+.contentp{
+  font-size:14px;
+  text-align: justify;
+  margin:30px 0px;
 }
 
 
-@media only screen and (max-width:480px) {
+/* Extras para motorcd */
+.linehr{
+  margin:0;
+  margin-bottom: 20px;
+}
+
+.title_simbology{
+  padding:0;
+  color:#999999;
+  font-weight: 700;
+  font-size: 15px;
+  text-transform: uppercase;
+
+}
+
+.content_simbo_p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+ 
+}
+
+.content_simbo_motorcd {
+  font-size: 14px;
+  color:#999999;
+  border: 3px solid #e6e6e6;
+  border-radius:5px;
+  width: 300px;
+  padding:20px;
+  margin: 20px 0px;
+}
+
+.content_simbo_pddesac1 {
+  font-size: 14px;
+  color:#999999;
+  border: 3px solid #e6e6e6;
+  border-radius:5px;
+  width: 450px;
+  padding:20px;
+  margin: 20px 0px;
+}
+
+.content_simbo_pddesac2 {
+  font-size: 14px;
+  color:#999999;
+  border: 3px solid #e6e6e6;
+  border-radius:5px;
+  width: 250px;
+  padding:20px;
+  margin: 20px 0px;
+}
+
+.mbotom{
+  margin-bottom:20px;
+}
+
+
+@media only screen and (max-width:600px) {
     
+  
+  .content_simbo_pddesac1 {
+    font-size: 14px;
+    color:#999999;
+    border: 3px solid #e6e6e6;
+    border-radius:5px;
+    width: 300px;
+    padding:20px;
+    margin: 20px 0px;
+  }
+  
+  
     .content_theory{
-        padding:20px;
+        padding:30px;
     }
    
 }

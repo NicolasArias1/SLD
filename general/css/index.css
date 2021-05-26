@@ -1,8 +1,4 @@
-
-    a:hover {
-        color: white;
-        text-decoration: none;
-    }
+ 
 
     body,
     html {
@@ -48,20 +44,22 @@ sidebar
 ----------------------*/
 
     #content3{
-  
+     
         display: flex;
         align-items: center ;
         justify-content: center ;
+
     }
 
     #content_r{
+        margin-top:50px;
         box-sizing: border-box;
-        padding:50px;
-      
+        width: 800px;
+        
     }
 
     .content_r_hst1{
-        font-size: 20px;
+        font-size: 26px;
         font-weight: 700;
         margin-bottom:50px;
         text-transform: uppercase;
@@ -71,9 +69,15 @@ sidebar
 
     .content_r_sst1{
         
-        font-size: 17px;
+        font-size: 18px;
         text-transform: none;
         color: #003366;
+    }
+
+    .content_r_hst3{
+        font-size:15px;
+        text-align: justify;
+        margin:30px 0px;
     }
 
    
@@ -91,11 +95,11 @@ sidebar
     }
    
 
-    @media only screen and (min-width:992px) {
+    @media only screen and (max-width:600px) {
       
         
-        .content{
-            padding: 0px !important;
+        #content_r{
+            padding: 30px;
         }
     }
 
@@ -126,12 +130,6 @@ cross-bar animation
         color:#000;
     }
 
-    .btnLogout span{
-        font-size: 13px;
-        font-weight: 700;
-        color: whitesmoke;
-    }
-
     .btnLog{
         display:flex;
         align-items: center;
@@ -145,14 +143,25 @@ cross-bar animation
     }
 
     .btnLog span{
+        font-size: 13px;
         font-weight: 700;
         color:whitesmoke;
     }
+
 
    .nav-link span{
         color:whitesmoke ;
     }
 
+    #btnLogin span{
+        color:black;
+    }
+
+    #btnLogin:hover{
+        background-color: #b46c00;
+        border-color: #b46c00;
+        transition: .3s;
+    }
     .hov:hover{
         color: #FF9900;
         transition: .5s;

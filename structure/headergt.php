@@ -4,7 +4,7 @@
 
 
     <div class="navbar-nav ml-auto">
-        <a class="sidebar-brand" href="../index.php">
+        <a class="sidebar-brand" href="../../index.php">
             <img src="/img/sld.png" style="margin-bottom:5px;" alt="">
         </a>
     </div>
@@ -43,7 +43,7 @@
         <!-- Nav Item - User Information -->
         <li class="nav-item dropdown">
             <a class="nav-link " href="/general/loging.php">
-                <div class="btnLog">
+                <div class="btnLog" id="btnLogin">
                     <span class="mr-2 d-none d-lg-inline small">Iniciar sesión</span>
                 </div>
 

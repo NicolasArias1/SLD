@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php require_once('css/libcss.php'); ?>
+
 </head>
+
 <body>
-<div id="wrapper">
+    <div id="wrapper">
         <!-- Page Content -->
         <div id="page-content-wrapper" class="toggled">
 
@@ -23,8 +26,7 @@
                     <div class="container-fluid px-lg-4 content_g ">
                         <div class="row">
                             <div id="content3" class="col-md-12 mt-lg-4 mt-4">
-
-                            <div id="content_r">
+                               <div id="content_r">
                                 <h1 class="content_r_hst1">Consideraciones te&oacute;ricas:</h1>
                                 <ol class="practices">
                                     <li class="practice"><a href="../modules/theory/modeltanks.php" class="ast1">Modelado del sistema de tanques acoplados</a></li>
@@ -55,5 +57,7 @@
     </div>
 </body>
 
-    <?php require_once('js/libjs.php'); ?>
+<?php require_once('js/libjs.php'); ?>
+
+
 </html>
