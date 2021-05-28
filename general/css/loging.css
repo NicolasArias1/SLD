@@ -3,7 +3,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width:100vw;
+    width:auto;
     height:93.2vh;
 }
 
@@ -102,4 +102,14 @@ form .btnlg:hover{
 
 .w400{
     width:400px;
+}
+
+
+@media only screen and (max-width:600px){
+    
+    .containerlg {
+     
+        width:auto;
+        
+    }
 }

@@ -1,14 +1,13 @@
 <!-- NavBar -->
 <nav class="navbar navbar-expand navbar-light my-navbar d-flex justify-content-between">
 
-    <div class="navbar-nav ml-auto">
+    <div class="navbar-nav ml-auto centra-head">
         <!-- Logo -->
-        <a class="navbar-brand" href="../../index.php">
-            <span class="fs-4 fw-bolder" style="color: orange;">SLD</span>
-            <span class="fs-4 fw-bolder" style="color: white;">WEB</span>
+        <a class="sidebar-brand" href="../../index.php">
+                <img src="../../img/sld.png" style="margin-bottom:5px;" alt="">
         </a>
 
-        <!-- Mobile menu -->
+        <!-- Mobile menu --> 
         <div class="d-sm-none">
             <!-- Hide on wider than sm-->
             <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">

@@ -426,5 +426,5 @@
 	</div>
 	<!-- /#wrapper -->
 </body>
-
+<?php require_once('js/libjs.php'); ?>
 </html>

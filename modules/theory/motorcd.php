@@ -18,7 +18,7 @@ include('../../inc/useful.fns.php');
        Page Content -->
 		<div id="page-content-wrapper" class="toggled">
 
-			<?php require_once('../../structure/mainHeader.php'); ?>
+		<?php require_once('../../structure/theoryHeader.php'); ?>
 
 			<div id="content">
 
@@ -131,4 +131,5 @@ include('../../inc/useful.fns.php');
 	<!-- /#wrapper -->
 </body>
 
+<?php require_once('js/libjs.php'); ?>
 </html>
