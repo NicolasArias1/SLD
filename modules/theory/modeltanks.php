@@ -19,7 +19,7 @@
        Page Content -->
         <div id="page-content-wrapper" class="toggled">
 
-            <?php require_once('../../structure/headergt.php'); ?>
+            <?php require_once('../../structure/theoryHeader.php'); ?>
 
             <div id="content">
 

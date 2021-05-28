@@ -18,7 +18,7 @@
        Page Content -->
         <div id="page-content-wrapper" class="toggled">
 
-            <?php require_once('structure/headerg.php'); ?>
+            <?php require_once('structure/mainHeader.php'); ?>
 
             <div id="content">
 
