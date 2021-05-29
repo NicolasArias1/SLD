@@ -35,8 +35,6 @@
         </div>
     </div>
 
-
-
     <div class="d-none d-sm-block">
         <!-- Hide on smaller than sm-->
         <div class="navbar-nav ml-auto">

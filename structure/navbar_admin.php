@@ -1,40 +1,29 @@
 <nav class="navbar navbar-expand navbar-light my-navbar d-flex justify-content-between">
 
     <!-- Sidebar Toggle (Topbar) -->
-    <div type="button" id="bar" class="nav-icon1 hamburger animated fadeInLeft is-closed" data-toggle="offcanvas">
+    <div type="button" id="bar" class="nav-icon1 hamburger animated fadeInLeft is-closed open" data-toggle="offcanvas">
         <span></span>
         <span></span>
         <span></span>
     </div>
+
+    <!-- Date -->
     <div class="navbar-nav ml-auto">
-
-
-        <!-- Nav Item - User Information -->
-        <li class="nav-item dropdown">
-            <a class="nav-link " href="#" id="fechat" role="button" data-toggle="dropdown">
-                <span class="mr-2 d-none d-lg-inline small"><?php echo Date_Time(); ?></span>
-            </a>
+        <li class="nav-item">
+            <span class="nav-link">
+                <span class="mr-2 d-none d-md-block small"><?php echo Date_Time(); ?></span>
+            </span>
         </li>
-
     </div>
 
-
-    <!-- Topbar Navbar -->
+    <!-- User name -->
     <ul class="navbar-nav ml-auto">
-
-
-        <!-- Nav Item - User Information -->
         <li class="nav-item dropdown">
-            <a class="nav-link " href="#" id="userDropdown" role="button" data-toggle="dropdown">
+            <a class="nav-link">
                 <div class="btnLog">
                     <span class="mr-2 d-lg-inline small"><b><?php echo $name; ?></b></span>
                 </div>
-
-
-
             </a>
         </li>
-
     </ul>
-
 </nav>

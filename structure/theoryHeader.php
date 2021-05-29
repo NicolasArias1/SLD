@@ -1,7 +1,7 @@
 <!-- NavBar -->
 <nav class="navbar navbar-expand navbar-light my-navbar d-flex justify-content-between">
-
     <div class="navbar-nav ml-auto centra-head">
+
         <!-- Logo -->
         <div class="navbar-nav ps-4">
             <a class="navbar-brand" href="../../index.php">
@@ -74,5 +74,4 @@
             </li>
         </ul>
     </div>
-
 </nav>
