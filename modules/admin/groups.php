@@ -85,6 +85,7 @@
 		case "profiles":
 			$btxt = "Perfiles de Usuarios";
 			$txtlog = "?body=profiles";
+			
 			break;
 		case "solicit":
 			$btxt = "Solicitudes de Usuarios";

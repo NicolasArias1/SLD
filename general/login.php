@@ -82,6 +82,9 @@ if ($method == 'POST') {
 
 					$uid = $results->Celd(0, 'id');
 
+
+					
+
 					$user->setUID($uid);
 					$user->setName($name);
 					$user->setLogin($login);
@@ -120,7 +123,7 @@ if ($method == 'POST') {
 					include('../utilities/setoutline.mod.php');
 					//include('modules/writelog.mod.php');
 				} //end else count
-
+			
 				if ($uid) {
 					$urfolder = dirname(__FILE__) . "/results/" . $uid;
 
@@ -131,7 +134,8 @@ if ($method == 'POST') {
 					} //end if
 
 					$_SESSION['user'] = serialize($user);
-
+				
+				
 					header('Location: ../modules/user/index.php');
 				} //end if
 				else

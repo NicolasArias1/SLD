@@ -1,6 +1,34 @@
 <?php
-	include('../../inc/useful.fns.php');
+	include('../../../inc/useful.fns.php');
+	include('../../../inc/user.class.php');
+	
+	session_start();
+	
+	$session = $_SESSION['user'];
+
+	if(empty($session)) {
+		header('Location: ../../../index.php');
+	}//end if
+	
+	$user = unserialize($session);
+	$uid = $user->getUID();
+	$name = $user->getName();
+	$login = $user->getLogin();
+	$mail = $user->getEMail();
+	$domain = $user->getDomain();
+	$level = $user->getPriority();
+	$_SESSION['user'] = serialize($user);
+	
+	if($level == 1)
+		$usrHTML = "<li><a href=\"../../admin/index.php\" class=\"ast3\">Administrar</a></li>";
+	else if($level == 2)
+		$usrHTML = "<li>Operar</li>";
+		else if($level == 3){
+			$usrHTML = "";
+		}
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,17 +37,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <?php require_once('../../general/css/libcss.php'); ?>
-    <link rel="stylesheet" href="css/theory.css">
+    <?php require_once('../css/libcss.php'); ?>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../../theory/css/theory.css">
+
 </head>
 
 <body>
     <div id="wrapper">
-        <!-- 
-       Page Content -->
-        <div id="page-content-wrapper" class="toggled">
 
-            <?php require_once('../../structure/theoryHeader.php'); ?>
+
+
+        <!-- Sidebar -->
+        <?php require_once('../../../structure/sidebar_admin.php') ?>
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper" class="toggled">
+            <!-- Topbar -->
+            <?php require_once('../../../structure/navbar_admin.php') ?>
+
 
             <div id="content">
 
@@ -59,7 +95,7 @@
                                         </p>
                                     </div>
 
-                                    <img class="img-fluid rounded mx-auto d-block" src="../../img/couptanks.jpg" />
+                                    <img class="img-fluid rounded mx-auto d-block" src="../../../../img/couptanks.jpg" />
 
                                     <h1 class="content_r_hst1"> <br />Modelo din&aacute;mico</h1>
 
@@ -70,7 +106,7 @@
                                             MV1 y MV2:
                                             abiertas, el resto cerradas), el proceso a modelar sería el siguiente:</p>
                                         <img class="img-fluid rounded mx-auto d-block"
-                                            src="../../img/tankscascada.jpg" />
+                                            src="../../../img/tankscascada.jpg" />
 
                                         <p> Donde h1(t) y h2(t) son el nivel en cada tanque [cm], u(t) el voltaje
                                             aplicado a
@@ -93,10 +129,10 @@
                                             son
                                             las siguientes:</p>
                                         <p>Para el estanque 1:</p>
-                                        <img class="img-fluid rounded mx-auto d-block" src="../../img/eqtank1.jpg" />
+                                        <img class="img-fluid rounded mx-auto d-block" src="../../../img/eqtank1.jpg" />
 
                                         <p>Para el estanque 2:</p>
-                                        <img class="img-fluid rounded mx-auto d-block" src="../../img/eqtank2.jpg" />
+                                        <img class="img-fluid rounded mx-auto d-block" src="../../../img/eqtank2.jpg" />
 
                                         <p>Las ecuaciones (1) y (2) constituyen un modelo no lineal de este sistema. En
                                             ellas k1 y k2 son las
@@ -107,7 +143,7 @@
                                             de la
                                             tuber&iacute;a, el
                                             tipo de fluido y la aceleraci&oacute;n de la gravedad:</p>
-                                        <img class="img-fluid rounded mx-auto d-block" src="../../img/eqk.jpg" />
+                                        <img class="img-fluid rounded mx-auto d-block" src="../../../img/eqk.jpg" />
                                     </div>
 
 
@@ -124,26 +160,26 @@
                                             (2) y evaluando
                                             para un voltaje constante en la bomba uo, se obtienen los puntos de
                                             operaci&oacute;n h1o y h2o:</p>
-                                        <img class="img-fluid rounded mx-auto d-block" src="../../img/eqh.jpg" />
+                                        <img class="img-fluid rounded mx-auto d-block" src="../../../img/eqh.jpg" />
 
                                         <p>Para peque&ntilde;as variaciones alrededor del punto de operaci&oacute;n se
                                             obtiene:</p>
-                                        <img class="img-fluid rounded mx-auto d-block" src="../../img/eqF.jpg" />
+                                        <img class="img-fluid rounded mx-auto d-block" src="../../../img/eqF.jpg" />
 
                                         <p>Poniendo en t&eacute;rminos de variaciones las ecuaciones (1) y (2) y
                                             utilizando
                                             la ecuaci&oacute;n
                                             (5) seg&uacute;n corresponda, se obtiene:</p>
-                                        <img class="img-fluid rounded mx-auto d-block" src="../../img/eqdeltah.jpg" />
+                                        <img class="img-fluid rounded mx-auto d-block" src="../../../img/eqdeltah.jpg" />
 
                                         <p>Aplicando Transformada de Laplace en (6) se obtiene:</p>
-                                        <img class="img-fluid rounded mx-auto d-block" src="../../img/eqmodh1.jpg" />
+                                        <img class="img-fluid rounded mx-auto d-block" src="../../../img/eqmodh1.jpg" />
 
                                         <p>Aplicando Transformada de Laplace en (7) seobtiene:</p>
-                                        <img class="img-fluid rounded mx-auto d-block" src="../../img/eqmodh2.jpg" />
+                                        <img class="img-fluid rounded mx-auto d-block" src="../../../img/eqmodh2.jpg" />
 
                                         <p>En bloques, este modelo queda de la siguiente forma:</p>
-                                        <img class="img-fluid rounded mx-auto d-block" src="../../img/diagblk.jpg" />
+                                        <img class="img-fluid rounded mx-auto d-block" src="../../../img/diagblk.jpg" />
                                     </div>
 
 
@@ -170,13 +206,13 @@
                                             código para Matlab que se muestra:</p>
                                         <p>Descargar datos de identificación.<a
                                                 href="../../../download/downloadidentnivel.php?path=../../../download/&file=datanivel.mat"><img
-                                                    src="../../../img/download.gif" vspace="2"
+                                                    src="../../../../img/download.gif" vspace="2"
                                                     alt="Descargar Modelo de Simulink enviado" /></p>
 
                                         <img class="img-fluid rounded mx-auto d-block"
-                                            src="../../img/codidentnivel.jpg" />
+                                            src="../../../img/codidentnivel.jpg" />
                                         <img class="img-fluid rounded mx-auto d-block"
-                                            src="../../img/grafidentnivel.jpg" />
+                                            src="../../../img/grafidentnivel.jpg" />
                                     </div>
 
 
@@ -202,8 +238,9 @@
         <!-- /#page-content-wrapper -->
 
     </div>
-    <!-- /#wrapper -->
 </body>
-<?php require_once('js/libjs.php'); ?>
-<script src="js/general.js"></script>
+
+<?php require_once('../js/libjs.php'); ?>
+<script src="../js/index.js"></script>
+
 </html>

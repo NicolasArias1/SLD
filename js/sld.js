@@ -10,16 +10,16 @@ var xmlHttp = getXMLHTTPRequest();
 
 //Crear el objeto XMLHttpRequest
 function getXMLHTTPRequest() {
-	//Almacenará la referencia al objeto XMLHttpRequest
+	//Almacenarï¿½ la referencia al objeto XMLHttpRequest
   var xmlHttp;
   
-  //Esto debe funcionar para todos los navegadores excepto IE6 y más antiguos
+  //Esto debe funcionar para todos los navegadores excepto IE6 y mï¿½s antiguos
   try {
     //Intenta crear el objeto XMLHttpRequest
     xmlHttp = new XMLHttpRequest();
   }//end try
   catch(e) {
-    //Asume IE6 o más antiguo
+    //Asume IE6 o mï¿½s antiguo
     var XmlHttpVersions = new Array("MSXML2.XMLHTTP.6.0",
                                     "MSXML2.XMLHTTP.5.0",
                                     "MSXML2.XMLHTTP.4.0",
@@ -52,13 +52,13 @@ function execute(ptype) {
 }//end function
 
 function nonexecute() {
-	alert('Para poder ejecutar las prácticas tiene que autentificarse primero');
+	alert('Para poder ejecutar las prï¿½cticas tiene que autentificarse primero');
 }//end function
 
-//Crear cadena de IDs en la URL a partir de la selección de los usuarios
+//Crear cadena de IDs en la URL a partir de la selecciï¿½n de los usuarios
 function checkedItems(id, limit) {
-	if(id == '*') { //Selección multiple
-		//Verificando selección
+	if(id == '*') { //Selecciï¿½n multiple
+		//Verificando selecciï¿½n
 		i=1;
 		while(i <= limit) {
 			if(document.getElementById(i) && document.getElementById(i).checked == true) {
@@ -68,7 +68,7 @@ function checkedItems(id, limit) {
 			i=i+1;
 		}//end while
 		
-		//Creando URL a partir de la selección
+		//Creando URL a partir de la selecciï¿½n
 		i=0;
 		while(i < j) {
 			myUrl += ids[i];
@@ -78,13 +78,13 @@ function checkedItems(id, limit) {
 		}//end while
 		myUrl += '&rand='+myRand;
 	}//end if
-	else { //Selección única
+	else { //Selecciï¿½n ï¿½nica
 		j = 1;
 		myUrl += id+'&rand='+myRand;
 	}//end else	
 }//end function
 
-//Cargar la página después de procesar datos en el servidor
+//Cargar la pï¿½gina despuï¿½s de procesar datos en el servidor
 function reloadPage() {
 	if(xmlHttp.readyState == 4) {
 		if(xmlHttp.status == 200) {
@@ -207,7 +207,7 @@ function saveComment() {
 	if((document.getElementById('comment_txt').value != ''))
 		document.getElementById('comment_form').submit();
   else
-  	alert('No se puede realizar la operación:\nVerifique sus datos, hay campos vacíos.');
+  	alert('No se puede realizar la operaciï¿½n:\nVerifique sus datos, hay campos vacï¿½os.');
 }//end function
 
 function newComment() {

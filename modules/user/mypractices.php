@@ -33,7 +33,7 @@
 	$type = isset($_GET['type']);
 	$alert = isset($_GET['alert']);
 	$res = isset($_GET['res']);
-	
+	print_r($resHTML);
 	if($level == 1)
 		$usrHTML = "<li><a href=\"../admin/index.php\" class=\"ast3\">Administrar</a></li>";
 	else if($level == 2)
@@ -142,8 +142,9 @@
 				<div id="content_l_b"></div>
 			</div>
 			<div id="content_r">
-				<?php if(!$res) {?><h1 class="content_r_hst1"><?php echo $btxt; ?></h1><?php } ?>				
+				<?php  if(!$res) {?><h1 class="content_r_hst1"><?php echo $btxt; ?></h1><?php } ?>				
 				<div id="results_box">				
+				
 					<?php echo $resHTML; ?>					
 				</div>
 			</div>

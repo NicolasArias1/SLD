@@ -6,9 +6,7 @@
 	include('../../inc/sch.class.php');
 	include('../../inc/useful.fns.php');
 	include('../../inc/user.class.php');
-	
 	session_start();
-	
 	$session = $_SESSION['user'];
 
 	if(empty($session)) {
@@ -32,6 +30,7 @@
 	$show = '';
 	$type = '';
 	
+	
 	if($level > 1) {
 		if($level == 2)
 			header('Location: ../operator/index.php');
@@ -51,7 +50,7 @@
 	if (isset($_GET['type'])){ $type = $_GET['type']; }
 	
 
-		
+
 	$usrHTML = "<li><a href=\"../user/index.php\" class=\"ast3\">Usar</a></li>";
 	
 	if($name == '')
@@ -94,6 +93,7 @@
 		case "profiles":
 			$btxt = "Perfiles de Usuarios";
 			$txtlog = "?body=profiles";
+			
 			break;
 		case "solicit":
 			$btxt = "Solicitudes de Usuarios";
@@ -117,129 +117,85 @@
 	
 	include('../../utilities/users.mod.php');
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+
+<!doctype html>
+<html lang="en">
+
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-	<title>Sistema de Laboratorios a Distancia : : Administraci&oacute;n : : Usuarios</title>
-	<link href="../../css/styles.css" rel="stylesheet" type="text/css" />
-  	<link rel="shortcut icon" href="../../img/aicon.gif" />
-	<script language="JavaScript" src="../../js/sld.js" type="text/javascript"></script>
-	<script language="JavaScript" src="../../js/osld.js" type="text/javascript"></script>
-	<script language="JavaScript" src="../../js/asld.js" type="text/javascript"></script>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<?php require_once('css/libcss.php') ?>
+	<link rel="stylesheet" href="css/index.css">
 </head>
 
-<body<?php if($body == 'new' || $body == 'edit') { ?> onLoad="usersLevel('<?php echo $usrdata['level']; ?>')"<?php }//end if ?>>
-	<div id="page">
-		<div id="header">
-			<div id="header_t">
-				<div id="header_t_l"><img src="../../img/logo.png" border="0" /></div>
-				<div id="header_t_r"><?php echo Date_Time(); ?></div>
-			</div>
-			<div id="header_b">
-				<div id="header_l"></div>
-				<div id="header_c">
-					<h1 class="logo">SLD<span class="w_txt">WEB</span></h1>
-					<h4 class="txt">Sistema de Laboratorios a Distancia</h4>
-				</div>
-				<div id="header_r"></div>
-			</div>
+
+<body <?php if($body == 'new' || $body == 'edit') { ?> onLoad="usersLevel('<?php echo $usrdata['level']; ?>')"
+	<?php }?>>
+
+
+	<div id="wrapper">
+		<div class="overlay"></div>
+
+		<!-- Sidebar -->
+		<?php require_once('../../structure/sidebar_admin.php') ?>
+
+		<div id="page-content-wrapper" class="toggled">
+
+			<!-- Topbar -->
+			<?php require_once('../../structure/navbar_admin.php') ?>
+
+
+			<!-- Begin Page Content -->
+			<div class="container-fluid px-lg-4 content_g ">
+                        <div class="row" style="text-align:center;justify-content:center;align-items:center;">
+                             <div id="content3" style="width:700px;" class="col-md-12 mt-lg-4 mt-4">
+
+                                <div id="content_r">
+
+
+                                    <div class="content_r_hst3">
+									<?php if($alert) {  ?>
+									<p class="alert alert-secondary" role="alert"><?php echo $atxt; ?></p>
+								<?php }  ?>
+								<br>
+
+								<h1 class="content_r_hst1"><?php echo $btxt; ?></h1>
+								<br>
+								<div id="results_box">
+									<?php  echo $resHTML; ?>
+								</div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+
+                    </div>
+                    <!-- /.container-fluid -->
+
 		</div>
-		<div id="navigator">
-			<div id="nav_l"></div>
-			<div id="nav_c">
-				<ul>
-					<li><a href="index.php">Inicio</a></li>
-					<li><a href="users.php">Usuarios</a></li>					
-				</ul>
-			</div>
-			<div id="nav_r"></div>
-		</div>
-		<div id="content">
-			<div id="content_l">
-				<div id="content_l_t"></div>
-				<div id="content_l_c">
-					<h1 class="content_l_hst1">Usuario</h1>
-					<ul>
-						<li><strong><?php echo $name; ?></strong></li>
-						<?php echo $usrHTML; ?>
-						<li><a href="../../general/logout.php" class="ast3">Logout</a></li>
-						
-					</ul>
-					<h1 class="content_l_hst1">Navegaci&oacute;n</h1>
-					<ul>
-						<li><a href="index.php" class="ast3">Inicio</a></li>
-						<li><a href="users.php" class="ast3">Usuarios</a></li>						
-					</ul>
-					<h1 class="content_l_hst1">Opciones</h1>
-					<ul>
-						<li><a href="users.php?body=users" class="ast3">Usuarios privilegiados</a></li>
-						<li><a href="users.php?body=profiles" class="ast3">Perfiles</a></li>
-						<li><a href="users.php?body=new" class="ast3">Nuevo usuario</a></li>
-						<li><a href="users.php?body=groups" class="ast3">Grupos</a></li>
-					</ul>
-				</div>
-				<div id="content_l_b"></div>
-			</div>
-			<div id="content_r">
-				<?php
-					if($alert) {
-						?>
-						<p class="alert"><?php echo $atxt; ?></p>
-						<?php
-					}//end if
-				?>
-				<h1 class="content_r_hst1"><?php echo $btxt; ?></h1>
-				<div id="results_box">
-					<?php echo $resHTML; ?>
-				</div>
-				<?php
-				if($body == "groups") {
-					?>
-						<form id="frmarea" name="frmarea" method="post" action="../../utilities/updateconfiguration.mod.php" enctype="multipart/form-data">
-							<h1 class="content_r_hst2">Grupo</h1>
-							<table width="100%" cellpadding="0" cellspacing="0" class="form">
-	  						<tr>
-									<td width="90"><img src="../../img/aarrow.gif" alt="Obligatorio" /> Nombre:</td>
-									<td><input id="name" name="name" type="name" class="input_field" size="40" autocomplete="off" /></td>
-								</tr>
-								<tr>
-									<td>Descripci&oacute;n:</td>
-									<td><input id="description" name="description" type="description" class="input_field" size="40" autocomplete="off" /></td>
-								</tr>
-							</table>
-							<p class="header">Marcar usuarios</p>
-							<table width="100%" cellpadding="0" cellspacing="0" class="form" id="user_list">
-	  						<?php
-									echo $ulsHTML;
-								?>
-								
-							</table>
-							<table width="100%" cellpadding="0" cellspacing="0" class="form">	
-								<tr>
-									<td>
-										<input name="action" id="action" type="hidden" value="groups" />
-										<input name="id" id="id" type="hidden" value="" />
-										<input name="save" id="save" type="button" class="input_button" value="Guardar" onclick="validArea(<?php echo $nusers; ?>)" />
-										<input name="reset" id="reset" type="button" class="input_button" value="Nuevo" onclick="newArea(<?php echo $nusers; ?>)" />
-									</td>
-									<td>&nbsp;</td>
-								</tr>
-							</table>
-						</form>
-					<?php
-				}//end if
-				?>
-			</div>
-			<div class="content_bottom"></div>
-		</div>
-			</div>
-			<div class="blank"></div>
-		</div>
-		<div id="footer">
-			Copyright &copy; 2009 GARP - Facultad de Ingenier&iacute;a El&eacute;ctrica<br />
-			Universidad Central &quot;Marta Abreu&quot; de Las Villas.
-		</div>
+		<!-- /#page-content-wrapper -->
+
 	</div>
+	<!-- /#wrapper -->
+
 </body>
+
+
+<?php require_once('js/libjs.php') ?>
+<script src="js/index.js"></script>
+<script language="javascript" src="../../js/sld.js" type="text/javascript"></script>
+<script language="javascript" src="../../js/osld.js" type="text/javascript"></script>
+<script language="javascript" src="../../js/asld.js" type="text/javascript"></script>
+
+
 </html>

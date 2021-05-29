@@ -19,8 +19,12 @@
 	$level = $user->getPriority();
 	$_SESSION['user'] = serialize($user);
 		
-	if($level == 1)
+	if($level == 1){
 		$usrHTML = "<li><a href=\"../admin/index.php\" class=\"ast3\">Administrar</a></li>";
+		header('Location: ../admin/index.php');
+	}
+		
+
 	else if($level == 2)
 		$usrHTML = "<li>Operar</li>";
 	else if($level == 3){

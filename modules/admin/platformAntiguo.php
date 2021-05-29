@@ -80,7 +80,7 @@
 					<ul>
 						<li><a href="index.php" class="ast3">Inicio</a></li>
 						<li><a href="theory.php" class="ast3">Teoria</a></li>
-						<li><a href="practices.php" class="ast3">Prácticas</a></li>
+						<li><a href="practices.php" class="ast3">Pr&aacute;cticas</a></li>
 						<li><a href="platform.php" class="ast3">Plataforma</a></li>
 						<li><a href="mypractices.php" class="ast3">Mis Pr&aacute;cticas</a></li>
 						<li><a href="mailto:ching@uclv.edu.cu;aerubio@ubiobio.cl">Contacto</a></li>
