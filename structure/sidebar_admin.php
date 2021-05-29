@@ -12,8 +12,9 @@
          <ul class="navbar-nav align-self-stretch">
 
              <li class="">
-                 <a class="nav-link text-left nosub" role="button">
-                     <i class="fas fa-circle"></i> Inicio
+                 <a href="/modules/admin/index.php" class="nav-link text-left nosub" role="button">
+                 <i class="fas fa-circle"></i> 
+                     Inicio
                  </a>
              </li>
 
@@ -125,7 +126,7 @@
                      Plataforma
                  </a>
              </li>
-             
+
              <li class="has-sub">
                  <a class="nav-link collapsed text-left nosub" role="button" data-toggle="collapse" data-target="#sece">
                      <i class="fas fa-users"></i> Estadísticas
