@@ -160,7 +160,7 @@
                                     <div class="content_r_hst3">
 									<?php if($alert) {  ?>
 									<p class="alert alert-secondary" role="alert"><?php echo $atxt; ?></p>
-								<?php }  ?>
+								<?php } ?>
 								<br>
 
 								<h1 class="content_r_hst1"><?php echo $btxt; ?></h1>

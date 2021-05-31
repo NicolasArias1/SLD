@@ -2,7 +2,7 @@
 	// Permitir que el script se ejecute por tiempo indefinido
 	set_time_limit(0);
 	
-	$address = '192.168.0.11';
+	$address = '192.168.1.128';
 	$port = 10000;   //10000
 	$str = '';
 	

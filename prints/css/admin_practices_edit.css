@@ -1,0 +1,55 @@
+#results_box{
+    border:1px solid #cecece;
+    border-radius:3px;
+    padding:30px 100px;
+    
+}
+
+.secbtnGuardar{
+    margin-top:15px;
+    display:flex;
+    justify-content: center;
+}
+
+div .form-group{
+    margin-bottom:20px;
+}
+
+.btnGuardar{
+    font-weight: 500;
+    font-size:13px;
+    padding:10px;
+    border-radius: 5px;
+    width:180px;
+    background-color: #0058b6;
+    border-color: #0058b6;
+    color:white;
+
+}
+
+.btnGuardar:hover{
+    background-color: #002c5e;
+    border-color: #002c5e;
+    transition: .5s;
+}
+
+
+.form-group label{
+    font-size:14px;
+    font-weight: 500;
+}
+
+.std input,
+.std select{
+    font-size:14px;
+}
+
+
+
+@media only screen and (max-width:600px){
+
+    #results_box{
+        padding:30px;
+    }
+
+}

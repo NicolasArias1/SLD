@@ -114,54 +114,88 @@
 	
 	include('../../utilities/configp.mod.php');
 ?>
-
-<!doctype html>
-<html lang="en">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<?php require_once('css/libcss.php') ?>
-	<link rel="stylesheet" href="css/index.css">
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<title>Sistema de Laboratorios a Distancia : : Administraci&oacute;n : : Usuarios</title>
+	<link href="../../css/styles.css" rel="stylesheet" type="text/css" />
+  <link rel="shortcut icon" href="../../img/aicon.gif" />
 	<script language="JavaScript" src="../../js/sld.js" type="text/javascript"></script>
 	<script language="JavaScript" src="../../js/osld.js" type="text/javascript"></script>
 	<script language="JavaScript" src="../../js/asld.js" type="text/javascript"></script>
 </head>
 
-<body>
-	<div id="wrapper">
-		<div class="overlay"></div>
-
-		<?php require_once('../../structure/sidebar_admin.php') ?>
-
-		<div id="page-content-wrapper" class="toggled">
-
-			<?php require_once('../../structure/navbar_admin.php') ?>
-
-			<div class="container-fluid p-0 px-lg-0 px-md-0">
-				<div class="container-fluid px-lg-4 content_g ">
-					<div class="row">
-						<div id="content3" class="col-md-12 mt-lg-4 mt-4">
-
-							<div id="content_r">
-							<?php if($alert) {  ?>
-									<p class="alert alert-secondary" role="alert"><?php echo $atxt; ?></p>
-								<?php } ?>
-								<br>
-								<h1 class="content_r_hst1"><?php echo $btxt; ?></h1>
-								<div id="results_box">
-									<?php echo $resHTML; ?>
-								</div>
-							</div>
-						</div>
-					</div>
+<body <?php if($body == 'newp' || $body == 'editp') { ?> onLoad="usersLevel('<?php echo $usrdata['level']; ?>')"<?php }//end if ?>>
+	<div id="page">
+		<div id="header">
+			<div id="header_t">
+				<div id="header_t_l"><img src="../../img/logo.png" border="0" /></a></div>
+				<div id="header_t_r"><?php echo Date_Time(); ?></div>
+			</div>
+			<div id="header_b">
+				<div id="header_l"></div>
+				<div id="header_c">
+					<h1 class="logo">SLD<span class="w_txt">WEB</span></h1>
+					<h4 class="txt">Sistema de Laboratorios a Distancia</h4>
+				</div>
+				<div id="header_r"></div>
+			</div>
+		</div>
+		<div id="navigator">
+			<div id="nav_l"></div>
+			<div id="nav_c">
+				<ul>
+					<li><a href="index.php">Inicio</a></li>
+					<li><a href="configp.php">Configurar Pr&aacute;cticas</a></li>
+					
+				</ul>
+			</div>
+			<div id="nav_r"></div>
+		</div>
+		<div id="content">
+			<div id="content_l">
+				<div id="content_l_t"></div>
+				<div id="content_l_c">
+					<h1 class="content_l_hst1">Usuario</h1>
+					<ul>
+						<li><strong><?php echo $name; ?></strong></li>
+						<?php echo $usrHTML; ?>
+						<li><a href="../../general/logout.php" class="ast3">Logout</a></li>
+					</ul>
+					<h1 class="content_l_hst1">Navegaci&oacute;n</h1>
+					<ul>
+						<li><a href="index.php" class="ast3">Inicio</a></li>
+						<li><a href="configp.php" class="ast3">Configurar Pr&aacute;cticas</a></li>
+						
+					</ul>
+					<h1 class="content_l_hst1">Opciones</h1>
+					<ul>
+						<li><a href="configp.php?body=configp" class="ast3">Editar Pr&aacute;cticas</a></li>
+						<li><a href="configp.php?body=new" class="ast3">Subir Pr&aacute;cticas</a></li>
+					</ul>
+				</div>
+				<div id="content_l_b"></div>
+			</div>
+			<div id="content_r">
+				<?php
+					if($alert) {
+						?>
+						<p class="alert"><?php echo $atxt; ?></p>
+						<?php
+					}//end if
+				?>
+				<h1 class="content_r_hst1"><?php echo $btxt; ?></h1>
+				<div id="results_box">
+					<?php echo $resHTML; ?>
 				</div>
 			</div>
+			<div class="blank"></div>
+		</div>
+		<div id="footer">
+			Copyright &copy; 2009 GARP - Facultad de Ingenier&iacute;a El&eacute;ctrica<br />
+			Universidad Central &quot;Marta Abreu&quot; de Las Villas.
 		</div>
 	</div>
 </body>
-
-<?php require_once('js/libjs.php') ?>
-<script src="js/index.js"></script>
-
 </html>
