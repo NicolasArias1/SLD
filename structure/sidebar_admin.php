@@ -53,8 +53,8 @@
                                  <div class="col-lg-12 px-2">
                                      <div class="submenu-box">
                                          <ul class="list-unstyled m-0">
-                                                <li><a href="configp.php "> Administrar prácticas</a></li>
-                                             <li><a href=""> Historial de prácticas</a></li>
+                                                <li><a href="configp.php"> Administrar prácticas</a></li>
+                                                <li><a href="/modules/admin/index.php?body=realizadas"> Historial de prácticas</a></li>
                                              <!-- <li><a href="">Asp.net</a></li> -->
                                          </ul>
                                      </div>

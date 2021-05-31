@@ -10,7 +10,7 @@
 
 
 
-	<div class="row" style="margin-bottom:10px;">
+	<div class="row d-flex justify-content-between" style="margin-bottom:10px;">
 		<div class="col-md-6">
 			<a style="text-decoration: none;margin:0;color: whitesmoke; font-size: 13px;" href="/modules/admin/users.php?body=new">
 				<div class="btnAdduser">
@@ -18,47 +18,31 @@
 				</div>
 			</a>
 		</div>
-		
-		<!--
-		<div class="col-md-6">                
-		<li id="list_order" onmouseover="showOptions(this.id, 'list_order_option')" onmouseout="hideOptions(this.id, 'list_order_option')">&nbsp;<strong>Ordenar<br /></strong>
-							<ul id="list_order_option">
-								<li id="order_element1" class="list_element" onmouseover="colorOverElement(this.id)" onmouseout="colorOutElement(this.id)" onclick="schPreferences('users.php', '<?php echo $this->url; ?>', 'id', '<?php echo $this->show; ?>', '<?php echo $this->idfocus; ?>')">por ID</li>
-								<li id="order_element2" class="list_element" onmouseover="colorOverElement(this.id)" onmouseout="colorOutElement(this.id)" onclick="schPreferences('users.php', '<?php echo $this->url; ?>', 'name', '<?php echo $this->show; ?>', '<?php echo $this->idfocus; ?>')">por Nombre</li>
-								<li id="order_element3" class="list_element" onmouseover="colorOverElement(this.id)" onmouseout="colorOutElement(this.id)" onclick="schPreferences('users.php', '<?php echo $this->url; ?>', 'login', '<?php echo $this->show; ?>', '<?php echo $this->idfocus; ?>')">por Login</li>
-								<li id="order_element4" class="list_element" onmouseover="colorOverElement(this.id)" onmouseout="colorOutElement(this.id)" onclick="schPreferences('users.php', '<?php echo $this->url; ?>', 'level', '<?php echo $this->show; ?>', '<?php echo $this->idfocus; ?>')">por Privilegio</li>
-							</ul>
-						</li>
-		</div>
-	-->
-		<!-- 
-		<div class="col-md-6">
-					<ul id="menu_list_box">
-	
 
-						<li id="list_order" onmouseover="showOptions(this.id, 'list_order_option')" onmouseout="hideOptions(this.id, 'list_order_option')">&nbsp;<strong>Ordenar<br /></strong>
-							<ul id="list_order_option">
-								<li id="order_element1" class="list_element" onmouseover="colorOverElement(this.id)" onmouseout="colorOutElement(this.id)" onclick="schPreferences('users.php', '<?php echo $this->url; ?>', 'id', '<?php echo $this->show; ?>', '<?php echo $this->idfocus; ?>')">por ID</li>
-								<li id="order_element2" class="list_element" onmouseover="colorOverElement(this.id)" onmouseout="colorOutElement(this.id)" onclick="schPreferences('users.php', '<?php echo $this->url; ?>', 'name', '<?php echo $this->show; ?>', '<?php echo $this->idfocus; ?>')">por Nombre</li>
-								<li id="order_element3" class="list_element" onmouseover="colorOverElement(this.id)" onmouseout="colorOutElement(this.id)" onclick="schPreferences('users.php', '<?php echo $this->url; ?>', 'login', '<?php echo $this->show; ?>', '<?php echo $this->idfocus; ?>')">por Login</li>
-								<li id="order_element4" class="list_element" onmouseover="colorOverElement(this.id)" onmouseout="colorOutElement(this.id)" onclick="schPreferences('users.php', '<?php echo $this->url; ?>', 'level', '<?php echo $this->show; ?>', '<?php echo $this->idfocus; ?>')">por Privilegio</li>
-							</ul>
-						</li>
-						<li id="list_show" onmouseover="showOptions(this.id, 'list_show_option')" onmouseout="hideOptions(this.id, 'list_show_option')">&nbsp;<strong>Mostrar<br /></strong>
-							<ul id="list_show_option">
-								<?php
+		<div id="mostrarB" class="col-md-6 dropdown">
+			<button  style="font-size:13px !important;" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				Mostrar
+			</button>
+			<div class="dropdown-menu"  style="font-size:13px !important;" aria-labelledby="dropdownMenuButton">
+			<?php
 								for($i=1; $i <= $this->nshow; $i++) {
 									?>
-									<li id="show_element<?php echo $i; ?>" class="list_element" onmouseover="colorOverElement(this.id)" onmouseout="colorOutElement(this.id)" onclick="schPreferences('users.php', '<?php echo $this->url; ?>', '<?php echo $this->order[0]; ?>', <?php echo $i*20; ?>, '<?php echo $this->idfocus; ?>')"><?php echo $i*20; ?> Usuarios</li>
+									<span id="show_element<?php echo $i; ?>" class="list_element" onmouseover="colorOverElement(this.id)" onmouseout="colorOutElement(this.id)" onclick="schPreferences('users.php', '<?php echo $this->url; ?>', '<?php echo $this->order[0]; ?>', <?php echo $i*10; ?>, '<?php echo $this->idfocus; ?>')"><?php echo $i*10; ?> Usuarios</span>
 									<?php
 								}//end for
 								?>
-							</ul>
-						</li>
-					</ul>
+			</div>
 		</div>
--->
 	</div>
+
+		<div class="col-md-6 results_info ">
+			<?php echo $this->message; ?>
+
+		</div>
+
+
+
+
 
 
 	<table class="table table-bordered table-hover tsize">
@@ -154,28 +138,26 @@
 		<?php
 				}//end if
 			}//end for
-			if($this->paginate) {			
+				
 				?>
-		<tr>
-			<td colspan="5">
-				<p class="paginator"><?php echo $this->paginate; ?></p>
-			</td>
-		</tr>
-		<?php
-			}//end if
-			?>
-
+		
 
 	</table>
 
 
 
-	<div class="row">
-		<div class="results_info">
-			<?php echo $this->message; ?>
+	<?php if($this->paginate) {	 ?>
 
-		</div>
-	</div>
+		<tr >
+				
+					<p style="text-align:center;" class="paginator"><?php echo $this->paginate; ?>                  </p>
+				
+		</tr>
+
+
+	<?php }//end if ?>
+
+	
 
 
 

@@ -8,7 +8,7 @@
 
 
 
-<div class="row" style="margin-bottom:10px;">
+<div class="row d-flex justify-content-between" style="margin-bottom:10px;">
 	<div class="col-md-6">
 		<a style="text-decoration: none;margin:0;color: whitesmoke; font-size: 13px;"
 			href="/modules/admin/configp.php?body=new">
@@ -18,7 +18,31 @@
 			</div>
 		</a>
 	</div>
+
+	<div id="mostrarB" class="col-md-6 dropdown">
+			<button  style="font-size:13px !important;" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				Mostrar
+			</button>
+			<div class="dropdown-menu"  style="font-size:13px !important;" aria-labelledby="dropdownMenuButton">
+					<?php
+								for($i=1; $i <= $this->nshow; $i++) {
+									?>
+						<li id="show_element<?php echo $i; ?>" class="list_element"
+							onmouseover="colorOverElement(this.id)" onmouseout="colorOutElement(this.id)"
+							onclick="schPreferences('configp.php', '<?php echo $this->url; ?>', '<?php echo $this->order[0]; ?>', <?php echo $i*10; ?>, '<?php echo $this->idfocus; ?>')">
+							<?php echo $i*10; ?> Pr&aacute;cticas</li>
+						<?php
+								}//end for
+								?>
+			</div>
+	</div>
+
 </div>
+
+<div class="col-md-6 results_info ">
+			<?php echo $this->message; ?>
+
+		</div>
 
 <table class="table table-bordered table-hover tsize">
 
@@ -28,73 +52,6 @@
 		<th class="col-sm-1" scope="col">Acción</th>
 	</tr>
 
-	<!--<tr>
-		<td colspan="5" class="menu">
-			<ul id="menu_list_box">
-				<li id="list_select" onmouseover="showOptions(this.id, 'list_select_option')"
-					onmouseout="hideOptions(this.id, 'list_select_option')">&nbsp;<strong>Seleccionar<br /></strong>
-					<ul id="list_select_option">
-						<li id="select_element1" class="list_element" onmouseover="colorOverElement(this.id)"
-							onmouseout="colorOutElement(this.id)"
-							onclick="checkAll(true, <?php echo $this->limits[1]; ?>, 'list_select', 'list_select_option')">
-							Todos</li>
-						<li id="select_element2" class="list_element" onmouseover="colorOverElement(this.id)"
-							onmouseout="colorOutElement(this.id)"
-							onclick="checkAll(false, <?php echo $this->limits[1]; ?>, 'list_select', 'list_select_option')">
-							Ninguno</li>
-					</ul>
-				</li>
-				<li id="list_operation" onmouseover="showOptions(this.id, 'list_operation_option')"
-					onmouseout="hideOptions(this.id, 'list_operation_option')">&nbsp;<strong>Operaciones<br /></strong>
-					<ul id="list_operation_option">
-					<?php
-								if($this->body == 'solicit') {
-									?>
-						<li id="operation_element1" class="list_element" onmouseover="colorOverElement(this.id)"
-							onmouseout="colorOutElement(this.id)"
-							onclick="acceptUsers('*', <?php echo $this->limits[1]; ?>, '<?php echo $this->body; ?>', '<?php echo $this->order[0]; ?>', <?php echo $this->show; ?>, <?php echo $this->page; ?>)">
-							Aceptar</li>
-						<?php
-								}//end if
-								?>
-						<li id="operation_element2" class="list_element" onmouseover="colorOverElement(this.id)"
-							onmouseout="colorOutElement(this.id)"
-							onclick="deleteUsers('*', <?php echo $this->limits[1]; ?>, '<?php echo $this->body; ?>', '<?php echo $this->order[0]; ?>', <?php echo $this->show; ?>, <?php echo $this->page; ?>)">
-							Eliminar</li>
-					</ul>
-				</li>
-				<li id="list_order" onmouseover="showOptions(this.id, 'list_order_option')"
-					onmouseout="hideOptions(this.id, 'list_order_option')">&nbsp;<strong>Ordenar<br /></strong>
-					<ul id="list_order_option">
-						<li id="order_element1" class="list_element" onmouseover="colorOverElement(this.id)"
-							onmouseout="colorOutElement(this.id)"
-							onclick="schPreferences('configp.php', '<?php echo $this->url; ?>', 'id', '<?php echo $this->show; ?>', '<?php echo $this->idfocus; ?>')">
-							por ID</li>
-						<li id="order_element2" class="list_element" onmouseover="colorOverElement(this.id)"
-							onmouseout="colorOutElement(this.id)"
-							onclick="schPreferences('configp.php', '<?php echo $this->url; ?>', 'name', '<?php echo $this->show; ?>', '<?php echo $this->idfocus; ?>')">
-							por Nombre</li>
-
-					</ul>
-				</li>
-				<li id="list_show" onmouseover="showOptions(this.id, 'list_show_option')"
-					onmouseout="hideOptions(this.id, 'list_show_option')">&nbsp;<strong>Mostrar<br /></strong>
-					<ul id="list_show_option">
-						<?php
-								for($i=1; $i <= $this->nshow; $i++) {
-									?>
-						<li id="show_element<?php echo $i; ?>" class="list_element"
-							onmouseover="colorOverElement(this.id)" onmouseout="colorOutElement(this.id)"
-							onclick="schPreferences('configp.php', '<?php echo $this->url; ?>', '<?php echo $this->order[0]; ?>', <?php echo $i*20; ?>, '<?php echo $this->idfocus; ?>')">
-							<?php echo $i*20; ?> Pr&aacute;cticas</li>
-						<?php
-								}//end for
-								?>
-					</ul>
-				</li>
-			</ul>
-		</td>
-	</tr> -->
 
 	<tbody>
 
@@ -184,12 +141,6 @@
 
 </table>
 
-<div class="row">
-		<div class="results_info">
-			<?php echo $this->message; ?>
-
-		</div>
-	</div>
 
 <?php
 		}//end if

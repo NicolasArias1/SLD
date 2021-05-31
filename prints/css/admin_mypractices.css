@@ -8,8 +8,8 @@
      color:whitesmoke;
  }
  
- #content3_t{
-     width: 700px;
+ #content_r{
+     width: 900px;
      margin-top: 30px;
  }
  
@@ -27,7 +27,7 @@
      font-size:14px;
  }
  
- .btnAdduser{
+ .btnAddPractice{
      display: flex;
      align-items: center;
      width: 150px;
@@ -38,7 +38,7 @@
      cursor: pointer;
  }
  
- .btnAdduser i{
+ .btnAddPractice i{
      margin-right: 15px;
      color: whitesmoke;
      font-size: 13px;
@@ -51,7 +51,7 @@
      text-decoration: none;
  }
  
- .btnAdduser:hover{
+ .btnAddPractice:hover{
      border:2px solid #002c5e;
      background-color: #002c5e;
      transition: .3s;
@@ -80,15 +80,13 @@
  }
 
  #mostrarB{
-   
-    display:flex;
-    justify-content: flex-end;
+     display:flex;
+     justify-content: flex-end;
+ }
 
-}
-
-@media only screen and (max-width:600px) {
-  #mostrarB{
-      justify-content: flex-start;
-      margin-top:10px;
-  }
+ @media only screen and (max-width:600px) {
+    #mostrarB{
+        justify-content: flex-start;
+        margin-top:10px;
+    }
 }

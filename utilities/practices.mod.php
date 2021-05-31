@@ -45,7 +45,7 @@
 		//Introduciendo n�mero de resultados
 		$sch->setNResults($nresults[0]['COUNT(*)']);
 		
-		if($page != 1 && $call) {
+		if($page != 1 && isset($call)) {
 			$prove = $show*($page-1);
 			
 			if(($nresults[0]['COUNT(*)']%$prove) == 0) {
