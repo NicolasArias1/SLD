@@ -79,13 +79,7 @@
 	$comments = new RecordSet($sql->SQLQuery($query));
 	$ncomments = $sql->count;
 	
-	if($advuser) {
-		$adetails['Visitas'] = $visits;
-		$adetails['Valoraciones'] = $nvotes;
-		$adetails['Comentarios'] = $ncomments;
-		$adetails['Sugerido'] = $comments->Celd(0,'sender');
-		$adetails['Publicado'] = $comments->Celd(0,'publisher');
-	}//end if
+
 	
 	if(isset($call)) {	
 		if($uid && $login && $domain) {

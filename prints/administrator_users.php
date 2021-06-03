@@ -117,7 +117,7 @@
 
 				<td><?php echo $tipoU ?></td>
 
-				<td>
+				<td style="text-align:center;">
 
 					<a style="text-decoration:none;"
 						href="users.php?body=edit&rbody=<?php echo $this->body; ?>&order=<?php echo $this->order[0]; ?>&show=<?php echo $this->show; ?>&page=<?php echo $this->page; ?>&id=<?php echo $this->results[$i]['id']; ?>"

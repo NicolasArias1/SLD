@@ -31,12 +31,20 @@
 		else
 			header('Location: ../../general/logout.php');
 	}//end if
+
+	$alert = '';
+	$rid = '';
+	$res = '';
+
+	//if (isset($alert)){ $alert = $_GET['alert']; }
+	if (isset($rid)){ $alert = $rid = $_GET['rid']; }
+	if (isset($res)){ $alert = $res = $_GET['res']; }
+
 	
-	$rid = $_GET['rid'];
-	$alert = $_GET['alert'];
+	
 	$image = "../";
 	$advuser = TRUE;
-	$res = $_GET['res'];
+	
 	
 	$usrHTML = "<li><a href=\"../user/index.php\" class=\"ast3\">Usar</a></li>";	
 
@@ -55,14 +63,15 @@
 	}//end if
 	
 	if($res) {
-		$path = "../../results/".$res."/";
+		$path = "../results/".$res."/";
 		ob_start();
 		include($path.'salida.html');
 		$resHTML = ob_get_contents();
 		ob_end_clean();
+
 	}//end if
 	
-	include('../modules/details.mod.php');
+	include('../../utilities/details.mod.php');
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -132,85 +141,12 @@
 				<div id="content_l_b"></div>
 			</div>
 			<div id="content_r">
-				<?php
-					if($alert) {
-						?>
-						<p class="alert"><?php echo $atxt; ?></p>
-						<?php
-					}//end if
-				?>
+		
 				<?php if(!$res) {?><h1 class="content_r_hst1"><?php echo $btxt; ?></h1><?php } ?>
 				<div id="results_box">
 					<?php echo $resHTML; ?>
 				</div>
-				<?php
-			if($vote && VOT_CONT) {
-				?>
-				<div id="vote_box">
-					<p class="header">Calificaci&oacute;n</p>
-						<form id="vote_form" name="vote_form" method="post" action="../../utilities/updatecontribution.mod.php" enctype="multipart/form-data">
-							<select name="vote" class="form_field">
-								<option value="5">5 (Muy Bien)</option>
-								<option value="4">4 (Bien)</option>
-								<option value="3">3 (Regular)</option>
-								<option value="2">2 (Mal)</option>								
-							</select> 
-							<input id="rid" name="rid" type="hidden" value="<?php echo $rid; ?>">
-							<input id="advuser" name="advuser" type="hidden" value="<?php echo $advuser; ?>">
-							<input id="page" name="page" type="hidden" value="../admin/details.php?id=<?php echo $id; ?>">
-							<input id="myvote" name="myvote" type="submit" class="form_button" value="Votar">
-						</form>
-				</div>
-				<?php
-				}//end if
-					if($ncomments) {
-					?>
-					<div id="comments_box">
-					  <?php
-					  	echo $comHTML;
-					  ?>
-					</div>
-					<?php			
-				}//end if
-				if(COM_CONT) {
-					?>
-					<div id="comment_form_box">
-						<h1 class="content_r_hst2">Comentarios del profesor</h1>
-						<p>
-							Los comentarios que emitir&aacute; ser&aacute;n vistos por el estudiante, as&iacute; como su nota.
-						</p>
-						<form id="comment_form" name="comment_form" method="post" action="../../utilities/updatecontribution.mod.php " enctype="multipart/form-data">
-							<input id="action" name="action" type="hidden" value="new">
-							<input id="id" name="id" type="hidden">
-							<input id="rid" name="rid" type="hidden" value="<?php echo $rid; ?>">
-							<input id="advuser" name="advuser" type="hidden" value="<?php echo $advuser; ?>">
-							<input id="page" name="page" type="hidden" value="../admin/details.php?res=<?php echo $res; ?>&rid=<?php echo $rid; ?>">
-							<textarea id="comment_txt" name="comment_txt" cols="68" rows="3" class="input_field"></textarea>
-							<input id="comsend" name="comsend" type="button" class="form_button" value="Guardar" onclick="saveComment()" />
-							<input id="comreset" name="comreset" type="reset" class="form_button" value="Nuevo" onclick="newComment()" />
-						</form>
-					</div>
-					<?php
-				}//end if
-				?>
-			
-		    <div id="comment_form_box">
-						
-						<p>
-							Despu&eacute;s de haber revizado la pr&aacute;ctica oprima el bot&oacute;n Revizada.
-						</p>
-			       <form id="rev_form" name="rev_form" method="post" action="../../utilities/updatepracticesrev.mod.php " enctype="multipart/form-data">
-                
-                <input id="prev" name="prev" type="hidden" value="ok">							
-							
-								<input id="rid" name="rid" type="hidden" value="<?php echo $rid; ?>">
-								
-								<input id="page" name="page" type="hidden" value="../admin/details.php?res=<?php echo $res; ?>&rid=<?php echo $rid; ?>">
-								
-								<input id="comsend" name="comsend" type="button" class="form_button" value="Revizada" onclick="practicesrev()" />
-							
-						</form>
-				</div>
+
 			</div>
 			<div class="blank"></div>
 		</div>

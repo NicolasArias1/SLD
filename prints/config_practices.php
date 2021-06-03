@@ -93,7 +93,7 @@
 						<?php
 							 	if($this->results[$i]['sid'] == '1' || $this->results[$i]['id'] == $this->pid) {
 									?>
-									<td>
+									<td style="text-align:center;">
 
 									<a style="text-decoration:none;"
 										href="configp.php?body=edit&rbody=<?php echo $this->body; ?>&order=<?php echo $this->order[0]; ?>&show=<?php echo $this->show; ?>&page=<?php echo $this->page; ?>&id=<?php echo $this->results[$i]['id']; ?>" onclick="selectResource(<?php echo ($i+1); ?>)">

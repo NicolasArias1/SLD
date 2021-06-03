@@ -65,100 +65,19 @@
 		} //end if	
 		
 ?>
-
-<!-- Realiza práctica desde perfil profesor. -->
-<?php  if($level == 1){  ?>
-
-
-
-<!doctype html>
-<html lang="en">
-
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<?php require_once('../../modules/admin/css/libcss.php') ?>
-	<script language="JavaScript" src="../../js/sld.js" type="text/javascript"></script>
-	<script language="JavaScript" src="../../js/osld.js" type="text/javascript"></script>
-	<link rel="stylesheet" href="../../modules/admin/css/index.css">
-	<link rel="stylesheet" href="css/practices.css">
-
-</head>
-
-<body>
-	<div id="wrapper">
-		<div class="overlay"></div>
-
-		<?php require_once('../../structure/sidebar_admin.php') ?>
-
-		<div id="page-content-wrapper" class="toggled">
-
-			<?php require_once('../../structure/navbar_admin.php') ?>
-
-			<div class="container-fluid p-0 px-lg-0 px-md-0">
-				<div class="container-fluid px-lg-4 content_g ">
-					<div class="row">
-						<div id="content3" class="col-md-12 mt-lg-4 mt-4">
-
-							<div id="content_r">
-
-
-							<h1 class="content_r_hst1">Pr&aacute;cticas disponibles</h1>
-							<?php 
-									echo $strHTML;
-							?>
-
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</body>
-
-<?php require_once('../../modules/admin/js/libjs.php') ?>
-<script src="../../modules/admin/js/index.js"></script>
-</html>
-
-
-
-
-
-
-<?php } ?>
-
-
-<!-- Realiza práctica desde perfil profesor. -->
-<?php if($level == 2){  ?>
-
-<?php } ?>
-
-<!-- Realiza práctica desde perfil estudiante. -->
-<?php if($level == 3){ ?>
-
-
-<?php } ?>
-
-
-
-
-<!--
-<!DOCTYPE html
-	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 	<title>Sistema de Laboratorios a Distancia : : Pr&aacute;cticas</title>
-	<link href="../../css/styles.css" rel="stylesheet" type="text/css" />
+  <link href="../../css/styles.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
 	<div id="page">
 		<div id="header">
 			<div id="header_t">
-				<div id="header_t_l"><img src="../../img/logo.png" /></div>
+				<div id="header_t_l"><img src="../../img/logo.png"/></div>
 				<div id="header_t_r"><?php echo Date_Time(); ?></div>
 			</div>
 			<div id="header_b">
@@ -177,7 +96,7 @@
 					<li><a href="index.php">Inicio</a></li>
 					<li><a href="theory.php">Teor&iacute;a</a></li>
 					<li><a href="practices.php">Pr&aacute;cticas</a></li>
-					<li><a href="platform.php">Plataforma</a></li>
+					<li><a href="platform.php">Plataforma</a></li>					
 				</ul>
 			</div>
 			<div id="nav_r"></div>
@@ -201,18 +120,21 @@
 						<li><a href="mypractices.php" class="ast3">Mis Pr&aacute;cticas</a></li>
 						<li><a href="mailto:ching@uclv.edu.cu;aerubio@ubiobio.cl">Contacto</a></li>
 					</ul>
-
+					
 				</div>
 				<div id="content_l_b"></div>
 			</div>
 			<div id="content_r">
+			<?php 
+						print_r($level) ;
+				?>
 
-				<h1 class="content_r_hst1">Pr&aacute;cticas disponibles</h1>
-				<?php 
+					<h1 class="content_r_hst1">Pr&aacute;cticas disponibles</h1>					
+					<?php 
 						echo $strHTML;
 				?>
 			</div>
-
+				
 			<div class="blank"></div>
 		</div>
 		<div id="footer">
@@ -220,7 +142,4 @@
 		</div>
 	</div>
 </body>
-
 </html>
-
- -->

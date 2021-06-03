@@ -120,129 +120,116 @@
 				<div class="container-fluid px-lg-4 content_g ">
 					<div class="row">
 						<div id="content3" class="col-md-12 mt-lg-4 mt-4">
-							<div class="content_practices">
+
+							<div id="content_r">
 
 								<h1 class="content_r_hst1">Identificaci&oacute;n al paso de la din&aacute;mica de un
 									motor</h1>
-								<div class="contentp">
-									<p>A continuaci&oacute;n se muestra el esquema empleado para la
-										identificaci&oacute;n al
-										paso de la din&aacute;mica de un motor en lazo abierto:</p>
+								<p>A continuaci&oacute;n se muestra el esquema empleado para la identificaci&oacute;n al
+									paso de la din&aacute;mica de un motor en lazo abierto:</p>
+								<div align="center">
+									<img src="../../../img/CS_ID.jpg" />
+									<div align="left">
+										<p>Se puede modificar el per&iacute;odo de muestreo, el tiempo de
+											experimentaci&oacute;n, y el voltaje inicial y final del paso as&iacute;
+											como el instante en que ocurre.</p>
 
-									<img src="../../../img/CS_ID.jpg"
-										class="img-fluid rounded mx-auto d-block mbotom" />
-									<p style="margin-bottom:40px;">Se puede modificar el per&iacute;odo de muestreo, el
-										tiempo de
-										experimentaci&oacute;n, y el voltaje inicial y final del paso as&iacute;
-										como el instante en que ocurre.</p>
-
-									<?php if ((isset($cantfree)) && ($timeejec < 3)) echo '<h1 class="content_r_hst2">	Hay estaciones libres para ejecutar esta pr&aacute;ctica de forma REAL.</h1>'; ?>
-									<?php if (($timeejec > 2) && ($timeejec < 5)) echo '<h1 class="content_r_hst2">	Las estaciones que pueden ejecutar esta pr&aacute;ctica de forma REAL est&aacute;n ocupadas. Si lo prefiere pruebe en unos minutos m&aacute;s.</h1>'; ?>
-									<?php if ($timeejec > 5) echo '<h1 class="content_r_hst2">	Las estaciones que pueden ejecutar esta pr&aacute;ctica de forma REAL est&aacute;n muy ocupadas. Por favor pruebe en otro momento.</h1>'; ?>
-									<?php if (!$cantidad) echo '<h1 class="content_r_hst2">	Lo sentimos, no hay estaciones que puedan ejecutar esta pr&aacute;ctica de forma REAL. Por favor pruebe en otro momento.</h1>';?>
-									<form id="practice" name="practice" action="../client.php" method="post"
-										enctype="multipart/form-data">
-										<div class="row" style="margin-top:30px;">
-											<div class="col-sm-6 paramExp">
-												<h1 class="content_r_hst6" style="margin:0; margin-bottom:20px;">
-													Par&aacute;metros para el experimento:
-												</h1>
-												<hr>
-												<div class="form-group row">
-													<label class="col-sm-2 col-form-label">Tm:</label>
-													<div class="col-sm-8">
-														<input name="Tm" type="text" value="0.1" size="15"
-															class="form-control">
-													</div>
-												</div>
-
-												<div class="form-group row">
-													<label class="col-sm-2 col-form-label">Te:</label>
-													<div class="col-sm-8">
-														<input name="Te" type="text" size="15" value="1"
-															class="form-control">
-													</div>
-												</div>
-
-												<div class="form-group row">
-													<label class="col-sm-2 col-form-label">Tp:</label>
-													<div class="col-sm-8">
-														<input name="Tp" type="text" size="15" value="0"
-															class="form-control">
-													</div>
-												</div>
-
-												<div class="form-group row">
-													<label class="col-sm-2 col-form-label">Vi:</label>
-													<div class="col-sm-8">
-														<input name="Vi" type="text" size="15" value="0"
-															class="form-control">
-													</div>
-												</div>
-												<div class="form-group row">
-													<label class="col-sm-2 col-form-label">Vf:</label>
-													<div class="col-sm-8">
-														<input name="Vf" type="text" size="15" value="1"
-															class="form-control">
-													</div>
-												</div>
-
-												<div class="form-group row">
-													<div class="col-sm-8">
-														<input type="hidden" id="mlmfile" name="mlmfile"
-															value="m_CS_IDr" class="form-control">
-													</div>
-												</div>
-
-												<div class="form-group row">
-													<div class="col-sm-8" style="text-align:center;">
-														<input type="button" name="Submit" value="Ejecutar"
-															<?php if(($cantidad == 0) || ($timeejec > 5)||($permbytime == 0)) echo 'disabled= "disabled"';?>
-															class="input_btn1" onClick="execute('m_CS_IDr')" />
-													</div>
-												</div>
-
-
-
-
-											</div>
-
-											<div class="col-sm-5 paramSim">
-												<h1 class="content_r_hst6" style="margin:0;">Simbolog&iacute;a:</h1>
-												<hr>
-												<table class="table table-borderless">
-													<tbody class="tbodyA">
+										<?php if ((isset($cantfree)) && ($timeejec < 3)) echo '<h1 class="content_r_hst2">	Hay estaciones libres para ejecutar esta pr&aacute;ctica de forma REAL.</h1>'; ?>
+										<?php if (($timeejec > 2) && ($timeejec < 5)) echo '<h1 class="content_r_hst2">	Las estaciones que pueden ejecutar esta pr&aacute;ctica de forma REAL est&aacute;n ocupadas. Si lo prefiere pruebe en unos minutos m&aacute;s.</h1>'; ?>
+										<?php if ($timeejec > 5) echo '<h1 class="content_r_hst2">	Las estaciones que pueden ejecutar esta pr&aacute;ctica de forma REAL est&aacute;n muy ocupadas. Por favor pruebe en otro momento.</h1>'; ?>
+										<?php if (!$cantidad) echo '<h1 class="content_r_hst2">	Lo sentimos, no hay estaciones que puedan ejecutar esta pr&aacute;ctica de forma REAL. Por favor pruebe en otro momento.</h1>';?>
+										<form id="practice" name="practice" action="../client.php" method="post"
+											enctype="multipart/form-data">
+											<div class="content_r_data">
+												<div class="content_r_data_t"></div>
+												<div class="content_r_data_c">
+													<h1 class="content_r_hst3">Par&aacute;metros para el experimento:
+													</h1>
+													<table width="100%" cellpadding="0" cellspacing="0" class="form">
 														<tr>
 															<td>Tm:</td>
-															<td>Per&iacute;odo de
-																	muestreo (0.001<=Tm[s]<=1).</td>
+															<td><input name="Tm" type="text" class="input_field"
+																	value="0.1" size="15" /></td>
 														</tr>
 														<tr>
-															<td> Te:</td>
-															<td> Tiempo de experimento (1<=Te[s]<=10).</td>
+															<td>Te:</td>
+															<td><input name="Te" type="text" size="15" value="1"
+																	class="input_field" /></td>
 														</tr>
 														<tr>
 															<td>Tp:</td>
-															<td>Instante en que ocurre el paso
-																	(Tp[s]<=Te).</td>
+															<td><input name="Tp" type="text" size="15" value="0"
+																	class="input_field" /></td>
 														</tr>
-														
 														<tr>
 															<td>Vi:</td>
-															<td>Voltaje inicial del paso
-																	(+-10V).</td>
+															<td><input name="Vi" type="text" size="15" value="0"
+																	class="input_field" /></td>
 														</tr>
 														<tr>
 															<td>Vf:</td>
-															<td>Voltaje final del
-																	paso(+-10V).</td>
+															<td><input name="Vf" type="text" size="15" value="1"
+																	class="input_field" /></td>
 														</tr>
-													</tbody>
-												</table>
-											</div>
-										</div>
+													</table>
 
-									</form>
+													<table width="100%" cellpadding="0" cellspacing="0" class="form">
+
+														<tr>
+															<td class="buttons"><input type="hidden" id="mlmfile"
+																	name="mlmfile" value="m_CS_IDs"></td>
+															<td class="buttons"><input type="button" name="Submit"
+																	value="Ejecutar"
+																	<?php if(($cantidad == 0) || ($timeejec > 5)||($permbytime == 0)) echo 'disabled= "disabled"';?>
+																	class="input_button"
+																	onClick="execute('m_CS_IDr')" /></td>
+														</tr>
+
+													</table>
+
+												</div>
+
+												<div class="content_r_data_b"></div>
+											</div>
+											<div class="content_r_data">
+												<div class="content_r_data_t"></div>
+												<div class="content_r_data_c">
+													<h1 class="content_r_hst3">Simbolog&iacute;a:</h1>
+													<table width="100%" cellpadding="0" cellspacing="0" class="data">
+														<tr>
+															<td width="20"><span class="Estilo3">Tm:</span></td>
+															<td width="175"><span class="Estilo3">Per&iacute;odo de
+																	muestreo (0.001<=Tm[s]<=1)</span> </td> 
+																
+														</tr> 
+														
+														<tr>
+															<td><span class="Estilo3">Te:</span></td>
+															<td><span class="Estilo3">Tiempo de experimento (1
+																	<=Te[s]<=10)</span> </td> </tr> <tr>
+															<td><span class="Estilo3">Tp:</span></td>
+															<td><span class="Estilo3">Instante en que ocurre el paso
+																	(Tp[s]<=Te)</span> </td> </tr> <tr>
+															<td><span class="Estilo3">Vi:</span></td>
+															<td><span class="Estilo3">Voltaje inicial del paso
+																	(+-10V)</span></td>
+														</tr>
+														<tr>
+															<td><span class="Estilo3">Vf:</span></td>
+															<td><span class="Estilo3">Voltaje final del
+																	paso(+-10V)</span></td>
+														</tr>
+
+													</table>
+												</div>
+												<div class="content_r_data_b"></div>
+											</div>
+
+
+										</form>
+
+
+									</div>
 								</div>
 							</div>
 						</div>
@@ -365,7 +352,7 @@
 						<div class="content_r_data_t"></div>
 						<div class="content_r_data_c">
 							<h1 class="content_r_hst3">Par&aacute;metros para el experimento:</h1>
-							<table  cellpadding="0" cellspacing="0" class="form">
+							<table width="100%" cellpadding="0" cellspacing="0" class="form">
 							    <tr>
 								  <td>Tm:</td>
 								  <td><input name="Tm" type="text" class="input_field" value="0.1" size="15" /></td>
@@ -388,7 +375,7 @@
 							  </tr>
 							</table>							
 							
-							<table  cellpadding="0" cellspacing="0" class="form">
+							<table width="100%" cellpadding="0" cellspacing="0" class="form">
 							  
 							  <tr>
 								  <td class="buttons"><input type="hidden" id="mlmfile" name="mlmfile" value="m_CS_IDs"></td>
@@ -405,7 +392,7 @@
 						<div class="content_r_data_t"></div>
 						<div class="content_r_data_c">
 							<h1 class="content_r_hst3">Simbolog&iacute;a:</h1>
-							<table  cellpadding="0" cellspacing="0" class="data">
+							<table width="100%" cellpadding="0" cellspacing="0" class="data">
 							  <tr>
 								<td width="20"><span class="Estilo3">Tm:</span></td>
 								<td width="175"><span class="Estilo3">Per&iacute;odo de muestreo (0.001<=Tm[s]<=1)</span></td>

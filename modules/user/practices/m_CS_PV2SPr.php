@@ -83,87 +83,54 @@
 	
 		
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+
+
+
+
+<!-- Realiza práctica desde perfil admin. -->
+<?php  if($level == 1){  ?>
+	<!doctype html>
+<html lang="en">
+
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-	<title>Sistema de Laboratorios a Distancia : : Pr&aacute;cticas</title>
-  <link href="../../../css/styles.css" rel="stylesheet" type="text/css" />
-  <script language="JavaScript" src="../../../js/sld.js" type="text/javascript"></script>
-  <style type="text/css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<?php require_once('../../../modules/admin/css/libcss.php') ?>
+	<script language="JavaScript" src="../../../js/sld.js" type="text/javascript"></script>
+	<script language="JavaScript" src="../../../js/osld.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="../../../modules/admin/css/index.css">
+	<link rel="stylesheet" href="../css/m_cs.css">
 
-.Estilo3 {font-size: 11px}
-
-  </style>
 </head>
 
 <body>
-	<div id="page">
-		<div id="header">
-			<div id="header_t">
-				<div id="header_t_l"><img src="../../../img/logo.png" /></div>
-				<div id="header_t_r"><?php echo Date_Time(); ?></div>
-			</div>
-			<div id="header_b">
-				<div id="header_l"></div>
-				<div id="header_c">
-					<h1 class="logo">SLD<span class="w_txt">WEB</span></h1>
-					<h4 class="txt">Sistema de Laboratorios a Distancia <?php //echo $permbytime; ?></h4>
-				</div>
-				<div id="header_r"></div>
-			</div>
-		</div>
-		<div id="navigator">
-			<div id="nav_l"></div>
-			<div id="nav_c">
-				<ul>
-					<li><a href="../index.php">Inicio</a></li>
-					<li><a href="../theory.php">Teor&iacute;a</a></li>
-					<li><a href="../practices.php">Pr&aacute;cticas</a></li>
-					<li><a href="../platform.php">Plataforma</a></li>					
-				</ul>
-			</div>
-			<div id="nav_r"></div>
-		</div>
-		<div id="content">
-			<div id="content_l">
-				<div id="content_l_t"></div>
-				<div id="content_l_c">
-					<h1 class="content_l_hst1">Usuario</h1>
-					<ul>
-						<li><?php echo $name; ?></li>
-						<?php echo $usrHTML; ?>
-						<li><a href="../../../general/logout.php" class="ast3">Logout</a></li>
-					</ul>
-					<h1 class="content_l_hst1">Navegaci&oacute;n</h1>
-					<ul>
-						<li><a href="../index.php" class="ast3">Inicio</a></li>
-						<li><a href="../theory.php" class="ast3">Teoria</a></li>
-						<li><a href="../practices.php" class="ast3">Pr&aacute;cticas</a></li>
-						<li><a href="../platform.php" class="ast3">Plataforma</a></li>
-						<li><a href="../mypractices.php" class="ast3">Mis Pr&aacute;cticas</a></li>
-						<li><a href="mailto:ching@uclv.edu.cu;aerubio@ubiobio.cl">Contacto</a></li>
-					</ul>
-					
-					
-				</div>
-				<div id="content_l_b"></div>
-			</div>
-					
-			<div id="content_r">
-				<h1 class="content_r_hst1">Ajuste de dos PID para control de posici&oacute;n en cascada</h1>
-				<p>A continuaci&oacute;n se muestra el esquema empleado para controlar la posici&oacute;n durante 10 segundos:</p>
-				<div align="center">
-				<img src="../../../img/CS_PV2SP.jpg" />
-				<div align="left">
-				<p>La referencia de posici&oacute;n puede ser:</p>
+	<div id="wrapper">
+		<div class="overlay"></div>
+
+		<?php require_once('../../../structure/sidebar_admin.php') ?>
+
+		<div id="page-content-wrapper" class="toggled">
+
+			<?php require_once('../../../structure/navbar_admin.php') ?>
+
+			<div class="container-fluid p-0 px-lg-0 px-md-0">
+				<div class="container-fluid px-lg-4 content_g ">
+					<div class="row">
+						<div id="content3" class="col-md-12 mt-lg-4 mt-4">
+							<div class="content_practices">
+
+							<h1 class="content_r_hst1">Ajuste de dos PID para control de posici&oacute;n en cascada</h1>
+								<div class="contentp">
+								<p>A continuaci&oacute;n se muestra el esquema empleado para controlar la posici&oacute;n durante 10 segundos:</p>
+								<img src="../../../img/CS_PV2SP.jpg"class="img-fluid rounded mx-auto d-block mbotom" />
+								<p>La referencia de posici&oacute;n puede ser:</p>
 				<p>- Comenzando en -50 grados y a los 5 segundos pasar a 50 grados (referencia tipo paso).</p>
 				<p>- Comenzando en 0 grados suavemente pasar a -50 grados y a los 5 segundos suavemente pasar a 50 grados (referencia tipo jtraj).</p>
 				<p>N&oacute;tese que se dispone de la prealimentaci&oacute;n de la velocidad (Kv) y la aceleraci&oacute;n (Ka) deseada que solo tiene sentido par el segundo tipo de referencia.</p>
 				<p>Se dispone de un controlador PID para el lazo de velocidad (lazo interno) y otro PID para el lazo de posici&oacute;n (lazo externo). El esquema de control de los PIDs implementados se corresponde con el siguiente diagrama en bloques:</p>
-				<div align="center">
-				<img src="../../../img/CS_PV_PID.jpg" />
-				<div align="left">
+				<img src="../../../img/CS_PV_PID.jpg" class="img-fluid rounded mx-auto d-block mbotom"/>
 				<p>N&oacute;tese que los PIDs responde a la estructura paralela: man = P + I/s + Ds. Los valores P, I y D son las constantes proporcional, integral y derivativa respectivamente, Tm es el per&iacute;odo de muestreo, Kb la constante de realimentaci&oacute;n de la diferencia entre el mando calculado y el saturado para eliminar el windup y N la frecuencia de corte en rad/segundos del filtro derivativo de primero orden (N=2*pi*Fcd).</p>
 				<p>En este experimento se pueden modificar los par&aacute;metros antes mencionados tanto para el PID de velocidad como para el PID de posici&oacute;n. Tambi&eacute;n se puede modificar el orden y la frecuencia de corte de los filtros (Butterworth) de ambas mediciones.</p>
 				
@@ -171,173 +138,284 @@
 				<?php if (($timeejec > 2) && ($timeejec < 5)) echo '<h1 class="content_r_hst2">	Las estaciones que pueden ejecutar esta pr&aacute;ctica de forma REAL est&aacute;n ocupadas. Si lo prefiere pruebe en unos minutos m&aacute;s.</h1>'; ?>
 				<?php if ($timeejec > 5) echo '<h1 class="content_r_hst2">	Las estaciones que pueden ejecutar esta pr&aacute;ctica de forma REAL est&aacute;n muy ocupadas. Por favor pruebe en otro momento.</h1>'; ?>
 				<?php if (!$cantidad) echo '<h1 class="content_r_hst2">	Lo sentimos, no hay estaciones que puedan ejecutar esta pr&aacute;ctica de forma REAL. Por favor pruebe en otro momento.</h1>';?>
-				<form id="practice" name="practice" action="../client.php" method="post" enctype="multipart/form-data">
-					<div class="content_r_data">
-						<div class="content_r_data_t"></div>
-						<div class="content_r_data_c">
-							<h1 class="content_r_hst3">Par&aacute;metros para el experimento:</h1>
-							<table width="100%" cellpadding="0" cellspacing="0" class="form">
-							    <tr>
-								  <td>Tm:</td>
-								  <td><input name="Tm" type="text" class="input_field" value="0.5" size="15" /></td>
-							    </tr>
-								<tr>
-								  <td>SWsp:</td>
-							      <td><input name="SWsp" type="text" size="15" value="0" class="input_field" /></td>
-							    </tr>
-								<tr>
-								  <td>Kv:</td>
-							      <td><input name="Kv" type="text" size="15" value="0" class="input_field" /></td>
-							    </tr>
-								<tr>
-								  <td>Ka:</td>
-							      <td><input name="Ka" type="text" size="15" value="0" class="input_field" /></td>
-							    </tr>
-								<tr>
-								  <td>Pp:</td>
-							      <td><input name="Pp" type="text" size="15" value="0.1" class="input_field" /></td>
-							    </tr>
-								<tr>
-								  <td>Ip:</td>
-							      <td><input name="Ip" type="text" size="15" value="0" class="input_field" /></td>
-							    </tr>
-								<tr>
-								  <td>Dp:</td>
-							      <td><input name="Dp" type="text" size="15" value="0" class="input_field" /></td>
-							    </tr>
-								<tr>
-								  <td>Kbp:</td>
-							      <td><input name="Kbp" type="text" size="15" value="0" class="input_field" /></td>
-							    </tr>
-								<tr>
-								  <td>Fcdp:</td>
-							      <td><input name="Fcdp" type="text" size="15" value="1" class="input_field" /></td>
-							    </tr>
-								<tr>
-								  <td>SWp:</td>
-							      <td><input name="SWp" type="text" size="15" value="0" class="input_field" /></td>
-							    </tr>
-								<tr>
-								  <td>Np:</td>
-							      <td><input name="Np" type="text" size="15" value="1" class="input_field" /></td>
-							    </tr>
-							    <tr>
-								  <td>Fcp:</td>
-							      <td><input name="Fcp" type="text" size="15" value="0.1" class="input_field" /></td>
-							    </tr>
-								<tr>
-								  <td>Pv:</td>
-							      <td><input name="Pv" type="text" size="15" value="0.1" class="input_field" /></td>
-							    </tr>
-								<tr>
-								  <td>Iv:</td>
-							      <td><input name="Iv" type="text" size="15" value="0" class="input_field" /></td>
-							    </tr>
-								<tr>
-								  <td>Dv:</td>
-							      <td><input name="Dv" type="text" size="15" value="0" class="input_field" /></td>
-							    </tr>
-								<tr>
-								  <td>Kbv:</td>
-							      <td><input name="Kbv" type="text" size="15" value="0" class="input_field" /></td>
-							    </tr>
-								<tr>
-								  <td>Fcdv:</td>
-							      <td><input name="Fcdv" type="text" size="15" value="1" class="input_field" /></td>
-							    </tr>
-								<tr>
-								  <td>SWv:</td>
-							      <td><input name="SWv" type="text" size="15" value="0" class="input_field" /></td>
-							    </tr>
-								<tr>
-								  <td>Nv:</td>
-							      <td><input name="Nv" type="text" size="15" value="1" class="input_field" /></td>
-							    </tr>
-							    <tr>
-								  <td>Fcv:</td>
-							      <td><input name="Fcv" type="text" size="15" value="0.1" class="input_field" /></td>
-							    </tr>
-							</table>							
-							
-							<table width="100%" cellpadding="0" cellspacing="0" class="form">
-							  
-							  <tr>
-								  <td class="buttons"><input type="hidden" id="mlmfile" name="mlmfile" value="m_CS_PV2SPs"></td>
-							      <td class="buttons"><input type="button" name="Submit" value="Ejecutar" <?php if(($cantidad == 0) || ($timeejec > 5)||($permbytime == 0)) echo 'disabled= "disabled"';?> class="input_button" onClick="execute('m_CS_PV2SPr')" /></td>
-							  </tr>			  						  
-							  
-							</table>
-							
+
+
+									<form id="practice" name="practice" action="../client.php" method="post"
+										enctype="multipart/form-data">
+										<div class="row" style="margin-top:30px;">
+											<div class="col-sm-6 paramExp">
+												<h1 class="content_r_hst6" style="margin:0; margin-bottom:20px;">
+													Par&aacute;metros para el experimento:
+												</h1>
+												<hr>
+												<div class="form-group row">
+													<label class="col-sm-2 col-form-label">Tm:</label>
+													<div class="col-sm-8">
+														<input name="Tm" type="text" value="0.5" size="15"
+															class="form-control">
+													</div>
+												</div>
+
+												<div class="form-group row">
+													<label class="col-sm-2 col-form-label">SWsp:</label>
+													<div class="col-sm-8">
+														<input name="SWsp" type="text" size="15" value="0"
+															class="form-control">
+													</div>
+												</div>
+
+												<div class="form-group row">
+													<label class="col-sm-2 col-form-label">Kv:</label>
+													<div class="col-sm-8">
+														<input name="Kv" type="text" size="15" value="0"
+															class="form-control">
+													</div>
+												</div>
+
+												<div class="form-group row">
+													<label class="col-sm-2 col-form-label">Ka:</label>
+													<div class="col-sm-8">
+														<input name="Ka" type="text" size="15" value="0"
+															class="form-control">
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="col-sm-2 col-form-label">Pp:</label>
+													<div class="col-sm-8">
+														<input name="Pp" type="text" size="15" value="0.1"
+															class="form-control">
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="col-sm-2 col-form-label">Ip:</label>
+													<div class="col-sm-8">
+														<input name="Ip" type="text" size="15" value="0"
+															class="form-control">
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="col-sm-2 col-form-label">Dp:</label>
+													<div class="col-sm-8">
+														<input name="Dp" type="text" size="15" value="0"
+															class="form-control">
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="col-sm-2 col-form-label">Kbp:</label>
+													<div class="col-sm-8">
+														<input name="Kbp" type="text" size="15" value="0"
+															class="form-control">
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="col-sm-2 col-form-label">Fcdp:</label>
+													<div class="col-sm-8">
+														<input name="Fcdp" type="text" size="15" value="1"
+															class="form-control">
+													</div>
+												</div>
+
+												<div class="form-group row">
+													<label class="col-sm-2 col-form-label">SWp:</label>
+													<div class="col-sm-8">
+														<input name="SWp" type="text" size="15" value="0"
+															class="form-control">
+													</div>
+												</div>
+
+												<div class="form-group row">
+													<label class="col-sm-2 col-form-label">Np:</label>
+													<div class="col-sm-8">
+														<input name="Np" type="text" size="15" value="1"
+															class="form-control">
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="col-sm-2 col-form-label">Fcp:</label>
+													<div class="col-sm-8">
+														<input name="Fcp" type="text" size="15" value="0.1"
+															class="form-control">
+													</div>
+												</div>
+
+												<div class="form-group row">
+													<label class="col-sm-2 col-form-label">Pv:</label>
+													<div class="col-sm-8">
+														<input name="Pv" type="text" size="15" value="0.1"
+															class="form-control">
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="col-sm-2 col-form-label">Iv:</label>
+													<div class="col-sm-8">
+														<input name="Iv" type="text" size="15" value="0"
+															class="form-control">
+													</div>
+												</div>
+
+												<div class="form-group row">
+													<label class="col-sm-2 col-form-label">Dv:</label>
+													<div class="col-sm-8">
+														<input name="Dv" type="text" size="15" value="0"
+															class="form-control">
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="col-sm-2 col-form-label">Kbv:</label>
+													<div class="col-sm-8">
+														<input name="Kbv" type="text" size="15" value="0"
+															class="form-control">
+													</div>
+												</div>
+
+												<div class="form-group row">
+													<label class="col-sm-2 col-form-label">Fcdv:</label>
+													<div class="col-sm-8">
+														<input name="Fcdv" type="text" size="15" value="1"
+															class="form-control">
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="col-sm-2 col-form-label">SWv:</label>
+													<div class="col-sm-8">
+														<input name="SWv" type="text" size="15" value="0"
+															class="form-control">
+													</div>
+												</div>
+
+												<div class="form-group row">
+													<label class="col-sm-2 col-form-label">Nv:</label>
+													<div class="col-sm-8">
+														<input name="Nv" type="text" size="15" value="1"
+															class="form-control">
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="col-sm-2 col-form-label">Fcv:</label>
+													<div class="col-sm-8">
+														<input name="Fcv" type="text" size="15" value="0.1"
+															class="form-control">
+													</div>
+												</div>
+
+
+
+												<div class="form-group row">
+													<div class="col-sm-8">
+														<input type="hidden" id="mlmfile" name="mlmfile"
+															value="m_CS_PV2SPs" class="form-control">
+													</div>
+												</div>
+
+												<div class="form-group row">
+													<div class="col-sm-8" style="text-align:center;">
+														<input type="button" name="Submit" value="Ejecutar"
+															<?php if(($cantidad == 0) || ($timeejec > 5)||($permbytime == 0)) echo 'disabled= "disabled"';?>
+															class="input_btn1" onClick="execute('m_CS_PV2SPs')" />
+													</div>
+												</div>
+
+
+
+
+											</div>
+
+											<div class="col-sm-5 paramSim">
+												<h1 class="content_r_hst6" style="margin:0;">Simbolog&iacute;a:</h1>
+												<hr>
+												<table class="table table-borderless">
+													<tbody class="tbodyA">
+														<tr>
+															<td>Tm:</td>
+															<td>Per&iacute;odo de muestreo (0.001<=Tm[s]<=1).</td>
+														</tr>
+														<tr>
+															<td> SW_sp:</td>
+															<td> Selector de la referencia deseada (0:step, 1:jtraj).</td>
+														</tr>
+														<tr>
+															<td>Kv:</td>
+															<td>Ganancia para la prealimentaci&oacute;n de la velocidad deseada.</td>
+														</tr>
+														
+														<tr>
+															<td>Ka:</td>
+															<td>Ganancia para la prealimentaci&oacute;n de la aceleraci&oacute;n deseada.</td>
+														</tr>
+														<tr>
+															<td>P_pv:</td>
+															<td>Ganancia proporcional.</td>
+														</tr>
+														<tr>
+															<td>I_pv:</td>
+															<td>Ganancia integral.</td>
+														</tr>
+														<tr>
+															<td>D_pv:</td>
+															<td>Ganancia derivativa.</td>
+														</tr>
+														<tr>
+															<td>Kb_pv:</td>
+															<td>Ganancia anti-windup.</td>
+														</tr>
+														<tr>
+															<td>Fcd_pv:</td>
+															<td>Frecuencia de corte (Hz).</td>
+														</tr>
+														<tr>
+															<td>SW_pv:</td>
+															<td>Selector del Filtro de la medici&oacute;n (0:No, 1:Si).</td>
+														</tr>
+														<tr>
+															<td>N_pv:</td>
+															<td>Orden del Filtro de la medici&oacute;n.</td>
+														</tr>
+														<tr>
+															<td>Fc_pv:</td>
+															<td>Frecuencia de corte (Fc[Hz]&lt;Fm/2).</td>
+														</tr>
+
+													</tbody>
+												</table>
+											</div>
+										</div>
+
+									</form>
+								</div>
+							</div>
 						</div>
-						
-						<div class="content_r_data_b"></div>
 					</div>
-					<div class="content_r_data">
-						<div class="content_r_data_t"></div>
-						<div class="content_r_data_c">
-							<h1 class="content_r_hst3">Simbolog&iacute;a:</h1>
-							<table width="100%" cellpadding="0" cellspacing="0" class="data">
-							  <tr>
-								<td width="20"><span class="Estilo3">Tm:</span></td>
-								<td width="175"><span class="Estilo3">Per&iacute;odo de muestreo (0.001<=Tm[s]<=1)</span></td>
-							  </tr>
-							  <tr>
-								<td><span class="Estilo3">SW_sp:</span></td>
-							    <td><span class="Estilo3">Selector de la referencia deseada (0:step, 1:jtraj)</span></td>
-							  </tr>
-							  <tr>
-								<td><span class="Estilo3">Kv:</span></td>
-							    <td><span class="Estilo3">Ganancia para la prealimentaci&oacute;n de la velocidad deseada</span></td>
-							  </tr>
-							  <tr>
-								<td><span class="Estilo3">Ka:</span></td>
-							    <td><span class="Estilo3">Ganancia para la prealimentaci&oacute;n de la aceleraci&oacute;n deseada</span></td>
-							  </tr>
-							  <tr>
-								<td><span class="Estilo3">P_pv:</span></td>
-							    <td><span class="Estilo3">Ganancia proporcional</span></td>
-							  </tr>
-							  <tr>
-								<td><span class="Estilo3">I_pv:</span></td>
-							    <td><span class="Estilo3">Ganancia integral</span></td>
-							  </tr>
-							  <tr> 
-								<td><span class="Estilo3">D_pv:</span></td>
-							    <td><span class="Estilo3">Ganancia derivativa</span></td>
-							  </tr>
-							  <tr>
-								<td><span class="Estilo3">Kb_pv:</span></td>
-							    <td><span class="Estilo3">Ganancia anti-windup</span></td>
-							  </tr>
-							  <tr>
-								<td><span class="Estilo3">Fcd_pv:</span></td>
-							    <td><span class="Estilo3">Frecuencia de corte (Hz)</span></td>
-							  </tr>
-							  <tr>
-								<td><span class="Estilo3">SW_pv:</span></td>
-							    <td><span class="Estilo3">Selector del Filtro de la medici&oacute;n (0:No, 1:Si)</span></td>
-							  </tr>
-							  <tr>
-								<td><span class="Estilo3">N_pv:</span></td>
-							    <td><span class="Estilo3">Orden del Filtro de la medici&oacute;n</span></td>
-							  </tr>
-							  <tr>
-								<td><span class="Estilo3">Fc_pv:</span></td>
-							    <td><span class="Estilo3">Frecuencia de corte (Fc[Hz]&lt;Fm/2)</span></td>
-							  </tr>
-							</table>
-						</div>
-						<div class="content_r_data_b"></div>
-					</div>
-													
-					
-				</form>
+				</div>
 			</div>
-			<div class="blank"></div>
-		</div>
-		<div id="footer">
-			Copyright &copy; 2017: GARP.UCLV-DIEE.UBB
-		</div>
-	</div>
 </body>
+
+<?php require_once('../../../modules/admin/js/libjs.php') ?>
+<script src="../../../modules/admin/js/index.js"></script>
+
 </html>
+
+
+
+<?php  }  ?>
+
+
+<!-- Realiza práctica desde perfil profe. -->
+<?php  if($level == 2){  ?>
+
+	
+<?php  }  ?>
+
+
+
+<!-- Realiza práctica desde perfil estudiante. -->
+<?php  if($level == 3){  ?>
+
+	
+<?php  }  ?>
+
+
+
+
+
+
+

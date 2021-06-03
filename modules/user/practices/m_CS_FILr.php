@@ -83,185 +83,176 @@
 	
 		
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+<!-- Realiza práctica desde perfil admin. -->
+<?php  if($level == 1){  ?>
+
+
+
+<!doctype html>
+<html lang="en">
+
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-	<title>Sistema de Laboratorios a Distancia : : Pr&aacute;cticas</title>
-  <link href="../../../css/styles.css" rel="stylesheet" type="text/css" />
-  <script language="JavaScript" src="../../../js/sld.js" type="text/javascript"></script>
-  <style type="text/css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<?php require_once('../../../modules/admin/css/libcss.php') ?>
+	<script language="JavaScript" src="../../../js/sld.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="../../../modules/admin/css/index.css">
+	<link rel="stylesheet" href="../css/m_cs.css">
 
-.Estilo3 {font-size: 11px}
-
-  </style>
 </head>
 
 <body>
-	<div id="page">
-		<div id="header">
-			<div id="header_t">
-				<div id="header_t_l"><img src="../../../img/logo.png" border="0" /></div>
-				<div id="header_t_r"><?php echo Date_Time(); ?></div>
-			</div>
-			<div id="header_b">
-				<div id="header_l"></div>
-				<div id="header_c">
-					<h1 class="logo">SLD<span class="w_txt">WEB</span></h1>
-					<h4 class="txt">Sistema de Laboratorios a Distancia <?php //echo $permbytime; ?></h4>
-				</div>
-				<div id="header_r"></div>
-			</div>
-		</div>
-		<div id="navigator">
-			<div id="nav_l"></div>
-			<div id="nav_c">
-				<ul>
-					<li><a href="../index.php">Inicio</a></li>
-					<li><a href="../theory.php">Teor&iacute;a</a></li>
-					<li><a href="../practices.php">Pr&aacute;cticas</a></li>
-					<li><a href="../platform.php">Plataforma</a></li>					
-				</ul>
-			</div>
-			<div id="nav_r"></div>
-		</div>
-		<div id="content">
-			<div id="content_l">
-				<div id="content_l_t"></div>
-				<div id="content_l_c">
-					<h1 class="content_l_hst1">Usuario</h1>
-					<ul>
-						<li><?php echo $name; ?></li>
-						<?php echo $usrHTML; ?>
-						<li><a href="../../../general/logout.php" class="ast3">Logout</a></li>
-					</ul>
-					<h1 class="content_l_hst1">Navegaci&oacute;n</h1>
-					<ul>
-						<li><a href="../index.php" class="ast3">Inicio</a></li>
-						<li><a href="../theory.php" class="ast3">Teoria</a></li>
-						<li><a href="../practices.php" class="ast3">Pr&aacute;cticas</a></li>
-						<li><a href="../platform.php" class="ast3">Plataforma</a></li>
-						<li><a href="../mypractices.php" class="ast3">Mis Pr&aacute;cticas</a></li>
-						<li><a href="mailto:ching@uclv.edu.cu;aerubio@ubiobio.cl">Contacto</a></li>
-					</ul>
-					
-					<h1 class="content_l_hst1">Video</h1>
-					<ul></ul>
-						<script src="http://127.0.0.1/modules/video/hls/dist/hls.min.js"></script>
-						<video id="video"></video>
-						<script>
-						
-						  if(Hls.isSupported()) {
-							var video = document.getElementById('video');
-							var hls = new Hls();
-							hls.loadSource('http://127.0.0.1/modules/video/hls/test.m3u8');
-							hls.attachMedia(video);
-							hls.on(Hls.Events.MANIFEST_PARSED,function() {
-							  video.play();
-						  });
-						 }		
-								
-						</script>
-					<ul>
-						<li><a href="../aboutvideo.php" class="ast3">Sobre el video...</a></li>
-					</ul>	
-					
-				</div>
-				<div id="content_l_b"></div>
-			</div>
-					
-			<div id="content_r">
-				<h1 class="content_r_hst1">Ajuste de los filtros para las mediciones</h1>
-				<p>A continuaci&oacute;n se muestra el esquema empleado para probar los filtros de las mediciones:</p>
-				<div align="center">
-				<img src="../../../img/CS_FIL.jpg" />
-				<div align="left">
-				<p>El experimento tendr&aacute; una duraci&oacute;n de 10 segundos. Se comienza aplicando un voltaje de -5V al motor y a los 5 segundos de pasa a +5V. </p>
-				<p>Se puede modificar el per&iacute;odo de muestreo, y el orden y frecuencia de corte de los filtros (Butterworth) de velocidad y posici&oacute;n.</p>
-				<p>Nota: El video tiene un retardo de 10 segundos aproximadamente.</p>
-				<?php if (($cantfree) && ($timeejec < 3)) echo '<h1 class="content_r_hst2">	Hay estaciones libres para ejecutar esta pr&aacute;ctica de forma REAL.</h1>'; ?>
-				<?php if (($timeejec > 2) && ($timeejec < 5)) echo '<h1 class="content_r_hst2">	Las estaciones que pueden ejecutar esta pr&aacute;ctica de forma REAL est&aacute;n ocupadas. Si lo prefiere pruebe en unos minutos m&aacute;s.</h1>'; ?>
-				<?php if ($timeejec > 5) echo '<h1 class="content_r_hst2">	Las estaciones que pueden ejecutar esta pr&aacute;ctica de forma REAL est&aacute;n muy ocupadas. Por favor pruebe en otro momento.</h1>'; ?>
-				<?php if (!$cantidad) echo '<h1 class="content_r_hst2">	Lo sentimos, no hay estaciones que puedan ejecutar esta pr&aacute;ctica de forma REAL. Por favor pruebe en otro momento.</h1>';?>
-				<form id="practice" name="practice" action="../client.php" method="post" enctype="multipart/form-data">
-					<div class="content_r_data">
-						<div class="content_r_data_t"></div>
-						<div class="content_r_data_c">
-							<h1 class="content_r_hst3">Par&aacute;metros para el experimento:</h1>
-							<table width="100%" cellpadding="0" cellspacing="0" class="form">
-							    <tr>
-								  <td>Tm:</td>
-								  <td><input name="Tm" type="text" class="input_field" value="0.5" size="15" /></td>
-							    </tr>
-								<tr>
-								  <td>Nv:</td>
-							      <td><input name="Nv" type="text" size="15" value="1" class="input_field" /></td>
-							    </tr>
-							    <tr>
-								  <td>Fcv:</td>
-							      <td><input name="Fcv" type="text" size="15" value="0.1" class="input_field" /></td>
-							    </tr>
-							    <tr>
-								  <td>Np:</td>
-							      <td><input name="Np" type="text" size="15" value="1" class="input_field" /></td>
-							    </tr>
-							    <tr>
-								  <td>Fcp:</td>
-							      <td><input name="Fcp" type="text" size="15" value="0.1" class="input_field" /></td>
-							    </tr>
-							</table>							
-							
-							<table width="100%" cellpadding="0" cellspacing="0" class="form">
-							  
-							  <tr>
-								  <td class="buttons"><input type="hidden" id="mlmfile" name="mlmfile" value="m_CS_FILs"></td>
-							      <td class="buttons"><input type="button" name="Submit" value="Ejecutar" <?php if(($cantidad == 0) || ($timeejec > 5)||($permbytime == 0)) echo 'disabled= "disabled"';?> class="input_button" onClick="execute('m_CS_FILr')" /></td>
-							  </tr>			  						  
-							  
-							</table>
-							
+	<div id="wrapper">
+		<div class="overlay"></div>
+
+		<?php require_once('../../../structure/sidebar_admin.php') ?>
+
+		<div id="page-content-wrapper" class="toggled">
+
+			<?php require_once('../../../structure/navbar_admin.php') ?>
+
+			<div class="container-fluid p-0 px-lg-0 px-md-0">
+				<div class="container-fluid px-lg-4 content_g ">
+					<div class="row">
+						<div id="content3" class="col-md-12 mt-lg-4 mt-4">
+							<div class="content_practices">
+								<h1 class="content_r_hst1">Ajuste de los filtros para las mediciones</h1>
+								<div class="contentp">
+									<img src="../../../img/CS_FIL.jpg"
+										class="img-fluid rounded mx-auto d-block mbotom" />
+									<p>El experimento tendr&aacute; una duraci&oacute;n de 10 segundos. Se comienza
+										aplicando un
+										voltaje de -5V al motor y a los 5 segundos de pasa a +5V. </p>
+									<p>Se puede modificar el per&iacute;odo de muestreo, y el orden y frecuencia de
+										corte de los
+										filtros (Butterworth) de velocidad y posici&oacute;n.</p>
+									<p style="margin-bottom:40px;">Nota: El video tiene un retardo de 10 segundos
+										aproximadamente.</p>
+									<?php if (($cantfree) && ($timeejec < 3)) echo '<h1 class="content_r_hst2">	Hay estaciones libres para ejecutar esta pr&aacute;ctica de forma REAL.</h1>'; ?>
+									<?php if (($timeejec > 2) && ($timeejec < 5)) echo '<h1 class="content_r_hst2">	Las estaciones que pueden ejecutar esta pr&aacute;ctica de forma REAL est&aacute;n ocupadas. Si lo prefiere pruebe en unos minutos m&aacute;s.</h1>'; ?>
+									<?php if ($timeejec > 5) echo '<h1 class="content_r_hst2">	Las estaciones que pueden ejecutar esta pr&aacute;ctica de forma REAL est&aacute;n muy ocupadas. Por favor pruebe en otro momento.</h1>'; ?>
+									<?php if (!$cantidad) echo '<h1 class="content_r_hst2">	Lo sentimos, no hay estaciones que puedan ejecutar esta pr&aacute;ctica de forma REAL. Por favor pruebe en otro momento.</h1>';?>
+									<form id="practice" name="practice" action="../client.php" method="post"
+										enctype="multipart/form-data">
+										<div class="row" style="margin-top:30px;">
+											<div class="col-sm-6 paramExp">
+												<h1 class="content_r_hst6" style="margin:0; margin-bottom:20px;">
+													Par&aacute;metros para el experimento:
+												</h1>
+												<hr>
+												<div class="form-group row">
+													<label class="col-sm-2 col-form-label">Tm:</label>
+													<div class="col-sm-8">
+														<input name="Tm" type="text" value="0.5" size="15"
+															class="form-control">
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="col-sm-2 col-form-label">Nv:</label>
+													<div class="col-sm-8">
+														<input name="Nv" type="text" size="15" value="1"
+															class="form-control">
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="col-sm-2 col-form-label">Fcv:</label>
+													<div class="col-sm-8">
+														<input name="Fcv" type="text" value="0.1" size="15"
+															class="form-control">
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="col-sm-2 col-form-label">Np:</label>
+													<div class="col-sm-8">
+														<input name="Np" type="text" size="15" value="1"
+															class="form-control">
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="col-sm-2 col-form-label">Fcp:</label>
+													<div class="col-sm-8">
+														<input name="Fcp" type="text" size="15" value="0.1"
+															class="form-control">
+													</div>
+												</div>
+												<div class="form-group row">
+													<div class="col-sm-8">
+														<input type="hidden" id="mlmfile" name="mlmfile"
+															value="m_CS_FILs" class="form-control">
+													</div>
+												</div>
+
+												<div class="form-group row">
+													<div class="col-sm-8" style="text-align:center;">
+														<input type="button" name="Submit" value="Ejecutar"
+															<?php if(($cantidad == 0) || ($timeejec > 5)||($permbytime == 0)) echo 'disabled= "disabled"';?>
+															class="input_btn1" onClick="execute('m_CS_FILr')" />
+													</div>
+												</div>
+
+											</div>
+											<div class="col-sm-5 paramSim">
+												<h1 class="content_r_hst6" style="margin:0;">Simbolog&iacute;a:</h1>
+												<hr>
+
+												<table width="100%" cellpadding="0" cellspacing="0"
+													class="table table-borderless">
+													<tbody class="tbodyA">
+														<tr>
+															<td>Tm:</td>
+															<td>Per&iacute;odo de muestreo (0.001
+																<=Tm[s]<=1).</td> </tr> <tr>
+															<td>Nv:</td>
+															<td>Orden del Filtro de velocidad</td>
+														</tr>
+														<tr>
+															<td>Fcv:</td>
+															<td>Frecuencia de corte (Fc[Hz]&lt;Fm/2)</td>
+														</tr>
+														<tr>
+															<td>Np:</td>
+															<td>Orden del Filtro de posici&oacute;n</td>
+														</tr>
+														<tr>
+															<td>Fcp:</td>
+															<td>Frecuencia de corte (Fc[Hz]&lt;Fm/2)</td>
+														</tr>
+													</tbody>
+
+												</table>
+											</div>
+										</div>
+									</form>
+
+								</div>
+							</div>
 						</div>
-						
-						<div class="content_r_data_b"></div>
 					</div>
-					<div class="content_r_data">
-						<div class="content_r_data_t"></div>
-						<div class="content_r_data_c">
-							<h1 class="content_r_hst3">Simbolog&iacute;a:</h1>
-							<table width="100%" cellpadding="0" cellspacing="0" class="data">
-							  <tr>
-								<td width="20"><span class="Estilo3">Tm:</span></td>
-								<td width="175"><span class="Estilo3">Per&iacute;odo de muestreo (0.001<=Tm[s]<=1)</span></td>
-							  </tr>							  
-							  <tr>
-								<td><span class="Estilo3">Nv:</span></td>
-							    <td><span class="Estilo3">Orden del Filtro de velocidad</span></td>
-							  </tr>
-							  <tr>
-								<td><span class="Estilo3">Fcv:</span></td>
-							    <td><span class="Estilo3">Frecuencia de corte (Fc[Hz]&lt;Fm/2)</span></td>
-							  </tr>
-							  <tr>
-								<td><span class="Estilo3">Np:</span></td>
-							    <td><span class="Estilo3">Orden del Filtro de posici&oacute;n</span></td>
-							  </tr>
-							  <tr>
-								<td><span class="Estilo3">Fcp:</span></td>
-								<td><span class="Estilo3">Frecuencia de corte (Fc[Hz]&lt;Fm/2)</span></td>
-							  </tr>							  
-							</table>
-						</div>
-						<div class="content_r_data_b"></div>
-					</div>
-													
-					
-				</form>
+				</div>
 			</div>
-			<div class="blank"></div>
-		</div>
-		<div id="footer">
-			Copyright &copy; 2017: GARP.UCLV-DIEE.UBB
-		</div>
-	</div>
 </body>
+
+<?php require_once('../../../modules/admin/js/libjs.php') ?>
+<script src="../../../modules/admin/js/index.js"></script>
+
 </html>
+
+
+<?php  }  ?>
+
+
+<!-- Realiza práctica desde perfil profe. -->
+<?php  if($level == 2){  ?>
+
+
+<?php  }  ?>
+
+
+
+<!-- Realiza práctica desde perfil estudiante. -->
+<?php  if($level == 3){  ?>
+
+
+<?php  }  ?>

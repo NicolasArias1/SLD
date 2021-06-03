@@ -24,31 +24,14 @@
 		$strHTML .= "<h1 class=\"content_r_hst2\">".$cat."</h1>";
 		
 		$query = "SELECT pname, pcname FROM sld_practices_data WHERE visibilidad='visible' AND categoria='".$cat."' ORDER BY id";
-
-		$conta = 0;
 				
 		$result = $sql->SQLQuery($query);
 		$numpract= $sql->count;
-		$strHTML .= "<table class=\"table table-bordered table-hover tsize\">
-						<thead>
-							<tr class=\"bg-dark\">
-								<th class=\"col-sm-1\" style=\"color:whitesmoke;\" scope=\"col\">N°</th>
-								<th class=\"col-sm-10\" style=\"color:whitesmoke;\" scope=\"col\">Práctica</th>
-							</tr>
-						</thead>
-						<tbody>
-		
-							";
+		$strHTML .= "<ol class=\"practices\">";
 		for($j=0; $j < $numpract; $j++) {
-			$conta++;
-			$strHTML .= "<tr>
-							<th>$conta</th>
-							<td><a href=\"practices/".$result[$j]['pname'].".php\" class=\"ast1\">".tildes($result[$j]['pcname'])."</a></td>
-						</tr>";
+			$strHTML .= "<li class=\"practice\"><a href=\"practices/".$result[$j]['pname'].".php\" class=\"ast1\">".tildes($result[$j]['pcname'])."</a></li>";
 			}
-		$strHTML .= "</tbody>
-					
-					</table>";
+			$strHTML .= "</ol>";
 	}//end for
 	
 	
