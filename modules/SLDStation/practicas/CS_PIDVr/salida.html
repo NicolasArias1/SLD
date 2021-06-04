@@ -1,14 +1,31 @@
+<style>
+	.btnNot{
+		padding: 10px 20px;
+		border-radius:3px;
+		background-color:#FF9900;
+		border-color:#FF9900;
+		font-weight:500;
+		color:black;
+		font-size:13px;
+		width:150px;
+		text-align: center;
+		cursor:pointer;
+}
+</style>
+
+
+
 <h1 class="content_r_hst1">Pr&aacute;ctica real de control de velocidad</h1>
   
-
+<div class="btnNot">Agregar Nota <i class="fas fa-sticky-note"></i></div>
 <div align="center">
-	<h1 class="content_r_hst2">Esquema ejecutado en tiempo real:</h1>
-	<img src="<?php echo $path;?>CS_PIDV.jpg" border="0">
-	<h1 class="content_r_hst2">Datos de la pr&aacute;ctica</h1>
-	<table width="300" border="1" cellpadding="0" cellspacing="0" class="data"> 
-	  <tr>  
-	    <td width="175">Per&iacute;odo de muestreo</td> 
-	    <td width="70">Tm=$Tm$</td> 
+	<h1 style="text-align:left;font-weight: 700; font-size: 20px;text-transform: uppercase;margin:30px 0px;color:#003366;">Esquema ejecutado en tiempo real:</h1>
+	<img class="img-fluid rounded mx-auto d-block mbotom" src="<?php echo $path;?>CS_PIDV.jpg" border="0">
+	<h1 style="text-align:left;font-weight: 700; font-size: 20px;text-transform: uppercase;margin:30px 0px;color:#003366;">Datos de la pr&aacute;ctica</h1>
+	<table style="font-size:13px;width:300px;"  class="table table-bordered"> 
+		<tr>  
+	    <td >Per&iacute;odo de muestreo</td> 
+	    <td >Tm=$Tm$</td> 
 	  </tr>
 	  <tr>  
 	    <td>Ganancia proporcional</td> 
@@ -44,14 +61,14 @@
 	  </tr>
 	  <tr>  
 	    <td>Descargar Fichero de Vectores: <BR> Comando: load -ascii CS_PIDVr <BR> Vectores: Tim, Ref, Vel, VelF, ManS, Man, ManP, ManI, ManD</td>
-	    <td align="center"><a href="../../../../download/downloadf.php?path=<?php echo $path;?>&file=CS_PIDVr"><img src="../../../../img/download.gif" vspace="2" alt="Descargar Fichero de Vectores" border="0" /></td> 
+	    <td align="center"><a href="../../../../download/downloadf.php?path=<?php echo $path;?>&file=CS_PIDVr"><i class="fas fa-download"></i></td> 
 	  </tr>
     </table> 
 	<div class="content_r_data2">
 		<div class="content_r_data_t2"></div>
 		<div class="content_r_data_c">
 			<h1 class="content_r_hst3">VELOCIDAD ZOOM (RPM)</h1>
-			<img src="<?php echo $path;?>CS_PIDV_velzoom.jpg" border="1">
+			<img class="img-fluid rounded mx-auto d-block mbotom" src="<?php echo $path;?>CS_PIDV_velzoom.jpg" border="1">
 		</div>
 		<div class="content_r_data_b2"></div>
 	</div>
@@ -59,7 +76,7 @@
 		<div class="content_r_data_t2"></div>
 		<div class="content_r_data_c">
 			<h1 class="content_r_hst3">VELOCIDAD (RPM)</h1>
-			<img src="<?php echo $path;?>CS_PIDV_velocidad.jpg" border="1">
+			<img class="img-fluid rounded mx-auto d-block mbotom" src="<?php echo $path;?>CS_PIDV_velocidad.jpg" border="1">
 		</div>
 		<div class="content_r_data_b2"></div>
 	</div>
@@ -67,7 +84,7 @@
 		<div class="content_r_data_t2"></div>
 		<div class="content_r_data_c">
 			<h1 class="content_r_hst3">MANDO (V)</h1>
-			<img src="<?php echo $path;?>CS_PIDV_mando.jpg" border="1">
+			<img class="img-fluid rounded mx-auto d-block mbotom" src="<?php echo $path;?>CS_PIDV_mando.jpg" border="1">
 		</div>
 		<div class="content_r_data_b2"></div>
 	</div>
@@ -75,10 +92,10 @@
 		<div class="content_r_data_t2"></div>
 		<div class="content_r_data_c">
 			<h1 class="content_r_hst3">ACCIONES P I D (V)</h1>
-			<img src="<?php echo $path;?>CS_PIDV_acciones.jpg" border="1">
+			<img class="img-fluid rounded mx-auto d-block mbotom" src="<?php echo $path;?>CS_PIDV_acciones.jpg" border="1">
 		</div>
 		<div class="content_r_data_b2"></div>
 	</div>
-	<p><a href="../../../../download/downloadf.php?path=<?php echo $path;?>&file=CS_PIDVr">Fichero de Vectores</a></p>
-	<p><a href="javascript:history.back()"><img name="Atras_r2_c2" src="../../../../errors/images/Atras_r2_c2.jpg" width="71" height="21" border="0"></a>	
+	<p><a style="text-decoration:none; font-size:14px;" href="../../../../download/downloadf.php?path=<?php echo $path;?>&file=CS_PIDVr">Descargar fichero de vectores <i class="fas fa-download"></i></a></p>
+	<a style="text-decoration:none;color:black;" href="javascript:history.back()"><div class="btnNot" style="margin-top:40px;margin-bottom:200px;">Volver</div></a>	
 </div>

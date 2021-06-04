@@ -36,6 +36,9 @@ $_SESSION['user'] = serialize($user);
 $fmdlname = "";
 $fmatname = "";
 $regpath = "";
+$maturl = "null";
+$regurl = "null";
+
 
 set_time_limit(0);
 

@@ -26,91 +26,6 @@
 	else if($level == 2)
 		$usrHTML = "<li>Operar</li>";
 ?>
-
-
-<!-- Realiza práctica desde perfil admin. -->
-<?php  if($level == 1){  ?>
-
-
-<!doctype html>
-<html lang="en">
-
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<?php require_once('../modules/admin/css/libcss.php') ?>
-	<link rel="stylesheet" href="../modules/admin/css/index.css">
-</head>
-
-<body>
-	<div id="wrapper">
-		<div class="overlay"></div>
-
-		<?php require_once('../structure/sidebar_admin.php') ?>
-
-		<div id="page-content-wrapper" class="toggled">
-
-			<?php require_once('../structure/navbar_admin.php') ?>
-
-			<div class="container-fluid p-0 px-lg-0 px-md-0">
-				<div class="container-fluid px-lg-4 content_g ">
-					<div class="row">
-						<div id="content3" class="col-md-12 mt-lg-4 mt-4">
-
-							<div id="content_r">
-
-								<h1 class="content_r_hst1">ERROR</h1>
-								<?php
-								if($varerror)
-									echo "\n".$varerror;
-								?>
-
-
-								<div style="margin-top: 50px;">
-									<a style="text-decoration:none;color:black;" href="javascript:history.back()">
-										<div
-											style="padding: 10px 20px;border-radius:3px; background-color:#FF9900;border-color:#FF9900;font-weight:500;color:black;font-size:13px;width:150px;text-align: center;cursor:pointer;margin:0 auto;">
-											Volver</div>
-									</a>
-								</div>
-
-
-
-							</div>
-
-
-
-
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	</div>
-</body>
-
-<?php require_once('../modules/admin/js/libjs.php') ?>
-<script src="../modules/admin/js/index.js"></script>
-
-</html>
-
-
-<?php }  ?>
-
-
-<!-- Realiza práctica desde perfil prof. -->
-<?php  if($level == 2){  ?>
-
-<?php }  ?>
-
-
-<!-- Realiza práctica desde perfil est. -->
-<?php  if($level == 3){  ?>
-
-<?php }  ?>
-
-<!--
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -189,4 +104,3 @@
 	</div>
 </body>
 </html>
--->

@@ -20,7 +20,8 @@
 	$domain = $user->getDomain();
 	$level = $user->getPriority();
 	$_SESSION['user'] = serialize($user);
-	
+	$ip = '';
+
 	if($level == 1)
 		$usrHTML = "<li><a href=\"../../admin/index.php\" class=\"ast3\">Administrar</a></li>";
 	else if($level == 2)
@@ -69,7 +70,7 @@
 	else
 		$cantidad = 0;
 		
-	$timeejec = ($pcount[$ip] * 2) + 2;	
+	$timeejec = (isset($pcount[$ip]) * 2) + 2;	
 
 	//Restriccion por tiempo
 		$permbytime = 1; // activo todo el tiempo, para limitar poner a 0 y cambiar horas debajo
@@ -155,7 +156,7 @@
 										Simulink.<?php if ($cantidad) echo "	En estos momentos hay $cantidad estacion(es) que puede(n) ejecutar esta pr&aacute;ctica."; ?>
 									</p>
 
-									<?php if (($cantfree) && ($timeejec < 3)) echo '<h1 class="content_r_hst2">	Hay estaciones libres para ejecutar esta pr&aacute;ctica de forma REAL.</h1>'; ?>
+									<?php if ((isset($cantfree)) && ($timeejec < 3)) echo '<h1 class="content_r_hst2">	Hay estaciones libres para ejecutar esta pr&aacute;ctica de forma REAL.</h1>'; ?>
 									<?php if (($timeejec > 2) && ($timeejec < 5)) echo '<h1 class="content_r_hst2">	Las estaciones que pueden ejecutar esta pr&aacute;ctica de forma REAL est&aacute;n ocupadas. Si lo prefiere pruebe en unos minutos m&aacute;s.</h1>'; ?>
 									<?php if ($timeejec > 5) echo '<h1 class="content_r_hst2">	Las estaciones que pueden ejecutar esta pr&aacute;ctica de forma REAL est&aacute;n muy ocupadas. Por favor pruebe en otro momento.</h1>'; ?>
 									<?php if (!$cantidad) echo '<h1 class="content_r_hst2">	Lo sentimos, no hay estaciones que puedan ejecutar esta pr&aacute;ctica de forma REAL. Por favor pruebe en otro momento.</h1>';?>

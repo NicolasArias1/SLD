@@ -1,49 +1,61 @@
+<style>
+	.btnNot{
+		padding: 10px 20px;
+		border-radius:3px;
+		background-color:#FF9900;
+		border-color:#FF9900;
+		font-weight:500;
+		color:black;
+		font-size:13px;
+		width:150px;
+		text-align: center;
+		cursor:pointer;
+}
+</style>
+
 <h1 class="content_r_hst1">Control de velocidad y posici&oacute;n</h1>
+<div class="btnNot">Agregar Nota <i class="fas fa-sticky-note"></i></div>
 <div align="center">
-	<h1 class="content_r_hst2">Esquema de control:</h1>
-	<img src="<?php echo $path;?>CS_C.jpg" border="0">
-	<h1 class="content_r_hst2">Datos del experimento</h1>
-	<table width="300" border="1" cellpadding="0" cellspacing="0" class="data">
+	<h1 style="text-align:left;font-weight: 700; font-size: 20px;text-transform: uppercase;margin:30px 0px;color:#003366;">Esquema de control:</h1>
+	<img class="img-fluid rounded mx-auto d-block mbotom" src="<?php echo $path;?>CS_C.jpg" border="0">
+	<h1 style="text-align:left;font-weight: 700; font-size: 20px;text-transform: uppercase;margin:30px 0px;color:#003366;">Datos del experimento</h1>
+	<table style="font-size:13px;width:300px;"  class="table table-bordered"> 
 		<tr>
-			<td width="200"> Descargar Fichero de Vectores: <BR> Comando: load -ascii CS_Cr <BR> Vectores: Tim, AUX1,
+			<td> Descargar Fichero de Vectores: <BR> Comando: load -ascii CS_Cr <BR> Vectores: Tim, AUX1,
 				AUX2, AUX3, Man</td>
-			<td align="center"><a href="../../../../download/downloadf.php?path=<?php echo $path;?>&file=CS_Cr"><img
-						src="../../../../img/download.gif" vspace="2" alt="Descargar Fichero de Vectores" border="0" />
+			<td align="center"><a href="../../../../download/downloadf.php?path=<?php echo $path;?>&file=CS_Cr"><i class="fas fa-download"></i>
 			</td>
 		</tr>
 		<tr>
 			<td>Descargar modelo enviado </td>
-			<td align="center"><a href="../../../../download/downloadf.php?path=<?php echo $path;?>&file=ureg.mdl"><img
-						src="../../../../img/download.gif" vspace="2" alt="Descargar Modelo de Simulink enviado"
-						border="0" /></td>
+			<td align="center"><a href="../../../../download/downloadf.php?path=<?php echo $path;?>&file=ureg.mdl"><i class="fas fa-download"></i></td>
 		</tr>
 		<tr>
 			<td>Descargar .mat enviado </td>
-			<td align="center"><a href="../../../../download/downloadf.php?path=<?php echo $path;?>&file=umat.mat"><img
-						src="../../../../img/download.gif" vspace="2" alt="Descargar .mat enviado" border="0" /></td>
+			<td align="center"><a href="../../../../download/downloadf.php?path=<?php echo $path;?>&file=umat.mat"><i class="fas fa-download"></i></td>
 		</tr>
 	</table>
 	<div class="content_r_data2">
 		<div class="content_r_data_t2"></div>
 		<div class="content_r_data_c">
-			<h1 class="content_r_hst3">Gr�fico AUX1</h1>
-			<img src="<?php echo $path;?>CS_C_aux1.jpg" border="1">
+			<h1 class="content_r_hst3">Gráfico AUX1</h1>
+			<img class="img-fluid rounded mx-auto d-block mbotom" src="<?php echo $path;?>CS_C_aux1.jpg" border="1">
 		</div>
 		<div class="content_r_data_b2"></div>
 	</div>
 	<div class="content_r_data2">
 		<div class="content_r_data_t2"></div>
 		<div class="content_r_data_c">
-			<h1 class="content_r_hst3">Gr�fico AUX2</h1>
-			<img src="<?php echo $path;?>CS_C_aux2.jpg" border="1">
+			<h1 class="content_r_hst3">Gráfico AUX2</h1>
+			<img class="img-fluid rounded mx-auto d-block mbotom" src="<?php echo $path;?>CS_C_aux2.jpg" border="1">
 		</div>
 		<div class="content_r_data_b2"></div>
 	</div>
 	<div class="content_r_data2">
 		<div class="content_r_data_t2"></div>
 		<div class="content_r_data_c">
-			<h1 class="content_r_hst3">Gr�fico AUX3</h1>
-			<img src="<?php echo $path;?>CS_C_aux3.jpg" border="1">
+			<h1 class="content_r_hst3">Gráfico AUX3</h1>
+			<img class="img-fluid rounded mx-auto d-block mbotom" src="<?php echo $path;?>CS_C_aux3.jpg" border="1">
 		</div>
 		<div class="content_r_data_b2"></div>
 	</div>
@@ -51,11 +63,10 @@
 		<div class="content_r_data_t2"></div>
 		<div class="content_r_data_c">
 			<h1 class="content_r_hst3">Mando (V)</h1>
-			<img src="<?php echo $path;?>CS_C_mando.jpg" border="1">
+			<img class="img-fluid rounded mx-auto d-block mbotom" src="<?php echo $path;?>CS_C_mando.jpg" border="1">
 		</div>
 		<div class="content_r_data_b2"></div>
 	</div>
-	<p><a href="../../../../download/downloadf.php?path=<?php echo $path;?>&file=CS_Cr">Fichero de Vectores</a></p>
-	<p><a href="javascript:history.back()"><img name="Atras_r2_c2" src="../../../../errors/images/Atras_r2_c2.jpg" width="71"
-				height="21" border="0"></a>
+	<p><a style="text-decoration:none; font-size:14px;" href="../../../../download/downloadf.php?path=<?php echo $path;?>&file=CS_Cr">Descargar fichero de vectores <i class="fas fa-download"></i></a></p>
+	<a style="text-decoration:none;color:black;" href="javascript:history.back()"><div class="btnNot" style="margin-top:40px;margin-bottom:200px;">Volver</div></a>
 </div>

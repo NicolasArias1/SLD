@@ -18,7 +18,7 @@ Model {
       Type		      "Cell"
       Dimension		      2
       Cell		      "HDLSubsystem"
-      Cell		      "CS_Cr"
+      Cell		      "CS_Cr_resguardo"
       PropName		      "mdlProps"
     }
   }
@@ -74,10 +74,10 @@ Model {
   Creator		  "Equipo-Servo"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "E. Rubio"
+  LastModifiedBy	  "Usuario"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Jan 25 14:40:16 2018"
-  RTWModifiedTimeStamp	  438792016
+  LastModifiedDate	  "Fri Jun 04 15:33:22 2021"
+  RTWModifiedTimeStamp	  544721602
   ModelVersionFormat	  "1.%<AutoIncrement:95>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
@@ -196,7 +196,7 @@ Model {
 	  StartTime		  "0.0"
 	  StopTime		  "10"
 	  AbsTol		  "auto"
-	  FixedStep		  "0.01"
+	  FixedStep		  "0.5"
 	  InitialStep		  "auto"
 	  MaxNumMinSteps	  "-1"
 	  MaxOrder		  5
@@ -1393,12 +1393,6 @@ Model {
       PreserveConstantTs      off
     }
     Block {
-      BlockType		      Demux
-      Outputs		      "4"
-      DisplayOption	      "none"
-      BusSelectionMode	      off
-    }
-    Block {
       BlockType		      DiscreteFilter
       NumeratorSource	      "Dialog"
       Numerator		      "[1]"
@@ -1458,15 +1452,6 @@ Model {
       RTWStateStorageClass    "Auto"
       ICPrevOutput	      "DiscIntNeverNeededParam"
       ICPrevScaledInput	      "DiscIntNeverNeededParam"
-    }
-    Block {
-      BlockType		      FromWorkspace
-      VariableName	      "simulink_input"
-      OutDataTypeStr	      "Inherit: auto"
-      SampleTime	      "-1"
-      Interpolate	      on
-      ZeroCross		      off
-      OutputAfterFinalValue   "Extrapolation"
     }
     Block {
       BlockType		      Gain
@@ -1701,7 +1686,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "125"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "506"
+    SIDHighWatermark	    "492"
     Block {
       BlockType		      SubSystem
       Name		      "Controlador"
@@ -1712,7 +1697,7 @@ Model {
       RequestExecContextInheritance off
       System {
 	Name			"Controlador"
-	Location		[73, 29, 982, 685]
+	Location		[73, 52, 875, 806]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1724,12 +1709,12 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"80"
+	ZoomFactor		"100"
 	Block {
 	  BlockType		  Inport
 	  Name			  "Vmed"
 	  SID			  "435"
-	  Position		  [245, 338, 275, 352]
+	  Position		  [10, 323, 40, 337]
 	  ZOrder		  -1
 	  IconDisplay		  "Port number"
 	}
@@ -1737,100 +1722,17 @@ Model {
 	  BlockType		  Inport
 	  Name			  "Pmed"
 	  SID			  "436"
-	  Position		  [245, 203, 275, 217]
+	  Position		  [10, 183, 40, 197]
 	  ZOrder		  -2
 	  Port			  "2"
 	  IconDisplay		  "Port number"
 	}
 	Block {
-	  BlockType		  Sum
-	  Name			  "Add"
-	  SID			  "437"
-	  Ports			  [2, 1]
-	  Position		  [120, 342, 135, 378]
-	  ZOrder		  149
-	  ShowName		  off
-	  InputSameDT		  off
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Sum
-	  Name			  "Add1"
-	  SID			  "438"
-	  Ports			  [2, 1]
-	  Position		  [250, 482, 265, 518]
-	  ZOrder		  157
-	  ShowName		  off
-	  InputSameDT		  off
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Demux
-	  Name			  "Demux"
-	  SID			  "439"
-	  Ports			  [1, 3]
-	  Position		  [140, 206, 145, 274]
-	  ZOrder		  145
-	  ShowName		  off
-	  Outputs		  "3"
-	  DisplayOption		  "bar"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Discrete Derivative"
-	  SID			  "440"
-	  Ports			  [1, 1]
-	  Position		  [70, 442, 130, 478]
-	  ZOrder		  153
-	  LibraryVersion	  "1.354"
-	  SourceBlock		  "simulink/Discrete/Discrete Derivative"
-	  SourceType		  "Discrete Derivative"
-	  ContentPreviewEnabled	  off
-	  gainval		  "1.0"
-	  ICPrevScaledInput	  "0.0"
-	  InputProcessing	  "Inherited"
-	  OutMin		  "[]"
-	  OutMax		  "[]"
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  OutputDataTypeScalingMode "Inherit via internal rule"
-	  OutDataType		  "fixdt(1, 16)"
-	  OutScaling		  "2^-10"
-	  LockScale		  off
-	  RndMeth		  "Floor"
-	  DoSatur		  off
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Discrete Derivative1"
-	  SID			  "441"
-	  Ports			  [1, 1]
-	  Position		  [70, 522, 130, 558]
-	  ZOrder		  154
-	  LibraryVersion	  "1.354"
-	  SourceBlock		  "simulink/Discrete/Discrete Derivative"
-	  SourceType		  "Discrete Derivative"
-	  ContentPreviewEnabled	  off
-	  gainval		  "1.0"
-	  ICPrevScaledInput	  "0.0"
-	  InputProcessing	  "Inherited"
-	  OutMin		  "[]"
-	  OutMax		  "[]"
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  OutputDataTypeScalingMode "Inherit via internal rule"
-	  OutDataType		  "fixdt(1, 16)"
-	  OutScaling		  "2^-10"
-	  LockScale		  off
-	  RndMeth		  "Floor"
-	  DoSatur		  off
-	}
-	Block {
 	  BlockType		  SubSystem
 	  Name			  "FiltroP"
-	  SID			  "442"
+	  SID			  "437"
 	  Ports			  [1, 1]
-	  Position		  [310, 232, 365, 268]
+	  Position		  [75, 212, 130, 248]
 	  ZOrder		  -3
 	  RequestExecContextInheritance	off
 	  Object {
@@ -1853,20 +1755,134 @@ Model {
 		Type			"edit"
 		Name			"Fc"
 		Prompt			"Frecuencia de corte (Fc<Fm/2)"
-		Value			"5"
+		Value			"0.5"
 	      }
 	      Object {
 		$ObjectID		36
 		Type			"edit"
 		Name			"Fm"
 		Prompt			"Frecuencia de muestreo"
-		Value			"1/Tm"
+		Value			"1/0.5"
 	      }
 	      PropName		      "Parameters"
 	    }
 	  }
 	  System {
 	    Name		    "FiltroP"
+	    Location		    [73, 52, 875, 806]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In"
+	      SID		      "438"
+	      Position		      [20, 33, 50, 47]
+	      ZOrder		      -1
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      DiscreteFilter
+	      Name		      "Discrete Filter"
+	      SID		      "439"
+	      Ports		      [1, 1]
+	      Position		      [100, 22, 160, 58]
+	      ZOrder		      -2
+	      InputPortMap	      "u0"
+	      Numerator		      "B"
+	      Denominator	      "A"
+	      SampleTime	      "1/Fm"
+	    }
+	    Block {
+	      BlockType		      ZeroOrderHold
+	      Name		      "Zero-Order\nHold"
+	      SID		      "440"
+	      Position		      [195, 25, 230, 55]
+	      ZOrder		      -3
+	      SampleTime	      "1/Fm"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out"
+	      SID		      "441"
+	      Position		      [270, 33, 300, 47]
+	      ZOrder		      -4
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      ZOrder		      1
+	      SrcBlock		      "Zero-Order\nHold"
+	      SrcPort		      1
+	      DstBlock		      "Out"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      2
+	      SrcBlock		      "In"
+	      SrcPort		      1
+	      DstBlock		      "Discrete Filter"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      3
+	      SrcBlock		      "Discrete Filter"
+	      SrcPort		      1
+	      DstBlock		      "Zero-Order\nHold"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "FiltroV"
+	  SID			  "442"
+	  Ports			  [1, 1]
+	  Position		  [75, 352, 130, 388]
+	  ZOrder		  -4
+	  RequestExecContextInheritance	off
+	  Object {
+	    $PropName		    "MaskObject"
+	    $ObjectID		    37
+	    $ClassName		    "Simulink.Mask"
+	    Initialization	    "Fn = Fm/2;   % Frecuencia de Nyquist\n[B,A] = butter(N,Fc/Fn);"
+	    Array {
+	      Type		      "Simulink.MaskParameter"
+	      Dimension		      3
+	      Object {
+		$ObjectID		38
+		Type			"edit"
+		Name			"N"
+		Prompt			"Orden del filtro (Butterworth)"
+		Value			"2"
+	      }
+	      Object {
+		$ObjectID		39
+		Type			"edit"
+		Name			"Fc"
+		Prompt			"Frecuencia de corte (Fc<Fm/2)"
+		Value			"0.5"
+	      }
+	      Object {
+		$ObjectID		40
+		Type			"edit"
+		Name			"Fm"
+		Prompt			"Frecuencia de muestreo"
+		Value			"1/0.5"
+	      }
+	      PropName		      "Parameters"
+	    }
+	  }
+	  System {
+	    Name		    "FiltroV"
 	    Location		    [73, 52, 875, 806]
 	    Open		    off
 	    ModelBrowserVisibility  off
@@ -1912,120 +1928,6 @@ Model {
 	      BlockType		      Outport
 	      Name		      "Out"
 	      SID		      "446"
-	      Position		      [270, 33, 300, 47]
-	      ZOrder		      -4
-	      IconDisplay	      "Port number"
-	    }
-	    Line {
-	      ZOrder		      1
-	      SrcBlock		      "Zero-Order\nHold"
-	      SrcPort		      1
-	      DstBlock		      "Out"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      2
-	      SrcBlock		      "In"
-	      SrcPort		      1
-	      DstBlock		      "Discrete Filter"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      3
-	      SrcBlock		      "Discrete Filter"
-	      SrcPort		      1
-	      DstBlock		      "Zero-Order\nHold"
-	      DstPort		      1
-	    }
-	  }
-	}
-	Block {
-	  BlockType		  SubSystem
-	  Name			  "FiltroV"
-	  SID			  "447"
-	  Ports			  [1, 1]
-	  Position		  [310, 367, 365, 403]
-	  ZOrder		  -4
-	  RequestExecContextInheritance	off
-	  Object {
-	    $PropName		    "MaskObject"
-	    $ObjectID		    37
-	    $ClassName		    "Simulink.Mask"
-	    Initialization	    "Fn = Fm/2;   % Frecuencia de Nyquist\n[B,A] = butter(N,Fc/Fn);"
-	    Array {
-	      Type		      "Simulink.MaskParameter"
-	      Dimension		      3
-	      Object {
-		$ObjectID		38
-		Type			"edit"
-		Name			"N"
-		Prompt			"Orden del filtro (Butterworth)"
-		Value			"2"
-	      }
-	      Object {
-		$ObjectID		39
-		Type			"edit"
-		Name			"Fc"
-		Prompt			"Frecuencia de corte (Fc<Fm/2)"
-		Value			"5"
-	      }
-	      Object {
-		$ObjectID		40
-		Type			"edit"
-		Name			"Fm"
-		Prompt			"Frecuencia de muestreo"
-		Value			"1/Tm"
-	      }
-	      PropName		      "Parameters"
-	    }
-	  }
-	  System {
-	    Name		    "FiltroV"
-	    Location		    [83, 53, 842, 666]
-	    Open		    off
-	    ModelBrowserVisibility  off
-	    ModelBrowserWidth	    200
-	    ScreenColor		    "white"
-	    PaperOrientation	    "landscape"
-	    PaperPositionMode	    "auto"
-	    PaperType		    "usletter"
-	    PaperUnits		    "inches"
-	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
-	    TiledPageScale	    1
-	    ShowPageBoundaries	    off
-	    ZoomFactor		    "100"
-	    Block {
-	      BlockType		      Inport
-	      Name		      "In"
-	      SID		      "448"
-	      Position		      [20, 33, 50, 47]
-	      ZOrder		      -1
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      DiscreteFilter
-	      Name		      "Discrete Filter"
-	      SID		      "449"
-	      Ports		      [1, 1]
-	      Position		      [100, 22, 160, 58]
-	      ZOrder		      -2
-	      InputPortMap	      "u0"
-	      Numerator		      "B"
-	      Denominator	      "A"
-	      SampleTime	      "1/Fm"
-	    }
-	    Block {
-	      BlockType		      ZeroOrderHold
-	      Name		      "Zero-Order\nHold"
-	      SID		      "450"
-	      Position		      [195, 25, 230, 55]
-	      ZOrder		      -3
-	      SampleTime	      "1/Fm"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "Out"
-	      SID		      "451"
 	      Position		      [260, 33, 290, 47]
 	      ZOrder		      -4
 	      IconDisplay	      "Port number"
@@ -2054,86 +1956,11 @@ Model {
 	  }
 	}
 	Block {
-	  BlockType		  FromWorkspace
-	  Name			  "From\nWorkspace"
-	  SID			  "452"
-	  Position		  [50, 228, 115, 252]
-	  ZOrder		  144
-	  VariableName		  "spq"
-	  SampleTime		  "0"
-	  ZeroCross		  on
-	}
-	Block {
-	  BlockType		  Gain
-	  Name			  "Gain"
-	  SID			  "453"
-	  Position		  [70, 325, 100, 355]
-	  ZOrder		  147
-	  Gain			  "KV"
-	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Gain
-	  Name			  "Gain1"
-	  SID			  "454"
-	  Position		  [70, 370, 100, 400]
-	  ZOrder		  148
-	  Gain			  "KA"
-	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Gain
-	  Name			  "Gain2"
-	  SID			  "455"
-	  Position		  [200, 445, 230, 475]
-	  ZOrder		  155
-	  Gain			  "KV"
-	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Gain
-	  Name			  "Gain3"
-	  SID			  "456"
-	  Position		  [200, 525, 230, 555]
-	  ZOrder		  156
-	  Gain			  "KA"
-	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Gain
-	  Name			  "Gain4"
-	  SID			  "457"
-	  Position		  [195, 235, 225, 265]
-	  ZOrder		  158
-	  BlockRotation		  270
-	  ShowName		  off
-	  Gain			  "0"
-	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  ManualSwitch
-	  Name			  "Manual Switch1"
-	  SID			  "458"
-	  Position		  [160, 352, 190, 388]
-	  ZOrder		  151
-	  ShowName		  off
-	}
-	Block {
 	  BlockType		  Mux
 	  Name			  "Mux"
-	  SID			  "459"
+	  SID			  "447"
 	  Ports			  [2, 1]
-	  Position		  [690, 36, 695, 74]
+	  Position		  [435, 21, 440, 59]
 	  ZOrder		  -5
 	  ShowName		  off
 	  Inputs		  "2"
@@ -2142,10 +1969,21 @@ Model {
 	Block {
 	  BlockType		  Mux
 	  Name			  "Mux1"
-	  SID			  "460"
+	  SID			  "448"
 	  Ports			  [2, 1]
-	  Position		  [690, 81, 695, 119]
+	  Position		  [435, 66, 440, 104]
 	  ZOrder		  -6
+	  ShowName		  off
+	  Inputs		  "2"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux2"
+	  SID			  "449"
+	  Ports			  [2, 1]
+	  Position		  [435, 261, 440, 299]
+	  ZOrder		  -7
 	  ShowName		  off
 	  Inputs		  "2"
 	  DisplayOption		  "bar"
@@ -2153,9 +1991,9 @@ Model {
 	Block {
 	  BlockType		  SubSystem
 	  Name			  "PID_P"
-	  SID			  "461"
+	  SID			  "450"
 	  Ports			  [2, 1]
-	  Position		  [490, 122, 565, 193]
+	  Position		  [235, 107, 310, 178]
 	  ZOrder		  -8
 	  RequestExecContextInheritance	off
 	  Object {
@@ -2171,7 +2009,7 @@ Model {
 		Type			"edit"
 		Name			"P"
 		Prompt			"Ganancia Proporcional"
-		Value			"kp"
+		Value			"0.1"
 	      }
 	      Object {
 		$ObjectID		43
@@ -2192,7 +2030,7 @@ Model {
 		Type			"edit"
 		Name			"Tm"
 		Prompt			"Período de muestreo"
-		Value			"Tm"
+		Value			"0.5"
 	      }
 	      Object {
 		$ObjectID		46
@@ -2206,7 +2044,7 @@ Model {
 		Type			"edit"
 		Name			"Fc"
 		Prompt			"Fc Filtro D"
-		Value			"5"
+		Value			"0.5"
 	      }
 	      Object {
 		$ObjectID		48
@@ -2243,7 +2081,7 @@ Model {
 	    Block {
 	      BlockType		      Inport
 	      Name		      "ref"
-	      SID		      "462"
+	      SID		      "451"
 	      Position		      [20, 103, 50, 117]
 	      ZOrder		      -1
 	      IconDisplay	      "Port number"
@@ -2251,7 +2089,7 @@ Model {
 	    Block {
 	      BlockType		      Inport
 	      Name		      "med"
-	      SID		      "463"
+	      SID		      "452"
 	      Position		      [20, 188, 50, 202]
 	      ZOrder		      -2
 	      Port		      "2"
@@ -2260,7 +2098,7 @@ Model {
 	    Block {
 	      BlockType		      DiscreteIntegrator
 	      Name		      "Discrete-Time\nIntegrator"
-	      SID		      "464"
+	      SID		      "453"
 	      Ports		      [1, 1]
 	      Position		      [280, 92, 315, 128]
 	      ZOrder		      -3
@@ -2270,7 +2108,7 @@ Model {
 	    Block {
 	      BlockType		      DiscreteIntegrator
 	      Name		      "Discrete-Time\nIntegrator1"
-	      SID		      "465"
+	      SID		      "454"
 	      Ports		      [1, 1]
 	      Position		      [285, 232, 320, 268]
 	      ZOrder		      -4
@@ -2282,7 +2120,7 @@ Model {
 	    Block {
 	      BlockType		      Gain
 	      Name		      "Gain"
-	      SID		      "466"
+	      SID		      "455"
 	      Position		      [150, 20, 180, 50]
 	      ZOrder		      -5
 	      ShowName		      off
@@ -2294,7 +2132,7 @@ Model {
 	    Block {
 	      BlockType		      Gain
 	      Name		      "Gain1"
-	      SID		      "467"
+	      SID		      "456"
 	      Position		      [150, 95, 180, 125]
 	      ZOrder		      -6
 	      ShowName		      off
@@ -2306,7 +2144,7 @@ Model {
 	    Block {
 	      BlockType		      Gain
 	      Name		      "Gain2"
-	      SID		      "468"
+	      SID		      "457"
 	      Position		      [150, 180, 180, 210]
 	      ZOrder		      -7
 	      ShowName		      off
@@ -2318,7 +2156,7 @@ Model {
 	    Block {
 	      BlockType		      Gain
 	      Name		      "Gain3"
-	      SID		      "469"
+	      SID		      "458"
 	      Position		      [285, 180, 315, 210]
 	      ZOrder		      -8
 	      ShowName		      off
@@ -2330,7 +2168,7 @@ Model {
 	    Block {
 	      BlockType		      Gain
 	      Name		      "Gain4"
-	      SID		      "470"
+	      SID		      "459"
 	      Position		      [405, 150, 435, 180]
 	      ZOrder		      -9
 	      BlockMirror	      on
@@ -2344,7 +2182,7 @@ Model {
 	    Block {
 	      BlockType		      Sum
 	      Name		      "Sum"
-	      SID		      "471"
+	      SID		      "460"
 	      Ports		      [3, 1]
 	      Position		      [370, 100, 390, 120]
 	      ZOrder		      -10
@@ -2358,7 +2196,7 @@ Model {
 	    Block {
 	      BlockType		      Sum
 	      Name		      "Sum1"
-	      SID		      "472"
+	      SID		      "461"
 	      Ports		      [2, 1]
 	      Position		      [235, 185, 255, 205]
 	      ZOrder		      -11
@@ -2372,7 +2210,7 @@ Model {
 	    Block {
 	      BlockType		      Sum
 	      Name		      "Sum2"
-	      SID		      "473"
+	      SID		      "462"
 	      Ports		      [2, 1]
 	      Position		      [460, 155, 480, 175]
 	      ZOrder		      -12
@@ -2388,7 +2226,7 @@ Model {
 	    Block {
 	      BlockType		      Sum
 	      Name		      "Sum3"
-	      SID		      "474"
+	      SID		      "463"
 	      Ports		      [2, 1]
 	      Position		      [220, 100, 240, 120]
 	      ZOrder		      -13
@@ -2402,7 +2240,7 @@ Model {
 	    Block {
 	      BlockType		      Sum
 	      Name		      "Sum4"
-	      SID		      "475"
+	      SID		      "464"
 	      Ports		      [2, 1]
 	      Position		      [80, 100, 100, 120]
 	      ZOrder		      -14
@@ -2416,7 +2254,7 @@ Model {
 	    Block {
 	      BlockType		      ZeroOrderHold
 	      Name		      "Zero-Order\nHold"
-	      SID		      "476"
+	      SID		      "465"
 	      Position		      [585, 95, 620, 125]
 	      ZOrder		      -15
 	      SampleTime	      "Tm"
@@ -2424,7 +2262,7 @@ Model {
 	    Block {
 	      BlockType		      Saturate
 	      Name		      "sat"
-	      SID		      "477"
+	      SID		      "466"
 	      Ports		      [1, 1]
 	      Position		      [495, 95, 525, 125]
 	      ZOrder		      -16
@@ -2435,7 +2273,7 @@ Model {
 	    Block {
 	      BlockType		      Outport
 	      Name		      "man"
-	      SID		      "478"
+	      SID		      "467"
 	      Position		      [645, 103, 675, 117]
 	      ZOrder		      -17
 	      IconDisplay	      "Port number"
@@ -2607,9 +2445,9 @@ Model {
 	Block {
 	  BlockType		  SubSystem
 	  Name			  "PID_V"
-	  SID			  "479"
+	  SID			  "468"
 	  Ports			  [2, 1]
-	  Position		  [620, 142, 695, 213]
+	  Position		  [365, 127, 440, 198]
 	  ZOrder		  -9
 	  RequestExecContextInheritance	off
 	  Object {
@@ -2625,14 +2463,14 @@ Model {
 		Type			"edit"
 		Name			"P"
 		Prompt			"Ganancia Proporcional"
-		Value			"kv"
+		Value			"0.1"
 	      }
 	      Object {
 		$ObjectID		52
 		Type			"edit"
 		Name			"I"
 		Prompt			"Ganancia Integral"
-		Value			"kv/tv"
+		Value			"0"
 	      }
 	      Object {
 		$ObjectID		53
@@ -2646,21 +2484,21 @@ Model {
 		Type			"edit"
 		Name			"Tm"
 		Prompt			"Período de muestreo"
-		Value			"Tm"
+		Value			"0.5"
 	      }
 	      Object {
 		$ObjectID		55
 		Type			"edit"
 		Name			"Kb"
 		Prompt			"Ganancia Antiwindup"
-		Value			"1"
+		Value			"0"
 	      }
 	      Object {
 		$ObjectID		56
 		Type			"edit"
 		Name			"Fc"
 		Prompt			"Fc Filtro D"
-		Value			"5"
+		Value			"0.5"
 	      }
 	      Object {
 		$ObjectID		57
@@ -2697,7 +2535,7 @@ Model {
 	    Block {
 	      BlockType		      Inport
 	      Name		      "ref"
-	      SID		      "480"
+	      SID		      "469"
 	      Position		      [20, 103, 50, 117]
 	      ZOrder		      -1
 	      IconDisplay	      "Port number"
@@ -2705,7 +2543,7 @@ Model {
 	    Block {
 	      BlockType		      Inport
 	      Name		      "med"
-	      SID		      "481"
+	      SID		      "470"
 	      Position		      [20, 188, 50, 202]
 	      ZOrder		      -2
 	      Port		      "2"
@@ -2714,7 +2552,7 @@ Model {
 	    Block {
 	      BlockType		      DiscreteIntegrator
 	      Name		      "Discrete-Time\nIntegrator"
-	      SID		      "482"
+	      SID		      "471"
 	      Ports		      [1, 1]
 	      Position		      [280, 92, 315, 128]
 	      ZOrder		      -3
@@ -2724,7 +2562,7 @@ Model {
 	    Block {
 	      BlockType		      DiscreteIntegrator
 	      Name		      "Discrete-Time\nIntegrator1"
-	      SID		      "483"
+	      SID		      "472"
 	      Ports		      [1, 1]
 	      Position		      [285, 232, 320, 268]
 	      ZOrder		      -4
@@ -2736,7 +2574,7 @@ Model {
 	    Block {
 	      BlockType		      Gain
 	      Name		      "Gain"
-	      SID		      "484"
+	      SID		      "473"
 	      Position		      [150, 20, 180, 50]
 	      ZOrder		      -5
 	      ShowName		      off
@@ -2748,7 +2586,7 @@ Model {
 	    Block {
 	      BlockType		      Gain
 	      Name		      "Gain1"
-	      SID		      "485"
+	      SID		      "474"
 	      Position		      [150, 95, 180, 125]
 	      ZOrder		      -6
 	      ShowName		      off
@@ -2760,7 +2598,7 @@ Model {
 	    Block {
 	      BlockType		      Gain
 	      Name		      "Gain2"
-	      SID		      "486"
+	      SID		      "475"
 	      Position		      [150, 180, 180, 210]
 	      ZOrder		      -7
 	      ShowName		      off
@@ -2772,7 +2610,7 @@ Model {
 	    Block {
 	      BlockType		      Gain
 	      Name		      "Gain3"
-	      SID		      "487"
+	      SID		      "476"
 	      Position		      [285, 180, 315, 210]
 	      ZOrder		      -8
 	      ShowName		      off
@@ -2784,7 +2622,7 @@ Model {
 	    Block {
 	      BlockType		      Gain
 	      Name		      "Gain4"
-	      SID		      "488"
+	      SID		      "477"
 	      Position		      [405, 150, 435, 180]
 	      ZOrder		      -9
 	      BlockMirror	      on
@@ -2798,7 +2636,7 @@ Model {
 	    Block {
 	      BlockType		      Sum
 	      Name		      "Sum"
-	      SID		      "489"
+	      SID		      "478"
 	      Ports		      [3, 1]
 	      Position		      [370, 100, 390, 120]
 	      ZOrder		      -10
@@ -2812,7 +2650,7 @@ Model {
 	    Block {
 	      BlockType		      Sum
 	      Name		      "Sum1"
-	      SID		      "490"
+	      SID		      "479"
 	      Ports		      [2, 1]
 	      Position		      [235, 185, 255, 205]
 	      ZOrder		      -11
@@ -2826,7 +2664,7 @@ Model {
 	    Block {
 	      BlockType		      Sum
 	      Name		      "Sum2"
-	      SID		      "491"
+	      SID		      "480"
 	      Ports		      [2, 1]
 	      Position		      [460, 155, 480, 175]
 	      ZOrder		      -12
@@ -2842,7 +2680,7 @@ Model {
 	    Block {
 	      BlockType		      Sum
 	      Name		      "Sum3"
-	      SID		      "492"
+	      SID		      "481"
 	      Ports		      [2, 1]
 	      Position		      [220, 100, 240, 120]
 	      ZOrder		      -13
@@ -2856,7 +2694,7 @@ Model {
 	    Block {
 	      BlockType		      Sum
 	      Name		      "Sum4"
-	      SID		      "493"
+	      SID		      "482"
 	      Ports		      [2, 1]
 	      Position		      [80, 100, 100, 120]
 	      ZOrder		      -14
@@ -2870,7 +2708,7 @@ Model {
 	    Block {
 	      BlockType		      ZeroOrderHold
 	      Name		      "Zero-Order\nHold"
-	      SID		      "494"
+	      SID		      "483"
 	      Position		      [580, 95, 615, 125]
 	      ZOrder		      -15
 	      SampleTime	      "Tm"
@@ -2878,7 +2716,7 @@ Model {
 	    Block {
 	      BlockType		      Saturate
 	      Name		      "sat"
-	      SID		      "495"
+	      SID		      "484"
 	      Ports		      [1, 1]
 	      Position		      [495, 95, 525, 125]
 	      ZOrder		      -16
@@ -2889,7 +2727,7 @@ Model {
 	    Block {
 	      BlockType		      Outport
 	      Name		      "man"
-	      SID		      "496"
+	      SID		      "485"
 	      Position		      [645, 103, 675, 117]
 	      ZOrder		      -17
 	      IconDisplay	      "Port number"
@@ -3061,79 +2899,41 @@ Model {
 	Block {
 	  BlockType		  ManualSwitch
 	  Name			  "PSelector"
-	  SID			  "497"
-	  Position		  [395, 202, 425, 238]
+	  SID			  "486"
+	  Position		  [160, 182, 190, 218]
 	  ZOrder		  -10
-	  CurrentSetting	  "0"
 	}
 	Block {
 	  BlockType		  Step
-	  Name			  "Referencia1"
-	  SID			  "498"
-	  Position		  [70, 115, 100, 145]
-	  ZOrder		  143
+	  Name			  "Referencia"
+	  SID			  "487"
+	  Position		  [10, 110, 40, 140]
+	  ZOrder		  -11
 	  Time			  "5"
 	  Before		  "-50"
 	  After			  "50"
-	  SampleTime		  "0.01"
-	}
-	Block {
-	  BlockType		  ManualSwitch
-	  Name			  "SPSelector"
-	  SID			  "499"
-	  Position		  [130, 122, 160, 158]
-	  ZOrder		  146
-	  CurrentSetting	  "0"
-	}
-	Block {
-	  BlockType		  Sum
-	  Name			  "Sum"
-	  SID			  "500"
-	  Ports			  [2, 1]
-	  Position		  [200, 130, 220, 150]
-	  ZOrder		  150
-	  ShowName		  off
-	  IconShape		  "round"
-	  Inputs		  "|++"
-	  InputSameDT		  off
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Sum
-	  Name			  "Sum1"
-	  SID			  "501"
-	  Ports			  [2, 1]
-	  Position		  [450, 285, 470, 305]
-	  ZOrder		  152
-	  ShowName		  off
-	  IconShape		  "round"
-	  Inputs		  "-+|"
-	  InputSameDT		  off
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
+	  SampleTime		  "0"
 	}
 	Block {
 	  BlockType		  ManualSwitch
 	  Name			  "VSelector"
-	  SID			  "502"
-	  Position		  [395, 337, 425, 373]
+	  SID			  "488"
+	  Position		  [160, 322, 190, 358]
 	  ZOrder		  -12
-	  CurrentSetting	  "0"
 	}
 	Block {
 	  BlockType		  Outport
 	  Name			  "Aux1"
-	  SID			  "503"
-	  Position		  [730, 48, 760, 62]
+	  SID			  "489"
+	  Position		  [475, 33, 505, 47]
 	  ZOrder		  -13
 	  IconDisplay		  "Port number"
 	}
 	Block {
 	  BlockType		  Outport
 	  Name			  "Aux2"
-	  SID			  "504"
-	  Position		  [730, 93, 760, 107]
+	  SID			  "490"
+	  Position		  [475, 78, 505, 92]
 	  ZOrder		  -14
 	  Port			  "2"
 	  IconDisplay		  "Port number"
@@ -3141,8 +2941,8 @@ Model {
 	Block {
 	  BlockType		  Outport
 	  Name			  "Aux3"
-	  SID			  "505"
-	  Position		  [730, 288, 760, 302]
+	  SID			  "491"
+	  Position		  [475, 273, 505, 287]
 	  ZOrder		  -15
 	  Port			  "3"
 	  IconDisplay		  "Port number"
@@ -3150,231 +2950,59 @@ Model {
 	Block {
 	  BlockType		  Outport
 	  Name			  "man"
-	  SID			  "506"
-	  Position		  [730, 173, 760, 187]
+	  SID			  "492"
+	  Position		  [475, 158, 505, 172]
 	  ZOrder		  -16
 	  Port			  "4"
 	  IconDisplay		  "Port number"
 	}
 	Line {
 	  ZOrder		  1
-	  SrcBlock		  "Gain4"
-	  SrcPort		  1
-	  DstBlock		  "Sum"
-	  DstPort		  2
-	}
-	Line {
-	  ZOrder		  2
-	  SrcBlock		  "Discrete Derivative1"
-	  SrcPort		  1
-	  DstBlock		  "Gain3"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  3
-	  SrcBlock		  "Add1"
-	  SrcPort		  1
-	  Points		  [9, 0; 0, -77; -134, 0]
-	  DstBlock		  "Manual Switch1"
-	  DstPort		  2
-	}
-	Line {
-	  ZOrder		  4
-	  SrcBlock		  "Gain3"
-	  SrcPort		  1
-	  Points		  [5, 0; 0, -30]
-	  DstBlock		  "Add1"
-	  DstPort		  2
-	}
-	Line {
-	  ZOrder		  5
-	  SrcBlock		  "Gain2"
-	  SrcPort		  1
-	  Points		  [5, 0; 0, 30]
-	  DstBlock		  "Add1"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  6
-	  SrcBlock		  "Discrete Derivative"
-	  SrcPort		  1
-	  Points		  [17, 0]
-	  Branch {
-	    ZOrder		    7
-	    Points		    [0, 47; -98, 0; 0, 33]
-	    DstBlock		    "Discrete Derivative1"
-	    DstPort		    1
-	  }
-	  Branch {
-	    ZOrder		    8
-	    DstBlock		    "Gain2"
-	    DstPort		    1
-	  }
-	}
-	Line {
-	  ZOrder		  9
-	  SrcBlock		  "Sum"
-	  SrcPort		  1
-	  DstBlock		  "PID_P"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  10
-	  SrcBlock		  "Manual Switch1"
-	  SrcPort		  1
-	  Points		  [15, 0]
-	  DstBlock		  "Gain4"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  11
-	  SrcBlock		  "SPSelector"
-	  SrcPort		  1
-	  Points		  [16, 0]
-	  Branch {
-	    ZOrder		    12
-	    Points		    [0, -95]
-	    DstBlock		    "Mux"
-	    DstPort		    1
-	  }
-	  Branch {
-	    ZOrder		    13
-	    Points		    [0, 155]
-	    DstBlock		    "Sum1"
-	    DstPort		    2
-	  }
-	  Branch {
-	    ZOrder		    14
-	    DstBlock		    "Sum"
-	    DstPort		    1
-	  }
-	}
-	Line {
-	  ZOrder		  15
-	  SrcBlock		  "Demux"
-	  SrcPort		  1
-	  Points		  [13, 0; 0, -24; -48, 0]
-	  Branch {
-	    ZOrder		    16
-	    DstBlock		    "SPSelector"
-	    DstPort		    2
-	  }
-	  Branch {
-	    ZOrder		    17
-	    Points		    [-80, 0; 0, 264]
-	    DstBlock		    "Discrete Derivative"
-	    DstPort		    1
-	  }
-	}
-	Line {
-	  ZOrder		  18
-	  SrcBlock		  "Add"
-	  SrcPort		  1
-	  DstBlock		  "Manual Switch1"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  19
-	  SrcBlock		  "Gain1"
-	  SrcPort		  1
-	  Points		  [5, 0; 0, -15]
-	  DstBlock		  "Add"
-	  DstPort		  2
-	}
-	Line {
-	  ZOrder		  20
-	  SrcBlock		  "Gain"
-	  SrcPort		  1
-	  Points		  [5, 0; 0, 10]
-	  DstBlock		  "Add"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  21
-	  SrcBlock		  "Demux"
-	  SrcPort		  3
-	  Points		  [7, 0; 0, 47; -108, 0; 0, 78]
-	  DstBlock		  "Gain1"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  22
-	  SrcBlock		  "Demux"
-	  SrcPort		  2
-	  Points		  [13, 0; 0, 74; -108, 0]
-	  DstBlock		  "Gain"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  23
-	  SrcBlock		  "From\nWorkspace"
-	  SrcPort		  1
-	  DstBlock		  "Demux"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  24
-	  SrcBlock		  "Referencia1"
-	  SrcPort		  1
-	  DstBlock		  "SPSelector"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  25
 	  SrcBlock		  "PID_V"
 	  SrcPort		  1
 	  DstBlock		  "man"
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  26
-	  SrcBlock		  "Sum1"
+	  ZOrder		  2
+	  SrcBlock		  "Mux2"
 	  SrcPort		  1
 	  DstBlock		  "Aux3"
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  27
+	  ZOrder		  3
 	  SrcBlock		  "Mux1"
 	  SrcPort		  1
 	  DstBlock		  "Aux2"
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  28
+	  ZOrder		  4
 	  SrcBlock		  "Mux"
 	  SrcPort		  1
 	  DstBlock		  "Aux1"
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  29
+	  ZOrder		  5
 	  SrcBlock		  "PSelector"
 	  SrcPort		  1
-	  Points		  [30, 0]
+	  Points		  [17, 0; 0, -40]
 	  Branch {
-	    ZOrder		    30
-	    DstBlock		    "Sum1"
-	    DstPort		    1
+	    ZOrder		    6
+	    Points		    [0, -110]
+	    DstBlock		    "Mux"
+	    DstPort		    2
 	  }
 	  Branch {
-	    ZOrder		    31
-	    Points		    [0, -45]
-	    Branch {
-	      ZOrder		      32
-	      DstBlock		      "PID_P"
-	      DstPort		      2
-	    }
-	    Branch {
-	      ZOrder		      33
-	      Points		      [0, -110]
-	      DstBlock		      "Mux"
-	      DstPort		      2
-	    }
+	    ZOrder		    7
+	    DstBlock		    "PID_P"
+	    DstPort		    2
 	  }
 	}
 	Line {
-	  ZOrder		  34
+	  ZOrder		  8
 	  SrcBlock		  "FiltroP"
 	  SrcPort		  1
 	  Points		  [8, 0; 0, -20]
@@ -3382,78 +3010,114 @@ Model {
 	  DstPort		  2
 	}
 	Line {
-	  ZOrder		  35
+	  ZOrder		  9
 	  SrcBlock		  "VSelector"
 	  SrcPort		  1
-	  Points		  [169, 0; 0, -160]
+	  Points		  [149, 0; 0, -160]
 	  Branch {
-	    ZOrder		    36
+	    ZOrder		    10
 	    Points		    [0, -85]
 	    DstBlock		    "Mux1"
 	    DstPort		    2
 	  }
 	  Branch {
-	    ZOrder		    37
+	    ZOrder		    11
 	    DstBlock		    "PID_V"
 	    DstPort		    2
 	  }
 	}
 	Line {
-	  ZOrder		  38
+	  ZOrder		  12
 	  SrcBlock		  "FiltroV"
 	  SrcPort		  1
 	  Points		  [8, 0; 0, -20]
-	  DstBlock		  "VSelector"
-	  DstPort		  2
+	  Branch {
+	    ZOrder		    13
+	    DstBlock		    "VSelector"
+	    DstPort		    2
+	  }
+	  Branch {
+	    ZOrder		    14
+	    Points		    [0, -60]
+	    DstBlock		    "Mux2"
+	    DstPort		    2
+	  }
 	}
 	Line {
-	  ZOrder		  39
+	  ZOrder		  15
 	  SrcBlock		  "Vmed"
 	  SrcPort		  1
 	  Points		  [10, 0]
 	  Branch {
-	    ZOrder		    40
-	    DstBlock		    "VSelector"
-	    DstPort		    1
+	    ZOrder		    16
+	    Points		    [63, 0]
+	    Branch {
+	      ZOrder		      17
+	      DstBlock		      "VSelector"
+	      DstPort		      1
+	    }
+	    Branch {
+	      ZOrder		      18
+	      Points		      [0, -60]
+	      DstBlock		      "Mux2"
+	      DstPort		      1
+	    }
 	  }
 	  Branch {
-	    ZOrder		    41
+	    ZOrder		    19
 	    Points		    [0, 40]
 	    DstBlock		    "FiltroV"
 	    DstPort		    1
 	  }
 	}
 	Line {
-	  ZOrder		  42
+	  ZOrder		  20
 	  SrcBlock		  "PID_P"
 	  SrcPort		  1
 	  Points		  [9, 0]
 	  Branch {
-	    ZOrder		    43
+	    ZOrder		    21
 	    Points		    [0, -70]
 	    DstBlock		    "Mux1"
 	    DstPort		    1
 	  }
 	  Branch {
-	    ZOrder		    44
+	    ZOrder		    22
 	    DstBlock		    "PID_V"
 	    DstPort		    1
 	  }
 	}
 	Line {
-	  ZOrder		  45
+	  ZOrder		  23
 	  SrcBlock		  "Pmed"
 	  SrcPort		  1
 	  Points		  [11, 0]
 	  Branch {
-	    ZOrder		    46
+	    ZOrder		    24
 	    DstBlock		    "PSelector"
 	    DstPort		    1
 	  }
 	  Branch {
-	    ZOrder		    47
+	    ZOrder		    25
 	    Points		    [0, 40]
 	    DstBlock		    "FiltroP"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  ZOrder		  26
+	  SrcBlock		  "Referencia"
+	  SrcPort		  1
+	  Points		  [141, 0]
+	  Branch {
+	    ZOrder		    27
+	    DstBlock		    "PID_P"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    28
+	    Points		    [0, -95]
+	    DstBlock		    "Mux"
 	    DstPort		    1
 	  }
 	}

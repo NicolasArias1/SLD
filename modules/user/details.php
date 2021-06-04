@@ -71,13 +71,99 @@
 	include('../../utilities/details.mod.php');
 
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!-- Realiza práctica desde perfil admin. -->
+<?php  if($level == 1){  ?>
+
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<?php require_once('../../modules/admin/css/libcss.php') ?>
+	<script language="JavaScript" src="../../js/sld.js" type="text/javascript"></script>
+	<script language="JavaScript" src="../../js/osld.js" type="text/javascript"></script>
+	<script language="JavaScript" src="../../js/asld.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="../../modules/admin/css/index.css">
+
+
+</head>
+
+<body>
+	<div id="wrapper">
+		<div class="overlay"></div>
+
+		<?php require_once('../../structure/sidebar_admin.php') ?>
+
+		<div id="page-content-wrapper" class="toggled">
+
+			<?php require_once('../../structure/navbar_admin.php') ?>
+
+			<div class="container-fluid p-0 px-lg-0 px-md-0">
+				<div class="container-fluid px-lg-4 content_g ">
+					<div class="row">
+						<div id="content3" class="col-md-12 mt-lg-4 mt-4">
+
+							<div id="content_r">
+								<?php if(isset($alert) && $alert){ ?>
+								<p class="alert"><?php echo $atxt; ?></p>
+								<?php }	?>
+
+								<?php if(!$res) {?><h1 class="content_r_hst1"><?php echo $btxt; ?></h1><?php } ?>
+								<div id="results_box">
+									<?php echo $resHTML; ?>
+								</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+<?php require_once('../../modules/admin/js/libjs.php') ?>
+<script src="../../modules/admin/js/index.js"></script>
+
+</html>
+
+
+
+<?php }  ?>
+
+<!-- Realiza práctica desde perfil profesor. -->
+<?php  if($level == 2){  ?>
+
+
+
+
+<?php }  ?>
+
+<!-- Realiza práctica desde perfil est. -->
+<?php  if($level == 3){  ?>
+
+
+
+
+<?php }  ?>
+
+
+
+<!--
+
+
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 	<title>Sistema de Laboratorios a Distancia : : Inicio</title>
-  <link href="../../css/styles.css" rel="stylesheet" type="text/css" />
-  <script language="JavaScript" src="../../js/sld.js" type="text/javascript"></script>
+	<link href="../../css/styles.css" rel="stylesheet" type="text/css" />
+	<script language="JavaScript" src="../../js/sld.js" type="text/javascript"></script>
 	<script language="JavaScript" src="../../js/osld.js" type="text/javascript"></script>
 	<script language="JavaScript" src="../../js/asld.js" type="text/javascript"></script>
 </head>
@@ -105,7 +191,7 @@
 					<li><a href="index.php">Inicio</a></li>
 					<li><a href="theory.php">Teor&iacute;a</a></li>
 					<li><a href="practices.php">Pr&aacute;cticas</a></li>
-					<li><a href="platform.php">Plataforma</a></li>					
+					<li><a href="platform.php">Plataforma</a></li>
 				</ul>
 			</div>
 			<div id="nav_r"></div>
@@ -140,8 +226,8 @@
 				<?php
 				if(isset($alert) && $alert){
 					?>
-					<p class="alert"><?php echo $atxt; ?></p>
-					<?php
+				<p class="alert"><?php echo $atxt; ?></p>
+				<?php
 				}					
 				?>
 				<?php if(!$res) {?><h1 class="content_r_hst1"><?php echo $btxt; ?></h1><?php } ?>
@@ -151,49 +237,56 @@
 				<?php
 					if($ncomments) {
 					?>
-					<div id="comments_box">			
-					  <?php
+				<div id="comments_box">
+					<?php
 					  	echo $comHTML;
 					  ?>
-					</div>
-					<?php			
+				</div>
+				<?php			
 				}//end if
 
 					?>
-					<div id="comment_form_box">
-						<h1 class="content_r_hst2">Comentario</h1>
-						<p>
-							Los comentarios que emitir&aacute; ser&aacute;n revisados por los profesores.
-						</p>
-						<form id="comment_form" name="comment_form" method="post" action="../../utilities/updatecontribution.mod.php" enctype="multipart/form-data">
-							<input id="action" name="action" type="hidden" value="new">
-							<input id="id" name="id" type="hidden">
-							<input id="rid" name="rid" type="hidden" value="<?php echo $rid; ?>">
-							<input id="advuser" name="advuser" type="hidden" value="<?php echo $advuser; ?>">
-							<input id="page" name="page" type="hidden" value="../user/details.php?res=<?php echo $res; ?>&rid=<?php echo $rid; ?>">
-							<textarea id="comment_txt" name="comment_txt" cols="68" rows="3" class="input_field"></textarea>
-							<input id="comsend" name="comsend" type="button" class="form_button" value="Guardar" onclick="saveComment()" />
-							<input id="comreset" name="comreset" type="reset" class="form_button" value="Nuevo" onclick="newComment()" />
-						</form>
-					</div>
-					<?php
+				<div id="comment_form_box">
+					<h1 class="content_r_hst2">Comentario</h1>
+					<p>
+						Los comentarios que emitir&aacute; ser&aacute;n revisados por los profesores.
+					</p>
+					<form id="comment_form" name="comment_form" method="post"
+						action="../../utilities/updatecontribution.mod.php" enctype="multipart/form-data">
+						<input id="action" name="action" type="hidden" value="new">
+						<input id="id" name="id" type="hidden">
+						<input id="rid" name="rid" type="hidden" value="<?php echo $rid; ?>">
+						<input id="advuser" name="advuser" type="hidden" value="<?php echo $advuser; ?>">
+						<input id="page" name="page" type="hidden"
+							value="../user/details.php?res=<?php echo $res; ?>&rid=<?php echo $rid; ?>">
+						<textarea id="comment_txt" name="comment_txt" cols="68" rows="3" class="input_field"></textarea>
+						<input id="comsend" name="comsend" type="button" class="form_button" value="Guardar"
+							onclick="saveComment()" />
+						<input id="comreset" name="comreset" type="reset" class="form_button" value="Nuevo"
+							onclick="newComment()" />
+					</form>
+				</div>
+				<?php
 		
 				?>
 				<div id="comment_form_box">
-						
-						<p>
-							Para mandar a revisar la practica oprima el boton Revisar.
-						</p>
-						<form id="revisar_form" name="revisar_form" method="post" action="../../utilities/updatepracticesrev.mod.php" enctype="multipart/form-data">
-							
-							
-							<input id="rid" name="rid" type="hidden" value="<?php echo $rid; ?>">
-							
-							<input id="page" name="page" type="hidden" value="../user/details.php?res=<?php echo $res; ?>&rid=<?php echo $rid; ?>">
-							
-							<input id="comsend" name="comsend" type="button" class="form_button" value="Revisar" onclick="revisar()" />
-							
-						</form>
+
+					<p>
+						Para mandar a revisar la practica oprima el boton Revisar.
+					</p>
+					<form id="revisar_form" name="revisar_form" method="post"
+						action="../../utilities/updatepracticesrev.mod.php" enctype="multipart/form-data">
+
+
+						<input id="rid" name="rid" type="hidden" value="<?php echo $rid; ?>">
+
+						<input id="page" name="page" type="hidden"
+							value="../user/details.php?res=<?php echo $res; ?>&rid=<?php echo $rid; ?>">
+
+						<input id="comsend" name="comsend" type="button" class="form_button" value="Revisar"
+							onclick="revisar()" />
+
+					</form>
 				</div>
 			</div>
 			<div class="blank"></div>
@@ -203,4 +296,7 @@
 		</div>
 	</div>
 </body>
+
 </html>
+
+-->

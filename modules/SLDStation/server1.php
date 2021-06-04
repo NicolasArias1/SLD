@@ -83,7 +83,7 @@
 					$strvarray = explode(";", substr($vars, 0, -1));
 					
 					for($i=0; $i < count($strvarray); $i++) {
-						list($key, $value) = explode("=", $strvarray[$i]);
+						list($key, $value) = explode("=", $strvarray[$i].'=');
 						
 						$strrep = "$".$key."$";
 						
