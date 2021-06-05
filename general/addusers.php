@@ -35,7 +35,7 @@
 				if(SOLICIT_AUTH)
 					$atxt = "La operaci&oacute;n se realiz&oacute; con &eacute;xito: <span class=\"text\">Los datos se introdujeron correctamente, si es aprobada su solicitud se le comunicar&aacute; por su correo electr&oacute;nico.</span>";
 				else if(REGISTER_AUTH)
-					$atxt = "La operaci&oacute;n se realiz� con &eacute;xito: <span class=\"text\">Los datos se introdujeron correctamente.</span>";
+					$atxt = "La operaci&oacute;n se realizó con &eacute;xito: <span class=\"text\">Los datos se introdujeron correctamente.</span>";
 				break;
 			case 2:
 				$efname = array('Nombre', 'Nombre de Usuario', 'EMail');
@@ -59,6 +59,132 @@
 	}//end if
 	
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<?php require_once('css/libcss.php'); ?>
+	<script language="JavaScript" src="../js/sld.js" type="text/javascript"></script>
+	<script language="JavaScript" src="../js/osld.js" type="text/javascript"></script>
+	<script language="JavaScript" src="../js/asld.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="css/addusers.css">
+
+</head>
+
+<body>
+	<div id="wrapper">
+		<!-- Page Content -->
+		<div id="page-content-wrapper" class="toggled">
+
+			<?php require_once('../structure/mainHeader.php'); ?>
+
+			<div id="content">
+
+				<div id="content2" class="container-fluid p-0 px-lg-0 px-md-0">
+
+					<!-- End of Topbar -->
+
+					<!-- Begin Page Content -->
+					<div class="container-fluid px-lg-4 content_g ">
+						<div class="row">
+							<div id="content3" class="col-md-12 mt-lg-4 mt-4">
+								<div id="content_r" style="width:700px;border: 1px solid #cecece; border-radius: 3px; padding: 30px 100px;">
+
+									<h1 class="content_r_hst1">Registrarse</h1>
+									<?php
+										if($alert) {
+											?>
+														<p class="alert alert-info" style="font-size:14px;"><?php echo $atxt; ?></p>
+														<?php
+										}//end if
+									?>
+									<form id="frmuser" name="frmuser" method="post"
+										action="../utilities/userregistration.mod.php" enctype="multipart/form-data">
+
+
+
+										<div class="form-group row">
+											<label class="col-sm-4 col-form-label">Nombre completo:</label>
+											<div class="col-sm-8 std">
+												<input id="uname" name="uname" type="text" class="form-control"
+													placeholder="Nombre completo" value="" size="30" autocomplete="off">
+											</div>
+										</div>
+
+										<div class="form-group row">
+											<label class="col-sm-4 col-form-label">Nombre de usuario:</label>
+											<div class="col-sm-8 std">
+												<input id="ulogin" name="ulogin" type="text" class="form-control"
+													placeholder="Nombre de usuario" value="" size="30"
+													autocomplete="off">
+											</div>
+										</div>
+										<div class="form-group row">
+											<label class="col-sm-4 col-form-label">Email:</label>
+											<div class="col-sm-8 std">
+												<input id="umail" name="umail" type="text" class="form-control"
+													placeholder="Email" value="" size="30" autocomplete="off">
+											</div>
+										</div>
+										<div class="form-group row">
+											<label class="col-sm-4 col-form-label">Contraseña:</label>
+											<div class="col-sm-8 std">
+												<input id="upassword" name="upassword" type="password"
+													class="form-control" placeholder="Contraseña" value="" size="30"
+													maxlength="12" autocomplete="off">
+											</div>
+										</div>
+
+										<div class="form-group row">
+											<label class="col-sm-4 col-form-label">Confirmar contraseña:</label>
+											<div class="col-sm-8 std">
+												<input id="uconfirm" name="uconfirm" type="password"
+													class="form-control" placeholder="Confirmar contraseña" value=""
+													size="30" maxlength="12" autocomplete="off">
+											</div>
+										</div>
+
+										<div class="form-group row secbtnGuardar">
+											<input id="type" name="type" type="hidden" value="<?php echo $type; ?>" />
+											<input id="save" name="save" type="button" class="btnGuardar"
+												value="Enviar" onClick="saveRegistration()" />
+										</div>
+
+									</form>
+
+
+
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<!-- /.container-fluid -->
+
+				</div>
+
+
+
+			</div>
+		</div>
+		<!-- /#page-content-wrapper -->
+
+	</div>
+</body>
+
+<?php require_once('js/libjs.php'); ?>
+
+
+</html>
+
+
+
+<!--
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -99,29 +225,7 @@
 			<div id="nav_r"></div>
 		</div>
 		<div id="content">
-			<div id="content_l">
-				<div id="content_l_t"></div>
-				<div id="content_l_c">
-					<form action="../general/login.php" method="post" enctype="multipart/form-data">
-						<h1 class="content_l_hst1">Autentificaci&oacute;n</h1>
-						<div class="input_celd">Nombre de usuario<br />
-						  <input name="login" type="text" size="15" class="input_field" />
-						</div>
-						<div class="input_celd">Contrase&ntilde;a<br />
-						  <input name="passwd" type="password" size="15" class="input_field" />
-						</div>
-						<div style="display:none;" class="input_celd">Dominio<br />
-						  <select name="domain" id="domain" class="input_field">						    
-						    <option>db</option>
-					    </select>
-						</div>
-						<div class="input_celd">
-						  <input type="submit" name="Submit" value="Enviar" class="input_button" />
-						</div>
-					</form>
-				</div>
-				<div id="content_l_b"></div>
-			</div>
+
 			<div id="content_r">
 				<?php
 					if($alert) {
@@ -167,3 +271,4 @@
 	</div>
 </body>
 </html>
+ -->

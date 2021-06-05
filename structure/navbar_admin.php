@@ -21,7 +21,7 @@
         <li class="nav-item dropdown">
             <a class="nav-link">
                 <div class="btnLog">
-                    <span class="mr-2 d-lg-inline small"><b><?php echo $name; ?></b></span>
+                    <span style="color:black;" class="mr-2 d-lg-inline small"><b><?php echo $name; ?></b></span>
                 </div>
             </a>
         </li>
