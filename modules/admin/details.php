@@ -1,131 +1,138 @@
 <?php
-	include('../../config/config.php');
-	
-	include('../../inc/db.class.php');
-	include('../../inc/sch.class.php');
-	include('../../inc/useful.fns.php');
-	include('../../inc/user.class.php');
-	
-	session_start();
-	
-	$session = $_SESSION['user'];
-	
-	if(empty($session)) {
-		header('Location: ../../index.php');
-	}//end if
-	
-	$user = unserialize($session);
-	$uid = $user->getUID();
-	$name = $user->getName();
-	$login = $user->getLogin();
-	$mail = $user->getEMail();
-	$domain = $user->getDomain();
-	$level = $user->getPriority();
-	$_SESSION['user'] = serialize($user);
-	
-	if($level > 1) {
-		if($level == 2)
-			header('Location: ../operator/index.php');
-		else if($level == 3)
-			header('Location: ../user/index.php');
-		else
-			header('Location: ../../general/logout.php');
-	}//end if
+include('../../config/config.php');
 
-	$alert = '';
-	$rid = '';
-	$res = '';
+include('../../inc/db.class.php');
+include('../../inc/sch.class.php');
+include('../../inc/useful.fns.php');
+include('../../inc/user.class.php');
 
-	//if (isset($alert)){ $alert = $_GET['alert']; }
-	if (isset($rid)){ $alert = $rid = $_GET['rid']; }
-	if (isset($res)){ $alert = $res = $_GET['res']; }
+require_once('../../libraries/Mobile_Detect.php');
 
-	
-	
-	$image = "../";
-	$advuser = TRUE;
-	
-	
-	$usrHTML = "<li><a href=\"../user/index.php\" class=\"ast3\">Usar</a></li>";	
+$detect = new Mobile_Detect;
 
-	if($alert) {
-		switch($alert) {
-			case 1:
-				$atxt = "<strong>La operaci&oacute;n se realiz&oacute; con &eacute;xito:</strong> Su comentario fue recibido, ser&aacute; publicado luego de ser revisado.";
-				break;
-			case 2:
-				$atxt = "<strong>No se puede realizar la operaci&oacute;n:</strong> Verifique su comentario, hay campos vacios.";
-				break;
-			case 3:
-				$atxt = "<strong>No se puede realizar la operaci&oacute;n:</strong> Sus datos no se recibieron correctamente.";
-				break;
-		}//end switch
-	}//end if
-	
-	if($res) {
-		$path = "../results/".$res."/";
-		ob_start();
-		include($path.'salida.html');
-		$resHTML = ob_get_contents();
-		ob_end_clean();
+session_start();
 
-	}//end if
-	
-	include('../../utilities/details.mod.php');
+$session = $_SESSION['user'];
+
+if (empty($session)) {
+	header('Location: ../../index.php');
+} //end if
+
+$user = unserialize($session);
+$uid = $user->getUID();
+$name = $user->getName();
+$login = $user->getLogin();
+$mail = $user->getEMail();
+$domain = $user->getDomain();
+$level = $user->getPriority();
+$_SESSION['user'] = serialize($user);
+
+if ($level > 1) {
+	if ($level == 2)
+		header('Location: ../operator/index.php');
+	else if ($level == 3)
+		header('Location: ../user/index.php');
+	else
+		header('Location: ../../general/logout.php');
+} //end if
+
+$alert = '';
+$rid = '';
+$res = '';
+
+//if (isset($alert)){ $alert = $_GET['alert']; }
+if (isset($rid)) {
+	$alert = $rid = $_GET['rid'];
+}
+if (isset($res)) {
+	$alert = $res = $_GET['res'];
+}
+
+
+
+$image = "../";
+$advuser = TRUE;
+
+
+$usrHTML = "<li><a href=\"../user/index.php\" class=\"ast3\">Usar</a></li>";
+
+if ($alert) {
+	switch ($alert) {
+		case 1:
+			$atxt = "<strong>La operaci&oacute;n se realiz&oacute; con &eacute;xito:</strong> Su comentario fue recibido, ser&aacute; publicado luego de ser revisado.";
+			break;
+		case 2:
+			$atxt = "<strong>No se puede realizar la operaci&oacute;n:</strong> Verifique su comentario, hay campos vacios.";
+			break;
+		case 3:
+			$atxt = "<strong>No se puede realizar la operaci&oacute;n:</strong> Sus datos no se recibieron correctamente.";
+			break;
+	} //end switch
+} //end if
+
+if ($res) {
+	$path = "../results/" . $res . "/";
+	ob_start();
+	include($path . 'salida.html');
+	$resHTML = ob_get_contents();
+	ob_end_clean();
+} //end if
+
+include('../../utilities/details.mod.php');
 ?>
 
 <!-- Realiza práctica desde perfil adm. -->
-<?php  if($level == 1){  ?>
+<?php if ($level == 1) {  ?>
 
 	<!doctype html>
-<html lang="en">
+	<html lang="en">
 
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<?php require_once('css/libcss.php') ?>
-	<script language="JavaScript" src="../../js/sld.js" type="text/javascript"></script>
-	<script language="JavaScript" src="../../js/osld.js" type="text/javascript"></script>
-	<script language="JavaScript" src="../../js/asld.js" type="text/javascript"></script>
-	<link rel="stylesheet" href="css/index.css">
-</head>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<?php require_once('css/libcss.php') ?>
+		<script language="JavaScript" src="../../js/sld.js" type="text/javascript"></script>
+		<script language="JavaScript" src="../../js/osld.js" type="text/javascript"></script>
+		<script language="JavaScript" src="../../js/asld.js" type="text/javascript"></script>
+		<link rel="stylesheet" href="css/index.css">
+	</head>
 
-<body>
-	<div id="wrapper">
-		<div class="overlay"></div>
+	<body>
+		<div id="wrapper">
+			<div class="overlay"></div>
 
-		<?php require_once('../../structure/sidebar_admin.php') ?>
+			<?php require_once('../../structure/sidebar_admin.php') ?>
 
-		<div id="page-content-wrapper" class="toggled">
+			<div id="page-content-wrapper" <?php if (!$detect->isMobile()) echo 'class="toggled"' ?>>
 
-			<?php require_once('../../structure/navbar_admin.php') ?>
+				<?php require_once('../../structure/navbar_admin.php') ?>
 
-			<div class="container-fluid p-0 px-lg-0 px-md-0">
-				<div class="container-fluid px-lg-4 content_g ">
-					<div class="row">
-						<div id="content3" class="col-md-12 mt-lg-4 mt-4">
+				<div class="container-fluid p-0 px-lg-0 px-md-0">
+					<div class="container-fluid px-lg-4 content_g ">
+						<div class="row">
+							<div id="content3" class="col-md-12 mt-lg-4 mt-4">
 
-							<div id="content_r">
+								<div id="content_r">
 
-							<?php if(!$res) {?><h1 class="content_r_hst1"><?php echo $btxt; ?></h1><?php } ?>
-							<div id="results_box">
-								<?php echo $resHTML; ?>
-							</div>
+									<?php if (!$res) { ?><h1 class="content_r_hst1"><?php echo $btxt; ?></h1><?php } ?>
+									<div id="results_box">
+										<?php echo $resHTML; ?>
+									</div>
 
 
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-</body>
+	</body>
 
-<?php require_once('js/libjs.php') ?>
-<script src="js/index.js"></script>
+	<?php require_once('js/libjs.php') ?>
+	<script src="js/index.js"></script>
 
-</html>
+	</html>
 
 
 <?php }  ?>
@@ -134,7 +141,7 @@
 
 
 <!-- Realiza práctica desde perfil profesor. -->
-<?php  if($level == 2){  ?>
+<?php if ($level == 2) {  ?>
 
 
 
@@ -143,7 +150,7 @@
 
 
 <!-- Realiza práctica desde perfil est. -->
-<?php  if($level == 3){  ?>
+<?php if ($level == 3) {  ?>
 
 
 
@@ -233,7 +240,7 @@
 			</div>
 			<div id="content_r">
 		
-				<?php if(!$res) {?><h1 class="content_r_hst1"><?php echo $btxt; ?></h1><?php } ?>
+				<?php if (!$res) { ?><h1 class="content_r_hst1"><?php echo $btxt; ?></h1><?php } ?>
 				<div id="results_box">
 					<?php echo $resHTML; ?>
 				</div>

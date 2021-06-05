@@ -1,112 +1,114 @@
 <?php
-	include('../inc/useful.fns.php');
-	include('../inc/user.class.php');
-	
-	session_start();
-	
-	$session = $_SESSION['user'];
+include('../inc/useful.fns.php');
+include('../inc/user.class.php');
+require_once('../libraries/Mobile_Detect.php');
 
-	if(empty($session)) {
-		header('Location: ../index.php');
-	}//end if
-	
-	$user = unserialize($session);
-	$uid = $user->getUID();
-	$name = $user->getName();
-	$login = $user->getLogin();
-	$mail = $user->getEMail();
-	$domain = $user->getDomain();
-	$level = $user->getPriority();
-	$_SESSION['user'] = serialize($user);
-	
-        $varerror = $_GET['err'];
+$detect = new Mobile_Detect;
 
-	if($level == 1)
-		$usrHTML = "<li><a href=\"../modules/admin/index.php\" class=\"ast3\">Administrar</a></li>";
-	else if($level == 2)
-		$usrHTML = "<li>Operar</li>";
+session_start();
+
+$session = $_SESSION['user'];
+
+if (empty($session)) {
+	header('Location: ../index.php');
+} //end if
+
+$user = unserialize($session);
+$uid = $user->getUID();
+$name = $user->getName();
+$login = $user->getLogin();
+$mail = $user->getEMail();
+$domain = $user->getDomain();
+$level = $user->getPriority();
+$_SESSION['user'] = serialize($user);
+
+$varerror = $_GET['err'];
+
+if ($level == 1)
+	$usrHTML = "<li><a href=\"../modules/admin/index.php\" class=\"ast3\">Administrar</a></li>";
+else if ($level == 2)
+	$usrHTML = "<li>Operar</li>";
 ?>
 
 
 <!-- Realiza práctica desde perfil admin. -->
-<?php  if($level == 1){  ?>
+<?php if ($level == 1) {  ?>
 
 
-<!doctype html>
-<html lang="en">
+	<!doctype html>
+	<html lang="en">
 
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<?php require_once('../modules/admin/css/libcss.php') ?>
-	<link rel="stylesheet" href="../modules/admin/css/index.css">
-</head>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<?php require_once('../modules/admin/css/libcss.php') ?>
+		<link rel="stylesheet" href="../modules/admin/css/index.css">
+	</head>
 
-<body>
-	<div id="wrapper">
-		<div class="overlay"></div>
+	<body>
+		<div id="wrapper">
+			<div class="overlay"></div>
 
-		<?php require_once('../structure/sidebar_admin.php') ?>
+			<?php require_once('../structure/sidebar_errors.php') ?>
 
-		<div id="page-content-wrapper" class="toggled">
+			<div id="page-content-wrapper" <?php if (!$detect->isMobile()) echo 'class="toggled"' ?>>
 
-			<?php require_once('../structure/navbar_admin.php') ?>
+				<?php require_once('../structure/navbar_errors.php') ?>
 
-			<div class="container-fluid p-0 px-lg-0 px-md-0">
-				<div class="container-fluid px-lg-4 content_g ">
-					<div class="row">
-						<div id="content3" class="col-md-12 mt-lg-4 mt-4">
+				<div class="container-fluid p-0 px-lg-0 px-md-0">
+					<div class="container-fluid px-lg-4 content_g ">
+						<div class="row">
+							<div id="content3" class="col-md-12 mt-lg-4 mt-4">
 
-							<div id="content_r">
+								<div id="content_r">
 
-								<h1 class="content_r_hst1">ERROR</h1>
-								<?php
-								if($varerror)
-									echo "\n".$varerror;
-								?>
+									<h1 class="content_r_hst1">ERROR</h1>
+									<?php
+									if ($varerror)
+										echo "\n" . $varerror;
+									?>
 
 
-								<div style="margin-top: 50px;">
-									<a style="text-decoration:none;color:black;" href="javascript:history.back()">
-										<div
-											style="padding: 10px 20px;border-radius:3px; background-color:#FF9900;border-color:#FF9900;font-weight:500;color:black;font-size:13px;width:150px;text-align: center;cursor:pointer;margin:0 auto;">
-											Volver</div>
-									</a>
+									<div style="margin-top: 50px;">
+										<a style="text-decoration:none;color:black;" href="javascript:history.back()">
+											<div style="padding: 10px 20px;border-radius:3px; background-color:#FF9900;border-color:#FF9900;font-weight:500;color:black;font-size:13px;width:150px;text-align: center;cursor:pointer;margin:0 auto;">
+												Volver</div>
+										</a>
+									</div>
+
+
+
 								</div>
 
 
 
+
 							</div>
-
-
-
-
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	</div>
-</body>
+		</div>
+	</body>
 
-<?php require_once('../modules/admin/js/libjs.php') ?>
-<script src="../modules/admin/js/index.js"></script>
+	<?php require_once('../modules/admin/js/libjs.php') ?>
+	<script src="../modules/admin/js/index.js"></script>
 
-</html>
+	</html>
 
 
 <?php }  ?>
 
 
 <!-- Realiza práctica desde perfil prof. -->
-<?php  if($level == 2){  ?>
+<?php if ($level == 2) {  ?>
 
 <?php }  ?>
 
 
 <!-- Realiza práctica desde perfil est. -->
-<?php  if($level == 3){  ?>
+<?php if ($level == 3) {  ?>
 
 <?php }  ?>
 
@@ -173,8 +175,8 @@
 			</div>	
 			<div id="content_r">
 			 <?php
-				if($varerror)
-					echo "\n".$varerror;
+				if ($varerror)
+					echo "\n" . $varerror;
 				?>             
 			</div>
 			<div align="center">

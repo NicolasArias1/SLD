@@ -1,5 +1,9 @@
 <?php
 include('../../inc/useful.fns.php');
+
+require_once('../../libraries/Mobile_Detect.php');
+
+$detect = new Mobile_Detect;
 ?>
 
 <!DOCTYPE html>
@@ -16,9 +20,9 @@ include('../../inc/useful.fns.php');
 	<div id="wrapper">
 		<!-- 
        Page Content -->
-		<div id="page-content-wrapper" class="toggled">
+		<div id="page-content-wrapper" <?php if (!$detect->isMobile()) echo 'class="toggled"' ?>>
 
-		<?php require_once('../../structure/theoryHeader.php'); ?>
+			<?php require_once('../../structure/theoryHeader.php'); ?>
 
 			<div id="content">
 
@@ -132,4 +136,5 @@ include('../../inc/useful.fns.php');
 </body>
 
 <?php require_once('js/libjs.php'); ?>
+
 </html>

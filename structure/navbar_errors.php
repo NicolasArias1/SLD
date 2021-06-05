@@ -1,5 +1,5 @@
 <?php
-require_once('../../libraries/Mobile_Detect.php');
+require_once('../libraries/Mobile_Detect.php');
 
 $detect = new Mobile_Detect;
 ?>

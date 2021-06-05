@@ -1,31 +1,35 @@
 <?php
-	include('../../../inc/useful.fns.php');
-	include('../../../inc/user.class.php');
-	
-	session_start();
-	
-	$session = $_SESSION['user'];
+include('../../../inc/useful.fns.php');
+include('../../../inc/user.class.php');
 
-	if(empty($session)) {
-		header('Location: ../../../index.php');
-	}//end if
-	
-	$user = unserialize($session);
-	$uid = $user->getUID();
-	$name = $user->getName();
-	$login = $user->getLogin();
-	$mail = $user->getEMail();
-	$domain = $user->getDomain();
-	$level = $user->getPriority();
-	$_SESSION['user'] = serialize($user);
-	
-	if($level == 1)
-		$usrHTML = "<li><a href=\"../../admin/index.php\" class=\"ast3\">Administrar</a></li>";
-	else if($level == 2)
-		$usrHTML = "<li>Operar</li>";
-		else if($level == 3){
-			$usrHTML = "";
-		}
+require_once('../../libraries/Mobile_Detect.php');
+
+$detect = new Mobile_Detect;
+
+session_start();
+
+$session = $_SESSION['user'];
+
+if (empty($session)) {
+    header('Location: ../../../index.php');
+} //end if
+
+$user = unserialize($session);
+$uid = $user->getUID();
+$name = $user->getName();
+$login = $user->getLogin();
+$mail = $user->getEMail();
+$domain = $user->getDomain();
+$level = $user->getPriority();
+$_SESSION['user'] = serialize($user);
+
+if ($level == 1)
+    $usrHTML = "<li><a href=\"../../admin/index.php\" class=\"ast3\">Administrar</a></li>";
+else if ($level == 2)
+    $usrHTML = "<li>Operar</li>";
+else if ($level == 3) {
+    $usrHTML = "";
+}
 ?>
 
 
@@ -52,7 +56,7 @@
         <?php require_once('../../../structure/sidebar_admin.php') ?>
 
         <!-- Page Content -->
-        <div id="page-content-wrapper" class="toggled">
+        <div id="page-content-wrapper" <?php if (!$detect->isMobile()) echo 'class="toggled"' ?>>
             <!-- Topbar -->
             <?php require_once('../../../structure/navbar_admin.php') ?>
 
@@ -105,8 +109,7 @@
                                             MVB,
                                             MV1 y MV2:
                                             abiertas, el resto cerradas), el proceso a modelar sería el siguiente:</p>
-                                        <img class="img-fluid rounded mx-auto d-block"
-                                            src="../../../img/tankscascada.jpg" />
+                                        <img class="img-fluid rounded mx-auto d-block" src="../../../img/tankscascada.jpg" />
 
                                         <p> Donde h1(t) y h2(t) son el nivel en cada tanque [cm], u(t) el voltaje
                                             aplicado a
@@ -204,15 +207,10 @@
                                             enlace
                                             y obtenerse con el
                                             código para Matlab que se muestra:</p>
-                                        <p>Descargar datos de identificación.<a
-                                                href="../../../download/downloadidentnivel.php?path=../../../download/&file=datanivel.mat"><img
-                                                    src="../../../../img/download.gif" vspace="2"
-                                                    alt="Descargar Modelo de Simulink enviado" /></p>
+                                        <p>Descargar datos de identificación.<a href="../../../download/downloadidentnivel.php?path=../../../download/&file=datanivel.mat"><img src="../../../../img/download.gif" vspace="2" alt="Descargar Modelo de Simulink enviado" /></p>
 
-                                        <img class="img-fluid rounded mx-auto d-block"
-                                            src="../../../img/codidentnivel.jpg" />
-                                        <img class="img-fluid rounded mx-auto d-block"
-                                            src="../../../img/grafidentnivel.jpg" />
+                                        <img class="img-fluid rounded mx-auto d-block" src="../../../img/codidentnivel.jpg" />
+                                        <img class="img-fluid rounded mx-auto d-block" src="../../../img/grafidentnivel.jpg" />
                                     </div>
 
 

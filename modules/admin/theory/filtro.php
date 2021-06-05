@@ -1,31 +1,35 @@
 <?php
-	include('../../../inc/useful.fns.php');
-	include('../../../inc/user.class.php');
-	
-	session_start();
-	
-	$session = $_SESSION['user'];
+include('../../../inc/useful.fns.php');
+include('../../../inc/user.class.php');
 
-	if(empty($session)) {
-		header('Location: ../../../index.php');
-	}//end if
-	
-	$user = unserialize($session);
-	$uid = $user->getUID();
-	$name = $user->getName();
-	$login = $user->getLogin();
-	$mail = $user->getEMail();
-	$domain = $user->getDomain();
-	$level = $user->getPriority();
-	$_SESSION['user'] = serialize($user);
-	
-	if($level == 1)
-		$usrHTML = "<li><a href=\"../../admin/index.php\" class=\"ast3\">Administrar</a></li>";
-	else if($level == 2)
-		$usrHTML = "<li>Operar</li>";
-		else if($level == 3){
-			$usrHTML = "";
-		}
+require_once('../../libraries/Mobile_Detect.php');
+
+$detect = new Mobile_Detect;
+
+session_start();
+
+$session = $_SESSION['user'];
+
+if (empty($session)) {
+	header('Location: ../../../index.php');
+} //end if
+
+$user = unserialize($session);
+$uid = $user->getUID();
+$name = $user->getName();
+$login = $user->getLogin();
+$mail = $user->getEMail();
+$domain = $user->getDomain();
+$level = $user->getPriority();
+$_SESSION['user'] = serialize($user);
+
+if ($level == 1)
+	$usrHTML = "<li><a href=\"../../admin/index.php\" class=\"ast3\">Administrar</a></li>";
+else if ($level == 2)
+	$usrHTML = "<li>Operar</li>";
+else if ($level == 3) {
+	$usrHTML = "";
+}
 ?>
 
 
@@ -34,27 +38,27 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <?php require_once('../css/libcss.php'); ?>
-    <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="../../theory/css/theory.css">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<?php require_once('../css/libcss.php'); ?>
+	<link rel="stylesheet" href="../css/index.css">
+	<link rel="stylesheet" href="../../theory/css/theory.css">
 
 </head>
 
 <body>
-    <div id="wrapper">
+	<div id="wrapper">
 
 
 
-        <!-- Sidebar -->
-        <?php require_once('../../../structure/sidebar_admin.php') ?>
+		<!-- Sidebar -->
+		<?php require_once('../../../structure/sidebar_admin.php') ?>
 
-        <!-- Page Content -->
-        <div id="page-content-wrapper" class="toggled">
-            <!-- Topbar -->
-            <?php require_once('../../../structure/navbar_admin.php') ?>
+		<!-- Page Content -->
+		<div id="page-content-wrapper" <?php if (!$detect->isMobile()) echo 'class="toggled"' ?>>
+			<!-- Topbar -->
+			<?php require_once('../../../structure/navbar_admin.php') ?>
 
 
 			<div id="content">
@@ -119,12 +123,10 @@
 											propiedades elementales de los sistemas LTI son:</p>
 										<h3 class="content_r_hst3"> a) Principio de Superposici&oacute;n:</h3>
 										<p> Esta es la propiedad elemental de los sistemas lineales. Para un sistema en
-											reposo a tiempo <td width="30">t=0</td>, si la respuesta a una entrada <td
-												width="30">f<sub>1</sub>(t)</td> es <td width="30">y<sub>1</sub>(t)</td>
+											reposo a tiempo <td width="30">t=0</td>, si la respuesta a una entrada <td width="30">f<sub>1</sub>(t)</td> es <td width="30">y<sub>1</sub>(t)</td>
 											, y
 											la respuesta de <td width="30">f<sub>2</sub>(t)</td> = <td width="30">
-												y<sub>2</sub>(t)</td>, entonces para una entrada compuesta como <td
-												width="30">f<sub>3</sub>(t)</td> = a<td width="30">f<sub>1</sub>(t)</td>
+												y<sub>2</sub>(t)</td>, entonces para una entrada compuesta como <td width="30">f<sub>3</sub>(t)</td> = a<td width="30">f<sub>1</sub>(t)</td>
 											+ b
 											<td width="30">f<sub>2</sub>(t)</td> (a y b constantes) la respuesta debe
 											ser: <b>(1)</b>
@@ -133,13 +135,13 @@
 										<h3 class="content_r_hst3"> b) Propiedad de Diferenciaci&oacute;n:</h3>
 										<p> Si la respuesta a la entrada f(t) es y(t), entonces la respuesta a la
 											derivada
-											de f(t), <td width="30">f<sub>1</sub>(t)</td> = df(t)/dt, es  <b>(2)</b></p>
+											de f(t), <td width="30">f<sub>1</sub>(t)</td> = df(t)/dt, es <b>(2)</b></p>
 										<p> <img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Eqn2.png" /> </p>
 										<h3 class="content_r_hst3"> c)Propiedad de la Integraci&oacute;n:</h3>
 										<p> Si la respuesta a la entrada f(t) es y(t), entonces la respuesta a la
 											integral
 											de f(t), es: <b>(3)</b></p>
-										<p> <img class="img-fluid rounded mx-auto d-block mbotom"src="../../../img/Eqn3.2.png" /> </p>
+										<p> <img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Eqn3.2.png" /> </p>
 										<h3 class="content_r_hst3"> d) Causalidad:</h3>
 										<p> Un sistema causal es no-anticipatorio, lo que quiere decir que no responde a
 											una
@@ -168,7 +170,7 @@
 										<p> o en el tiempo: <b>(5)</b></p>
 										<p> <img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Eqn5.png" /></p>
 
-										<img class="img-fluid rounded mx-auto d-block mbotom"src="../../../img/Fig.1.png" />
+										<img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Fig.1.png" />
 										<p style="text-align:center;"> Fig.1. Representaci&oacute;n de una fase no lineal</p>
 										<p>Se muestra en la Fig.1. el que ser&iacute;a el comportamiento de una fase no
 											lineal en el dominio frecuencial. se puede observar claramente que la fase
@@ -197,15 +199,15 @@
 											tiene
 											en un vecindario de frecuencias muy cercanas una de otras y es posible
 											representarlo matem&aacute;ticamente como: <b>(7)</b></p>
-										<p><img class="img-fluid rounded mx-auto d-block mbotom"  src="../../../img/Eqn7.png" /></p>
+										<p><img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Eqn7.png" /></p>
 										<p> con: <b>(8)</b></p>
-										<p><img class="img-fluid rounded mx-auto d-block mbotom"  src="../../../img/Eqn8.png" /></p>
+										<p><img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Eqn8.png" /></p>
 
 										<p> En la Fig.3. y la Fig.4. que se muestran a continuaci&oacute;n se observa el
 											efecto de una fase no lineal tanto en el dominio frecuencial como en el
 											dominio
 											temporal </p>
-										<img class="img-fluid rounded mx-auto d-block mbotom"  src="../../../img/Fig.3.png" />
+										<img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Fig.3.png" />
 										<p style="text-align:center;"> Fig.3. Ejemplo de Retardo de Grupo</p>
 										<p>En estas se puede observar que en si &tau;g no es m&aacute;s que un retardo
 											dado
@@ -220,7 +222,7 @@
 											frecuencia la respuesta aparecer&aacute; m&aacute;s tarde en
 											comparaci&oacute;n
 											a otras, este efecto se observa en la figura siguiente.</p>
-										<img class="img-fluid rounded mx-auto d-block mbotom"  src="../../../img/Fig.4.png" />
+										<img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Fig.4.png" />
 										<p style="text-align:center;"> Fig.4. Efecto del retardo de grupo en la respuesta temporal</p>
 									</div>
 
@@ -331,7 +333,7 @@
 										<p>y <b>(17)</b></p>
 										<p><img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Eqn17.png" /></p>
 										<p>De esta manera se tiene que igualando (16) y (17) se obtiene un reemplazo de
-										<b>(18)</b>
+											<b>(18)</b>
 										</p>
 										<p><img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Eqn18.png" /></p>
 										<p> Ejemplo 1: Teniendo la funci&oacute;n de transferencia de un filtro pasa
@@ -456,10 +458,10 @@
 
 
 			</div>
-        </div>
-        <!-- /#page-content-wrapper -->
+		</div>
+		<!-- /#page-content-wrapper -->
 
-    </div>
+	</div>
 </body>
 
 <?php require_once('../js/libjs.php'); ?>

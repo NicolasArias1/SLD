@@ -1,34 +1,38 @@
 <?php
-	include('../../inc/useful.fns.php');
-	include('../../inc/user.class.php');
-	
-	session_start();
-	
-	$session = $_SESSION['user'];
+include('../../inc/useful.fns.php');
+include('../../inc/user.class.php');
 
-	if(empty($session)) {
-		header('Location: ../../index.php');
-	}//end if
-	
-	$user = unserialize($session);
-	$uid = $user->getUID();
-	$name = $user->getName();
-	$login = $user->getLogin();
-	$mail = $user->getEMail();
-	$domain = $user->getDomain();
-	$level = $user->getPriority();
-	$_SESSION['user'] = serialize($user);
-	
-	if($level == 1)
-		$usrHTML = "<li><a href=\"../admin/index.php\" class=\"ast3\">Administrar</a></li>";
-	else if($level == 2)
-		$usrHTML = "<li>Operar</li>";
-		else if($level == 3){
-			$usrHTML = "";
-		}
-	//if($domain == 'db' && $level!=1) {
-	//	$usrHTML .= "<li><a href=\"users.php\" class=\"ast3\" title=\"Editar\">Editar Usuario</a></li>";
-	//}//end if
+require_once('../../libraries/Mobile_Detect.php');
+
+$detect = new Mobile_Detect;
+
+session_start();
+
+$session = $_SESSION['user'];
+
+if (empty($session)) {
+	header('Location: ../../index.php');
+} //end if
+
+$user = unserialize($session);
+$uid = $user->getUID();
+$name = $user->getName();
+$login = $user->getLogin();
+$mail = $user->getEMail();
+$domain = $user->getDomain();
+$level = $user->getPriority();
+$_SESSION['user'] = serialize($user);
+
+if ($level == 1)
+	$usrHTML = "<li><a href=\"../admin/index.php\" class=\"ast3\">Administrar</a></li>";
+else if ($level == 2)
+	$usrHTML = "<li>Operar</li>";
+else if ($level == 3) {
+	$usrHTML = "";
+}
+//if($domain == 'db' && $level!=1) {
+//	$usrHTML .= "<li><a href=\"users.php\" class=\"ast3\" title=\"Editar\">Editar Usuario</a></li>";
+//}//end if
 ?>
 
 <!doctype html>
@@ -58,12 +62,12 @@
 		<!-- Sidebar -->
 		<?php require_once('../../structure/sidebar_admin.php') ?>
 
-		<div id="page-content-wrapper" class="toggled">
+		<div id="page-content-wrapper" <?php if (!$detect->isMobile()) echo 'class="toggled"' ?>>
 
 			<!-- Topbar -->
 			<?php require_once('../../structure/navbar_admin.php') ?>
 
-			<div id="content">            
+			<div id="content">
 
 				<div id="content2" class="container-fluid p-0 px-lg-0 px-md-0">
 
@@ -205,8 +209,7 @@
 
 									<div class="content_r_hst3">
 										<p> El sistema presenta la siguiente arquitectura:</p>
-										<p> <img class="img-fluid rounded mx-auto d-block" src="../../img/platform.jpg"
-												width="562" height="358" /> </p>
+										<p> <img class="img-fluid rounded mx-auto d-block" src="../../img/platform.jpg" width="562" height="358" /> </p>
 										<p>La interfaz de usuario est&aacute; formada por p&aacute;ginas HTML con
 											funcionalidades de PHP para el registro de usuarios y la
 											administraci&oacute;n y
@@ -291,7 +294,7 @@
 				<!-- /.container-fluid -->
 
 			</div>
-			
+
 
 		</div>
 		<!-- /#page-content-wrapper -->

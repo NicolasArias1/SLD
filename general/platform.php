@@ -1,5 +1,8 @@
 <?php
-	include('../inc/useful.fns.php');
+include('../inc/useful.fns.php');
+require_once('../../libraries/Mobile_Detect.php');
+
+$detect = new Mobile_Detect;
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +20,7 @@
 <body>
 	<div id="wrapper">
 		<!-- Page Content -->
-		<div id="page-content-wrapper" class="toggled">
+		<div id="page-content-wrapper" <?php if (!$detect->isMobile()) echo 'class="toggled"' ?>>
 
 			<?php require_once('../structure/mainHeader.php'); ?>
 
@@ -163,8 +166,7 @@
 
 									<div class="content_r_hst3">
 										<p> El sistema presenta la siguiente arquitectura:</p>
-										<p> <img class="img-fluid rounded mx-auto d-block" src="../img/platform.jpg"
-												width="562" height="358" /> </p>
+										<p> <img class="img-fluid rounded mx-auto d-block" src="../img/platform.jpg" width="562" height="358" /> </p>
 										<p>La interfaz de usuario est&aacute; formada por p&aacute;ginas HTML con
 											funcionalidades de PHP para el registro de usuarios y la
 											administraci&oacute;n y

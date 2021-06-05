@@ -1,63 +1,67 @@
 <?php
-	//include('config/config.php');
-	
-	include('../inc/db.class.php');
-	include('../inc/frm.class.php');
-	include('../inc/sch.class.php');
-	include('../inc/useful.fns.php');
-	include('../inc/user.class.php');
-	include('../config/config.php');
-	
-	$alert = isset($_GET['alert']);
-	$error = explode(":", isset($_GET['alert']));
-	
-	if(!SOLICIT_AUTH && !REGISTER_AUTH && $rfpage) {
-		header('Location: '.$rfpage);
-		exit;
-	}//end if
-	else if(!SOLICIT_AUTH && !REGISTER_AUTH) {
-		header('Location: ../index.php');
-		exit;
-	}//end else if
-	
-	if(SOLICIT_AUTH) {
-		$btxt = "Solicitar";
-		$type = 2;
-	}//end if
-	else if(REGISTER_AUTH) {
-		$btxt = "Registrar";
-		$type = 1;
-	}//end if
-	
-	if($alert) {
-		switch($alert) {
-			case 1:
-				if(SOLICIT_AUTH)
-					$atxt = "La operaci&oacute;n se realiz&oacute; con &eacute;xito: <span class=\"text\">Los datos se introdujeron correctamente, si es aprobada su solicitud se le comunicar&aacute; por su correo electr&oacute;nico.</span>";
-				else if(REGISTER_AUTH)
-					$atxt = "La operaci&oacute;n se realizó con &eacute;xito: <span class=\"text\">Los datos se introdujeron correctamente.</span>";
-				break;
-			case 2:
-				$efname = array('Nombre', 'Nombre de Usuario', 'EMail');
-				$atxt = "No se puede realizar la operaci&oacute;n: <span class=\"text\">ya existe un usuario con algunos de esos datos.</span><br />Datos repetidos: <span class=\"text\">";
-				for($i=0; $i < count($error); $i++) {
-					$atxt .= $efname[$error[$i]];
-					if($i < (count($error)-1))
-						$atxt .= ", ";
-					else
-						$atxt .= ".";
-				}//end for
-				$atxt .= "</span>";
-				break;
-			case 3:
-				$atxt = "No se puede realizar la operaci&oacute;n: <span class=\"text\">Verifique sus datos, hay campos vacios.</span>";
-				break;
-			case 4:
-				$atxt = "No se puede realizar la operaci&oacute;n: <span class=\"text\">Sus datos no se recibieron correctamente.</span>";
-				break;
-		}//end switch
-	}//end if
-	
+//include('config/config.php');
+
+require_once('../../libraries/Mobile_Detect.php');
+
+$detect = new Mobile_Detect;
+
+include('../inc/db.class.php');
+include('../inc/frm.class.php');
+include('../inc/sch.class.php');
+include('../inc/useful.fns.php');
+include('../inc/user.class.php');
+include('../config/config.php');
+
+$alert = isset($_GET['alert']);
+$error = explode(":", isset($_GET['alert']));
+
+if (!SOLICIT_AUTH && !REGISTER_AUTH && $rfpage) {
+	header('Location: ' . $rfpage);
+	exit;
+} //end if
+else if (!SOLICIT_AUTH && !REGISTER_AUTH) {
+	header('Location: ../index.php');
+	exit;
+} //end else if
+
+if (SOLICIT_AUTH) {
+	$btxt = "Solicitar";
+	$type = 2;
+} //end if
+else if (REGISTER_AUTH) {
+	$btxt = "Registrar";
+	$type = 1;
+} //end if
+
+if ($alert) {
+	switch ($alert) {
+		case 1:
+			if (SOLICIT_AUTH)
+				$atxt = "La operaci&oacute;n se realiz&oacute; con &eacute;xito: <span class=\"text\">Los datos se introdujeron correctamente, si es aprobada su solicitud se le comunicar&aacute; por su correo electr&oacute;nico.</span>";
+			else if (REGISTER_AUTH)
+				$atxt = "La operaci&oacute;n se realizó con &eacute;xito: <span class=\"text\">Los datos se introdujeron correctamente.</span>";
+			break;
+		case 2:
+			$efname = array('Nombre', 'Nombre de Usuario', 'EMail');
+			$atxt = "No se puede realizar la operaci&oacute;n: <span class=\"text\">ya existe un usuario con algunos de esos datos.</span><br />Datos repetidos: <span class=\"text\">";
+			for ($i = 0; $i < count($error); $i++) {
+				$atxt .= $efname[$error[$i]];
+				if ($i < (count($error) - 1))
+					$atxt .= ", ";
+				else
+					$atxt .= ".";
+			} //end for
+			$atxt .= "</span>";
+			break;
+		case 3:
+			$atxt = "No se puede realizar la operaci&oacute;n: <span class=\"text\">Verifique sus datos, hay campos vacios.</span>";
+			break;
+		case 4:
+			$atxt = "No se puede realizar la operaci&oacute;n: <span class=\"text\">Sus datos no se recibieron correctamente.</span>";
+			break;
+	} //end switch
+} //end if
+
 ?>
 
 <!DOCTYPE html>
@@ -78,7 +82,7 @@
 <body>
 	<div id="wrapper">
 		<!-- Page Content -->
-		<div id="page-content-wrapper" class="toggled">
+		<div id="page-content-wrapper" <?php if (!$detect->isMobile()) echo 'class="toggled"' ?>>
 
 			<?php require_once('../structure/mainHeader.php'); ?>
 
@@ -96,62 +100,52 @@
 
 									<h1 class="content_r_hst1">Registrarse</h1>
 									<?php
-										if($alert) {
-											?>
-														<p class="alert alert-info" style="font-size:14px;"><?php echo $atxt; ?></p>
-														<?php
-										}//end if
+									if ($alert) {
 									?>
-									<form id="frmuser" name="frmuser" method="post"
-										action="../utilities/userregistration.mod.php" enctype="multipart/form-data">
+										<p class="alert alert-info" style="font-size:14px;"><?php echo $atxt; ?></p>
+									<?php
+									} //end if
+									?>
+									<form id="frmuser" name="frmuser" method="post" action="../utilities/userregistration.mod.php" enctype="multipart/form-data">
 
 
 
 										<div class="form-group row">
 											<label class="col-sm-4 col-form-label">Nombre completo:</label>
 											<div class="col-sm-8 std">
-												<input id="uname" name="uname" type="text" class="form-control"
-													placeholder="Nombre completo" value="" size="30" autocomplete="off">
+												<input id="uname" name="uname" type="text" class="form-control" placeholder="Nombre completo" value="" size="30" autocomplete="off">
 											</div>
 										</div>
 
 										<div class="form-group row">
 											<label class="col-sm-4 col-form-label">Nombre de usuario:</label>
 											<div class="col-sm-8 std">
-												<input id="ulogin" name="ulogin" type="text" class="form-control"
-													placeholder="Nombre de usuario" value="" size="30"
-													autocomplete="off">
+												<input id="ulogin" name="ulogin" type="text" class="form-control" placeholder="Nombre de usuario" value="" size="30" autocomplete="off">
 											</div>
 										</div>
 										<div class="form-group row">
 											<label class="col-sm-4 col-form-label">Email:</label>
 											<div class="col-sm-8 std">
-												<input id="umail" name="umail" type="text" class="form-control"
-													placeholder="Email" value="" size="30" autocomplete="off">
+												<input id="umail" name="umail" type="text" class="form-control" placeholder="Email" value="" size="30" autocomplete="off">
 											</div>
 										</div>
 										<div class="form-group row">
 											<label class="col-sm-4 col-form-label">Contraseña:</label>
 											<div class="col-sm-8 std">
-												<input id="upassword" name="upassword" type="password"
-													class="form-control" placeholder="Contraseña" value="" size="30"
-													maxlength="12" autocomplete="off">
+												<input id="upassword" name="upassword" type="password" class="form-control" placeholder="Contraseña" value="" size="30" maxlength="12" autocomplete="off">
 											</div>
 										</div>
 
 										<div class="form-group row">
 											<label class="col-sm-4 col-form-label">Confirmar contraseña:</label>
 											<div class="col-sm-8 std">
-												<input id="uconfirm" name="uconfirm" type="password"
-													class="form-control" placeholder="Confirmar contraseña" value=""
-													size="30" maxlength="12" autocomplete="off">
+												<input id="uconfirm" name="uconfirm" type="password" class="form-control" placeholder="Confirmar contraseña" value="" size="30" maxlength="12" autocomplete="off">
 											</div>
 										</div>
 
 										<div class="form-group row secbtnGuardar">
 											<input id="type" name="type" type="hidden" value="<?php echo $type; ?>" />
-											<input id="save" name="save" type="button" class="btnGuardar"
-												value="Enviar" onClick="saveRegistration()" />
+											<input id="save" name="save" type="button" class="btnGuardar" value="Enviar" onClick="saveRegistration()" />
 										</div>
 
 									</form>
@@ -228,12 +222,12 @@
 
 			<div id="content_r">
 				<?php
-					if($alert) {
-						?>
+				if ($alert) {
+				?>
 						<p class="alert"><?php echo $atxt; ?></p>
 						<?php
-					}//end if
-				?>
+					} //end if
+						?>
 				<form id="frmuser" name="frmuser" method="post" action="../utilities/userregistration.mod.php" enctype="multipart/form-data">
 					<table width="67%" height="181" cellpadding="0" cellspacing="0" class="form">
 					  <tr>

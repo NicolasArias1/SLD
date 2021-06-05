@@ -1,5 +1,9 @@
 <?php
-	include('../../inc/useful.fns.php');
+include('../../inc/useful.fns.php');
+
+require_once('../../libraries/Mobile_Detect.php');
+
+$detect = new Mobile_Detect;
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +21,7 @@
     <div id="wrapper">
         <!-- 
        Page Content -->
-        <div id="page-content-wrapper" class="toggled">
+        <div id="page-content-wrapper" <?php if (!$detect->isMobile()) echo 'class="toggled"' ?>>
 
             <?php require_once('../../structure/theoryHeader.php'); ?>
 
@@ -69,8 +73,7 @@
                                             MVB,
                                             MV1 y MV2:
                                             abiertas, el resto cerradas), el proceso a modelar sería el siguiente:</p>
-                                        <img class="img-fluid rounded mx-auto d-block"
-                                            src="../../img/tankscascada.jpg" />
+                                        <img class="img-fluid rounded mx-auto d-block" src="../../img/tankscascada.jpg" />
 
                                         <p> Donde h1(t) y h2(t) son el nivel en cada tanque [cm], u(t) el voltaje
                                             aplicado a
@@ -168,15 +171,10 @@
                                             enlace
                                             y obtenerse con el
                                             código para Matlab que se muestra:</p>
-                                        <p>Descargar datos de identificación.<a
-                                                href="../../../download/downloadidentnivel.php?path=../../../download/&file=datanivel.mat"><img
-                                                    src="../../../img/download.gif" vspace="2"
-                                                    alt="Descargar Modelo de Simulink enviado" /></p>
+                                        <p>Descargar datos de identificación.<a href="../../../download/downloadidentnivel.php?path=../../../download/&file=datanivel.mat"><img src="../../../img/download.gif" vspace="2" alt="Descargar Modelo de Simulink enviado" /></p>
 
-                                        <img class="img-fluid rounded mx-auto d-block"
-                                            src="../../img/codidentnivel.jpg" />
-                                        <img class="img-fluid rounded mx-auto d-block"
-                                            src="../../img/grafidentnivel.jpg" />
+                                        <img class="img-fluid rounded mx-auto d-block" src="../../img/codidentnivel.jpg" />
+                                        <img class="img-fluid rounded mx-auto d-block" src="../../img/grafidentnivel.jpg" />
                                     </div>
 
 
@@ -206,4 +204,5 @@
 </body>
 <?php require_once('js/libjs.php'); ?>
 <script src="js/general.js"></script>
+
 </html>

@@ -6,6 +6,10 @@ include('../../inc/sch.class.php');
 include('../../inc/useful.fns.php');
 include('../../inc/user.class.php');
 
+require_once('../../libraries/Mobile_Detect.php');
+
+$detect = new Mobile_Detect;
+
 session_start();
 
 $session = $_SESSION['user'];
@@ -147,7 +151,7 @@ if ($res) {
 
 		<?php require_once('../../structure/sidebar_admin.php') ?>
 
-		<div id="page-content-wrapper" class="toggled">
+		<div id="page-content-wrapper" <?php if (!$detect->isMobile()) echo 'class="toggled"' ?>>
 
 			<?php require_once('../../structure/navbar_admin.php') ?>
 
@@ -158,58 +162,55 @@ if ($res) {
 
 							<div id="content_r">
 
-								<?php if($btxt == 'Pr&aacute;cticas Revisadas'){ ?>
+								<?php if ($btxt == 'Pr&aacute;cticas Revisadas') { ?>
 
 
 
-										<h1 class="content_r_hst1">
-											Desarrollado por GARP (UCLV)
+									<h1 class="content_r_hst1">
+										Desarrollado por GARP (UCLV)
 
-											<br />
-											<span class="content_r_sst1">
-												(Grupo de Automatización Robótica y Percepción)
-											</span>
-										</h1>
-										<h1 class="content_r_hst1">
-											En colaboración con DISAM (UPM)
-											<br />
-											<span class="content_r_sst1">
-												(Departamento de Automática, Ingeniería Electrónica e Informática Industrial)
-											</span>
-										</h1>
-										<h1 class="content_r_hst1">
-											En colaboraci&oacute;n con DIEE (UBB)
-											<br />
-											<span class="content_r_sst1">
-												(Departamento de Ingenier&iacute;a El&eacute;ctrica y Electr&oacute;nica)
-											</span>
-										</h1>
+										<br />
+										<span class="content_r_sst1">
+											(Grupo de Automatización Robótica y Percepción)
+										</span>
+									</h1>
+									<h1 class="content_r_hst1">
+										En colaboración con DISAM (UPM)
+										<br />
+										<span class="content_r_sst1">
+											(Departamento de Automática, Ingeniería Electrónica e Informática Industrial)
+										</span>
+									</h1>
+									<h1 class="content_r_hst1">
+										En colaboraci&oacute;n con DIEE (UBB)
+										<br />
+										<span class="content_r_sst1">
+											(Departamento de Ingenier&iacute;a El&eacute;ctrica y Electr&oacute;nica)
+										</span>
+									</h1>
 
-										<div class="content_r_hst3">
-											<p>
-												Permite ejecutar experiencias de control tanto de forma virtual (simulando con
-												el modelo correspondiente) como real (accionando un dispositivo en tiempo real).
-											</p>
-											<p style="margin-top:50px;">
-												<img class="img-fluid rounded mx-auto " width=100 height=100 alt="" hspace=1
-													vspace=1 src="../../img/uclv_logo.jpg">
-												<img class="img-fluid rounded mx-auto " width=100 height=100 alt="" hspace=1
-													vspace=1 src="../../img/upm_logo.jpg">
-												<img class="img-fluid rounded mx-auto " width=100 height=100 alt="" hspace=1
-													vspace=1 src="../../img/ubb_logo.jpg">
-											</p>
-										</div>
-										<?php } ?>
+									<div class="content_r_hst3">
+										<p>
+											Permite ejecutar experiencias de control tanto de forma virtual (simulando con
+											el modelo correspondiente) como real (accionando un dispositivo en tiempo real).
+										</p>
+										<p style="margin-top:50px;">
+											<img class="img-fluid rounded mx-auto " width=100 height=100 alt="" hspace=1 vspace=1 src="../../img/uclv_logo.jpg">
+											<img class="img-fluid rounded mx-auto " width=100 height=100 alt="" hspace=1 vspace=1 src="../../img/upm_logo.jpg">
+											<img class="img-fluid rounded mx-auto " width=100 height=100 alt="" hspace=1 vspace=1 src="../../img/ubb_logo.jpg">
+										</p>
+									</div>
+								<?php } ?>
 
 
-								<?php if($btxt == 'Pr&aacute;cticas Realizadas'){ ?>
+								<?php if ($btxt == 'Pr&aacute;cticas Realizadas') { ?>
 
-									<?php if(!$res) {?><h1 class="content_r_hst1"><?php echo $btxt; ?></h1><?php } ?>
+									<?php if (!$res) { ?><h1 class="content_r_hst1"><?php echo $btxt; ?></h1><?php } ?>
 									<div id="results_box">
-										<?php 
-										echo $resHTML; 
-										
-										if(!empty($data)){
+										<?php
+										echo $resHTML;
+
+										if (!empty($data)) {
 											echo "<table id='tablapractica' cellspacing='0' width='100%'";
 											echo "<thead>
 												<tr>								
@@ -219,18 +220,17 @@ if ($res) {
 													<th></th>
 												</tr>
 												</thead>";
-											for($i = 0; $i < count($data) ; $i++  ){
-												
+											for ($i = 0; $i < count($data); $i++) {
+
 												$row = $data[$i];
-												echo "<tr><td>".$row['ulogin']."</td><td>".$row['pname']."</td><td>".$row['TOTAL'] ."</td></tr>";
-												
+												echo "<tr><td>" . $row['ulogin'] . "</td><td>" . $row['pname'] . "</td><td>" . $row['TOTAL'] . "</td></tr>";
 											}
 											echo "<tr></tr>";
 											echo "</table>";
 										}
-										
+
 										?>
-										
+
 									</div>
 
 								<?php } ?>
