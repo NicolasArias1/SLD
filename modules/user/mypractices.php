@@ -6,6 +6,10 @@
 	include('../../inc/useful.fns.php');
 	include('../../inc/user.class.php');
 	
+require_once('../../libraries/Mobile_Detect.php');
+
+$detect = new Mobile_Detect;
+
 	session_start();
 	
 	$session = $_SESSION['user'];
@@ -22,18 +26,27 @@
 	$domain = $user->getDomain();
 	$level = $user->getPriority();
 	$_SESSION['user'] = serialize($user);
+	$body = '';
+	$order = '';
+	$show = '';
+	$page = '';
+	$type = '';
+	$alert = '';
+	$res = '';
+
+
 	
 	$method = $_SERVER['REQUEST_METHOD'];
 	$body = isset($_GET['body']);
 	$id = isset($_GET['id']);
-	$body = isset($_GET['body']);
-	$order = isset($_GET['order']);
-	$show = isset($_GET['show']);
-	$page = isset($_GET['page']);
-	$type = isset($_GET['type']);
-	$alert = isset($_GET['alert']);
-	$res = isset($_GET['res']);
-	print_r($resHTML);
+	if(isset($_GET['body'])) { $body = $_GET['body']; }
+	if(isset($_GET['order'])) { $order = $_GET['order']; }
+	if(isset($_GET['show'])) { $show = $_GET['show']; }
+	if(isset($_GET['page'])) { $page = $_GET['page']; }
+	if(isset($_GET['type'])) { $type = $_GET['type']; }
+	if(isset($_GET['alert'])) { $alert = $_GET['alert']; }
+	if(isset($_GET['res'])) { $res = $_GET['res']; }
+
 	if($level == 1)
 		$usrHTML = "<li><a href=\"../admin/index.php\" class=\"ast3\">Administrar</a></li>";
 	else if($level == 2)
@@ -63,7 +76,7 @@
 		case "mprevisadas":
 			$status = "recurso";
 			$btxt = "Pr&aacute;cticas Revisadas";
-			$txtlog = "?body=mprevisadas";
+			$txtlog = "?body=mypractices";
 			break;
 		case "mprevisar":
 			$status = "sugerencia";
@@ -75,84 +88,90 @@
 	
 	include('../../utilities/mypractices.mod.php');	
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+
+
+<?php if ($level == 2) {  ?>
+<?php }  ?>
+
+
+
+<?php if ($level == 3) {  ?>
+
+
+	
+
+<!doctype html>
+<html lang="en">
+
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-	<title>Sistema de Laboratorios a Distancia : : Inicio</title>
-  <link href="../../css/styles.css" rel="stylesheet" type="text/css" />
-  <link rel="shortcut icon" href="../../img/aicon.gif" />
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<?php require_once('css/libcss.php') ?>
 	<script language="JavaScript" src="../../js/sld.js" type="text/javascript"></script>
 	<script language="JavaScript" src="../../js/osld.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="../../modules/admin/css/index.css">
+	<link rel="stylesheet" href="css/practices.css">
+
 </head>
 
 <body>
-	<div id="page">
-		<div id="header">
-			<div id="header_t">
-				<div id="header_t_l"><img src="../../img/logo.png" border="0" /></div>
-				<div id="header_t_r"><?php echo Date_Time(); ?></div>
-			</div>
-			<div id="header_b">
-				<div id="header_l"></div>
-				<div id="header_c">
-					<h1 class="logo">SLD<span class="w_txt">WEB</span></h1>
-					<h4 class="txt">Sistema de Laboratorios a Distancia</h4>
-				</div>
-				<div id="header_r"></div>
-			</div>
-		</div>
-		<div id="navigator">
-			<div id="nav_l"></div>
-			<div id="nav_c">
-				<ul>
-					<li><a href="index.php">Inicio</a></li>
-					<li><a href="theory.php">Teor&iacute;a</a></li>
-					<li><a href="practices.php">Pr&aacute;cticas</a></li>
-					<li><a href="platform.php">Plataforma</a></li>					
-				</ul>
-			</div>
-			<div id="nav_r"></div>
-		</div>
-		<div id="content">
-			<div id="content_l">
-				<div id="content_l_t"></div>
-				<div id="content_l_c">
-					<h1 class="content_l_hst1">Usuario</h1>
-					<ul>
-						<li><?php echo $name; ?></li>
-						<?php echo $usrHTML; ?>
-						<li><a href="../../general/logout.php" class="ast3">Logout</a></li>
-					</ul>
-					<h1 class="content_l_hst1">Navegaci&oacute;n</h1>
-					<ul>
-						<li><a href="index.php" class="ast3">Inicio</a></li>
-						<li><a href="theory.php" class="ast3">Teoria</a></li>
-						<li><a href="practices.php" class="ast3">Pr&aacute;cticas</a></li>
-						<li><a href="platform.php" class="ast3">Plataforma</a></li>
-						<li><a href="mypractices.php" class="ast3">Mis Pr&aacute;cticas</a></li>
-						<li><a href="mailto:ching@uclv.edu.cu;aerubio@ubiobio.cl">Contacto</a></li>
-					</ul>
-					<h1 class="content_l_hst1">Opciones</h1>
-					<ul>
-						<li><a href="mypractices.php?body=mprevisadas" class="ast3">Pr&aacute;cticas revisadas</a></li>
-						<li><a href="mypractices.php?body=mprevisar" class="ast3">Pr&aacute;cticas por revisar</a></li>
-					</ul>
-				</div>
-				<div id="content_l_b"></div>
-			</div>
-			<div id="content_r">
-				<?php  if(!$res) {?><h1 class="content_r_hst1"><?php echo $btxt; ?></h1><?php } ?>				
-				<div id="results_box">				
-				
-					<?php echo $resHTML; ?>					
+	<div id="wrapper">
+		<div class="overlay"></div>
+
+		<?php require_once('../../structure/sidebar_estudiante.php') ?>
+
+		<div id="page-content-wrapper" <?php if (!$detect->isMobile()) echo 'class="toggled"' ?>>
+
+			<?php require_once('../../structure/navbar_admin.php') ?>
+
+			<div class="container-fluid p-0 px-lg-0 px-md-0">
+				<div class="container-fluid px-lg-4 content_g ">
+					<div class="row">
+						<div id="content3" class="col-md-12 mt-lg-4 mt-4">
+
+							<div id="content_r" style="width:700px;">
+
+
+
+
+
+							<?php  if(!$res) {?><h1 class="content_r_hst1"><?php echo $btxt; ?></h1><?php } ?>
+
+							
+							<div id="results_box">
+
+								<?php echo $resHTML; ?>
+							</div>
+
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
-			<div class="blank"></div>
-		</div>
-		<div id="footer">
-			Copyright &copy; 2017: GARP.UCLV-DIEE.UBB
 		</div>
 	</div>
 </body>
+
+<?php require_once('../../modules/admin/js/libjs.php') ?>
+<script src="../../modules/admin/js/index.js"></script>
+
 </html>
+
+
+
+
+
+
+
+
+
+<?php }  ?>
+
+
+
+
+
+
+

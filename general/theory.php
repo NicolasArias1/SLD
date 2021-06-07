@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php
     require_once('css/libcss.php');
-    require_once('../../libraries/Mobile_Detect.php');
+    require_once('../libraries/Mobile_Detect.php');
 
     $detect = new Mobile_Detect;
     ?>

@@ -2,7 +2,7 @@
 include('../../../inc/useful.fns.php');
 include('../../../inc/user.class.php');
 
-require_once('../../libraries/Mobile_Detect.php');
+require_once('../../../libraries/Mobile_Detect.php');
 
 $detect = new Mobile_Detect;
 
@@ -51,16 +51,215 @@ else if ($level == 3) {
 	<div id="wrapper">
 
 
+		<nav class="fixed-top align-top<?php if (!$detect->isMobile()) echo ' toggled' ?>" id="sidebar-wrapper"
+			role="navigation">
+			<div class="simplebar-content" style="padding: 0px;">
 
-		<!-- Sidebar -->
-		<?php require_once('../../../structure/sidebar_admin.php') ?>
+				<!-- Logo -->
+				<div class="navbar-nav ps-4 pt-2">
+					<a class="navbar-brand" href="index.php">
+						<span class="fs-4 fw-bolder" style="color: orange;">SLD</span>
+						<span class="fs-4 fw-bolder" style="color: white;">WEB</span>
+					</a>
+				</div>
+
+				<ul class="navbar-nav align-self-stretch">
+
+					<li class="">
+						<a href="/modules/admin/index.php" class="nav-link text-left nosub" role="button">
+							<i class="fas fa-circle"></i>
+							Inicio
+						</a>
+					</li>
+
+					<li class="has-sub">
+						<a class="nav-link collapsed text-left nosub" href="#" role="button" data-toggle="collapse"
+							data-target="#sech">
+							<i class="fas fa-calendar"></i> Horarios
+						</a>
+						<div class="collapse menu mega-dropdown" id="sech">
+							<div class="dropmenu" aria-labelledby="navbarDropdown">
+								<div class="container-fluid ">
+									<div class="row">
+										<div class="col-lg-12 px-2">
+											<div class="submenu-box">
+												<ul class="list-unstyled m-0">
+													<li><a href="">Horarios reservados</a></li>
+													<li><a href=""> Solicitud de horarios</a></li>
+													<!-- <li><a href="">Asp.net</a></li> -->
+												</ul>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+
+					<li class="has-sub">
+						<a class="nav-link collapsed text-left nosub" href="#collapseExample2" role="button"
+							data-toggle="collapse" data-target="#secp">
+							<i class="fas fa-screwdriver"></i> Mis prácticas
+						</a>
+						<div class="collapse menu mega-dropdown" id="secp">
+							<div class="dropmenu" aria-labelledby="navbarDropdown">
+								<div class="container-fluid ">
+									<div class="row">
+										<div class="col-lg-12 px-2">
+											<div class="submenu-box">
+												<ul class="list-unstyled m-0">
+													<li><a href="/modules/admin/configp.php"> Administrar prácticas</a>
+													</li>
+													<li><a href="/modules/admin/index.php?body=realizadas"> Historial de
+															prácticas</a></li>
+													<!-- <li><a href="">Asp.net</a></li> -->
+												</ul>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+
+					<li class="has-sub">
+						<a class="nav-link collapsed text-left nosub" href="#collapseExample2" role="button"
+							data-toggle="collapse" data-target="#secu">
+							<i class="fas fa-users"></i> Usuarios
+						</a>
+						<div class="collapse menu mega-dropdown" id="secu">
+							<div class="dropmenu" aria-labelledby="navbarDropdown">
+								<div class="container-fluid ">
+									<div class="row">
+										<div class="col-lg-12 px-2">
+											<div class="submenu-box">
+												<ul class="list-unstyled m-0">
+													<li><a href="/modules/admin/users.php?body=profiles">Administrar
+															usuarios</a></li>
+													<li><a href="/modules/admin/users.php?body=users">Usuarios
+															privilegiados</a></li>
+												</ul>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+
+					<li class="has-sub">
+						<a class="nav-link collapsed text-left nosub" href="#collapseExample2" role="button"
+							data-toggle="collapse" data-target="#secas">
+							<i class="fas fa-book-open"></i> Asignaturas
+						</a>
+						<div class="collapse menu mega-dropdown" id="secas">
+							<div class="dropmenu" aria-labelledby="navbarDropdown">
+								<div class="container-fluid ">
+									<div class="row">
+										<div class="col-lg-12 px-2">
+											<div class="submenu-box">
+												<ul class="list-unstyled m-0">
+													<li><a href="">Ver asignaturas</a></li>
+
+													<!-- <li><a href="">Asp.net</a></li> -->
+												</ul>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+
+					<li class="">
+						<a href="/modules/admin/theory.php" class="nav-link text-left nosub" role="button">
+							<i class="fas fa-journal-whills"></i>
+							Teoría
+						</a>
+					</li>
+
+					<li class="">
+						<a href="/modules/admin/platform.php" class="nav-link text-left nosub" role="button">
+							<i class="far fa-stop-circle"></i>
+							Plataforma
+						</a>
+					</li>
+
+					<li class="has-sub">
+						<a class="nav-link collapsed text-left nosub" role="button" data-toggle="collapse"
+							data-target="#sece">
+							<i class="fas fa-users"></i> Estadísticas
+						</a>
+						<div class="collapse menu mega-dropdown" id="sece">
+							<div class="dropmenu" aria-labelledby="navbarDropdown">
+								<div class="container-fluid ">
+									<div class="row">
+										<div class="col-lg-12 px-2">
+											<div class="submenu-box">
+												<ul class="list-unstyled m-0">
+													<li><a href="">Estadísticas generales</a></li>
+													<li><a href="">Gráficos estadísticos</a></li>
+												</ul>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+
+					<li class="">
+						<a href="../../../general/logout.php" style="text-decoration:none;">
+							<div class="btnLogout">
+								<span class="mr-2 small">Cerrar sesión</span>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
 
 		<!-- Page Content -->
 		<div id="page-content-wrapper" <?php if (!$detect->isMobile()) echo 'class="toggled"' ?>>
 			<!-- Topbar -->
-			<?php require_once('../../../structure/navbar_admin.php') ?>
 
+			<nav class="navbar navbar-expand navbar-light my-navbar d-flex justify-content-between">
 
+				<!-- Sidebar Toggle (Topbar) -->
+				<div type="button" id="bar"
+					class="nav-icon1 hamburger animated fadeInLeft is-closed<?php if (!$detect->isMobile()) echo ' open' ?>"
+					data-toggle="offcanvas">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+
+				<!-- Date -->
+				<div class="navbar-nav ml-auto">
+					<li class="nav-item">
+						<span class="nav-link">
+							<span class="mr-2 d-none d-md-block small"><?php echo Date_Time(); ?></span>
+						</span>
+					</li>
+				</div>
+
+				<!-- User name -->
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item dropdown">
+						<a class="nav-link">
+							<div class="btnLog">
+								<span style="color:black;"
+									class="mr-2 d-lg-inline small"><b><?php echo $name; ?></b></span>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</nav>
 			<div id="content">
 
 				<div id="content2" class="container-fluid p-0 px-lg-0 px-md-0">
@@ -123,25 +322,30 @@ else if ($level == 3) {
 											propiedades elementales de los sistemas LTI son:</p>
 										<h3 class="content_r_hst3"> a) Principio de Superposici&oacute;n:</h3>
 										<p> Esta es la propiedad elemental de los sistemas lineales. Para un sistema en
-											reposo a tiempo <td width="30">t=0</td>, si la respuesta a una entrada <td width="30">f<sub>1</sub>(t)</td> es <td width="30">y<sub>1</sub>(t)</td>
+											reposo a tiempo <td width="30">t=0</td>, si la respuesta a una entrada <td
+												width="30">f<sub>1</sub>(t)</td> es <td width="30">y<sub>1</sub>(t)</td>
 											, y
 											la respuesta de <td width="30">f<sub>2</sub>(t)</td> = <td width="30">
-												y<sub>2</sub>(t)</td>, entonces para una entrada compuesta como <td width="30">f<sub>3</sub>(t)</td> = a<td width="30">f<sub>1</sub>(t)</td>
+												y<sub>2</sub>(t)</td>, entonces para una entrada compuesta como <td
+												width="30">f<sub>3</sub>(t)</td> = a<td width="30">f<sub>1</sub>(t)</td>
 											+ b
 											<td width="30">f<sub>2</sub>(t)</td> (a y b constantes) la respuesta debe
 											ser: <b>(1)</b>
 										</p>
-										<p> <img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Eqn1.png" /> </p>
+										<p> <img class="img-fluid rounded mx-auto d-block mbotom"
+												src="../../../img/Eqn1.png" /> </p>
 										<h3 class="content_r_hst3"> b) Propiedad de Diferenciaci&oacute;n:</h3>
 										<p> Si la respuesta a la entrada f(t) es y(t), entonces la respuesta a la
 											derivada
 											de f(t), <td width="30">f<sub>1</sub>(t)</td> = df(t)/dt, es <b>(2)</b></p>
-										<p> <img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Eqn2.png" /> </p>
+										<p> <img class="img-fluid rounded mx-auto d-block mbotom"
+												src="../../../img/Eqn2.png" /> </p>
 										<h3 class="content_r_hst3"> c)Propiedad de la Integraci&oacute;n:</h3>
 										<p> Si la respuesta a la entrada f(t) es y(t), entonces la respuesta a la
 											integral
 											de f(t), es: <b>(3)</b></p>
-										<p> <img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Eqn3.2.png" /> </p>
+										<p> <img class="img-fluid rounded mx-auto d-block mbotom"
+												src="../../../img/Eqn3.2.png" /> </p>
 										<h3 class="content_r_hst3"> d) Causalidad:</h3>
 										<p> Un sistema causal es no-anticipatorio, lo que quiere decir que no responde a
 											una
@@ -166,12 +370,16 @@ else if ($level == 3) {
 											representa en (4), donde &alpha; ser&aacute; finalmente el retardo en el
 											dominio
 											temporal <b>(4)</b></p>
-										<p> <img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Eqn4.png" /></p>
+										<p> <img class="img-fluid rounded mx-auto d-block mbotom"
+												src="../../../img/Eqn4.png" /></p>
 										<p> o en el tiempo: <b>(5)</b></p>
-										<p> <img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Eqn5.png" /></p>
+										<p> <img class="img-fluid rounded mx-auto d-block mbotom"
+												src="../../../img/Eqn5.png" /></p>
 
-										<img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Fig.1.png" />
-										<p style="text-align:center;"> Fig.1. Representaci&oacute;n de una fase no lineal</p>
+										<img class="img-fluid rounded mx-auto d-block mbotom"
+											src="../../../img/Fig.1.png" />
+										<p style="text-align:center;"> Fig.1. Representaci&oacute;n de una fase no
+											lineal</p>
 										<p>Se muestra en la Fig.1. el que ser&iacute;a el comportamiento de una fase no
 											lineal en el dominio frecuencial. se puede observar claramente que la fase
 											del
@@ -184,7 +392,8 @@ else if ($level == 3) {
 										<p>Suponemos un sistema H(j&omega;) pasa todo, es decir |H( j&omega;) | = 1
 											donde su
 											respuesta en frecuencia queda representada por: <b>(6)</b></p>
-										<p><img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Eqn6.png" /></p>
+										<p><img class="img-fluid rounded mx-auto d-block mbotom"
+												src="../../../img/Eqn6.png" /></p>
 										<p>acotando un rango de frecuencias tal que &Delta;&omega; = (&omega; -
 											&omega;0),
 											dentro de este “grupo” de frecuencias la fase se comporta de manera lineal,
@@ -193,21 +402,26 @@ else if ($level == 3) {
 											an&aacute;logo a a pero en un vecindario de frecuencia alrededor de
 											&omega;0, se
 											observa lo anterior en la Fig.2.</p>
-										<img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Fig.2.png" />
-										<p style="text-align:center;"> Fig.2. Representaci&oacute;n de una fase no lineal y su retargo de grupo</p>
+										<img class="img-fluid rounded mx-auto d-block mbotom"
+											src="../../../img/Fig.2.png" />
+										<p style="text-align:center;"> Fig.2. Representaci&oacute;n de una fase no
+											lineal y su retargo de grupo</p>
 										<p>El Retardo de Grupo (&tau;g) se puede definir como un retardo lineal que se
 											tiene
 											en un vecindario de frecuencias muy cercanas una de otras y es posible
 											representarlo matem&aacute;ticamente como: <b>(7)</b></p>
-										<p><img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Eqn7.png" /></p>
+										<p><img class="img-fluid rounded mx-auto d-block mbotom"
+												src="../../../img/Eqn7.png" /></p>
 										<p> con: <b>(8)</b></p>
-										<p><img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Eqn8.png" /></p>
+										<p><img class="img-fluid rounded mx-auto d-block mbotom"
+												src="../../../img/Eqn8.png" /></p>
 
 										<p> En la Fig.3. y la Fig.4. que se muestran a continuaci&oacute;n se observa el
 											efecto de una fase no lineal tanto en el dominio frecuencial como en el
 											dominio
 											temporal </p>
-										<img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Fig.3.png" />
+										<img class="img-fluid rounded mx-auto d-block mbotom"
+											src="../../../img/Fig.3.png" />
 										<p style="text-align:center;"> Fig.3. Ejemplo de Retardo de Grupo</p>
 										<p>En estas se puede observar que en si &tau;g no es m&aacute;s que un retardo
 											dado
@@ -222,8 +436,10 @@ else if ($level == 3) {
 											frecuencia la respuesta aparecer&aacute; m&aacute;s tarde en
 											comparaci&oacute;n
 											a otras, este efecto se observa en la figura siguiente.</p>
-										<img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Fig.4.png" />
-										<p style="text-align:center;"> Fig.4. Efecto del retardo de grupo en la respuesta temporal</p>
+										<img class="img-fluid rounded mx-auto d-block mbotom"
+											src="../../../img/Fig.4.png" />
+										<p style="text-align:center;"> Fig.4. Efecto del retardo de grupo en la
+											respuesta temporal</p>
 									</div>
 
 									<h2 class="content_r_hst2">2. Selecci&oacute;n y Dise&ntilde;o de un Filtro</h2>
@@ -233,8 +449,10 @@ else if ($level == 3) {
 											tipo de
 											filtro es el adecuado, para esto se muestran algunas caracter&iacute;sticas.
 										</p>
-										<p style="text-align:center;">Tab.1. Caracter&iacute;sticas Filtros IIR y FIR</p>
-										<img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Tab.1.png" />
+										<p style="text-align:center;">Tab.1. Caracter&iacute;sticas Filtros IIR y FIR
+										</p>
+										<img class="img-fluid rounded mx-auto d-block mbotom"
+											src="../../../img/Tab.1.png" />
 									</div>
 
 
@@ -246,18 +464,23 @@ else if ($level == 3) {
 											ver
 											con la respuesta del sistema y su ancho de banda. uno de los criterios
 											est&aacute; definido como <b>(9)</b></p>
-										<p><img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Eqn9.png" /></p>
+										<p><img class="img-fluid rounded mx-auto d-block mbotom"
+												src="../../../img/Eqn9.png" /></p>
 										<p> Donde Tr se define como el tiempo de subida del sistema.</p>
 										<p> Otro criterio est&aacute; definido en funci&oacute;n del ancho de banda del
 											sistema por muestrear. quedando: <b>(10)</b></p>
-										<p><img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Eqn10.png" /> </p>
+										<p><img class="img-fluid rounded mx-auto d-block mbotom"
+												src="../../../img/Eqn10.png" /> </p>
 										<p>o de otra forma <b>(11)</b></p>
-										<p><img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Eqn11.png" /></p>
+										<p><img class="img-fluid rounded mx-auto d-block mbotom"
+												src="../../../img/Eqn11.png" /></p>
 										<p>Aplicando estos criterios se puede obtener un tiempo de muestreo con tal que
 											la
 											perdida de informaci&oacute;n sea m&iacute;nima.</p>
-										<img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Fig.5.png" />
-										<p style="text-align:center;"> Fig.5. Tiempo de muestreo para el criterio Tm = Tr/10</p>
+										<img class="img-fluid rounded mx-auto d-block mbotom"
+											src="../../../img/Fig.5.png" />
+										<p style="text-align:center;"> Fig.5. Tiempo de muestreo para el criterio Tm =
+											Tr/10</p>
 									</div>
 
 									<h2 class="content_r_hst3">2.2. Transformaciones de Tiempo Continuo a Tiempo
@@ -274,19 +497,22 @@ else if ($level == 3) {
 										<p>Un filtro en el dominio anal&oacute;gico puede ser descrito por su
 											funci&oacute;n
 											de transferencia en el dominio de la frecuencia <b>(12)</b></p>
-										<p><img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Eqn12.png" /></p>
+										<p><img class="img-fluid rounded mx-auto d-block mbotom"
+												src="../../../img/Eqn12.png" /></p>
 										<p>donde a y ß son coeficientes del filtro. De otra manera puede ser descrito
 											por su
 											respuesta al impulso, la cual esta´ relacionada con la transformada de
 											Laplace. <b>(13)</b>
 										</p>
-										<p><img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Eqn13.png" /></p>
+										<p><img class="img-fluid rounded mx-auto d-block mbotom"
+												src="../../../img/Eqn13.png" /></p>
 										<p>De forma alternativa podr&iacute;amos escribir la funci&oacute;n de
 											trasferencia
 											Ha(s), como una ecuaci&oacute;n diferencial en tiempo continuo de la
 											siguiente
 											manera <b>(14)</b></p>
-										<p><img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Eqn14.png" /></p>
+										<p><img class="img-fluid rounded mx-auto d-block mbotom"
+												src="../../../img/Eqn14.png" /></p>
 										<p>As&iacute; los u(t) ser&aacute;n las entradas del filtro e y(t) ser&aacute;n
 											las
 											salidas. Cada una de las tres formas anteriores son equivalentes al momento
@@ -325,34 +551,43 @@ else if ($level == 3) {
 										<p>Esta es una de las aproximaciones m&aacute;s simples para convertir filtros
 											previamente dise&ntilde;ados en tiempo continuo a filtros digitales. Se
 											trabaja
-											con la definici&oacute;n de la derivada discreta. De la siguiente manera: <b>(15)</b>
+											con la definici&oacute;n de la derivada discreta. De la siguiente manera:
+											<b>(15)</b>
 										</p>
-										<p><img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Eqn15.png" /></p>
+										<p><img class="img-fluid rounded mx-auto d-block mbotom"
+												src="../../../img/Eqn15.png" /></p>
 										<p>donde T representa el periodo de muestreo. Conociendo que: <b>(16)</b></p>
-										<p><img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Eqn16.png" /></p>
+										<p><img class="img-fluid rounded mx-auto d-block mbotom"
+												src="../../../img/Eqn16.png" /></p>
 										<p>y <b>(17)</b></p>
-										<p><img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Eqn17.png" /></p>
+										<p><img class="img-fluid rounded mx-auto d-block mbotom"
+												src="../../../img/Eqn17.png" /></p>
 										<p>De esta manera se tiene que igualando (16) y (17) se obtiene un reemplazo de
 											<b>(18)</b>
 										</p>
-										<p><img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Eqn18.png" /></p>
+										<p><img class="img-fluid rounded mx-auto d-block mbotom"
+												src="../../../img/Eqn18.png" /></p>
 										<p> Ejemplo 1: Teniendo la funci&oacute;n de transferencia de un filtro pasa
 											bajos
 											de primer orden. <b>(19)</b> </p>
-										<p><img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Eqn19.png" /></p>
+										<p><img class="img-fluid rounded mx-auto d-block mbotom"
+												src="../../../img/Eqn19.png" /></p>
 										<p>Reemplazando la aproximaci&oacute;n de la derivada en la funci&oacute;n de
 											transferencia del filtro anal&oacute;gico previamente dise&ntilde;ado,
 											quedando
 											de la forma: <b>(20)</b></p>
-										<p><img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Eqn20.png" /></p>
+										<p><img class="img-fluid rounded mx-auto d-block mbotom"
+												src="../../../img/Eqn20.png" /></p>
 										<p>La ecuaci&oacute;n de diferencias de un filtro discreto de primer orden
 											dise&ntilde;ado a partir de un filtro anal&oacute;gico con la
 											aproximaci&oacute;n de la derivada hacia atr&aacute;s es: <b>(21)</b></p>
-										<p><img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Eqn21.png" /></p>
+										<p><img class="img-fluid rounded mx-auto d-block mbotom"
+												src="../../../img/Eqn21.png" /></p>
 										<p>A modo de ejemplo, a continuaci&oacute;n, se muestra un fragmento de
 											c&oacute;digo en Matlab que corresponde al filtro previamente discretizado:
 										</p>
-										<img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Cod1.png" />
+										<img class="img-fluid rounded mx-auto d-block mbotom"
+											src="../../../img/Cod1.png" />
 									</div>
 
 									<h3 class="content_r_hst3">2.2.2. Aproximaci&oacute;n por la Transformaci&oacute;n
@@ -369,23 +604,28 @@ else if ($level == 3) {
 											una
 											vez el eje j&omega; en el c&iacute;rculo unitario del plano-z evitando la
 											aparici&oacute;n de frecuencias alias. <b>(22)</b></p>
-										<p><img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Eqn22.png" /></p>
+										<p><img class="img-fluid rounded mx-auto d-block mbotom"
+												src="../../../img/Eqn22.png" /></p>
 										<p>Ejemplo 2: Teniendo la funci&oacute;n de transferencia de un filtro pasa
 											bajos de
 											primer orden. <b>(23)</b></p>
-										<p><img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Eqn19.png" /></p>
+										<p><img class="img-fluid rounded mx-auto d-block mbotom"
+												src="../../../img/Eqn19.png" /></p>
 										<p>Reemplazando (22) en (23) la funci&oacute;n de transferencia del filtro
 											digital
 											queda: <b>(24)</b></p>
-										<p><img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Eqn24.png" /></p>
+										<p><img class="img-fluid rounded mx-auto d-block mbotom"
+												src="../../../img/Eqn24.png" /></p>
 										<p>se encuentra una ecuaci&oacute;n de diferencias que es implementarle en
 											Matlab. <b>(25)</b>
 										</p>
-										<p><img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Eqn25.png" /></p>
+										<p><img class="img-fluid rounded mx-auto d-block mbotom"
+												src="../../../img/Eqn25.png" /></p>
 										<p>A continuaci&oacute;n, se muestra un fragmento de c&oacute;digo implementado
 											en
 											Matlab:</p>
-										<img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Cod2.png" />
+										<img class="img-fluid rounded mx-auto d-block mbotom"
+											src="../../../img/Cod2.png" />
 									</div>
 
 									<div class="contentp">
@@ -396,32 +636,42 @@ else if ($level == 3) {
 											m&eacute;todo parte generalmente de una respuesta en frecuencia deseada
 											ideal
 											que se puede representar como <b>(26)</b></p>
-										<p><img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Eqn26.png" /></p>
+										<p><img class="img-fluid rounded mx-auto d-block mbotom"
+												src="../../../img/Eqn26.png" /></p>
 										<p>siendo hd(n) la correspondiente secuencia de respuesta al impulso, que se
 											puede
 											expresar en funci&oacute;n de hd(e<sup>j&omega;</sup>) como <b>(27)</b></p>
-										<p><img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Eqn27.png" /></p>
+										<p><img class="img-fluid rounded mx-auto d-block mbotom"
+												src="../../../img/Eqn27.png" /></p>
 										<p>siendo una forma particularmente simple de obtener un FIR. <b>(28)</b></p>
-										<p><img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Eqn28.png" /></p>
+										<p><img class="img-fluid rounded mx-auto d-block mbotom"
+												src="../../../img/Eqn28.png" /></p>
 										<p>de forma general se puede representar como el producto entre la respuesta
 											impulso
 											deseada y una ventana de longitud finita w(n); es decir: <b>(29)</b></p>
-										<p><img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Eqn29.png" /></p>
+										<p><img class="img-fluid rounded mx-auto d-block mbotom"
+												src="../../../img/Eqn29.png" /></p>
 										<h3 class="content_r_hst3">2.3.1. Ventana Rectangular.</h3>
 										<p>El largo para un filtro Ventana Rectangular ser&aacute; <b>(30)</b></p>
-										<p><img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Eqn30.png" /></p>
+										<p><img class="img-fluid rounded mx-auto d-block mbotom"
+												src="../../../img/Eqn30.png" /></p>
 										<p>Para motivos de aplicaci&oacute;n de esta pr&aacute;ctica se tiene que la
 											funci&oacute;n de transferencia <b>(31)</b></p>
-										<p><img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Eqn31.png" /></p>
-										<p>finalmente, la ecuaci&oacute;n de diferencias implemetable se encuentra como <b>(32) </b>
+										<p><img class="img-fluid rounded mx-auto d-block mbotom"
+												src="../../../img/Eqn31.png" /></p>
+										<p>finalmente, la ecuaci&oacute;n de diferencias implemetable se encuentra como
+											<b>(32) </b>
 										</p>
-										<p><img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Eqn32.png" /></p>
+										<p><img class="img-fluid rounded mx-auto d-block mbotom"
+												src="../../../img/Eqn32.png" /></p>
 										<p>donde N es un n&uacute;mero entero que corresponde al largo del filtro y se
 											obtiene <b>(33)</b></p>
-										<p><img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Eqn33.png" /></p>
+										<p><img class="img-fluid rounded mx-auto d-block mbotom"
+												src="../../../img/Eqn33.png" /></p>
 										<p>A continuaci&oacute;n, se muestra una fracci&oacute;n de c&oacute;digo
 											implementado en Matlab</p>
-										<img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Cod3.png" />
+										<img class="img-fluid rounded mx-auto d-block mbotom"
+											src="../../../img/Cod3.png" />
 										<p></p>
 										<p></p>
 										<p></p>

@@ -1,0 +1,92 @@
+/*admin_users*/
+
+.tsize{
+    font-size:14px;
+ }
+ 
+ .bg-dark th{
+     color:whitesmoke;
+ }
+ 
+ #content_r{
+     width: 900px;
+     margin-top: 30px;
+ }
+ 
+ #menu_list_box{
+     padding:50px;
+     border-radius: 2px;
+     width:150px;
+     font-size: 13px;
+     padding:0;
+     list-style-type:none;
+ }
+ 
+ .results_info{
+     color:#222e3c;
+     font-size:14px;
+ }
+ 
+ .btnAddPractice{
+     display: flex;
+     align-items: center;
+     width: 150px;
+     padding: 10px;
+     border: 2px solid #0058b6;
+     background-color: #0058b6;
+     border-radius: 3px;
+     cursor: pointer;
+ }
+ 
+ .btnAddPractice i{
+     margin-right: 15px;
+     color: whitesmoke;
+     font-size: 13px;
+ }
+ 
+ #btnAdd {
+     margin:0;
+     color: whitesmoke;
+     font-size: 13px;
+     text-decoration: none;
+ }
+ 
+ .btnAddPractice:hover{
+     border:2px solid #002c5e;
+     background-color: #002c5e;
+     transition: .3s;
+ }
+ 
+ .uedit{
+     color:green;
+     margin-right: 5px;
+     text-decoration: none;
+ }
+ 
+ .udel{
+     color:red;
+     text-decoration: none;
+ }
+ 
+ .atable{
+     text-decoration: none;
+     color:black;
+ }
+ 
+ /* Editar usuarios*/
+ 
+ .labeledit{
+     font-weight: 500;
+ }
+
+ #mostrarB{
+     display:flex;
+     justify-content: flex-end;
+ }
+
+ @media only screen and (max-width:600px) {
+    #mostrarB{
+        justify-content: flex-start;
+        margin-top:10px;
+    }
+}

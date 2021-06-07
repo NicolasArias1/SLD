@@ -1,7 +1,10 @@
 <?php
 	include('../../inc/useful.fns.php');
 	include('../../inc/user.class.php');
-	
+	require_once('../../libraries/Mobile_Detect.php');
+
+	$detect = new Mobile_Detect;
+
 	session_start();
 	
 	$session = $_SESSION['user'];
@@ -30,82 +33,139 @@
 	//	$usrHTML .= "<li><a href=\"users.php\" class=\"ast3\" title=\"Editar\">Editar Usuario</a></li>";
 	//}//end if
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+<?php  if($level == 2){  ?>
+
+
+<?php  }  ?>
+
+
+
+<?php  if($level == 3){  ?>
+
+<!doctype html>
+<html lang="en">
+
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-	<title>Sistema de Laboratorios a Distancia : : Teor&iacute;a</title>
-  <link href="../../css/styles.css" rel="stylesheet" type="text/css" />
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<?php require_once('css/libcss.php') ?>
+	<link rel="stylesheet" href="css/index.css">
+	<link href="../admin/css/platform.css" rel="stylesheet" type="text/css" />
+
+
 </head>
 
+
+
+
 <body>
-	<div id="page">
-		<div id="header">
-			<div id="header_t">
-				<div id="header_t_l"><img src="../../img/logo.png" border="0" /></div>
-				<div id="header_t_r"><?php echo Date_Time(); ?></div>
-			</div>
-			<div id="header_b">
-				<div id="header_l"></div>
-				<div id="header_c">
-					<h1 class="logo">SLD<span class="w_txt">WEB</span></h1>
-					<h4 class="txt">Sistema de Laboratorios a Distancia</h4>
+
+
+	<div id="wrapper">
+		<div class="overlay"></div>
+
+		<!-- Sidebar -->
+		<?php require_once('../../structure/sidebar_estudiante.php') ?>
+
+		<div id="page-content-wrapper" <?php if (!$detect->isMobile()) echo 'class="toggled"' ?>>
+
+			<!-- Topbar -->
+			<?php require_once('../../structure/navbar_admin.php') ?>
+
+			<div id="content">
+
+				<div id="content2" class="container-fluid p-0 px-lg-0 px-md-0">
+
+					<!-- End of Topbar -->
+
+					<!-- Begin Page Content -->
+					<div class="container-fluid px-lg-4 content_g ">
+						<div class="row">
+							<div id="content3" class="col-md-12 mt-lg-4 mt-4">
+
+								<div id="content_r" style="width:500px; font-size:14px;">
+									<h1 class="content_r_hst1">Consideraciones te&oacute;ricas:</h1>
+									<table class="table table-bordered table-hover tsize">
+
+										<thead>
+											<tr class="bg-dark">
+												<th class="col-sm-1" style="color:whitesmoke;" scope="col">N°</th>
+												<th class="col-sm-8" style="color:whitesmoke;" scope="col">Teoría</th>
+											</tr>
+										</thead>
+
+										<tbody>
+
+											<tr>
+												<th scope="row">1</th>
+												<td><a style="text-decoration:none;" href="theory/modeltanks.php" class="ast1">Modelado del
+														sistema de tanques acoplados</a></td>
+
+											</tr>
+											<tr>
+												<th scope="row">2</th>
+												<td><a style="text-decoration:none;" href="theory/motorcd.php " class="ast1">Modelado de un
+														motor de corriente directa</a></td>
+											</tr>
+											<tr>
+												<th scope="row">3</th>
+												<td><a style="text-decoration:none;" href="theory/modeloport.php "
+														class="ast1">Identificaci&oacute;n de Sistemas por modelo
+														PORT</a></td>
+											</tr>
+											<tr>
+												<th scope="row">4</th>
+												<td><a style="text-decoration:none;" href="theory/pddesac.php" class="ast1">PD
+														desacoplado para control de posici&oacute;n de motores</a></td>
+											</tr>
+											<tr>
+												<th scope="row">5</th>
+												<td><a style="text-decoration:none;" href="theory/filtro.php "
+														class="ast1">Implementaci&oacute;n de filtro digital</a></td>
+											</tr>
+											<tr>
+												<th scope="row">6</th>
+												<td><a style="text-decoration:none;" href="theory/Control.php "
+														class="ast1">Implementaci&oacute;n de controlador digital</a>
+												</td>
+											</tr>
+										</tbody>
+
+
+									</table>
+
+								</div>
+
+
+							</div>
+
+						</div>
+					</div>
+
 				</div>
-				<div id="header_r"></div>
+				<!-- /.container-fluid -->
+
 			</div>
+
+
 		</div>
-		<div id="navigator">
-			<div id="nav_l"></div>
-			<div id="nav_c">
-				<ul>
-					<li><a href="index.php">Inicio</a></li>
-					<li><a href="theory.php">Teor&iacute;a</a></li>
-					<li><a href="practices.php">Pr&aacute;cticas</a></li>
-					<li><a href="platform.php">Plataforma</a></li>					
-				</ul>
-			</div>
-			<div id="nav_r"></div>
-		</div>
-		<div id="content">
-			<div id="content_l">
-				<div id="content_l_t"></div>
-				<div id="content_l_c">
-					<h1 class="content_l_hst1">Usuario</h1>
-					<ul>
-						<li><?php echo $name; ?></li>
-						<?php echo $usrHTML; ?>
-						<li><a href="../../general/logout.php" class="ast3">Logout</a></li>
-					</ul>
-					<h1 class="content_l_hst1">Navegaci&oacute;n</h1>
-					<ul>
-						<li><a href="index.php" class="ast3">Inicio</a></li>
-						<li><a href="theory.php" class="ast3">Teoria</a></li>
-						<li><a href="practices.php" class="ast3">Pr&aacute;cticas</a></li>
-						<li><a href="platform.php" class="ast3">Plataforma</a></li>
-						<li><a href="mypractices.php" class="ast3">Mis Pr&aacute;cticas</a></li>
-						<li><a href="mailto:ching@uclv.edu.cu;aerubio@ubiobio.cl">Contacto</a></li>
-					</ul>
-				</div>
-				<div id="content_l_b"></div>
-			</div>
-				
-			</div>
-			<div id="content_r">
-				<h1 class="content_r_hst1">Consideraciones te&oacute;ricas:</h1>
-				<ol class="practices">
-					<li class="practice"><a href="theory/modeltanks.php" class="ast1">Modelado del sistema de tanques acoplados</a></li>
-					<li class="practice"><a href="theory/motorcd.php" class="ast1">Modelado de un motor de corriente directa</a></li>
-					<li class="practice"><a href="theory/modeloport.php" class="ast1">Identificaci&oacute;n de Sistemas por modelo PORT</a></li>
-					<li class="practice"><a href="theory/pddesac.php" class="ast1">PD desacoplado para control de posici&oacute;n de motores</a></li>
-					<li class="practice"><a href="theory/filtro.php" class="ast1">Implementaci&oacute;n de filtro digital</a></li>
-				<li class="practice"><a href="theory/Control.php" class="ast1">Implementaci&oacute;n de control digital</a></li>
-				</ol>
-			</div>
-			<div class="blank"></div>
-		</div>
-		<div id="footer">
-			Copyright &copy; 2017: GARP.UCLV-DIEE.UBB
-		</div>
+		<!-- /#page-content-wrapper -->
+
 	</div>
+	<!-- /#wrapper -->
+
 </body>
+
+
+<?php require_once('js/libjs.php') ?>
+<script src="js/index.js"></script>
+
+
 </html>
+
+
+<?php  }  ?>

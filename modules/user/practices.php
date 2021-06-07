@@ -75,56 +75,56 @@ if (is_array($result)) {
 
 
 
-	<!doctype html>
-	<html lang="en">
+<!doctype html>
+<html lang="en">
 
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<?php require_once('../../modules/admin/css/libcss.php') ?>
-		<script language="JavaScript" src="../../js/sld.js" type="text/javascript"></script>
-		<script language="JavaScript" src="../../js/osld.js" type="text/javascript"></script>
-		<link rel="stylesheet" href="../../modules/admin/css/index.css">
-		<link rel="stylesheet" href="css/practices.css">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<?php require_once('../../modules/admin/css/libcss.php') ?>
+	<script language="JavaScript" src="../../js/sld.js" type="text/javascript"></script>
+	<script language="JavaScript" src="../../js/osld.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="../../modules/admin/css/index.css">
+	<link rel="stylesheet" href="css/practices.css">
 
-	</head>
+</head>
 
-	<body>
-		<div id="wrapper">
-			<div class="overlay"></div>
+<body>
+	<div id="wrapper">
+		<div class="overlay"></div>
 
-			<?php require_once('../../structure/sidebar_admin.php') ?>
+		<?php require_once('../../structure/sidebar_admin.php') ?>
 
-			<div id="page-content-wrapper" <?php if (!$detect->isMobile()) echo 'class="toggled"' ?>>
+		<div id="page-content-wrapper" <?php if (!$detect->isMobile()) echo 'class="toggled"' ?>>
 
-				<?php require_once('../../structure/navbar_admin.php') ?>
+			<?php require_once('../../structure/navbar_admin.php') ?>
 
-				<div class="container-fluid p-0 px-lg-0 px-md-0">
-					<div class="container-fluid px-lg-4 content_g ">
-						<div class="row">
-							<div id="content3" class="col-md-12 mt-lg-4 mt-4">
+			<div class="container-fluid p-0 px-lg-0 px-md-0">
+				<div class="container-fluid px-lg-4 content_g ">
+					<div class="row">
+						<div id="content3" class="col-md-12 mt-lg-4 mt-4">
 
-								<div id="content_r">
+							<div id="content_r">
 
 
-									<h1 class="content_r_hst1">Pr&aacute;cticas disponibles</h1>
-									<?php
+								<h1 class="content_r_hst1">Pr&aacute;cticas disponibles</h1>
+								<?php
 									echo $strHTML;
 									?>
 
-								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</body>
+	</div>
+</body>
 
-	<?php require_once('../../modules/admin/js/libjs.php') ?>
-	<script src="../../modules/admin/js/index.js"></script>
+<?php require_once('../../modules/admin/js/libjs.php') ?>
+<script src="../../modules/admin/js/index.js"></script>
 
-	</html>
+</html>
 
 
 
@@ -142,167 +142,56 @@ if (is_array($result)) {
 <!-- Realiza práctica desde perfil estudiante. -->
 <?php if ($level == 3) { ?>
 
-	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-	<html xmlns="http://www.w3.org/1999/xhtml">
-
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-		<title>Sistema de Laboratorios a Distancia : : Pr&aacute;cticas</title>
-		<link href="../../css/styles.css" rel="stylesheet" type="text/css" />
-	</head>
-
-	<body>
-		<div id="page">
-			<div id="header">
-				<div id="header_t">
-					<div id="header_t_l"><img src="../../img/logo.png" /></div>
-					<div id="header_t_r"><?php echo Date_Time(); ?></div>
-				</div>
-				<div id="header_b">
-					<div id="header_l"></div>
-					<div id="header_c">
-						<h1 class="logo">SLD<span class="w_txt">WEB</span></h1>
-						<h4 class="txt">Sistema de Laboratorios a Distancia </h4>
-					</div>
-					<div id="header_r"></div>
-				</div>
-			</div>
-			<div id="navigator">
-				<div id="nav_l"></div>
-				<div id="nav_c">
-					<ul>
-						<li><a href="index.php">Inicio</a></li>
-						<li><a href="theory.php">Teor&iacute;a</a></li>
-						<li><a href="practices.php">Pr&aacute;cticas</a></li>
-						<li><a href="platform.php">Plataforma</a></li>
-					</ul>
-				</div>
-				<div id="nav_r"></div>
-			</div>
-			<div id="content">
-				<div id="content_l">
-					<div id="content_l_t"></div>
-					<div id="content_l_c">
-						<h1 class="content_l_hst1">Usuario</h1>
-						<ul>
-							<li><?php echo $name; ?></li>
-							<?php echo $usrHTML; ?>
-							<li><a href="../../general/logout.php" class="ast3">Logout</a></li>
-						</ul>
-						<h1 class="content_l_hst1">Navegaci&oacute;n</h1>
-						<ul>
-							<li><a href="index.php" class="ast3">Inicio</a></li>
-							<li><a href="theory.php" class="ast3">Teoria</a></li>
-							<li><a href="practices.php" class="ast3">Pr&aacute;cticas</a></li>
-							<li><a href="platform.php" class="ast3">Plataforma</a></li>
-							<li><a href="mypractices.php" class="ast3">Mis Pr&aacute;cticas</a></li>
-							<li><a href="mailto:ching@uclv.edu.cu;aerubio@ubiobio.cl">Contacto</a></li>
-						</ul>
-
-					</div>
-					<div id="content_l_b"></div>
-				</div>
-				<div id="content_r">
-
-					<h1 class="content_r_hst1">Pr&aacute;cticas disponibles</h1>
-					<?php
-					echo $strHTML;
-					?>
-				</div>
-
-				<div class="blank"></div>
-			</div>
-			<div id="footer">
-				Copyright &copy; 2017: GARP.UCLV-DIEE.UBB
-			</div>
-		</div>
-	</body>
-
-	</html>
-
-<?php } ?>
-
-
-
-
-<!--
-<!DOCTYPE html
-	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!doctype html>
+<html lang="en">
 
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-	<title>Sistema de Laboratorios a Distancia : : Pr&aacute;cticas</title>
-	<link href="../../css/styles.css" rel="stylesheet" type="text/css" />
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<?php require_once('../../modules/admin/css/libcss.php') ?>
+	<script language="JavaScript" src="../../js/sld.js" type="text/javascript"></script>
+	<script language="JavaScript" src="../../js/osld.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="../../modules/admin/css/index.css">
+	<link rel="stylesheet" href="css/practices.css">
+
 </head>
 
 <body>
-	<div id="page">
-		<div id="header">
-			<div id="header_t">
-				<div id="header_t_l"><img src="../../img/logo.png" /></div>
-				<div id="header_t_r"><?php echo Date_Time(); ?></div>
-			</div>
-			<div id="header_b">
-				<div id="header_l"></div>
-				<div id="header_c">
-					<h1 class="logo">SLD<span class="w_txt">WEB</span></h1>
-					<h4 class="txt">Sistema de Laboratorios a Distancia </h4>
+	<div id="wrapper">
+		<div class="overlay"></div>
+
+		<?php require_once('../../structure/sidebar_estudiante.php') ?>
+
+		<div id="page-content-wrapper" <?php if (!$detect->isMobile()) echo 'class="toggled"' ?>>
+
+			<?php require_once('../../structure/navbar_admin.php') ?>
+
+			<div class="container-fluid p-0 px-lg-0 px-md-0">
+				<div class="container-fluid px-lg-4 content_g ">
+					<div class="row">
+						<div id="content3" class="col-md-12 mt-lg-4 mt-4">
+
+							<div id="content_r">
+
+
+								<h1 class="content_r_hst1">Pr&aacute;cticas disponibles</h1>
+								<?php
+									echo $strHTML;
+									?>
+
+							</div>
+						</div>
+					</div>
 				</div>
-				<div id="header_r"></div>
 			</div>
-		</div>
-		<div id="navigator">
-			<div id="nav_l"></div>
-			<div id="nav_c">
-				<ul>
-					<li><a href="index.php">Inicio</a></li>
-					<li><a href="theory.php">Teor&iacute;a</a></li>
-					<li><a href="practices.php">Pr&aacute;cticas</a></li>
-					<li><a href="platform.php">Plataforma</a></li>
-				</ul>
-			</div>
-			<div id="nav_r"></div>
-		</div>
-		<div id="content">
-			<div id="content_l">
-				<div id="content_l_t"></div>
-				<div id="content_l_c">
-					<h1 class="content_l_hst1">Usuario</h1>
-					<ul>
-						<li><?php echo $name; ?></li>
-						<?php echo $usrHTML; ?>
-						<li><a href="../../general/logout.php" class="ast3">Logout</a></li>
-					</ul>
-					<h1 class="content_l_hst1">Navegaci&oacute;n</h1>
-					<ul>
-						<li><a href="index.php" class="ast3">Inicio</a></li>
-						<li><a href="theory.php" class="ast3">Teoria</a></li>
-						<li><a href="practices.php" class="ast3">Pr&aacute;cticas</a></li>
-						<li><a href="platform.php" class="ast3">Plataforma</a></li>
-						<li><a href="mypractices.php" class="ast3">Mis Pr&aacute;cticas</a></li>
-						<li><a href="mailto:ching@uclv.edu.cu;aerubio@ubiobio.cl">Contacto</a></li>
-					</ul>
-
-				</div>
-				<div id="content_l_b"></div>
-			</div>
-			<div id="content_r">
-
-				<h1 class="content_r_hst1">Pr&aacute;cticas disponibles</h1>
-				<?php
-				echo $strHTML;
-				?>
-			</div>
-
-			<div class="blank"></div>
-		</div>
-		<div id="footer">
-			Copyright &copy; 2017: GARP.UCLV-DIEE.UBB
 		</div>
 	</div>
 </body>
 
+<?php require_once('../../modules/admin/js/libjs.php') ?>
+<script src="../../modules/admin/js/index.js"></script>
+
 </html>
 
- -->
+
+<?php } ?>

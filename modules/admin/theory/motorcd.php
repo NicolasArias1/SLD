@@ -2,7 +2,7 @@
 include('../../../inc/useful.fns.php');
 include('../../../inc/user.class.php');
 
-require_once('../../libraries/Mobile_Detect.php');
+require_once('../../../libraries/Mobile_Detect.php');
 
 $detect = new Mobile_Detect;
 
@@ -51,15 +51,215 @@ else if ($level == 3) {
 	<div id="wrapper">
 
 
+		<nav class="fixed-top align-top<?php if (!$detect->isMobile()) echo ' toggled' ?>" id="sidebar-wrapper"
+			role="navigation">
+			<div class="simplebar-content" style="padding: 0px;">
 
-		<!-- Sidebar -->
-		<?php require_once('../../../structure/sidebar_admin.php') ?>
+				<!-- Logo -->
+				<div class="navbar-nav ps-4 pt-2">
+					<a class="navbar-brand" href="index.php">
+						<span class="fs-4 fw-bolder" style="color: orange;">SLD</span>
+						<span class="fs-4 fw-bolder" style="color: white;">WEB</span>
+					</a>
+				</div>
+
+				<ul class="navbar-nav align-self-stretch">
+
+					<li class="">
+						<a href="/modules/admin/index.php" class="nav-link text-left nosub" role="button">
+							<i class="fas fa-circle"></i>
+							Inicio
+						</a>
+					</li>
+
+					<li class="has-sub">
+						<a class="nav-link collapsed text-left nosub" href="#" role="button" data-toggle="collapse"
+							data-target="#sech">
+							<i class="fas fa-calendar"></i> Horarios
+						</a>
+						<div class="collapse menu mega-dropdown" id="sech">
+							<div class="dropmenu" aria-labelledby="navbarDropdown">
+								<div class="container-fluid ">
+									<div class="row">
+										<div class="col-lg-12 px-2">
+											<div class="submenu-box">
+												<ul class="list-unstyled m-0">
+													<li><a href="">Horarios reservados</a></li>
+													<li><a href=""> Solicitud de horarios</a></li>
+													<!-- <li><a href="">Asp.net</a></li> -->
+												</ul>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+
+					<li class="has-sub">
+						<a class="nav-link collapsed text-left nosub" href="#collapseExample2" role="button"
+							data-toggle="collapse" data-target="#secp">
+							<i class="fas fa-screwdriver"></i> Mis prácticas
+						</a>
+						<div class="collapse menu mega-dropdown" id="secp">
+							<div class="dropmenu" aria-labelledby="navbarDropdown">
+								<div class="container-fluid ">
+									<div class="row">
+										<div class="col-lg-12 px-2">
+											<div class="submenu-box">
+												<ul class="list-unstyled m-0">
+													<li><a href="/modules/admin/configp.php"> Administrar prácticas</a>
+													</li>
+													<li><a href="/modules/admin/index.php?body=realizadas"> Historial de
+															prácticas</a></li>
+													<!-- <li><a href="">Asp.net</a></li> -->
+												</ul>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+
+					<li class="has-sub">
+						<a class="nav-link collapsed text-left nosub" href="#collapseExample2" role="button"
+							data-toggle="collapse" data-target="#secu">
+							<i class="fas fa-users"></i> Usuarios
+						</a>
+						<div class="collapse menu mega-dropdown" id="secu">
+							<div class="dropmenu" aria-labelledby="navbarDropdown">
+								<div class="container-fluid ">
+									<div class="row">
+										<div class="col-lg-12 px-2">
+											<div class="submenu-box">
+												<ul class="list-unstyled m-0">
+													<li><a href="/modules/admin/users.php?body=profiles">Administrar
+															usuarios</a></li>
+													<li><a href="/modules/admin/users.php?body=users">Usuarios
+															privilegiados</a></li>
+												</ul>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+
+					<li class="has-sub">
+						<a class="nav-link collapsed text-left nosub" href="#collapseExample2" role="button"
+							data-toggle="collapse" data-target="#secas">
+							<i class="fas fa-book-open"></i> Asignaturas
+						</a>
+						<div class="collapse menu mega-dropdown" id="secas">
+							<div class="dropmenu" aria-labelledby="navbarDropdown">
+								<div class="container-fluid ">
+									<div class="row">
+										<div class="col-lg-12 px-2">
+											<div class="submenu-box">
+												<ul class="list-unstyled m-0">
+													<li><a href="">Ver asignaturas</a></li>
+
+													<!-- <li><a href="">Asp.net</a></li> -->
+												</ul>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+
+					<li class="">
+						<a href="/modules/admin/theory.php" class="nav-link text-left nosub" role="button">
+							<i class="fas fa-journal-whills"></i>
+							Teoría
+						</a>
+					</li>
+
+					<li class="">
+						<a href="/modules/admin/platform.php" class="nav-link text-left nosub" role="button">
+							<i class="far fa-stop-circle"></i>
+							Plataforma
+						</a>
+					</li>
+
+					<li class="has-sub">
+						<a class="nav-link collapsed text-left nosub" role="button" data-toggle="collapse"
+							data-target="#sece">
+							<i class="fas fa-users"></i> Estadísticas
+						</a>
+						<div class="collapse menu mega-dropdown" id="sece">
+							<div class="dropmenu" aria-labelledby="navbarDropdown">
+								<div class="container-fluid ">
+									<div class="row">
+										<div class="col-lg-12 px-2">
+											<div class="submenu-box">
+												<ul class="list-unstyled m-0">
+													<li><a href="">Estadísticas generales</a></li>
+													<li><a href="">Gráficos estadísticos</a></li>
+												</ul>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+
+					<li class="">
+						<a href="../../../general/logout.php" style="text-decoration:none;">
+							<div class="btnLogout">
+								<span class="mr-2 small">Cerrar sesión</span>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
 
 		<!-- Page Content -->
 		<div id="page-content-wrapper" <?php if (!$detect->isMobile()) echo 'class="toggled"' ?>>
 			<!-- Topbar -->
-			<?php require_once('../../../structure/navbar_admin.php') ?>
 
+			<nav class="navbar navbar-expand navbar-light my-navbar d-flex justify-content-between">
+
+				<!-- Sidebar Toggle (Topbar) -->
+				<div type="button" id="bar"
+					class="nav-icon1 hamburger animated fadeInLeft is-closed<?php if (!$detect->isMobile()) echo ' open' ?>"
+					data-toggle="offcanvas">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+
+				<!-- Date -->
+				<div class="navbar-nav ml-auto">
+					<li class="nav-item">
+						<span class="nav-link">
+							<span class="mr-2 d-none d-md-block small"><?php echo Date_Time(); ?></span>
+						</span>
+					</li>
+				</div>
+
+				<!-- User name -->
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item dropdown">
+						<a class="nav-link">
+							<div class="btnLog">
+								<span style="color:black;"
+									class="mr-2 d-lg-inline small"><b><?php echo $name; ?></b></span>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</nav>
 			<div id="content">
 
 				<div id="content2" class="container-fluid p-0 px-lg-0 px-md-0">
@@ -79,11 +279,15 @@ else if ($level == 3) {
 									<div class="contentp">
 
 										<p>El motor de corriente directa resulta un actuador com&uacute;n en sistemas de
-											control. El mismo suministra de forma directa movimiento rotatorio y acoplado a
-											trav&eacute;s de dispositivos mec&aacute;nicos simples, puede proveer movimiento
-											traslacional. El circuito el&eacute;ctrico de la armadura y el campo se muestran
+											control. El mismo suministra de forma directa movimiento rotatorio y
+											acoplado a
+											trav&eacute;s de dispositivos mec&aacute;nicos simples, puede proveer
+											movimiento
+											traslacional. El circuito el&eacute;ctrico de la armadura y el campo se
+											muestran
 											en la siguiente figura:</p>
-										<img class="img-fluid rounded mx-auto d-block" src="../../../img/motorcd1.png" />
+										<img class="img-fluid rounded mx-auto d-block"
+											src="../../../img/motorcd1.png" />
 										<div class="content_simbo_p">
 											<div class="content_simbo_motorcd">
 												<h1 class="title_simbology">Simbología:</h1>
@@ -122,28 +326,39 @@ else if ($level == 3) {
 												</table>
 											</div>
 										</div>
-										<p>La fuerza contraelectromotriz es proporcional a la velocidad de rotaci&oacute;n
+										<p>La fuerza contraelectromotriz es proporcional a la velocidad de
+											rotaci&oacute;n
 											del eje (Eb=Kb.w). Por otra parte, si el campo es constante, el momento que
 											ejerce el eje sobre la carga es proporcional a la corriente de armadura
-											(T=Ka.Ia). Y se sabe que las constantes Ka y Kb son num&eacute;ricamente iguales
+											(T=Ka.Ia). Y se sabe que las constantes Ka y Kb son num&eacute;ricamente
+											iguales
 											si ambas se expresan en el sistema internacional de unidades (K=Kb=Ka).
 											Conociendo lo anterior y aplicando las leyes de Newton y de Kirchhoff's, las
 											ecuaciones del modelo en transformada de Laplace quedan:</p>
 										<p>(La.s + Ra).Ia(s) + K.w(s) = Ea(s)<br />(J.s + F).w(s) + Td(s) = K.Ia(s)</p>
-										<p>Teniendo en cuenta el momento disturbio (Td), la relaci&oacute;n de engrane entre
-											el eje y la carga (Re) y que el sensor disponible es el de posici&oacute;n (q),
+										<p>Teniendo en cuenta el momento disturbio (Td), la relaci&oacute;n de engrane
+											entre
+											el eje y la carga (Re) y que el sensor disponible es el de posici&oacute;n
+											(q),
 											el diagrama en bloque queda como se muestra a continuaci&oacute;n:</p>
-										<img class="img-fluid rounded mx-auto d-block" src="../../../img/motorcd2.png" />
-										<p>Despreciando la inductancia de armadura, que por lo general es peque&ntilde;a,
+										<img class="img-fluid rounded mx-auto d-block"
+											src="../../../img/motorcd2.png" />
+										<p>Despreciando la inductancia de armadura, que por lo general es
+											peque&ntilde;a,
 											este modelo puede reducirse a:</p>
-										<img class="img-fluid rounded mx-auto d-block" src="../../../img/motorcd3.png" />
+										<img class="img-fluid rounded mx-auto d-block"
+											src="../../../img/motorcd3.png" />
 										<p>Donde:</p>
-										<img class="img-fluid rounded mx-auto d-block" src="../../../img/motorcd4.png" />
-										<p>No todos los par&aacute;metros del modelo m&aacute;s completo son f&aacute;ciles
-											de obtener por lo que en la pr&aacute;ctica el modelo m&aacute;s utilizado es el
+										<img class="img-fluid rounded mx-auto d-block"
+											src="../../../img/motorcd4.png" />
+										<p>No todos los par&aacute;metros del modelo m&aacute;s completo son
+											f&aacute;ciles
+											de obtener por lo que en la pr&aacute;ctica el modelo m&aacute;s utilizado
+											es el
 											reducido ya que se puede deducir sin grandes dificultades, mediante la
 											identificaci&oacute;n experimental del sistema ante una entrada paso.</p>
-										<p>Para ello, se aplica una variaci&oacute;n tipo paso en el voltaje de entrada y se
+										<p>Para ello, se aplica una variaci&oacute;n tipo paso en el voltaje de entrada
+											y se
 											registra la variaci&oacute;n de velocidad en el tiempo. Luego Km*Re =
 											VarVel/VarVolt mientras Tm ser&aacute; el tiempo que tarda la velocidad en
 											alcanzar el 63% del valor final.</p>

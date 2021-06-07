@@ -2,7 +2,7 @@
 include('../../../inc/useful.fns.php');
 include('../../../inc/user.class.php');
 
-require_once('../../libraries/Mobile_Detect.php');
+require_once('../../../libraries/Mobile_Detect.php');
 
 $detect = new Mobile_Detect;
 
@@ -52,14 +52,215 @@ else if ($level == 3) {
 
 
 
-		<!-- Sidebar -->
-		<?php require_once('../../../structure/sidebar_admin.php') ?>
+		<nav class="fixed-top align-top<?php if (!$detect->isMobile()) echo ' toggled' ?>" id="sidebar-wrapper"
+			role="navigation">
+			<div class="simplebar-content" style="padding: 0px;">
+
+				<!-- Logo -->
+				<div class="navbar-nav ps-4 pt-2">
+					<a class="navbar-brand" href="index.php">
+						<span class="fs-4 fw-bolder" style="color: orange;">SLD</span>
+						<span class="fs-4 fw-bolder" style="color: white;">WEB</span>
+					</a>
+				</div>
+
+				<ul class="navbar-nav align-self-stretch">
+
+					<li class="">
+						<a href="/modules/admin/index.php" class="nav-link text-left nosub" role="button">
+							<i class="fas fa-circle"></i>
+							Inicio
+						</a>
+					</li>
+
+					<li class="has-sub">
+						<a class="nav-link collapsed text-left nosub" href="#" role="button" data-toggle="collapse"
+							data-target="#sech">
+							<i class="fas fa-calendar"></i> Horarios
+						</a>
+						<div class="collapse menu mega-dropdown" id="sech">
+							<div class="dropmenu" aria-labelledby="navbarDropdown">
+								<div class="container-fluid ">
+									<div class="row">
+										<div class="col-lg-12 px-2">
+											<div class="submenu-box">
+												<ul class="list-unstyled m-0">
+													<li><a href="">Horarios reservados</a></li>
+													<li><a href=""> Solicitud de horarios</a></li>
+													<!-- <li><a href="">Asp.net</a></li> -->
+												</ul>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+
+					<li class="has-sub">
+						<a class="nav-link collapsed text-left nosub" href="#collapseExample2" role="button"
+							data-toggle="collapse" data-target="#secp">
+							<i class="fas fa-screwdriver"></i> Mis prácticas
+						</a>
+						<div class="collapse menu mega-dropdown" id="secp">
+							<div class="dropmenu" aria-labelledby="navbarDropdown">
+								<div class="container-fluid ">
+									<div class="row">
+										<div class="col-lg-12 px-2">
+											<div class="submenu-box">
+												<ul class="list-unstyled m-0">
+													<li><a href="/modules/admin/configp.php"> Administrar prácticas</a>
+													</li>
+													<li><a href="/modules/admin/index.php?body=realizadas"> Historial de
+															prácticas</a></li>
+													<!-- <li><a href="">Asp.net</a></li> -->
+												</ul>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+
+					<li class="has-sub">
+						<a class="nav-link collapsed text-left nosub" href="#collapseExample2" role="button"
+							data-toggle="collapse" data-target="#secu">
+							<i class="fas fa-users"></i> Usuarios
+						</a>
+						<div class="collapse menu mega-dropdown" id="secu">
+							<div class="dropmenu" aria-labelledby="navbarDropdown">
+								<div class="container-fluid ">
+									<div class="row">
+										<div class="col-lg-12 px-2">
+											<div class="submenu-box">
+												<ul class="list-unstyled m-0">
+													<li><a href="/modules/admin/users.php?body=profiles">Administrar
+															usuarios</a></li>
+													<li><a href="/modules/admin/users.php?body=users">Usuarios
+															privilegiados</a></li>
+												</ul>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+
+					<li class="has-sub">
+						<a class="nav-link collapsed text-left nosub" href="#collapseExample2" role="button"
+							data-toggle="collapse" data-target="#secas">
+							<i class="fas fa-book-open"></i> Asignaturas
+						</a>
+						<div class="collapse menu mega-dropdown" id="secas">
+							<div class="dropmenu" aria-labelledby="navbarDropdown">
+								<div class="container-fluid ">
+									<div class="row">
+										<div class="col-lg-12 px-2">
+											<div class="submenu-box">
+												<ul class="list-unstyled m-0">
+													<li><a href="">Ver asignaturas</a></li>
+
+													<!-- <li><a href="">Asp.net</a></li> -->
+												</ul>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+
+					<li class="">
+						<a href="/modules/admin/theory.php" class="nav-link text-left nosub" role="button">
+							<i class="fas fa-journal-whills"></i>
+							Teoría
+						</a>
+					</li>
+
+					<li class="">
+						<a href="/modules/admin/platform.php" class="nav-link text-left nosub" role="button">
+							<i class="far fa-stop-circle"></i>
+							Plataforma
+						</a>
+					</li>
+
+					<li class="has-sub">
+						<a class="nav-link collapsed text-left nosub" role="button" data-toggle="collapse"
+							data-target="#sece">
+							<i class="fas fa-users"></i> Estadísticas
+						</a>
+						<div class="collapse menu mega-dropdown" id="sece">
+							<div class="dropmenu" aria-labelledby="navbarDropdown">
+								<div class="container-fluid ">
+									<div class="row">
+										<div class="col-lg-12 px-2">
+											<div class="submenu-box">
+												<ul class="list-unstyled m-0">
+													<li><a href="">Estadísticas generales</a></li>
+													<li><a href="">Gráficos estadísticos</a></li>
+												</ul>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+
+					<li class="">
+						<a href="../../../general/logout.php" style="text-decoration:none;">
+							<div class="btnLogout">
+								<span class="mr-2 small">Cerrar sesión</span>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
 
 		<!-- Page Content -->
 		<div id="page-content-wrapper" <?php if (!$detect->isMobile()) echo 'class="toggled"' ?>>
 			<!-- Topbar -->
-			<?php require_once('../../../structure/navbar_admin.php') ?>
 
+			<nav class="navbar navbar-expand navbar-light my-navbar d-flex justify-content-between">
+
+				<!-- Sidebar Toggle (Topbar) -->
+				<div type="button" id="bar"
+					class="nav-icon1 hamburger animated fadeInLeft is-closed<?php if (!$detect->isMobile()) echo ' open' ?>"
+					data-toggle="offcanvas">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+
+				<!-- Date -->
+				<div class="navbar-nav ml-auto">
+					<li class="nav-item">
+						<span class="nav-link">
+							<span class="mr-2 d-none d-md-block small"><?php echo Date_Time(); ?></span>
+						</span>
+					</li>
+				</div>
+
+				<!-- User name -->
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item dropdown">
+						<a class="nav-link">
+							<div class="btnLog">
+								<span style="color:black;"
+									class="mr-2 d-lg-inline small"><b><?php echo $name; ?></b></span>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</nav>
 			<div id="content">
 
 				<div id="content2" class="container-fluid p-0 px-lg-0 px-md-0">
@@ -84,15 +285,18 @@ else if ($level == 3) {
 											manipulador). Cada actuador de ve afectado por un torque de disturbio, que
 											no es otra cosa mas que el torque generado por la articulaci&oacute;n
 											acoplada al actuador en movimiento, y se calcula a trav&eacute;s de la
-											soluci&oacute;n del problema din&aacute;mico inverso (ver <a href="#" class="ast1">Modelado din&aacute;mico de manipuladores</a>).</p>
+											soluci&oacute;n del problema din&aacute;mico inverso (ver <a href="#"
+												class="ast1">Modelado din&aacute;mico de manipuladores</a>).</p>
 										<p>El control PD (Proporcional-Derivativo) desacoplado es el esquema de control
 											m&aacute;s simple y es adecuado para aplicaciones que no requieran
 											movimientos muy r&aacute;pidos, especialmente en manipuladores que tengan
 											una tasa de reducci&oacute;n grande entre los actuadores y las
 											articulaciones. El diagrama de bloques en lazo cerrado de este esquema es
 											presentado en la figura 1.</p>
-										<img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/pddesac1.gif" />
-										<p style="text-align:center;">Fig. 1. Esquema de lazo cerrado con control PD.</p>
+										<img class="img-fluid rounded mx-auto d-block mbotom"
+											src="../../../img/pddesac1.gif" />
+										<p style="text-align:center;">Fig. 1. Esquema de lazo cerrado con control PD.
+										</p>
 										<p>donde:</p>
 										<div class="content_simbo_p">
 											<div class="content_simbo_pddesac1">
@@ -156,15 +360,19 @@ else if ($level == 3) {
 											funci&oacute;n del voltaje aplicado, es una ecuaci&oacute;n diferencial
 											lineal invariante con el tiempo (ver <a href="#" class="ast1">Modelado de
 												actuadores</a>) que esta representada por:</p>
-										<img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/pddesac2.gif" />
+										<img class="img-fluid rounded mx-auto d-block mbotom"
+											src="../../../img/pddesac2.gif" />
 										<p>Del diagrama de la figura 1 podemos ver que la acci&oacute;n de control V(s)
 											esta dada por la ecuaci&oacute;n:</p>
-										<img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/pddesac3.gif" />
+										<img class="img-fluid rounded mx-auto d-block mbotom"
+											src="../../../img/pddesac3.gif" />
 										<p>Tomando la transformada de Laplace a ambos miembros de la ecuaci&oacute;n (1)
 											y sustituyendo la ecuaci&oacute;n (2) en (1) tenemos que:</p>
-										<img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/pddesac4.gif" />
+										<img class="img-fluid rounded mx-auto d-block mbotom"
+											src="../../../img/pddesac4.gif" />
 										<p>donde:</p>
-										<img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/pddesac5.gif" />
+										<img class="img-fluid rounded mx-auto d-block mbotom"
+											src="../../../img/pddesac5.gif" />
 										<p>es el polinomio caracter&iacute;stico en lazo cerrado del sistema.</p>
 										<p>Si aplicamos el criterio de estabilidad de Routh-Hurwitz al polinomio
 											caracter&iacute;stico, tenemos el siguiente arreglo de Routh-Hurwitz:</p>
@@ -201,12 +409,15 @@ else if ($level == 3) {
 
 									<div class="contentp">
 										<p>El error de seguimiento esta dado por la siguiente ecuaci&oacute;n:</p>
-										<img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/pddesac6.gif" />
+										<img class="img-fluid rounded mx-auto d-block mbotom"
+											src="../../../img/pddesac6.gif" />
 										<p>Para una entrada de referencia paso y un disturbio constante:</p>
-										<img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/pddesac7.gif" />
+										<img class="img-fluid rounded mx-auto d-block mbotom"
+											src="../../../img/pddesac7.gif" />
 										<p>Podemos concluir ayud&aacute;ndonos del teorema del valor final que el error
 											en estado estable para el sistema con control PD acoplado esta dado por:</p>
-										<img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/pddesac8.gif" />
+										<img class="img-fluid rounded mx-auto d-block mbotom"
+											src="../../../img/pddesac8.gif" />
 										<p>Se puede ver f&aacute;cilmente que el error en estado estable ser&aacute;
 											peque&ntilde;o para un disturbio constante, si la tasa de reducci&oacute;n
 											de engranes es grande, y que adem&aacute;s se puede hacer el error
@@ -228,8 +439,10 @@ else if ($level == 3) {
 										<p>Una vez determinadas estas dos magnitudes para una respuesta deseada, las
 											ganancias Kp y Kd pueden ser evaluadas a trav&eacute;s del polinomio
 											caracter&iacute;stico del sistema de la siguiente manera:</p>
-										<img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/pddesac9.gif" />
-										<img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/pddesac10.gif" />
+										<img class="img-fluid rounded mx-auto d-block mbotom"
+											src="../../../img/pddesac9.gif" />
+										<img class="img-fluid rounded mx-auto d-block mbotom"
+											src="../../../img/pddesac10.gif" />
 									</div>
 
 
