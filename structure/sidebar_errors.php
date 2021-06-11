@@ -9,7 +9,7 @@ $detect = new Mobile_Detect;
 
         <!-- Logo -->
         <div class="navbar-nav ps-4 pt-2">
-            <a class="navbar-brand" href="index.php">
+            <a class="navbar-brand" href="/modules/admin/index.php">
                 <span class="fs-4 fw-bolder" style="color: orange;">SLD</span>
                 <span class="fs-4 fw-bolder" style="color: white;">WEB</span>
             </a>
