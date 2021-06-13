@@ -52,7 +52,7 @@ $detect = new Mobile_Detect;
 
              <li class="">
                  <a href="" class="nav-link text-left nosub" role="button">
-                 <i class="fas fa-circle"></i> 
+                 <i class="fas fa-calendar"></i> 
                      Horarios reservados
                  </a>
              </li>

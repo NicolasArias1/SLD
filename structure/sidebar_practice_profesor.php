@@ -29,7 +29,7 @@ $detect = new Mobile_Detect;
             <li class="has-sub">
                 <a class="nav-link collapsed text-left nosub" href="#collapseExample2" role="button"
                     data-toggle="collapse" data-target="#secp">
-                    <i class="fas fa-calendar-alt"></i>Horarios
+                    <i class="fas fa-calendar"></i>Horarios
                 </a>
                 <div class="collapse menu mega-dropdown" id="secp">
                     <div class="dropmenu" aria-labelledby="navbarDropdown">
@@ -55,7 +55,7 @@ $detect = new Mobile_Detect;
             <li class="has-sub">
                 <a class="nav-link collapsed text-left nosub" href="#collapseExample2" role="button"
                     data-toggle="collapse" data-target="#secasig">
-                    <i class="fas fa-bookmark"></i>Mis asignaturas
+                    <i class="fas fa-screwdriver"></i>Mis asignaturas
                 </a>
                 <div class="collapse menu mega-dropdown" id="secasig">
                     <div class="dropmenu" aria-labelledby="navbarDropdown">

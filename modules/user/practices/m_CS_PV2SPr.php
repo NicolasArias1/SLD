@@ -138,11 +138,13 @@ if ($hora >= 9 && $hora < 21 && $diaweek > 0 && $diaweek < 6) {
 										<p>N&oacute;tese que los PIDs responde a la estructura paralela: man = P + I/s + Ds. Los valores P, I y D son las constantes proporcional, integral y derivativa respectivamente, Tm es el per&iacute;odo de muestreo, Kb la constante de realimentaci&oacute;n de la diferencia entre el mando calculado y el saturado para eliminar el windup y N la frecuencia de corte en rad/segundos del filtro derivativo de primero orden (N=2*pi*Fcd).</p>
 										<p>En este experimento se pueden modificar los par&aacute;metros antes mencionados tanto para el PID de velocidad como para el PID de posici&oacute;n. Tambi&eacute;n se puede modificar el orden y la frecuencia de corte de los filtros (Butterworth) de ambas mediciones.</p>
 
-										<?php if ((isset($cantfree)) && ($timeejec < 3)) echo '<h1 class="content_r_hst2">	Hay estaciones libres para ejecutar esta pr&aacute;ctica de forma REAL.</h1>'; ?>
-										<?php if (($timeejec > 2) && ($timeejec < 5)) echo '<h1 class="content_r_hst2">	Las estaciones que pueden ejecutar esta pr&aacute;ctica de forma REAL est&aacute;n ocupadas. Si lo prefiere pruebe en unos minutos m&aacute;s.</h1>'; ?>
-										<?php if ($timeejec > 5) echo '<h1 class="content_r_hst2">	Las estaciones que pueden ejecutar esta pr&aacute;ctica de forma REAL est&aacute;n muy ocupadas. Por favor pruebe en otro momento.</h1>'; ?>
-										<?php if (!$cantidad) echo '<h1 class="content_r_hst2">	Lo sentimos, no hay estaciones que puedan ejecutar esta pr&aacute;ctica de forma REAL. Por favor pruebe en otro momento.</h1>'; ?>
-
+										<?php
+										if ($cantidad) {
+											echo '<h1 class="content_r_hst2">	Hay estaciones libres para ejecutar esta pr&aacute;ctica de forma REAL.</h1>';
+										} else {
+											echo '<h1 class="content_r_hst2">	Lo sentimos, no hay estaciones que puedan ejecutar esta pr&aacute;ctica de forma REAL. Por favor pruebe en otro momento.</h1>';
+										}
+										?>
 
 										<form id="practice" name="practice" action="../client.php" method="post" enctype="multipart/form-data">
 											<div class="row" style="margin-top:30px;">
@@ -427,11 +429,13 @@ if ($hora >= 9 && $hora < 21 && $diaweek > 0 && $diaweek < 6) {
 										<p>N&oacute;tese que los PIDs responde a la estructura paralela: man = P + I/s + Ds. Los valores P, I y D son las constantes proporcional, integral y derivativa respectivamente, Tm es el per&iacute;odo de muestreo, Kb la constante de realimentaci&oacute;n de la diferencia entre el mando calculado y el saturado para eliminar el windup y N la frecuencia de corte en rad/segundos del filtro derivativo de primero orden (N=2*pi*Fcd).</p>
 										<p>En este experimento se pueden modificar los par&aacute;metros antes mencionados tanto para el PID de velocidad como para el PID de posici&oacute;n. Tambi&eacute;n se puede modificar el orden y la frecuencia de corte de los filtros (Butterworth) de ambas mediciones.</p>
 
-										<?php if ((isset($cantfree)) && ($timeejec < 3)) echo '<h1 class="content_r_hst2">	Hay estaciones libres para ejecutar esta pr&aacute;ctica de forma REAL.</h1>'; ?>
-										<?php if (($timeejec > 2) && ($timeejec < 5)) echo '<h1 class="content_r_hst2">	Las estaciones que pueden ejecutar esta pr&aacute;ctica de forma REAL est&aacute;n ocupadas. Si lo prefiere pruebe en unos minutos m&aacute;s.</h1>'; ?>
-										<?php if ($timeejec > 5) echo '<h1 class="content_r_hst2">	Las estaciones que pueden ejecutar esta pr&aacute;ctica de forma REAL est&aacute;n muy ocupadas. Por favor pruebe en otro momento.</h1>'; ?>
-										<?php if (!$cantidad) echo '<h1 class="content_r_hst2">	Lo sentimos, no hay estaciones que puedan ejecutar esta pr&aacute;ctica de forma REAL. Por favor pruebe en otro momento.</h1>'; ?>
-
+										<?php
+										if ($cantidad) {
+											echo '<h1 class="content_r_hst2">	Hay estaciones libres para ejecutar esta pr&aacute;ctica de forma REAL.</h1>';
+										} else {
+											echo '<h1 class="content_r_hst2">	Lo sentimos, no hay estaciones que puedan ejecutar esta pr&aacute;ctica de forma REAL. Por favor pruebe en otro momento.</h1>';
+										}
+										?>
 
 										<form id="practice" name="practice" action="../client.php" method="post" enctype="multipart/form-data">
 											<div class="row" style="margin-top:30px;">
@@ -720,11 +724,13 @@ if ($hora >= 9 && $hora < 21 && $diaweek > 0 && $diaweek < 6) {
 										<p>N&oacute;tese que los PIDs responde a la estructura paralela: man = P + I/s + Ds. Los valores P, I y D son las constantes proporcional, integral y derivativa respectivamente, Tm es el per&iacute;odo de muestreo, Kb la constante de realimentaci&oacute;n de la diferencia entre el mando calculado y el saturado para eliminar el windup y N la frecuencia de corte en rad/segundos del filtro derivativo de primero orden (N=2*pi*Fcd).</p>
 										<p>En este experimento se pueden modificar los par&aacute;metros antes mencionados tanto para el PID de velocidad como para el PID de posici&oacute;n. Tambi&eacute;n se puede modificar el orden y la frecuencia de corte de los filtros (Butterworth) de ambas mediciones.</p>
 
-										<?php if ((isset($cantfree)) && ($timeejec < 3)) echo '<h1 class="content_r_hst2">	Hay estaciones libres para ejecutar esta pr&aacute;ctica de forma REAL.</h1>'; ?>
-										<?php if (($timeejec > 2) && ($timeejec < 5)) echo '<h1 class="content_r_hst2">	Las estaciones que pueden ejecutar esta pr&aacute;ctica de forma REAL est&aacute;n ocupadas. Si lo prefiere pruebe en unos minutos m&aacute;s.</h1>'; ?>
-										<?php if ($timeejec > 5) echo '<h1 class="content_r_hst2">	Las estaciones que pueden ejecutar esta pr&aacute;ctica de forma REAL est&aacute;n muy ocupadas. Por favor pruebe en otro momento.</h1>'; ?>
-										<?php if (!$cantidad) echo '<h1 class="content_r_hst2">	Lo sentimos, no hay estaciones que puedan ejecutar esta pr&aacute;ctica de forma REAL. Por favor pruebe en otro momento.</h1>'; ?>
-
+										<?php
+										if ($cantidad) {
+											echo '<h1 class="content_r_hst2">	Hay estaciones libres para ejecutar esta pr&aacute;ctica de forma REAL.</h1>';
+										} else {
+											echo '<h1 class="content_r_hst2">	Lo sentimos, no hay estaciones que puedan ejecutar esta pr&aacute;ctica de forma REAL. Por favor pruebe en otro momento.</h1>';
+										}
+										?>
 
 										<form id="practice" name="practice" action="../client.php" method="post" enctype="multipart/form-data">
 											<div class="row" style="margin-top:30px;">

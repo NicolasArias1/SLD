@@ -133,10 +133,13 @@ if ($hora >= 9 && $hora < 21 && $diaweek > 0 && $diaweek < 6) {
 											filtros (Butterworth) de velocidad y posici&oacute;n.</p>
 										<p style="margin-bottom:40px;">Nota: El video tiene un retardo de 10 segundos
 											aproximadamente.</p>
-										<?php if ((isset($cantfree)) && ($timeejec < 3)) echo '<h1 class="content_r_hst2">	Hay estaciones libres para ejecutar esta pr&aacute;ctica de forma REAL.</h1>'; ?>
-										<?php if (($timeejec > 2) && ($timeejec < 5)) echo '<h1 class="content_r_hst2">	Las estaciones que pueden ejecutar esta pr&aacute;ctica de forma REAL est&aacute;n ocupadas. Si lo prefiere pruebe en unos minutos m&aacute;s.</h1>'; ?>
-										<?php if ($timeejec > 5) echo '<h1 class="content_r_hst2">	Las estaciones que pueden ejecutar esta pr&aacute;ctica de forma REAL est&aacute;n muy ocupadas. Por favor pruebe en otro momento.</h1>'; ?>
-										<?php if (!$cantidad) echo '<h1 class="content_r_hst2">	Lo sentimos, no hay estaciones que puedan ejecutar esta pr&aacute;ctica de forma REAL. Por favor pruebe en otro momento.</h1>'; ?>
+										<?php
+										if ($cantidad) {
+											echo '<h1 class="content_r_hst2">	Hay estaciones libres para ejecutar esta pr&aacute;ctica de forma REAL.</h1>';
+										} else {
+											echo '<h1 class="content_r_hst2">	Lo sentimos, no hay estaciones que puedan ejecutar esta pr&aacute;ctica de forma REAL. Por favor pruebe en otro momento.</h1>';
+										}
+										?>
 										<form id="practice" name="practice" action="../client.php" method="post" enctype="multipart/form-data">
 											<div class="row" style="margin-top:30px;">
 												<div class="col-sm-6 paramExp">
@@ -259,8 +262,8 @@ if ($hora >= 9 && $hora < 21 && $diaweek > 0 && $diaweek < 6) {
 		<div id="wrapper">
 			<div class="overlay"></div>
 
-			
-		<?php require_once('../../../structure/sidebar_practice_profesor.php') ?>
+
+			<?php require_once('../../../structure/sidebar_practice_profesor.php') ?>
 
 			<div id="page-content-wrapper" <?php if (!$detect->isMobile()) echo 'class="toggled"' ?>>
 
@@ -282,10 +285,13 @@ if ($hora >= 9 && $hora < 21 && $diaweek > 0 && $diaweek < 6) {
 											filtros (Butterworth) de velocidad y posici&oacute;n.</p>
 										<p style="margin-bottom:40px;">Nota: El video tiene un retardo de 10 segundos
 											aproximadamente.</p>
-										<?php if ((isset($cantfree)) && ($timeejec < 3)) echo '<h1 class="content_r_hst2">	Hay estaciones libres para ejecutar esta pr&aacute;ctica de forma REAL.</h1>'; ?>
-										<?php if (($timeejec > 2) && ($timeejec < 5)) echo '<h1 class="content_r_hst2">	Las estaciones que pueden ejecutar esta pr&aacute;ctica de forma REAL est&aacute;n ocupadas. Si lo prefiere pruebe en unos minutos m&aacute;s.</h1>'; ?>
-										<?php if ($timeejec > 5) echo '<h1 class="content_r_hst2">	Las estaciones que pueden ejecutar esta pr&aacute;ctica de forma REAL est&aacute;n muy ocupadas. Por favor pruebe en otro momento.</h1>'; ?>
-										<?php if (!$cantidad) echo '<h1 class="content_r_hst2">	Lo sentimos, no hay estaciones que puedan ejecutar esta pr&aacute;ctica de forma REAL. Por favor pruebe en otro momento.</h1>'; ?>
+										<?php
+										if ($cantidad) {
+											echo '<h1 class="content_r_hst2">	Hay estaciones libres para ejecutar esta pr&aacute;ctica de forma REAL.</h1>';
+										} else {
+											echo '<h1 class="content_r_hst2">	Lo sentimos, no hay estaciones que puedan ejecutar esta pr&aacute;ctica de forma REAL. Por favor pruebe en otro momento.</h1>';
+										}
+										?>
 										<form id="practice" name="practice" action="../client.php" method="post" enctype="multipart/form-data">
 											<div class="row" style="margin-top:30px;">
 												<div class="col-sm-6 paramExp">
@@ -414,8 +420,8 @@ if ($hora >= 9 && $hora < 21 && $diaweek > 0 && $diaweek < 6) {
 		<div id="wrapper">
 			<div class="overlay"></div>
 
-			
-		<?php require_once('../../../structure/sidebar_practice_estudiante.php') ?>
+
+			<?php require_once('../../../structure/sidebar_practice_estudiante.php') ?>
 
 			<div id="page-content-wrapper" <?php if (!$detect->isMobile()) echo 'class="toggled"' ?>>
 
@@ -437,10 +443,13 @@ if ($hora >= 9 && $hora < 21 && $diaweek > 0 && $diaweek < 6) {
 											filtros (Butterworth) de velocidad y posici&oacute;n.</p>
 										<p style="margin-bottom:40px;">Nota: El video tiene un retardo de 10 segundos
 											aproximadamente.</p>
-										<?php if ((isset($cantfree)) && ($timeejec < 3)) echo '<h1 class="content_r_hst2">	Hay estaciones libres para ejecutar esta pr&aacute;ctica de forma REAL.</h1>'; ?>
-										<?php if (($timeejec > 2) && ($timeejec < 5)) echo '<h1 class="content_r_hst2">	Las estaciones que pueden ejecutar esta pr&aacute;ctica de forma REAL est&aacute;n ocupadas. Si lo prefiere pruebe en unos minutos m&aacute;s.</h1>'; ?>
-										<?php if ($timeejec > 5) echo '<h1 class="content_r_hst2">	Las estaciones que pueden ejecutar esta pr&aacute;ctica de forma REAL est&aacute;n muy ocupadas. Por favor pruebe en otro momento.</h1>'; ?>
-										<?php if (!$cantidad) echo '<h1 class="content_r_hst2">	Lo sentimos, no hay estaciones que puedan ejecutar esta pr&aacute;ctica de forma REAL. Por favor pruebe en otro momento.</h1>'; ?>
+										<?php
+										if ($cantidad) {
+											echo '<h1 class="content_r_hst2">	Hay estaciones libres para ejecutar esta pr&aacute;ctica de forma REAL.</h1>';
+										} else {
+											echo '<h1 class="content_r_hst2">	Lo sentimos, no hay estaciones que puedan ejecutar esta pr&aacute;ctica de forma REAL. Por favor pruebe en otro momento.</h1>';
+										}
+										?>
 										<form id="practice" name="practice" action="../client.php" method="post" enctype="multipart/form-data">
 											<div class="row" style="margin-top:30px;">
 												<div class="col-sm-6 paramExp">

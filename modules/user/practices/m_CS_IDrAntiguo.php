@@ -135,11 +135,13 @@ $permbytime = 1; // activo todo el tiempo, para limitar poner a 0 y cambiar hora
 											<p>Se puede modificar el per&iacute;odo de muestreo, el tiempo de
 												experimentaci&oacute;n, y el voltaje inicial y final del paso as&iacute;
 												como el instante en que ocurre.</p>
-
-											<?php if ((isset($cantfree)) && ($timeejec < 3)) echo '<h1 class="content_r_hst2">	Hay estaciones libres para ejecutar esta pr&aacute;ctica de forma REAL.</h1>'; ?>
-											<?php if (($timeejec > 2) && ($timeejec < 5)) echo '<h1 class="content_r_hst2">	Las estaciones que pueden ejecutar esta pr&aacute;ctica de forma REAL est&aacute;n ocupadas. Si lo prefiere pruebe en unos minutos m&aacute;s.</h1>'; ?>
-											<?php if ($timeejec > 5) echo '<h1 class="content_r_hst2">	Las estaciones que pueden ejecutar esta pr&aacute;ctica de forma REAL est&aacute;n muy ocupadas. Por favor pruebe en otro momento.</h1>'; ?>
-											<?php if (!$cantidad) echo '<h1 class="content_r_hst2">	Lo sentimos, no hay estaciones que puedan ejecutar esta pr&aacute;ctica de forma REAL. Por favor pruebe en otro momento.</h1>'; ?>
+											<?php
+											if ($cantidad) {
+												echo '<h1 class="content_r_hst2">	Hay estaciones libres para ejecutar esta pr&aacute;ctica de forma REAL.</h1>';
+											} else {
+												echo '<h1 class="content_r_hst2">	Lo sentimos, no hay estaciones que puedan ejecutar esta pr&aacute;ctica de forma REAL. Por favor pruebe en otro momento.</h1>';
+											}
+											?>
 											<form id="practice" name="practice" action="../client.php" method="post" enctype="multipart/form-data">
 												<div class="content_r_data">
 													<div class="content_r_data_t"></div>
@@ -342,10 +344,13 @@ $permbytime = 1; // activo todo el tiempo, para limitar poner a 0 y cambiar hora
 				<div align="left">
 				<p>Se puede modificar el per&iacute;odo de muestreo, el tiempo de experimentaci&oacute;n, y el voltaje inicial y final del paso as&iacute; como el instante en que ocurre.</p>
 				
-				<?php if ((isset($cantfree)) && ($timeejec < 3)) echo '<h1 class="content_r_hst2">	Hay estaciones libres para ejecutar esta pr&aacute;ctica de forma REAL.</h1>'; ?>
-				<?php if (($timeejec > 2) && ($timeejec < 5)) echo '<h1 class="content_r_hst2">	Las estaciones que pueden ejecutar esta pr&aacute;ctica de forma REAL est&aacute;n ocupadas. Si lo prefiere pruebe en unos minutos m&aacute;s.</h1>'; ?>
-				<?php if ($timeejec > 5) echo '<h1 class="content_r_hst2">	Las estaciones que pueden ejecutar esta pr&aacute;ctica de forma REAL est&aacute;n muy ocupadas. Por favor pruebe en otro momento.</h1>'; ?>
-				<?php if (!$cantidad) echo '<h1 class="content_r_hst2">	Lo sentimos, no hay estaciones que puedan ejecutar esta pr&aacute;ctica de forma REAL. Por favor pruebe en otro momento.</h1>'; ?>
+				<?php
+				if ($cantidad) {
+					echo '<h1 class="content_r_hst2">	Hay estaciones libres para ejecutar esta pr&aacute;ctica de forma REAL.</h1>';
+				} else {
+					echo '<h1 class="content_r_hst2">	Lo sentimos, no hay estaciones que puedan ejecutar esta pr&aacute;ctica de forma REAL. Por favor pruebe en otro momento.</h1>';
+				}
+				?>
 				<form id="practice" name="practice" action="../client.php" method="post" enctype="multipart/form-data">
 					<div class="content_r_data">
 						<div class="content_r_data_t"></div>
