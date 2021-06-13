@@ -110,6 +110,8 @@ $permbytime = 1; // activo todo el tiempo, para limitar poner a 0 y cambiar hora
 
 	<body>
 		<div id="wrapper">
+			<?php require_once('../../../structure/spinner.php') ?>
+
 			<div class="overlay"></div>
 
 			<?php require_once('../../../structure/sidebar_practices.php') ?>
@@ -193,12 +195,9 @@ $permbytime = 1; // activo todo el tiempo, para limitar poner a 0 y cambiar hora
 
 													<div class="form-group row">
 														<div class="col-sm-8" style="text-align:center;">
-															<input type="button" name="Submit" value="Ejecutar" <?php if (($cantidad == 0) || ($timeejec > 5) || ($permbytime == 0)) echo 'disabled= "disabled"'; ?> class="input_btn1" onClick="execute('m_CS_IDr')" />
+															<input id="execute-button" type="button" name="Submit" value="Ejecutar" <?php if (($cantidad == 0) || ($timeejec > 5) || ($permbytime == 0)) echo 'disabled= "disabled"'; ?> class="input_btn1" onClick="execute('m_CS_IDr')" />
 														</div>
 													</div>
-
-
-
 
 												</div>
 
@@ -259,8 +258,6 @@ $permbytime = 1; // activo todo el tiempo, para limitar poner a 0 y cambiar hora
 <!-- Realiza práctica desde perfil profesor. -->
 <?php if ($level == 2) {  ?>
 
-
-
 	<!doctype html>
 	<html lang="en">
 
@@ -277,6 +274,8 @@ $permbytime = 1; // activo todo el tiempo, para limitar poner a 0 y cambiar hora
 
 	<body>
 		<div id="wrapper">
+			<?php require_once('../../../structure/spinner.php') ?>
+
 			<div class="overlay"></div>
 
 			<?php require_once('../../../structure/sidebar_practice_profesor.php') ?>
@@ -360,12 +359,9 @@ $permbytime = 1; // activo todo el tiempo, para limitar poner a 0 y cambiar hora
 
 													<div class="form-group row">
 														<div class="col-sm-8" style="text-align:center;">
-															<input type="button" name="Submit" value="Ejecutar" <?php if (($cantidad == 0) || ($timeejec > 5) || ($permbytime == 0)) echo 'disabled= "disabled"'; ?> class="input_btn1" onClick="execute('m_CS_IDr')" />
+															<input id="execute-button" type="button" name="Submit" value="Ejecutar" <?php if (($cantidad == 0) || ($timeejec > 5) || ($permbytime == 0)) echo 'disabled= "disabled"'; ?> class="input_btn1" onClick="execute('m_CS_IDr')" />
 														</div>
 													</div>
-
-
-
 
 												</div>
 
@@ -443,6 +439,8 @@ $permbytime = 1; // activo todo el tiempo, para limitar poner a 0 y cambiar hora
 
 	<body>
 		<div id="wrapper">
+			<?php require_once('../../../structure/spinner.php') ?>
+
 			<div class="overlay"></div>
 
 			<?php require_once('../../../structure/sidebar_practice_estudiante.php') ?>
@@ -525,12 +523,9 @@ $permbytime = 1; // activo todo el tiempo, para limitar poner a 0 y cambiar hora
 
 													<div class="form-group row">
 														<div class="col-sm-8" style="text-align:center;">
-															<input type="button" name="Submit" value="Ejecutar" <?php if (($cantidad == 0) || ($timeejec > 5) || ($permbytime == 0)) echo 'disabled= "disabled"'; ?> class="input_btn1" onClick="execute('m_CS_IDr')" />
+															<input id="execute-button" type="button" name="Submit" value="Ejecutar" <?php if (($cantidad == 0) || ($timeejec > 5) || ($permbytime == 0)) echo 'disabled= "disabled"'; ?> class="input_btn1" onClick="execute('m_CS_IDr')" />
 														</div>
 													</div>
-
-
-
 
 												</div>
 
@@ -584,3 +579,12 @@ $permbytime = 1; // activo todo el tiempo, para limitar poner a 0 y cambiar hora
 
 
 <?php } ?>
+
+<script>
+	var executeButton = document.getElementById("execute-button");
+
+	executeButton.addEventListener("click", function() {
+		var spinner = document.getElementById("spinner-container");
+		spinner.style.display = "block";
+	});
+</script>

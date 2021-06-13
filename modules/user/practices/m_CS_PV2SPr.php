@@ -111,6 +111,8 @@ if ($hora >= 9 && $hora < 21 && $diaweek > 0 && $diaweek < 6) {
 
 	<body>
 		<div id="wrapper">
+			<?php require_once('../../../structure/spinner.php') ?>
+
 			<div class="overlay"></div>
 
 			<?php require_once('../../../structure/sidebar_practices.php') ?>
@@ -293,7 +295,7 @@ if ($hora >= 9 && $hora < 21 && $diaweek > 0 && $diaweek < 6) {
 
 													<div class="form-group row">
 														<div class="col-sm-8" style="text-align:center;">
-															<input type="button" name="Submit" value="Ejecutar" <?php if (($cantidad == 0) || ($timeejec > 5) || ($permbytime == 0)) echo 'disabled= "disabled"'; ?> class="input_btn1" onClick="execute('m_CS_PV2SPr')" />
+															<input id="execute-button" type="button" name="Submit" value="Ejecutar" <?php if (($cantidad == 0) || ($timeejec > 5) || ($permbytime == 0)) echo 'disabled= "disabled"'; ?> class="input_btn1" onClick="execute('m_CS_PV2SPr')" />
 														</div>
 													</div>
 
@@ -402,6 +404,8 @@ if ($hora >= 9 && $hora < 21 && $diaweek > 0 && $diaweek < 6) {
 
 	<body>
 		<div id="wrapper">
+			<?php require_once('../../../structure/spinner.php') ?>
+
 			<div class="overlay"></div>
 
 			<?php require_once('../../../structure/sidebar_practice_profesor.php') ?>
@@ -584,7 +588,7 @@ if ($hora >= 9 && $hora < 21 && $diaweek > 0 && $diaweek < 6) {
 
 													<div class="form-group row">
 														<div class="col-sm-8" style="text-align:center;">
-															<input type="button" name="Submit" value="Ejecutar" <?php if (($cantidad == 0) || ($timeejec > 5) || ($permbytime == 0)) echo 'disabled= "disabled"'; ?> class="input_btn1" onClick="execute('m_CS_PV2SPr')" />
+															<input id="execute-button" type="button" name="Submit" value="Ejecutar" <?php if (($cantidad == 0) || ($timeejec > 5) || ($permbytime == 0)) echo 'disabled= "disabled"'; ?> class="input_btn1" onClick="execute('m_CS_PV2SPr')" />
 														</div>
 													</div>
 
@@ -697,6 +701,8 @@ if ($hora >= 9 && $hora < 21 && $diaweek > 0 && $diaweek < 6) {
 
 	<body>
 		<div id="wrapper">
+			<?php require_once('../../../structure/spinner.php') ?>
+
 			<div class="overlay"></div>
 
 			<?php require_once('../../../structure/sidebar_practice_estudiante.php') ?>
@@ -879,7 +885,7 @@ if ($hora >= 9 && $hora < 21 && $diaweek > 0 && $diaweek < 6) {
 
 													<div class="form-group row">
 														<div class="col-sm-8" style="text-align:center;">
-															<input type="button" name="Submit" value="Ejecutar" <?php if (($cantidad == 0) || ($timeejec > 5) || ($permbytime == 0)) echo 'disabled= "disabled"'; ?> class="input_btn1" onClick="execute('m_CS_PV2SPr')" />
+															<input id="execute-button" type="button" name="Submit" value="Ejecutar" <?php if (($cantidad == 0) || ($timeejec > 5) || ($permbytime == 0)) echo 'disabled= "disabled"'; ?> class="input_btn1" onClick="execute('m_CS_PV2SPr')" />
 														</div>
 													</div>
 
@@ -965,3 +971,12 @@ if ($hora >= 9 && $hora < 21 && $diaweek > 0 && $diaweek < 6) {
 
 
 <?php  }  ?>
+
+<script>
+	var executeButton = document.getElementById("execute-button");
+
+	executeButton.addEventListener("click", function() {
+		var spinner = document.getElementById("spinner-container");
+		spinner.style.display = "block";
+	});
+</script>

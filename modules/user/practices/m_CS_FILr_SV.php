@@ -101,6 +101,8 @@ if ($hora >= 9 && $hora < 21 && $diaweek > 0 && $diaweek < 6) {
 
 <body>
 	<div id="page">
+		<?php require_once('../../../structure/spinner.php') ?>
+
 		<div id="header">
 			<div id="header_t">
 				<div id="header_t_l"><img src="../../../img/logo.png" border="0" /></div>
@@ -202,7 +204,7 @@ if ($hora >= 9 && $hora < 21 && $diaweek > 0 && $diaweek < 6) {
 
 										<tr>
 											<td class="buttons"><input type="hidden" id="mlmfile" name="mlmfile" value="m_CS_FILs"></td>
-											<td class="buttons"><input type="button" name="Submit" value="Ejecutar" <?php if (($cantidad == 0) || ($timeejec > 5) || ($permbytime == 0)) echo 'disabled= "disabled"'; ?> class="input_button" onClick="execute('m_CS_FILr')" /></td>
+											<td class="buttons"><input id="execute-button" type="button" name="Submit" value="Ejecutar" <?php if (($cantidad == 0) || ($timeejec > 5) || ($permbytime == 0)) echo 'disabled= "disabled"'; ?> class="input_button" onClick="execute('m_CS_FILr')" /></td>
 										</tr>
 
 									</table>
@@ -254,3 +256,12 @@ if ($hora >= 9 && $hora < 21 && $diaweek > 0 && $diaweek < 6) {
 </body>
 
 </html>
+
+<script>
+	var executeButton = document.getElementById("execute-button");
+
+	executeButton.addEventListener("click", function() {
+		var spinner = document.getElementById("spinner-container");
+		spinner.style.display = "block";
+	});
+</script>
