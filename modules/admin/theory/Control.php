@@ -51,8 +51,7 @@ else if ($level == 3) {
 	<div id="wrapper">
 
 
-		<nav class="fixed-top align-top<?php if (!$detect->isMobile()) echo ' toggled' ?>" id="sidebar-wrapper"
-			role="navigation">
+		<nav class="fixed-top align-top<?php if (!$detect->isMobile()) echo ' toggled' ?>" id="sidebar-wrapper" role="navigation">
 			<div class="simplebar-content" style="padding: 0px;">
 
 				<!-- Logo -->
@@ -73,8 +72,7 @@ else if ($level == 3) {
 					</li>
 
 					<li class="has-sub">
-						<a class="nav-link collapsed text-left nosub" href="#" role="button" data-toggle="collapse"
-							data-target="#sech">
+						<a class="nav-link collapsed text-left nosub" href="#" role="button" data-toggle="collapse" data-target="#sech">
 							<i class="fas fa-calendar"></i> Horarios
 						</a>
 						<div class="collapse menu mega-dropdown" id="sech">
@@ -84,9 +82,8 @@ else if ($level == 3) {
 										<div class="col-lg-12 px-2">
 											<div class="submenu-box">
 												<ul class="list-unstyled m-0">
-													<li><a href="">Horarios reservados</a></li>
-													<li><a href=""> Solicitud de horarios</a></li>
-													<!-- <li><a href="">Asp.net</a></li> -->
+													<li><a href="/modules/admin/notavaible.php">Horarios reservados</a></li>
+													<li><a href="/modules/admin/notavaible.php"> Solicitud de horarios</a></li>
 												</ul>
 											</div>
 										</div>
@@ -98,8 +95,7 @@ else if ($level == 3) {
 					</li>
 
 					<li class="has-sub">
-						<a class="nav-link collapsed text-left nosub" href="#collapseExample2" role="button"
-							data-toggle="collapse" data-target="#secp">
+						<a class="nav-link collapsed text-left nosub" href="#collapseExample2" role="button" data-toggle="collapse" data-target="#secp">
 							<i class="fas fa-screwdriver"></i> Mis prácticas
 						</a>
 						<div class="collapse menu mega-dropdown" id="secp">
@@ -113,7 +109,6 @@ else if ($level == 3) {
 													</li>
 													<li><a href="/modules/admin/index.php?body=realizadas"> Historial de
 															prácticas</a></li>
-													<!-- <li><a href="">Asp.net</a></li> -->
 												</ul>
 											</div>
 										</div>
@@ -125,8 +120,7 @@ else if ($level == 3) {
 					</li>
 
 					<li class="has-sub">
-						<a class="nav-link collapsed text-left nosub" href="#collapseExample2" role="button"
-							data-toggle="collapse" data-target="#secu">
+						<a class="nav-link collapsed text-left nosub" href="#collapseExample2" role="button" data-toggle="collapse" data-target="#secu">
 							<i class="fas fa-users"></i> Usuarios
 						</a>
 						<div class="collapse menu mega-dropdown" id="secu">
@@ -151,8 +145,7 @@ else if ($level == 3) {
 					</li>
 
 					<li class="has-sub">
-						<a class="nav-link collapsed text-left nosub" href="#collapseExample2" role="button"
-							data-toggle="collapse" data-target="#secas">
+						<a class="nav-link collapsed text-left nosub" href="#collapseExample2" role="button" data-toggle="collapse" data-target="#secas">
 							<i class="fas fa-book-open"></i> Asignaturas
 						</a>
 						<div class="collapse menu mega-dropdown" id="secas">
@@ -162,9 +155,7 @@ else if ($level == 3) {
 										<div class="col-lg-12 px-2">
 											<div class="submenu-box">
 												<ul class="list-unstyled m-0">
-													<li><a href="">Ver asignaturas</a></li>
-
-													<!-- <li><a href="">Asp.net</a></li> -->
+													<li><a href="/modules/admin/notavaible.php">Ver asignaturas</a></li>
 												</ul>
 											</div>
 										</div>
@@ -190,8 +181,7 @@ else if ($level == 3) {
 					</li>
 
 					<li class="has-sub">
-						<a class="nav-link collapsed text-left nosub" role="button" data-toggle="collapse"
-							data-target="#sece">
+						<a class="nav-link collapsed text-left nosub" role="button" data-toggle="collapse" data-target="#sece">
 							<i class="fas fa-users"></i> Estadísticas
 						</a>
 						<div class="collapse menu mega-dropdown" id="sece">
@@ -201,8 +191,8 @@ else if ($level == 3) {
 										<div class="col-lg-12 px-2">
 											<div class="submenu-box">
 												<ul class="list-unstyled m-0">
-													<li><a href="">Estadísticas generales</a></li>
-													<li><a href="">Gráficos estadísticos</a></li>
+													<li><a href="/modules/admin/notavaible.php">Estadísticas generales</a></li>
+													<li><a href="/modules/admin/notavaible.php">Gráficos estadísticos</a></li>
 												</ul>
 											</div>
 										</div>
@@ -231,9 +221,7 @@ else if ($level == 3) {
 			<nav class="navbar navbar-expand navbar-light my-navbar d-flex justify-content-between">
 
 				<!-- Sidebar Toggle (Topbar) -->
-				<div type="button" id="bar"
-					class="nav-icon1 hamburger animated fadeInLeft is-closed<?php if (!$detect->isMobile()) echo ' open' ?>"
-					data-toggle="offcanvas">
+				<div type="button" id="bar" class="nav-icon1 hamburger animated fadeInLeft is-closed<?php if (!$detect->isMobile()) echo ' open' ?>" data-toggle="offcanvas">
 					<span></span>
 					<span></span>
 					<span></span>
@@ -253,15 +241,14 @@ else if ($level == 3) {
 					<li class="nav-item dropdown">
 						<a class="nav-link">
 							<div class="btnLog">
-								<span style="color:black;"
-									class="mr-2 d-lg-inline small"><b><?php echo $name; ?></b></span>
+								<span style="color:black;" class="mr-2 d-lg-inline small"><b><?php echo $name; ?></b></span>
 							</div>
 						</a>
 					</li>
 				</ul>
 			</nav>
 
-			
+
 			<div id="content">
 
 				<div id="content2" class="container-fluid p-0 px-lg-0 px-md-0">
@@ -288,24 +275,20 @@ else if ($level == 3) {
 										<p>Un controlador PID descrito en tiempo continuo y en funci&oacute;n de las
 											ganancias de la acci&oacute;n proporcional, integral y derivativa de la
 											forma <b>(1)</b> </p>
-										<p> <img class="img-fluid rounded mx-auto d-block mbotom"
-												src="../../../img/Control/Eqn1.png" /></p>
+										<p> <img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Control/Eqn1.png" /></p>
 										<p>de la misma forma, pero ahora en funci&oacute;n de las constantes de tiempo
 											integrativa y derivativa <b>(2)</b></p>
-										<p> <img class="img-fluid rounded mx-auto d-block mbotom"
-												src="../../../img/Control/Eqn2.png" /></p>
+										<p> <img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Control/Eqn2.png" /></p>
 										<p>El control PID se caracteriza por su robustez y simplicidad en dise&ntilde;o,
 											haciendo el control de sistemas lineales una tarea f&aacute;cil.</p>
 										<p>Una de las formas m&aacute;s pr&aacute;cticas para la representaci&oacute;n
 											del controlados est&aacute; dada por la relaci&oacute;n entrada salida del
 											mismo, representada por su funci&oacute;n de transferencia en el dominio de
 											Laplace. <b>(3)</b></p>
-										<p> <img class="img-fluid rounded mx-auto d-block mbotom"
-												src="../../../img/Control/Eqn3.png" /></p>
+										<p> <img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Control/Eqn3.png" /></p>
 										<p>Esta ultima es muy utilizada en el an&aacute;lisis del comportamiento de la
 											respuesta en lazo cerrado.</p>
-										<img class="img-fluid rounded mx-auto d-block mbotom"
-											src="../../../img/Control/Fig.1.png" />
+										<img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Control/Fig.1.png" />
 										<p style="text-align:center;">Fig.1. Diagrama en bloque de lazo de control
 											realimentados (feedback)</p>
 										<h2 class="content_r_hst2">1.2 M&eacute;todos de Sintonizaci&oacute;n.</h2>
@@ -325,23 +308,18 @@ else if ($level == 3) {
 										<p>Ejemplo 1: Se propone hacer control sobre la planta que se muestra a
 											continuaci&oacute;n haciendo uso de Matlab y del m&eacute;todo antes
 											se&ntilde;alado.</p>
-										<img class="img-fluid rounded mx-auto d-block mbotom"
-											src="../../../img/Control/Eg1.png" />
-										<img class="img-fluid rounded mx-auto d-block mbotom"
-											src="../../../img/Control/Cod1.png" />
+										<img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Control/Eg1.png" />
+										<img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Control/Cod1.png" />
 										<p>Tab.1. Parametros de control Ziegler-Nichols, ganancia cr&iacute;tica y
 											Periodo cr&iacute;tico</p>
-										<img class="img-fluid rounded mx-auto d-block mbotom"
-											src="../../../img/Control/Tab.1.png" />
+										<img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Control/Tab.1.png" />
 										<p>A continuaci&oacute;n, se muestran los resultados del c&oacute;digo anterior:
 										</p>
-										<img class="img-fluid rounded mx-auto d-block mbotom"
-											src="../../../img/Control/Fig.2.png" />
+										<img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Control/Fig.2.png" />
 										<p>Fig.2. Respuestas del Sistema Hp(s), a) Sistema en R&eacute;gimen
 											Oscilatorio, llevado con ganancia critica Ku. b) Respuesta al escal&oacute;n
 											del sistema Hp en lazo abierto.</p>
-										<img class="img-fluid rounded mx-auto d-block mbotom"
-											src="../../../img/Control/Fig.3.png" />
+										<img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Control/Fig.3.png" />
 										<p style="text-align:center;">Fig.3. Respuesta ante referencia paso, sistema
 											lazo cerrado sintonizado con
 											Ziegler-Nichols.</p>
@@ -353,20 +331,17 @@ else if ($level == 3) {
 										<p>Hay plantas que, por el comportamiento de sus ra&iacute;ces, no es posible
 											llevar a oscilaci&oacute;n, un ejemplo de esto son las plantas de primer
 											orden, que son descritas por el modelo PORT como: <b>(4)</b></p>
-										<p> <img class="img-fluid rounded mx-auto d-block mbotom"
-												src="../../../img/Control/Eqn4.png" /></p>
+										<p> <img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Control/Eqn4.png" /></p>
 										<p>Por simplicidad para el an&aacute;lisis consideraremos e<sup>-Ls</sup>
 											unitario, lo que significa que no habr&aacute; retardo de tiempo, si
 											observamos su LGR y su margen de ganancia, se observa que no es posible
 											llevar a oscilaci&oacute;n. Es ah&iacute; donde aparecen otros
 											m&eacute;todos de control c&oacute;mo lo es asignaci&oacute;n de polos. </p>
-										<img class="img-fluid rounded mx-auto d-block mbotom"
-											src="../../../img/Control/Fig.4.png" />
+										<img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Control/Fig.4.png" />
 										<p style="text-align:center;">Fig.4. Lugar geom&eacute;trico de las
 											ra&iacute;ces, planta de primer orden.
 										</p>
-										<img class="img-fluid rounded mx-auto d-block mbotom"
-											src="../../../img/Control/Fig.5.png" />
+										<img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Control/Fig.5.png" />
 										<p style="text-align:center;">Fig.5. Margen de ganancia y fase, sistema de
 											primer orden.</p>
 										<p>El m&eacute;todo en cuesti&oacute;n trata de ubicar los polos del lazo
@@ -376,278 +351,238 @@ else if ($level == 3) {
 											una respuesta t&iacute;pica de segundo orden
 											P(s)=s<sup>2</sup>+2&xi;&omega;<sub>n</sub>+&omega;<sub>n</sub><sup>2</sup>.
 										</p>
-										<img class="img-fluid rounded mx-auto d-block mbotom"
-											src="../../../img/Control/Fig.6.png" />
+										<img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Control/Fig.6.png" />
 										<p style="text-align:center;">Fig.6. Diagrama en bloques del lazo de control PI
 											para una planta de primer
 											orden.</p>
 										<p>As&iacute; la F. de T. del lazo ser&aacute;: <b>(5)</b></p>
-										<p> <img class="img-fluid rounded mx-auto d-block mbotom"
-												src="../../../img/Control/Eqn5.png" /></p>
+										<p> <img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Control/Eqn5.png" /></p>
 										<p>De ella despejando su polinomio caracter&iacute;stico se tiene que <b>(6)</b>
 										</p>
-										<p> <img class="img-fluid rounded mx-auto d-block mbotom"
-												src="../../../img/Control/Eqn6.png" /></p>
+										<p> <img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Control/Eqn6.png" /></p>
 										<p>Luego igualando los coeficientes del polinomio caracter&iacute;stico del lazo
 											cerrado con el que se busca tener se tiene que: <b>(7)</b></p>
-										<p> <img class="img-fluid rounded mx-auto d-block mbotom"
-												src="../../../img/Control/Eqn7.png" /></p>
+										<p> <img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Control/Eqn7.png" /></p>
 										<p>y <b>(8)</b></p>
-										<p> <img class="img-fluid rounded mx-auto d-block mbotom"
-												src="../../../img/Control/Eqn8.png" /></p>
+										<p> <img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Control/Eqn8.png" /></p>
 										<p>As&iacute; es posible determinar los coeficientes del control en
 											funci&oacute;n de la frecuencia angular del lazo y su factor de
 											amortiguamiento, obteniendo una respuesta deseada.</p>
 										<p>Despejando se tiene que los par&aacute;metros del control son <b>(9)</b></p>
-										<p> <img class="img-fluid rounded mx-auto d-block mbotom"
-												src="../../../img/Control/Eqn9.png" /></p>
+										<p> <img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Control/Eqn9.png" /></p>
 										<p>y <b>(10)</b></p>
-										<p> <img class="img-fluid rounded mx-auto d-block mbotom"
-												src="../../../img/Control/Eqn10.png" /></p>
+										<p> <img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Control/Eqn10.png" /></p>
 										<p> Con: </p>
-										<p><img class="img-fluid rounded mx-auto d-block mbotom"
-												src="../../../img/Control/wn.png" /></p>
+										<p><img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Control/wn.png" /></p>
 										<p>donde T<sub>ss</sub> es el tiempo de asentamiento de la respuesta, este se
 											encuentra buscando evitar la saturaci&oacute;n del actuador de control.
-											<p>Ejemplo 2: Se propone hacer control sobre la planta que se muestra a
-												continuaci&oacute;n haciendo uso de Matlab y del m&eacute;todo antes
-												se&ntilde;alado.</p>
-											<img class="img-fluid rounded mx-auto d-block mbotom"
-												src="../../../img/Control/Eg2.png" />
-											<img class="img-fluid rounded mx-auto d-block mbotom"
-												src="../../../img/Control/Cod2.png" />
-											<p>A partir del c&oacute;digo anterior se obtiene la respuesta del lazo
-												cerrado ante un cambio tipo paso en la referencia, se busca que dicha
-												respuesta tenga un sobrepaso de un 4%, y un tiempo de asentamiento de 1
-												[s], esto junto a las igualdades que relacionan los par&aacute;metros
-												del control con los par&aacute;metros de la planta, se obtiene la
-												siguiente respuesta.</p>
-											<img class="img-fluid rounded mx-auto d-block mbotom"
-												src="../../../img/Control/Fig.7.png" />
-											<p style="text-align:center;">Fig.7. Respuesta ante un paso de referencia
-												del sistema en lazo cerrado.
-											</p>
-											<p>Como se puede observar en la Fig.7, la respuesta tiene un sobrepaso
-												superior al 4%, esto se debe a que el control PI, pone un cero en el LGR
-												el cual cambia la din&aacute;mica del sistema, esta repuesta puede
-												mejorarse aplicando un filtro de cancelaci&oacute;n del cero del control
-												en la referenciad de la forma siguiente.</p>
-											<img class="img-fluid rounded mx-auto d-block mbotom"
-												src="../../../img/Control/Fig.8.png" />
-											<p style="text-align:center;">Fig.8. Diagrama en bloque del lazo de control
-												con filtro de
-												cancelaci&oacute;n de zero.</p>
-											<p>Con esta implementaci&oacute;n se mejora la respuesta obteniendo el
-												sobrepaso para el cual se ha dise&ntilde;ado en controlador.</p>
-											<img class="img-fluid rounded mx-auto d-block mbotom"
-												src="../../../img/Control/Fig.9.png" />
-											<p style="text-align:center;">Fig.9. :"Comparaci&oacute;n de las respuestas
-												con filtro de
-												cancelaci&oacute;n de cero y sin filtro de cancelaci&oacute;n de cero.
-											</p>
-											<p>C&oacute;mo se puede observar en la Fig.9, la respuesta se hace
-												m&aacute;s lenta por la ausencia del cero puesto por el controlador,
-												pero a la vez se obtiene una respuesta dada por el factor de
-												amortiguamiento seg&uacute;n dise&ntilde;o.</p>
-											<h2 class="content_r_hst2">1.3 Modificaciones del Control PID.</h2>
-											<h3 class="content_r_hst3">1.3.1 Anti-Windup.</h3>
-											<img class="img-fluid rounded mx-auto d-block mbotom"
-												src="../../../img/Control/Fig.10.png" />
-											<p style="text-align:center;">Fig.10. Diagrama de simulaci&oacute;n del lazo
-												cerrado con control PID
-												modificado con Anti-windup.</p>
-											<p>Con el objetivo de evitar la saturaci&oacute;n del actuador de control,
-												se dise&ntilde;a el controlador PID con una modificaci&oacute;n, esta es
-												conocida como Anti-windup, en la Ilustraci&oacute;n 10 se muestra su
-												diagrama de simulaci&oacute;n para la implementaci&oacute;n del mismo en
-												Matlab Simulink, esta modificaci&oacute;n lo que busca es saturar la
-												se&ntilde;al de control cuando se produce un sobrepaso en la
-												se&ntilde;al de mando, esto se consigue apagando la parte integrativa y
-												as&iacute; evitar la sobre-integraci&oacute;n del erro y sacando en el
-												mando el valor m&aacute;ximo de salida del mismo. En el c&oacute;digo
-												para Matlab que se muestra a continuaci&oacute;n se observa c&oacute;mo
-												se implementa el anti-windup, se satura la se&ntilde;al de mando para el
-												actuador y se “apaga” la parte integrativa haciendo sw=0, donde sw se
-												encuentra multiplicando a la parte integrativa en el c&oacute;digo que
-												describe los par&aacute;metros del controlador.</p>
-											<img class="img-fluid rounded mx-auto d-block mbotom"
-												src="../../../img/Control/Cod3.png" />
-											<p>Cabe destacar que esta modificaci&oacute;n saca al sistema de su zona
-												lineal por lo que es preferible evitar la saturaci&oacute;n del mando
-												cambiando el tiempo de asentamiento con el que se dise&ntilde;a el
-												controlador, pero en el caso de que sea posible aplicarlo es conveniente
-												para evitar la sobre-integraci&oacute;n del error y proteger al actuador
-												de se&ntilde;ales muy altas de tensi&oacute;n.</p>
-											<h3 class="content_r_hst3">1.3.2 Filtro Derivada.</h3>
-											<img class="img-fluid rounded mx-auto d-block mbotom"
-												src="../../../img/Control/Fig.11.png" />
-											<p style="text-align:center;">Fig.11. Diagrama de simulaci&oacute;n
-												controlador PID modificado con
-												filtro Derivada</p>
-											<p>La presencia de ruido y pendientes fuertes en las mediciones producen un
-												efecto indeseado en las acciones de control, ya que la acci&oacute;n
-												derivativa amplifica este efecto (amplificando ruido), es por esta
-												raz&oacute;n que la acci&oacute;n derivativa no puede y no
-												deber&iacute;a ser implementada sin modificaciones. Es posible modificar
-												la acci&oacute;n derivativa como se muestra en el diagrama de
-												simulaci&oacute;n de la Ilustraci&oacute;n 11 con el objetivo de reducir
-												el efecto de estas pendientes fuertes.</p>
-											<p>Mirando esta modificaci&oacute;n como una funci&oacute;n de
-												transferencia, haciendo <b>(11)</b></p>
-											<p> <img class="img-fluid rounded mx-auto d-block mbotom"
-													src="../../../img/Control/Eqn11.png" /></p>
-											<p>donde se mueve t&iacute;picamente entre 3 y 20 buscando reducir lo
-												m&aacute;s posible el efecto derivativo, la nueva funci&oacute;n de
-												transferencia del controlador PID se encuentra simplemente reemplazando
-												la aproximaci&oacute;n de la ecuaci&oacute;n (11) en (3), finalmente el
-												control ser&aacute; <b>(12)</b>
-												<p>
-													<p> <img class="img-fluid rounded mx-auto d-block mbotom"
-															src="../../../img/Control/Eqn12.png" /></p>
-													<h2 class="content_r_hst2" style="margin-bottom:30px;">1.4
-														Discretizaci&oacute;n.</h2>
-													<img class="img-fluid rounded mx-auto d-block mbotom"
-														src="../../../img/Control/Fig.12.png" />
-													<p style="text-align:center;">Fig.12. Lazo cerrado con control
-														digital, retentor de orden cero
-														y planta en tiempo continuo.</p>
-													<p>El control digital toma cada vez m&aacute;s &eacute;nfasis, los
-														controladores antes dise&ntilde;ados en el mundo
-														anal&oacute;gico pueden ser llevados al mundo digital por medio
-														de la discretizaci&oacute;n de los mismos, para esto se
-														presentan tres tipos de aproximaciones con diferentes
-														caracter&iacute;sticas que cumplen con este objetivo.</p>
-													<img class="img-fluid rounded mx-auto d-block mbotom"
-														src="../../../img/Control/Fig.13.png" />
-													<p>Fig.13. Aproximaciones num&eacute;ricas de integraci&oacute;n. a)
-														aproximaci&oacute;n rectangular hacia adelante. b)
-														Aproximaci&oacute;n rectangular hacia atr&aacute;s. c)
-														Aproximaci&oacute;n trapezoidal.</p>
-													<p>En la Fig.13 se ven los diferentes tipos de aproximaciones de la
-														integraci&oacute;n, donde T corresponde al intervalo de
-														muestreo, e(k) corresponde al error en el instante de tiempo kT,
-														e(k+1) corresponde al error en el instante de tiempo siguiente y
-														e(k-1) es el error en el instante de tiempo anterior.</p>
-													<h3 class="content_r_hst3">1.4.1 Aproximaci&oacute;n rectangular
-														hacia adelante</h3>
-													<p>A partir de la Fig.13.a) se tiene lo siguiente: <b>(13)</b></p>
-													<p> <img class="img-fluid rounded mx-auto d-block mbotom"
-															src="../../../img/Control/Eqn13.png" /></p>
-													<p>luego separando <b>(14)</b> </p>
-													<p> <img class="img-fluid rounded mx-auto d-block mbotom"
-															src="../../../img/Control/Eqn14.png" /></p>
-													<p>aplicando la transformada <b>(15)</b></p>
-													<p> <img class="img-fluid rounded mx-auto d-block mbotom"
-															src="../../../img/Control/Eqn15.png" /></p>
-													<p>Finalmente, la funci&oacute;n de transferencia en el dominio z de
-														un integrador quedara c&oacute;mo <b>(16)</b></p>
-													<p> <img class="img-fluid rounded mx-auto d-block mbotom"
-															src="../../../img/Control/Eqn16.png" /></p>
-													<h3 class="content_r_hst3">1.4.2 Aproximaci&oacute;n rectangular
-														hacia atr&aacute;s</h3>
-													<p>A partir de la Fig.13.b) se tiene que <b>(17)</b></p>
-													<p> <img class="img-fluid rounded mx-auto d-block mbotom"
-															src="../../../img/Control/Eqn17.png" /></p>
-													<p>Luego separando <b>(18)</b></p>
-													<p> <img class="img-fluid rounded mx-auto d-block mbotom"
-															src="../../../img/Control/Eqn18.png" /></p>
-													<p>aplicando la transformada <b>(19)</b></p>
-													<p> <img class="img-fluid rounded mx-auto d-block mbotom"
-															src="../../../img/Control/Eqn19.png" /></p>
-													<p>Finalmente, la funci&oacute;n de transferencia en el dominio z de
-														un integrador quedara c&oacute;mo <b>(20)</b></p>
-													<p> <img class="img-fluid rounded mx-auto d-block mbotom"
-															src="../../../img/Control/Eqn20.png" /></p>
-													<h3 class="content_r_hst3">1.4.3 Aproximaci&oacute;n rectangular
-														hacia atr&aacute;s</h3>
-													<p>A partir de la Fig.13.c) se tiene que <b>(21)</b></p>
-													<p> <img class="img-fluid rounded mx-auto d-block mbotom"
-															src="../../../img/Control/Eqn21.png" /></p>
-													<p>Luego separando <b>(22)</b></p>
-													<p> <img class="img-fluid rounded mx-auto d-block mbotom"
-															src="../../../img/Control/Eqn22.png" /></p>
-													<p>aplicando la transformada <b>(23)</b></p>
-													<p> <img class="img-fluid rounded mx-auto d-block mbotom"
-															src="../../../img/Control/Eqn23.png" /></p>
-													<p>Finalmente, la funci&oacute;n de transferencia en el dominio z de
-														un integrador quedara c&oacute;mo <b>(24)</b></p>
-													<p> <img class="img-fluid rounded mx-auto d-block mbotom"
-															src="../../../img/Control/Eqn24.png" /></p>
-													<h3 class="content_r_hst3">1.4.4 Mapeo al plano-z.</h3>
-													<p>Las aproximaciones antes mostradas llevan de forma diferente el
-														semiplano izquierdo al c&iacute;rculo unitario del plano-z, esto
-														se debe tanto a la cantidad de polos y ceros que tiene su
-														funci&oacute;n de transferencia, adem&aacute;s la
-														ubicaci&oacute;n de los mismos. En la Ilustraci&oacute;n 14 se
-														muestra la correspondencia entre el plano-s y el plano-z.</p>
-													<img class="img-fluid rounded mx-auto d-block mbotom"
-														src="../../../img/Control/Fig.14.png" />
-													<p>Fig.14. Mapeo del semi-plano del plano-s al plano-z mediante las
-														aproximaciones de integrales. a) Aproximaci&oacute;n rectangular
-														hacia adelante. b) Aproximaci&oacute;n rectangular hacia
-														atr&aacute;s. c) Aproximaci&oacute;n trapezoidal.</p>
-													<h3 class="content_r_hst3">1.4.5 Control PID Discreto.</h3>
-													<p>El uso de las aproximaciones descritas anteriormente va de la
-														mano con la estabilidad del control, ya que las diferentes
-														aproximaciones suponen un posicionamiento de los polos y ceros
-														mas cercanos a la estabilidad o no. Es por esto que se muestra
-														la estabilidad de la funci&oacute;n de transferencia del PID en
-														el Lugar Geom&eacute;trico de las Ra&iacute;ces (LGR) en las
-														siguientes ilustraciones. </p>
-													<img class="img-fluid rounded mx-auto d-block mbotom"
-														src="../../../img/Control/Fig.15.png" />
-													<p>Estabilidad del Control PID. a) aproximaci&oacute;n Forward para
-														la acci&oacute;n integrativa y forward para la acci&oacute;n
-														derivativa. b) aproximaci&oacute;n backward para la
-														acci&oacute;n integrativa y backward para la acci&oacute;n
-														derivativa .c) aproximaci&oacute;n Forward para la acci&oacute;n
-														integrativa y backward para la acci&oacute;n derivativa. d)
-														aproximaci&oacute;n backward para la acci&oacute;n integrativa y
-														forward para la acci&oacute;n derivativa.</p>
-													<p></p>
-													<p>La parte proporcional es la m&aacute;s simple, reemplazando t =
-														kT se encuentra: <b>(25)</b></p>
-													<p> <img class="img-fluid rounded mx-auto d-block mbotom"
-															src="../../../img/Control/Eqn25.png" /></p>
-													<p>Como se observa en la Fig.15 la estabilidad del controlador
-														cambia con la aproximaci&oacute;n con la que sea discretizado,
-														el uso de la aproximaci&oacute;n hacia atr&aacute;s para la
-														parte derivativa tiene como ventaja la estabilidad de la misma,
-														ya que uno de los polos se ubica en cero, mientras que la
-														aproximaci&oacute;n hacia adelante saca a los polos del circulo
-														unidad. <b>(26)</b> </p>
-													<p> <img class="img-fluid rounded mx-auto d-block mbotom"
-															src="../../../img/Control/Eqn26.png" /></p>
-													<p>despejando el presente de la derivaci&oacute;n: <b>(27)</b></p>
-													<p> <img class="img-fluid rounded mx-auto d-block mbotom"
-															src="../../../img/Control/Eqn27.png" /></p>
-													<p>En cuanto a la parte integrativa, esta no tiene mayores problemas
-														de estabilidad, pero en la literatura se ve usualmente la
-														integraci&oacute;n hacia adelante para la discretizaci&oacute;n
-														de esta acci&oacute;n. <b>(28)</b></p>
-													<p> <img class="img-fluid rounded mx-auto d-block mbotom"
-															src="../../../img/Control/Eqn28.png" /></p>
-													<p>Se busca la ecuaci&oacute;n en tiempo discreto: <b>(29)</b></p>
-													<p> <img class="img-fluid rounded mx-auto d-block mbotom"
-															src="../../../img/Control/Eqn29.png" /></p>
-													<p>A continuaci&oacute;n, se muestra un c&oacute;digo de ejemplo de
-														implementaci&oacute;n discreta del control PID antes
-														discretizado.</p>
-													<img class="img-fluid rounded mx-auto d-block mbotom"
-														src="../../../img/Control/Cod4.png" />
+										<p>Ejemplo 2: Se propone hacer control sobre la planta que se muestra a
+											continuaci&oacute;n haciendo uso de Matlab y del m&eacute;todo antes
+											se&ntilde;alado.</p>
+										<img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Control/Eg2.png" />
+										<img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Control/Cod2.png" />
+										<p>A partir del c&oacute;digo anterior se obtiene la respuesta del lazo
+											cerrado ante un cambio tipo paso en la referencia, se busca que dicha
+											respuesta tenga un sobrepaso de un 4%, y un tiempo de asentamiento de 1
+											[s], esto junto a las igualdades que relacionan los par&aacute;metros
+											del control con los par&aacute;metros de la planta, se obtiene la
+											siguiente respuesta.</p>
+										<img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Control/Fig.7.png" />
+										<p style="text-align:center;">Fig.7. Respuesta ante un paso de referencia
+											del sistema en lazo cerrado.
+										</p>
+										<p>Como se puede observar en la Fig.7, la respuesta tiene un sobrepaso
+											superior al 4%, esto se debe a que el control PI, pone un cero en el LGR
+											el cual cambia la din&aacute;mica del sistema, esta repuesta puede
+											mejorarse aplicando un filtro de cancelaci&oacute;n del cero del control
+											en la referenciad de la forma siguiente.</p>
+										<img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Control/Fig.8.png" />
+										<p style="text-align:center;">Fig.8. Diagrama en bloque del lazo de control
+											con filtro de
+											cancelaci&oacute;n de zero.</p>
+										<p>Con esta implementaci&oacute;n se mejora la respuesta obteniendo el
+											sobrepaso para el cual se ha dise&ntilde;ado en controlador.</p>
+										<img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Control/Fig.9.png" />
+										<p style="text-align:center;">Fig.9. :"Comparaci&oacute;n de las respuestas
+											con filtro de
+											cancelaci&oacute;n de cero y sin filtro de cancelaci&oacute;n de cero.
+										</p>
+										<p>C&oacute;mo se puede observar en la Fig.9, la respuesta se hace
+											m&aacute;s lenta por la ausencia del cero puesto por el controlador,
+											pero a la vez se obtiene una respuesta dada por el factor de
+											amortiguamiento seg&uacute;n dise&ntilde;o.</p>
+										<h2 class="content_r_hst2">1.3 Modificaciones del Control PID.</h2>
+										<h3 class="content_r_hst3">1.3.1 Anti-Windup.</h3>
+										<img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Control/Fig.10.png" />
+										<p style="text-align:center;">Fig.10. Diagrama de simulaci&oacute;n del lazo
+											cerrado con control PID
+											modificado con Anti-windup.</p>
+										<p>Con el objetivo de evitar la saturaci&oacute;n del actuador de control,
+											se dise&ntilde;a el controlador PID con una modificaci&oacute;n, esta es
+											conocida como Anti-windup, en la Ilustraci&oacute;n 10 se muestra su
+											diagrama de simulaci&oacute;n para la implementaci&oacute;n del mismo en
+											Matlab Simulink, esta modificaci&oacute;n lo que busca es saturar la
+											se&ntilde;al de control cuando se produce un sobrepaso en la
+											se&ntilde;al de mando, esto se consigue apagando la parte integrativa y
+											as&iacute; evitar la sobre-integraci&oacute;n del erro y sacando en el
+											mando el valor m&aacute;ximo de salida del mismo. En el c&oacute;digo
+											para Matlab que se muestra a continuaci&oacute;n se observa c&oacute;mo
+											se implementa el anti-windup, se satura la se&ntilde;al de mando para el
+											actuador y se “apaga” la parte integrativa haciendo sw=0, donde sw se
+											encuentra multiplicando a la parte integrativa en el c&oacute;digo que
+											describe los par&aacute;metros del controlador.</p>
+										<img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Control/Cod3.png" />
+										<p>Cabe destacar que esta modificaci&oacute;n saca al sistema de su zona
+											lineal por lo que es preferible evitar la saturaci&oacute;n del mando
+											cambiando el tiempo de asentamiento con el que se dise&ntilde;a el
+											controlador, pero en el caso de que sea posible aplicarlo es conveniente
+											para evitar la sobre-integraci&oacute;n del error y proteger al actuador
+											de se&ntilde;ales muy altas de tensi&oacute;n.</p>
+										<h3 class="content_r_hst3">1.3.2 Filtro Derivada.</h3>
+										<img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Control/Fig.11.png" />
+										<p style="text-align:center;">Fig.11. Diagrama de simulaci&oacute;n
+											controlador PID modificado con
+											filtro Derivada</p>
+										<p>La presencia de ruido y pendientes fuertes en las mediciones producen un
+											efecto indeseado en las acciones de control, ya que la acci&oacute;n
+											derivativa amplifica este efecto (amplificando ruido), es por esta
+											raz&oacute;n que la acci&oacute;n derivativa no puede y no
+											deber&iacute;a ser implementada sin modificaciones. Es posible modificar
+											la acci&oacute;n derivativa como se muestra en el diagrama de
+											simulaci&oacute;n de la Ilustraci&oacute;n 11 con el objetivo de reducir
+											el efecto de estas pendientes fuertes.</p>
+										<p>Mirando esta modificaci&oacute;n como una funci&oacute;n de
+											transferencia, haciendo <b>(11)</b></p>
+										<p> <img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Control/Eqn11.png" /></p>
+										<p>donde se mueve t&iacute;picamente entre 3 y 20 buscando reducir lo
+											m&aacute;s posible el efecto derivativo, la nueva funci&oacute;n de
+											transferencia del controlador PID se encuentra simplemente reemplazando
+											la aproximaci&oacute;n de la ecuaci&oacute;n (11) en (3), finalmente el
+											control ser&aacute; <b>(12)</b>
+										<p>
+										<p> <img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Control/Eqn12.png" /></p>
+										<h2 class="content_r_hst2" style="margin-bottom:30px;">1.4
+											Discretizaci&oacute;n.</h2>
+										<img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Control/Fig.12.png" />
+										<p style="text-align:center;">Fig.12. Lazo cerrado con control
+											digital, retentor de orden cero
+											y planta en tiempo continuo.</p>
+										<p>El control digital toma cada vez m&aacute;s &eacute;nfasis, los
+											controladores antes dise&ntilde;ados en el mundo
+											anal&oacute;gico pueden ser llevados al mundo digital por medio
+											de la discretizaci&oacute;n de los mismos, para esto se
+											presentan tres tipos de aproximaciones con diferentes
+											caracter&iacute;sticas que cumplen con este objetivo.</p>
+										<img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Control/Fig.13.png" />
+										<p>Fig.13. Aproximaciones num&eacute;ricas de integraci&oacute;n. a)
+											aproximaci&oacute;n rectangular hacia adelante. b)
+											Aproximaci&oacute;n rectangular hacia atr&aacute;s. c)
+											Aproximaci&oacute;n trapezoidal.</p>
+										<p>En la Fig.13 se ven los diferentes tipos de aproximaciones de la
+											integraci&oacute;n, donde T corresponde al intervalo de
+											muestreo, e(k) corresponde al error en el instante de tiempo kT,
+											e(k+1) corresponde al error en el instante de tiempo siguiente y
+											e(k-1) es el error en el instante de tiempo anterior.</p>
+										<h3 class="content_r_hst3">1.4.1 Aproximaci&oacute;n rectangular
+											hacia adelante</h3>
+										<p>A partir de la Fig.13.a) se tiene lo siguiente: <b>(13)</b></p>
+										<p> <img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Control/Eqn13.png" /></p>
+										<p>luego separando <b>(14)</b> </p>
+										<p> <img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Control/Eqn14.png" /></p>
+										<p>aplicando la transformada <b>(15)</b></p>
+										<p> <img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Control/Eqn15.png" /></p>
+										<p>Finalmente, la funci&oacute;n de transferencia en el dominio z de
+											un integrador quedara c&oacute;mo <b>(16)</b></p>
+										<p> <img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Control/Eqn16.png" /></p>
+										<h3 class="content_r_hst3">1.4.2 Aproximaci&oacute;n rectangular
+											hacia atr&aacute;s</h3>
+										<p>A partir de la Fig.13.b) se tiene que <b>(17)</b></p>
+										<p> <img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Control/Eqn17.png" /></p>
+										<p>Luego separando <b>(18)</b></p>
+										<p> <img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Control/Eqn18.png" /></p>
+										<p>aplicando la transformada <b>(19)</b></p>
+										<p> <img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Control/Eqn19.png" /></p>
+										<p>Finalmente, la funci&oacute;n de transferencia en el dominio z de
+											un integrador quedara c&oacute;mo <b>(20)</b></p>
+										<p> <img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Control/Eqn20.png" /></p>
+										<h3 class="content_r_hst3">1.4.3 Aproximaci&oacute;n rectangular
+											hacia atr&aacute;s</h3>
+										<p>A partir de la Fig.13.c) se tiene que <b>(21)</b></p>
+										<p> <img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Control/Eqn21.png" /></p>
+										<p>Luego separando <b>(22)</b></p>
+										<p> <img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Control/Eqn22.png" /></p>
+										<p>aplicando la transformada <b>(23)</b></p>
+										<p> <img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Control/Eqn23.png" /></p>
+										<p>Finalmente, la funci&oacute;n de transferencia en el dominio z de
+											un integrador quedara c&oacute;mo <b>(24)</b></p>
+										<p> <img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Control/Eqn24.png" /></p>
+										<h3 class="content_r_hst3">1.4.4 Mapeo al plano-z.</h3>
+										<p>Las aproximaciones antes mostradas llevan de forma diferente el
+											semiplano izquierdo al c&iacute;rculo unitario del plano-z, esto
+											se debe tanto a la cantidad de polos y ceros que tiene su
+											funci&oacute;n de transferencia, adem&aacute;s la
+											ubicaci&oacute;n de los mismos. En la Ilustraci&oacute;n 14 se
+											muestra la correspondencia entre el plano-s y el plano-z.</p>
+										<img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Control/Fig.14.png" />
+										<p>Fig.14. Mapeo del semi-plano del plano-s al plano-z mediante las
+											aproximaciones de integrales. a) Aproximaci&oacute;n rectangular
+											hacia adelante. b) Aproximaci&oacute;n rectangular hacia
+											atr&aacute;s. c) Aproximaci&oacute;n trapezoidal.</p>
+										<h3 class="content_r_hst3">1.4.5 Control PID Discreto.</h3>
+										<p>El uso de las aproximaciones descritas anteriormente va de la
+											mano con la estabilidad del control, ya que las diferentes
+											aproximaciones suponen un posicionamiento de los polos y ceros
+											mas cercanos a la estabilidad o no. Es por esto que se muestra
+											la estabilidad de la funci&oacute;n de transferencia del PID en
+											el Lugar Geom&eacute;trico de las Ra&iacute;ces (LGR) en las
+											siguientes ilustraciones. </p>
+										<img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Control/Fig.15.png" />
+										<p>Estabilidad del Control PID. a) aproximaci&oacute;n Forward para
+											la acci&oacute;n integrativa y forward para la acci&oacute;n
+											derivativa. b) aproximaci&oacute;n backward para la
+											acci&oacute;n integrativa y backward para la acci&oacute;n
+											derivativa .c) aproximaci&oacute;n Forward para la acci&oacute;n
+											integrativa y backward para la acci&oacute;n derivativa. d)
+											aproximaci&oacute;n backward para la acci&oacute;n integrativa y
+											forward para la acci&oacute;n derivativa.</p>
+										<p></p>
+										<p>La parte proporcional es la m&aacute;s simple, reemplazando t =
+											kT se encuentra: <b>(25)</b></p>
+										<p> <img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Control/Eqn25.png" /></p>
+										<p>Como se observa en la Fig.15 la estabilidad del controlador
+											cambia con la aproximaci&oacute;n con la que sea discretizado,
+											el uso de la aproximaci&oacute;n hacia atr&aacute;s para la
+											parte derivativa tiene como ventaja la estabilidad de la misma,
+											ya que uno de los polos se ubica en cero, mientras que la
+											aproximaci&oacute;n hacia adelante saca a los polos del circulo
+											unidad. <b>(26)</b> </p>
+										<p> <img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Control/Eqn26.png" /></p>
+										<p>despejando el presente de la derivaci&oacute;n: <b>(27)</b></p>
+										<p> <img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Control/Eqn27.png" /></p>
+										<p>En cuanto a la parte integrativa, esta no tiene mayores problemas
+											de estabilidad, pero en la literatura se ve usualmente la
+											integraci&oacute;n hacia adelante para la discretizaci&oacute;n
+											de esta acci&oacute;n. <b>(28)</b></p>
+										<p> <img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Control/Eqn28.png" /></p>
+										<p>Se busca la ecuaci&oacute;n en tiempo discreto: <b>(29)</b></p>
+										<p> <img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Control/Eqn29.png" /></p>
+										<p>A continuaci&oacute;n, se muestra un c&oacute;digo de ejemplo de
+											implementaci&oacute;n discreta del control PID antes
+											discretizado.</p>
+										<img class="img-fluid rounded mx-auto d-block mbotom" src="../../../img/Control/Cod4.png" />
 
-													<h2 class="content_r_hst2">Referencias</h2>
-													<p>[1] Katsuhiko Ogata, "Ingenier&iacute;a de control Moderna," 3a
-														ed., Minnesota, Tom Robbins,1998, pp. 147-154.</p>
-													<p>[2] Anibal Ollero Baturone, Control por computador
-														descripci&oacute;n y dise&ntilde;o optimo, 1a ed., 1991, pp.12.
-													</p>
-													<p>[3] Alan V. Oppenheim & Ronald W. Schafer, 2T&eacute;cnicas de
-														dise&ntilde;o de filtros," en Tratamiento de se&ntilde;ales en
-														tiempo discreto. 3a ed., Pearson Educaci&oacute;n, 2011.</p>
-													<p>[4] Mario E. Salgado, Juan I. Yuz, Ricardo A. Rojas,
-														"An&aacute;lisis en tiempo discreto," en An&aacute;lisis de
-														sistemas lineales. 1a ed., Pearson Educaci&oacute;n, 2005.</p>
+										<h2 class="content_r_hst2">Referencias</h2>
+										<p>[1] Katsuhiko Ogata, "Ingenier&iacute;a de control Moderna," 3a
+											ed., Minnesota, Tom Robbins,1998, pp. 147-154.</p>
+										<p>[2] Anibal Ollero Baturone, Control por computador
+											descripci&oacute;n y dise&ntilde;o optimo, 1a ed., 1991, pp.12.
+										</p>
+										<p>[3] Alan V. Oppenheim & Ronald W. Schafer, 2T&eacute;cnicas de
+											dise&ntilde;o de filtros," en Tratamiento de se&ntilde;ales en
+											tiempo discreto. 3a ed., Pearson Educaci&oacute;n, 2011.</p>
+										<p>[4] Mario E. Salgado, Juan I. Yuz, Ricardo A. Rojas,
+											"An&aacute;lisis en tiempo discreto," en An&aacute;lisis de
+											sistemas lineales. 1a ed., Pearson Educaci&oacute;n, 2005.</p>
 
 
 

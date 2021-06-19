@@ -189,9 +189,9 @@ if(isset($_GET['todaysdate']))
 				<ul>
 					<li><a href="../index.php">Inicio</a></li>
 					<li><a href="../../user/users.php">Usuarios</a></li>
-					<li><a href="#">Estad&iacute;sticas</a></li>
-					<li><a href="#">Configuraci&oacute;n</a></li>
-					<li><a href="#">Reserva de Laboratorio</a></li>
+					<li><a href="../../user/notavaible.php">Estad&iacute;sticas</a></li>
+					<li><a href="../../user/notavaible.php">Configuraci&oacute;n</a></li>
+					<li><a href="../../user/notavaible.php">Reserva de Laboratorio</a></li>
 				</ul>
 			</div>
 			<div id="nav_r"></div>

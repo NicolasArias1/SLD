@@ -88,10 +88,8 @@ $detect = new Mobile_Detect;
                                         <div class="col-lg-12 px-2">
                                             <div class="submenu-box">
                                                 <ul class="list-unstyled m-0">
-                                                    <li><a href=""> Horarios reservados</a></li>
-                                                    <li><a href="/modules/user/mypractices.php"> Mis solicitudes</a>
-                                                    </li>
-                                                    <!-- <li><a href="">Asp.net</a></li> -->
+                                                    <li><a href="/modules/user/notavaible.php"> Horarios reservados</a></li>
+                                                    <li><a href="/modules/user/notavaible.php"> Mis solicitudes</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -115,14 +113,12 @@ $detect = new Mobile_Detect;
                                         <div class="col-lg-12 px-2">
                                             <div class="submenu-box">
                                                 <ul class="list-unstyled m-0">
-                                                    <li><a href=""> Gestionar asignaturas </a></li>
-                                                    <li><a href=""> Historial de prácticas </a></li>
-                                                    <li><a href=""> Prácticas disponibles </a></li>
-                                                    <!-- <li><a href="">Asp.net</a></li> -->
+                                                    <li><a href="/modules/user/notavaible.php"> Gestionar asignaturas </a></li>
+                                                    <li><a href="/modules/user/notavaible.php"> Historial de prácticas </a></li>
+                                                    <li><a href="/modules/user/mypractices.php"> Prácticas disponibles </a></li>
                                                 </ul>
                                             </div>
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
@@ -141,20 +137,16 @@ $detect = new Mobile_Detect;
                                         <div class="col-lg-12 px-2">
                                             <div class="submenu-box">
                                                 <ul class="list-unstyled m-0">
-                                                    <li><a href=""> Estadísticas resumidas </a></li>
-                                                    <li><a href=""> Gráficos estadísticos </a></li>
-
-                                                    <!-- <li><a href="">Asp.net</a></li> -->
+                                                    <li><a href="/modules/user/notavaible.php"> Estadísticas resumidas </a></li>
+                                                    <li><a href="/modules/user/notavaible.php"> Gráficos estadísticos </a></li>
                                                 </ul>
                                             </div>
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </li>
-
 
                     <li class="">
                         <a href="/modules/user/theory.php" class="nav-link text-left nosub" role="button">
@@ -169,12 +161,6 @@ $detect = new Mobile_Detect;
                             Plataforma
                         </a>
                     </li>
-
-
-
-
-
-
 
                     <li class="">
                         <a href="../../../general/logout.php" style="text-decoration:none;">
@@ -382,9 +368,6 @@ $detect = new Mobile_Detect;
 <body>
 	<div id="wrapper">
 
-
-
-
 		<nav class="fixed-top align-top<?php if (!$detect->isMobile()) echo ' toggled' ?>" id="sidebar-wrapper"
 			role="navigation">
 			<div class="simplebar-content" style="padding: 0px;">
@@ -418,22 +401,19 @@ $detect = new Mobile_Detect;
 										<div class="col-lg-12 px-2">
 											<div class="submenu-box">
 												<ul class="list-unstyled m-0">
-													<li><a href=""> Prácticas disponibles</a></li>
-													<li><a href="../mypractices.php"> Historial de prácticas</a></li>
-													<!-- <li><a href="">Asp.net</a></li> -->
+													<li><a href="../mypractices.php"> Prácticas disponibles</a></li>
+													<li><a href="/modules/user/notavaible.php"> Historial de prácticas</a></li>
 												</ul>
 											</div>
 										</div>
-
 									</div>
 								</div>
 							</div>
 						</div>
 					</li>
 
-
 					<li class="">
-						<a href="" class="nav-link text-left nosub" role="button">
+						<a href="/modules/user/notavaible.php" class="nav-link text-left nosub" role="button">
 							<i class="fas fa-calendar"></i>
 							Horarios reservados
 						</a>
@@ -452,12 +432,6 @@ $detect = new Mobile_Detect;
 							Plataforma
 						</a>
 					</li>
-
-
-
-
-
-
 
 					<li class="">
 						<a href="../../../general/logout.php" style="text-decoration:none;">

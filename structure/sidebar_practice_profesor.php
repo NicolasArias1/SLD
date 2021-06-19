@@ -5,8 +5,7 @@ $detect = new Mobile_Detect;
 ?>
 
 
-<nav class="fixed-top align-top<?php if (!$detect->isMobile()) echo ' toggled' ?>" id="sidebar-wrapper"
-    role="navigation">
+<nav class="fixed-top align-top<?php if (!$detect->isMobile()) echo ' toggled' ?>" id="sidebar-wrapper" role="navigation">
     <div class="simplebar-content" style="padding: 0px;">
 
         <!-- Logo -->
@@ -27,8 +26,7 @@ $detect = new Mobile_Detect;
             </li>
 
             <li class="has-sub">
-                <a class="nav-link collapsed text-left nosub" href="#collapseExample2" role="button"
-                    data-toggle="collapse" data-target="#secp">
+                <a class="nav-link collapsed text-left nosub" href="#collapseExample2" role="button" data-toggle="collapse" data-target="#secp">
                     <i class="fas fa-calendar"></i>Horarios
                 </a>
                 <div class="collapse menu mega-dropdown" id="secp">
@@ -38,9 +36,8 @@ $detect = new Mobile_Detect;
                                 <div class="col-lg-12 px-2">
                                     <div class="submenu-box">
                                         <ul class="list-unstyled m-0">
-                                            <li><a href=""> Horarios reservados</a></li>
-                                            <li><a href="/modules/user/mypractices.php"> Mis solicitudes</a></li>
-                                            <!-- <li><a href="">Asp.net</a></li> -->
+                                            <li><a href="/modules/user/notavaible.php"> Horarios reservados</a></li>
+                                            <li><a href="/modules/user/notavaible.php"> Mis solicitudes</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -51,10 +48,8 @@ $detect = new Mobile_Detect;
                 </div>
             </li>
 
-
             <li class="has-sub">
-                <a class="nav-link collapsed text-left nosub" href="#collapseExample2" role="button"
-                    data-toggle="collapse" data-target="#secasig">
+                <a class="nav-link collapsed text-left nosub" href="#collapseExample2" role="button" data-toggle="collapse" data-target="#secasig">
                     <i class="fas fa-screwdriver"></i>Mis asignaturas
                 </a>
                 <div class="collapse menu mega-dropdown" id="secasig">
@@ -64,14 +59,12 @@ $detect = new Mobile_Detect;
                                 <div class="col-lg-12 px-2">
                                     <div class="submenu-box">
                                         <ul class="list-unstyled m-0">
-                                            <li><a href=""> Gestionar asignaturas </a></li>
-                                            <li><a href="../mypractices.php"> Historial de prácticas </a></li>
-                                            <li><a href=""> Prácticas disponibles </a></li>
-                                            <!-- <li><a href="">Asp.net</a></li> -->
+                                            <li><a href="/modules/user/notavaible.php"> Gestionar asignaturas </a></li>
+                                            <li><a href="/modules/user/notavaible.php"> Historial de prácticas </a></li>
+                                            <li><a href="../mypractices.php"> Prácticas disponibles </a></li>
                                         </ul>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -79,8 +72,7 @@ $detect = new Mobile_Detect;
             </li>
 
             <li class="has-sub">
-                <a class="nav-link collapsed text-left nosub" href="#collapseExample2" role="button"
-                    data-toggle="collapse" data-target="#secEst">
+                <a class="nav-link collapsed text-left nosub" href="#collapseExample2" role="button" data-toggle="collapse" data-target="#secEst">
                     <i class="fas fa-chart-area"></i>Estadísticas
                 </a>
                 <div class="collapse menu mega-dropdown" id="secEst">
@@ -90,20 +82,16 @@ $detect = new Mobile_Detect;
                                 <div class="col-lg-12 px-2">
                                     <div class="submenu-box">
                                         <ul class="list-unstyled m-0">
-                                            <li><a href=""> Estadísticas resumidas </a></li>
-                                            <li><a href=""> Gráficos estadísticos </a></li>
-
-                                            <!-- <li><a href="">Asp.net</a></li> -->
+                                            <li><a href="/modules/user/notavaible.php"> Estadísticas resumidas </a></li>
+                                            <li><a href="/modules/user/notavaible.php"> Gráficos estadísticos </a></li>
                                         </ul>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
                 </div>
             </li>
-
 
             <li class="">
                 <a href="/modules/user/theory.php" class="nav-link text-left nosub" role="button">

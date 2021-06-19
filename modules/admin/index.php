@@ -164,8 +164,6 @@ if ($res) {
 
 								<?php if ($btxt == 'Pr&aacute;cticas Revisadas') { ?>
 
-
-
 									<h1 class="content_r_hst1">
 										Desarrollado por GARP (UCLV)
 

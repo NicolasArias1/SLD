@@ -121,8 +121,8 @@
 				<ul>
 					<li><a href="index.php">Inicio</a></li>
 					<li><a href="users.php">Usuarios</a></li>
-					<li><a href="#">Estad&iacute;sticas</a></li>
-					<li><a href="#">Configuraci&oacute;n</a></li>
+					<li><a href="notavaible.php">Estad&iacute;sticas</a></li>
+					<li><a href="notavaible.php">Configuraci&oacute;n</a></li>
 					<li><a href="TM/calendar.php">Reserva</a></li>
           			<li><a href="configp.php">Configurar</a></li>
 				</ul>

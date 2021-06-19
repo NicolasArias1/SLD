@@ -35,13 +35,11 @@ $detect = new Mobile_Detect;
                                 <div class="col-lg-12 px-2">
                                     <div class="submenu-box">
                                         <ul class="list-unstyled m-0">
-                                            <li><a href="">Horarios reservados</a></li>
-                                            <li><a href=""> Solicitud de horarios</a></li>
-                                            <!-- <li><a href="">Asp.net</a></li> -->
+                                            <li><a href="/modules/admin/notavaible.php">Horarios reservados</a></li>
+                                            <li><a href="/modules/admin/notavaible.php"> Solicitud de horarios</a></li>
                                         </ul>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -61,11 +59,9 @@ $detect = new Mobile_Detect;
                                         <ul class="list-unstyled m-0">
                                             <li><a href="/modules/admin/configp.php"> Administrar prácticas</a></li>
                                             <li><a href="/modules/admin/index.php?body=realizadas"> Historial de prácticas</a></li>
-                                            <!-- <li><a href="">Asp.net</a></li> -->
                                         </ul>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -106,13 +102,10 @@ $detect = new Mobile_Detect;
                                 <div class="col-lg-12 px-2">
                                     <div class="submenu-box">
                                         <ul class="list-unstyled m-0">
-                                            <li><a href="">Ver asignaturas</a></li>
-
-                                            <!-- <li><a href="">Asp.net</a></li> -->
+                                            <li><a href="/modules/admin/notavaible.php">Ver asignaturas</a></li>
                                         </ul>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -144,8 +137,8 @@ $detect = new Mobile_Detect;
                                 <div class="col-lg-12 px-2">
                                     <div class="submenu-box">
                                         <ul class="list-unstyled m-0">
-                                            <li><a href="">Estadísticas generales</a></li>
-                                            <li><a href="">Gráficos estadísticos</a></li>
+                                            <li><a href="/modules/admin/notavaible.php">Estadísticas generales</a></li>
+                                            <li><a href="/modules/admin/notavaible.php">Gráficos estadísticos</a></li>
                                         </ul>
                                     </div>
                                 </div>

@@ -51,8 +51,7 @@ else if ($level == 3) {
 	<div id="wrapper">
 
 
-		<nav class="fixed-top align-top<?php if (!$detect->isMobile()) echo ' toggled' ?>" id="sidebar-wrapper"
-			role="navigation">
+		<nav class="fixed-top align-top<?php if (!$detect->isMobile()) echo ' toggled' ?>" id="sidebar-wrapper" role="navigation">
 			<div class="simplebar-content" style="padding: 0px;">
 
 				<!-- Logo -->
@@ -73,8 +72,7 @@ else if ($level == 3) {
 					</li>
 
 					<li class="has-sub">
-						<a class="nav-link collapsed text-left nosub" href="#" role="button" data-toggle="collapse"
-							data-target="#sech">
+						<a class="nav-link collapsed text-left nosub" href="#" role="button" data-toggle="collapse" data-target="#sech">
 							<i class="fas fa-calendar"></i> Horarios
 						</a>
 						<div class="collapse menu mega-dropdown" id="sech">
@@ -84,13 +82,11 @@ else if ($level == 3) {
 										<div class="col-lg-12 px-2">
 											<div class="submenu-box">
 												<ul class="list-unstyled m-0">
-													<li><a href="">Horarios reservados</a></li>
-													<li><a href=""> Solicitud de horarios</a></li>
-													<!-- <li><a href="">Asp.net</a></li> -->
+													<li><a href="/modules/admin/notavaible.php">Horarios reservados</a></li>
+													<li><a href="/modules/admin/notavaible.php"> Solicitud de horarios</a></li>
 												</ul>
 											</div>
 										</div>
-
 									</div>
 								</div>
 							</div>
@@ -98,8 +94,7 @@ else if ($level == 3) {
 					</li>
 
 					<li class="has-sub">
-						<a class="nav-link collapsed text-left nosub" href="#collapseExample2" role="button"
-							data-toggle="collapse" data-target="#secp">
+						<a class="nav-link collapsed text-left nosub" href="#collapseExample2" role="button" data-toggle="collapse" data-target="#secp">
 							<i class="fas fa-screwdriver"></i> Mis prácticas
 						</a>
 						<div class="collapse menu mega-dropdown" id="secp">
@@ -113,11 +108,9 @@ else if ($level == 3) {
 													</li>
 													<li><a href="/modules/admin/index.php?body=realizadas"> Historial de
 															prácticas</a></li>
-													<!-- <li><a href="">Asp.net</a></li> -->
 												</ul>
 											</div>
 										</div>
-
 									</div>
 								</div>
 							</div>
@@ -125,8 +118,7 @@ else if ($level == 3) {
 					</li>
 
 					<li class="has-sub">
-						<a class="nav-link collapsed text-left nosub" href="#collapseExample2" role="button"
-							data-toggle="collapse" data-target="#secu">
+						<a class="nav-link collapsed text-left nosub" href="#collapseExample2" role="button" data-toggle="collapse" data-target="#secu">
 							<i class="fas fa-users"></i> Usuarios
 						</a>
 						<div class="collapse menu mega-dropdown" id="secu">
@@ -151,8 +143,7 @@ else if ($level == 3) {
 					</li>
 
 					<li class="has-sub">
-						<a class="nav-link collapsed text-left nosub" href="#collapseExample2" role="button"
-							data-toggle="collapse" data-target="#secas">
+						<a class="nav-link collapsed text-left nosub" href="#collapseExample2" role="button" data-toggle="collapse" data-target="#secas">
 							<i class="fas fa-book-open"></i> Asignaturas
 						</a>
 						<div class="collapse menu mega-dropdown" id="secas">
@@ -162,13 +153,10 @@ else if ($level == 3) {
 										<div class="col-lg-12 px-2">
 											<div class="submenu-box">
 												<ul class="list-unstyled m-0">
-													<li><a href="">Ver asignaturas</a></li>
-
-													<!-- <li><a href="">Asp.net</a></li> -->
+													<li><a href="/modules/admin/notavaible.php">Ver asignaturas</a></li>
 												</ul>
 											</div>
 										</div>
-
 									</div>
 								</div>
 							</div>
@@ -190,8 +178,7 @@ else if ($level == 3) {
 					</li>
 
 					<li class="has-sub">
-						<a class="nav-link collapsed text-left nosub" role="button" data-toggle="collapse"
-							data-target="#sece">
+						<a class="nav-link collapsed text-left nosub" role="button" data-toggle="collapse" data-target="#sece">
 							<i class="fas fa-users"></i> Estadísticas
 						</a>
 						<div class="collapse menu mega-dropdown" id="sece">
@@ -201,8 +188,8 @@ else if ($level == 3) {
 										<div class="col-lg-12 px-2">
 											<div class="submenu-box">
 												<ul class="list-unstyled m-0">
-													<li><a href="">Estadísticas generales</a></li>
-													<li><a href="">Gráficos estadísticos</a></li>
+													<li><a href="/modules/admin/notavaible.php">Estadísticas generales</a></li>
+													<li><a href="/modules/admin/notavaible.php">Gráficos estadísticos</a></li>
 												</ul>
 											</div>
 										</div>
@@ -231,9 +218,7 @@ else if ($level == 3) {
 			<nav class="navbar navbar-expand navbar-light my-navbar d-flex justify-content-between">
 
 				<!-- Sidebar Toggle (Topbar) -->
-				<div type="button" id="bar"
-					class="nav-icon1 hamburger animated fadeInLeft is-closed<?php if (!$detect->isMobile()) echo ' open' ?>"
-					data-toggle="offcanvas">
+				<div type="button" id="bar" class="nav-icon1 hamburger animated fadeInLeft is-closed<?php if (!$detect->isMobile()) echo ' open' ?>" data-toggle="offcanvas">
 					<span></span>
 					<span></span>
 					<span></span>
@@ -253,8 +238,7 @@ else if ($level == 3) {
 					<li class="nav-item dropdown">
 						<a class="nav-link">
 							<div class="btnLog">
-								<span style="color:black;"
-									class="mr-2 d-lg-inline small"><b><?php echo $name; ?></b></span>
+								<span style="color:black;" class="mr-2 d-lg-inline small"><b><?php echo $name; ?></b></span>
 							</div>
 						</a>
 					</li>
@@ -286,8 +270,7 @@ else if ($level == 3) {
 											traslacional. El circuito el&eacute;ctrico de la armadura y el campo se
 											muestran
 											en la siguiente figura:</p>
-										<img class="img-fluid rounded mx-auto d-block"
-											src="../../../img/motorcd1.png" />
+										<img class="img-fluid rounded mx-auto d-block" src="../../../img/motorcd1.png" />
 										<div class="content_simbo_p">
 											<div class="content_simbo_motorcd">
 												<h1 class="title_simbology">Simbología:</h1>
@@ -341,16 +324,13 @@ else if ($level == 3) {
 											el eje y la carga (Re) y que el sensor disponible es el de posici&oacute;n
 											(q),
 											el diagrama en bloque queda como se muestra a continuaci&oacute;n:</p>
-										<img class="img-fluid rounded mx-auto d-block"
-											src="../../../img/motorcd2.png" />
+										<img class="img-fluid rounded mx-auto d-block" src="../../../img/motorcd2.png" />
 										<p>Despreciando la inductancia de armadura, que por lo general es
 											peque&ntilde;a,
 											este modelo puede reducirse a:</p>
-										<img class="img-fluid rounded mx-auto d-block"
-											src="../../../img/motorcd3.png" />
+										<img class="img-fluid rounded mx-auto d-block" src="../../../img/motorcd3.png" />
 										<p>Donde:</p>
-										<img class="img-fluid rounded mx-auto d-block"
-											src="../../../img/motorcd4.png" />
+										<img class="img-fluid rounded mx-auto d-block" src="../../../img/motorcd4.png" />
 										<p>No todos los par&aacute;metros del modelo m&aacute;s completo son
 											f&aacute;ciles
 											de obtener por lo que en la pr&aacute;ctica el modelo m&aacute;s utilizado
