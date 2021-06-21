@@ -1,19 +1,32 @@
 <link rel="stylesheet" href="../../prints/css/user_mypractices.css">
 
 
+<?php if($this->nresults == 0){ ?>
 
+	<div class="col-md-6">
+		<a style="text-decoration: none;margin:0;color: whitesmoke; font-size: 13px;" href="practices.php">
+			<div class="btnAddPractice">
+				<i class="fas fa-arrow-circle-right"></i>
+				
+				<p style="margin:0;">Realizar práctica</p>
+			</div>
+		</a>
+	</div>
+
+
+<?php } ?>
 
 
 
 
 <?php if($this->nresults && $this->results[0]['id']) { ?>
 
-
 <div class="row d-flex justify-content-between" style="margin-bottom:10px;">
 	<div class="col-md-6">
 		<a style="text-decoration: none;margin:0;color: whitesmoke; font-size: 13px;" href="practices.php">
 			<div class="btnAddPractice">
 				<i class="fas fa-arrow-circle-right"></i>
+				
 				<p style="margin:0;">Realizar práctica</p>
 			</div>
 		</a>

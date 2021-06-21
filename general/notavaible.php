@@ -23,7 +23,11 @@ $detect = new Mobile_Detect;
                 <div class="container-fluid px-lg-4 content_g ">
                     <div class="row">
                         <div id="content3" class="col-md-12 mt-lg-4 mt-4">
-                            <h3>Módulo no disponible</h3>
+                              <div class="alert alert-danger" role="alert" style="width:80%;text-align:center">
+									<h4 class="alert-heading text-uppercase" style="font-weight:900;">Módulo en desarrollo
+									</h4>
+									<p>El módulo seleccionado no se encuentra disponible.</p>
+								</div>
                         </div>
                     </div>
                 </div>
