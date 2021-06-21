@@ -1,6 +1,20 @@
 	<link rel="stylesheet" href="../../prints/css/admin_users.css">
 
 
+	<?php if($this->nresults == 0){ ?>
+
+		<div class="col-md-6">
+			<a style="text-decoration: none;margin:0;color: whitesmoke; font-size: 13px;" href="/modules/admin/users.php?body=new">
+				<div class="btnAdduser">
+					<i class="fas fa-user-plus"></i><p style="margin:0;">Agregar usuario</p> 
+				</div>
+			</a>
+		</div>
+
+
+	<?php } ?>
+
+
 
 	<?php
 
@@ -163,10 +177,10 @@
 
 	<?php
 		}//end if
-		else if($this->num && !$this->results[0]['id']) {
+		/*else if($this->num && !$this->results[0]['id']) {
 			if($this->page != 1)
 				header('Location: '.$_SERVER[PHP_SELF].'?body='.$this->body.'&page='.($this->page-1));
 			else
 				header('Location: '.$_SERVER[PHP_SELF].'?body='.$this->body);
-		}//end else if
+		}//end else if*/
 ?>

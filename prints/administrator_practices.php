@@ -1,6 +1,21 @@
 <link rel="stylesheet" href="../../prints/css/admin_mypractices.css">
 
 
+<?php if($this->nresults == 0){ ?>
+
+	<div class="col-md-6">
+			<a style="text-decoration: none;margin:0;color: whitesmoke; font-size: 13px;"
+				href="/modules/user/practices.php">
+				<div class="btnAddPractice">
+					<i class="fas fa-arrow-circle-right"></i>
+					<p style="margin:0;">Realizar práctica</p>
+				</div>
+			</a>
+		</div>
+
+
+<?php } ?>
+
 
 
 
