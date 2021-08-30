@@ -2,7 +2,16 @@
 require_once('../../../libraries/Mobile_Detect.php');
 
 $detect = new Mobile_Detect;
+
+$userType = '';
+if($level == 1) $userType = 'ADM | ';
+if($level == 2) $userType = 'PROF | ';
+if($level == 3) $userType = 'EST | ';
+
 ?>
+
+
+
 
 <nav class="navbar navbar-expand navbar-light my-navbar d-flex justify-content-between">
 
@@ -27,7 +36,7 @@ $detect = new Mobile_Detect;
         <li class="nav-item dropdown">
             <a class="nav-link">
                 <div class="btnLog">
-                    <span style="color:black;" class="mr-2 d-lg-inline small"><b><?php echo $name; ?></b></span>
+                <span style="color:black;" class="mr-2 d-lg-inline small"><b><?php echo $userType.$name; ?></b></span>
                 </div>
             </a>
         </li>
