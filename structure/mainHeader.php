@@ -54,11 +54,11 @@
                     <span class="mr-2 d-none d-sm-inline small hov">Plataforma</span>
                 </a>
             </li>
-            <li class="nav-item dropdown">
+            <!-- <li class="nav-item dropdown">
                 <a class="nav-link " href="../general/notavaible.php" id="horariosg" role="button">
                     <span class="mr-2 d-none d-sm-inline small hov">Horarios</span>
                 </a>
-            </li>
+            </li> -->
         </div>
     </div>
 
