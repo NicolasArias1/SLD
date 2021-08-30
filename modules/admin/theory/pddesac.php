@@ -65,7 +65,7 @@ else if ($level == 3) {
 
 				<!-- Logo -->
 				<div class="navbar-nav ps-4 pt-2">
-					<a class="navbar-brand" href="index.php">
+				<a class="navbar-brand" href="../index.php">
 						<span class="fs-4 fw-bolder" style="color: orange;">SLD</span>
 						<span class="fs-4 fw-bolder" style="color: white;">WEB</span>
 					</a>
@@ -79,7 +79,8 @@ else if ($level == 3) {
 							Inicio
 						</a>
 					</li>
-
+               <!-- Menú Horarios, descomentar para implementación. -->
+<!-- 
 					<li class="has-sub">
 						<a class="nav-link collapsed text-left nosub" href="#" role="button" data-toggle="collapse"
 							data-target="#sech">
@@ -101,12 +102,12 @@ else if ($level == 3) {
 								</div>
 							</div>
 						</div>
-					</li>
+					</li> -->
 
 					<li class="has-sub">
 						<a class="nav-link collapsed text-left nosub" href="#collapseExample2" role="button"
 							data-toggle="collapse" data-target="#secp">
-							<i class="fas fa-screwdriver"></i> Mis prácticas
+							<i class="fas fa-book-open"></i> Mis prácticas
 						</a>
 						<div class="collapse menu mega-dropdown" id="secp">
 							<div class="dropmenu" aria-labelledby="navbarDropdown">
@@ -117,6 +118,7 @@ else if ($level == 3) {
 												<ul class="list-unstyled m-0">
 													<li><a href="/modules/admin/configp.php"> Administrar prácticas</a>
 													</li>
+													<li><a href="/modules/admin/practices_availables.php"> Prácticas disponibles</a></li>
 													<li><a href="/modules/admin/index.php?body=realizadas"> Historial de
 															prácticas</a></li>
 												</ul>
@@ -153,11 +155,11 @@ else if ($level == 3) {
 							</div>
 						</div>
 					</li>
-
-					<li class="has-sub">
+  <!-- Menú asignaturas, descomentar para implementación. -->
+					<!-- <li class="has-sub">
 						<a class="nav-link collapsed text-left nosub" href="#collapseExample2" role="button"
 							data-toggle="collapse" data-target="#secas">
-							<i class="fas fa-book-open"></i> Asignaturas
+							<i class="fas fa-pencil-alt"></i> Asignaturas
 						</a>
 						<div class="collapse menu mega-dropdown" id="secas">
 							<div class="dropmenu" aria-labelledby="navbarDropdown">
@@ -174,7 +176,7 @@ else if ($level == 3) {
 								</div>
 							</div>
 						</div>
-					</li>
+					</li> -->
 
 					<li class="">
 						<a href="/modules/admin/theory.php" class="nav-link text-left nosub" role="button">
@@ -190,10 +192,19 @@ else if ($level == 3) {
 						</a>
 					</li>
 
-					<li class="has-sub">
+					<li class="">
+                <a href="/modules/admin/notavaible.php" class="nav-link text-left nosub" role="button">
+                    <i class="fas fa-chart-bar"></i>
+                    Estadísticas
+                </a>
+            </li>
+
+					<!-- Menú estadísticas, descomentar para implementación. -->
+
+					<!-- <li class="has-sub">
 						<a class="nav-link collapsed text-left nosub" role="button" data-toggle="collapse"
 							data-target="#sece">
-							<i class="fas fa-users"></i> Estadísticas
+							<i class="fas fa-chart-bar"></i> Estadísticas
 						</a>
 						<div class="collapse menu mega-dropdown" id="sece">
 							<div class="dropmenu" aria-labelledby="navbarDropdown">
@@ -211,7 +222,7 @@ else if ($level == 3) {
 								</div>
 							</div>
 						</div>
-					</li>
+					</li> -->
 
 					<li class="">
 						<a href="../../../general/logout.php" style="text-decoration:none;">
