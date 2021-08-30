@@ -20,16 +20,24 @@ $detect = new Mobile_Detect;
 	$domain = $user->getDomain();
 	$level = $user->getPriority();
 	$_SESSION['user'] = serialize($user);
-	
-	if($level == 1)
-		$usrHTML = "<li><a href=\"../../admin/index.php\" class=\"ast3\">Administrar</a></li>";
-	else if($level == 2)
-		$usrHTML = "<li>Operar</li>";
-		else if($level == 3){
-			$usrHTML = "";
-		}
-?>
+	$userType = '';
 
+	if ($level == 1){
+		$userType = 'ADM | ';
+		$usrHTML = "<li><a href=\"../../admin/index.php\" class=\"ast3\">Administrar</a></li>";
+	}
+		
+	else if ($level == 2){
+		$userType = 'PROF | ';
+		$usrHTML = "<li>Operar</li>";
+	}
+	   
+	else if ($level == 3) {
+		$userType = 'EST | ';
+		$usrHTML = "";
+	}
+	?>
+	
 
 
 <?php  if($level == 2){  ?>
@@ -201,8 +209,7 @@ $detect = new Mobile_Detect;
 					<li class="nav-item dropdown">
 						<a class="nav-link">
 							<div class="btnLog">
-								<span style="color:black;"
-									class="mr-2 d-lg-inline small"><b><?php echo $name; ?></b></span>
+							<span style="color:black;" class="mr-2 d-lg-inline small"><b><?php echo $userType.$name; ?></b></span>
 							</div>
 						</a>
 					</li>
@@ -579,8 +586,7 @@ $detect = new Mobile_Detect;
 					<li class="nav-item dropdown">
 						<a class="nav-link">
 							<div class="btnLog">
-								<span style="color:black;"
-									class="mr-2 d-lg-inline small"><b><?php echo $name; ?></b></span>
+							<span style="color:black;" class="mr-2 d-lg-inline small"><b><?php echo $userType.$name; ?></b></span>
 							</div>
 						</a>
 					</li>

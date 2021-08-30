@@ -6,7 +6,7 @@ $detect = new Mobile_Detect;
 $userType = '';
 
 if($level == 1) $userType = 'ADM | ';
-if($level == 2) $userType = 'PRO | ';
+if($level == 2) $userType = 'PROF | ';
 if($level == 3) $userType = 'EST | ';
 
 
