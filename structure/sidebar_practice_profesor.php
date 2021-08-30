@@ -25,7 +25,7 @@ $detect = new Mobile_Detect;
                 </a>
             </li>
 
-            <li class="has-sub">
+            <!-- <li class="has-sub">
                 <a class="nav-link collapsed text-left nosub" href="#collapseExample2" role="button" data-toggle="collapse" data-target="#secp">
                     <i class="fas fa-calendar"></i>Horarios
                 </a>
@@ -46,11 +46,11 @@ $detect = new Mobile_Detect;
                         </div>
                     </div>
                 </div>
-            </li>
+            </li> -->
 
             <li class="has-sub">
                 <a class="nav-link collapsed text-left nosub" href="#collapseExample2" role="button" data-toggle="collapse" data-target="#secasig">
-                    <i class="fas fa-screwdriver"></i>Mis asignaturas
+                <i class="fas fa-book-open"></i> Mis prácticas
                 </a>
                 <div class="collapse menu mega-dropdown" id="secasig">
                     <div class="dropmenu" aria-labelledby="navbarDropdown">
@@ -58,11 +58,11 @@ $detect = new Mobile_Detect;
                             <div class="row">
                                 <div class="col-lg-12 px-2">
                                     <div class="submenu-box">
-                                        <ul class="list-unstyled m-0">
-                                            <li><a href="/modules/user/notavaible.php"> Gestionar asignaturas </a></li>
-                                            <li><a href="/modules/user/notavaible.php"> Historial de prácticas </a></li>
-                                            <li><a href="../mypractices.php"> Prácticas disponibles </a></li>
-                                        </ul>
+                                    <ul class="list-unstyled m-0">
+                                                    <!-- <li><a href="/modules/user/notavaible.php"> Gestionar asignaturas </a></li> -->
+													<li><a href="/modules/user/practices_availables.php"> Prácticas disponibles </a></li>
+                                                        <li><a href="/modules/user/mypractices.php"> Historial de prácticas </a></li>
+                                                </ul>
                                     </div>
                                 </div>
                             </div>
@@ -71,7 +71,7 @@ $detect = new Mobile_Detect;
                 </div>
             </li>
 
-            <li class="has-sub">
+            <!-- <li class="has-sub">
                 <a class="nav-link collapsed text-left nosub" href="#collapseExample2" role="button" data-toggle="collapse" data-target="#secEst">
                     <i class="fas fa-chart-area"></i>Estadísticas
                 </a>
@@ -91,7 +91,7 @@ $detect = new Mobile_Detect;
                         </div>
                     </div>
                 </div>
-            </li>
+            </li> -->
 
             <li class="">
                 <a href="/modules/user/theory.php" class="nav-link text-left nosub" role="button">
@@ -108,7 +108,13 @@ $detect = new Mobile_Detect;
             </li>
 
 
-
+   <!-- Quitar para futura implementación -->
+   <li>
+            <a href="/modules/user/notavaible.php" class="nav-link text-left nosub" role="button">
+                    <i class="fas fa-chart-bar"></i>
+                    Estadísticas
+                </a>
+            </li>
 
 
 
