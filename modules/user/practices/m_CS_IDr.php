@@ -205,20 +205,20 @@ $permbytime = 1; // activo todo el tiempo, para limitar poner a 0 y cambiar hora
 													<h1 class="content_r_hst6" style="margin:0;">Simbolog&iacute;a:</h1>
 													<hr>
 													<table class="table table-borderless">
-														<tbody class="tbodyA">
+														<tbody class="tbodyA" style="text-align:left !important;">
 															<tr>
 																<td>Tm:</td>
 																<td>Per&iacute;odo de
-																	muestreo (0.001<=Tm[s]<=1).< /td>
+																	muestreo (0.001<=Tm[s]<=1). </td>
 															</tr>
 															<tr>
 																<td> Te:</td>
-																<td> Tiempo de experimento (1<=Te[s]<=10).< /td>
+																<td> Tiempo de experimento (1<=Te[s]<=10).</td>
 															</tr>
 															<tr>
 																<td>Tp:</td>
 																<td>Instante en que ocurre el paso
-																	(Tp[s]<=Te).< /td>
+																	(Tp[s]<=Te).</td>
 															</tr>
 															<tr>
 																<td>Vi:</td>
@@ -369,24 +369,24 @@ $permbytime = 1; // activo todo el tiempo, para limitar poner a 0 y cambiar hora
 													<h1 class="content_r_hst6" style="margin:0;">Simbolog&iacute;a:</h1>
 													<hr>
 													<table class="table table-borderless">
-														<tbody class="tbodyA">
+														<tbody class="tbodyA"  style="text-align:left !important;">
 															<tr>
 																<td>Tm:</td>
 																<td>Per&iacute;odo de
-																	muestreo (0.001<=Tm[s]<=1).< /td>
+																	muestreo (0.001 <= Tm[s] <= 1).</td>
 															</tr>
 															<tr>
 																<td> Te:</td>
-																<td> Tiempo de experimento (1<=Te[s]<=10).< /td>
+																<td> Tiempo de experimento (1 <= Te[s] <= 10).</td>
 															</tr>
 															<tr>
 																<td>Tp:</td>
 																<td>Instante en que ocurre el paso
-																	(Tp[s]<=Te).< /td>
+																	(Tp[s] <= Te).</td>
 															</tr>
 															<tr>
 																<td>Vi:</td>
-																<td>Voltaje inicial del paso
+																<td>Voltaje inicial del pasoad
 																	(+-10V).</td>
 															</tr>
 															<tr>
@@ -533,20 +533,20 @@ $permbytime = 1; // activo todo el tiempo, para limitar poner a 0 y cambiar hora
 													<h1 class="content_r_hst6" style="margin:0;">Simbolog&iacute;a:</h1>
 													<hr>
 													<table class="table table-borderless">
-														<tbody class="tbodyA">
+														<tbody class="tbodyA" style="text-align:left !important;">
 															<tr>
 																<td>Tm:</td>
 																<td>Per&iacute;odo de
-																	muestreo (0.001<=Tm[s]<=1).< /td>
+																	muestreo (0.001<=Tm[s]<=1). </td>
 															</tr>
 															<tr>
 																<td> Te:</td>
-																<td> Tiempo de experimento (1<=Te[s]<=10).< /td>
+																<td> Tiempo de experimento (1<=Te[s]<=10).</td>
 															</tr>
 															<tr>
 																<td>Tp:</td>
 																<td>Instante en que ocurre el paso
-																	(Tp[s]<=Te).< /td>
+																	(Tp[s]<=Te).</td>
 															</tr>
 															<tr>
 																<td>Vi:</td>

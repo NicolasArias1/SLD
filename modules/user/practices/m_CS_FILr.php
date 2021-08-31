@@ -130,11 +130,11 @@ if ($hora >= 9 && $hora < 21 && $diaweek > 0 && $diaweek < 6) {
 										<p>El experimento tendr&aacute; una duraci&oacute;n de 10 segundos. Se comienza
 											aplicando un
 											voltaje de -5V al motor y a los 5 segundos de pasa a +5V. </p>
-										<p>Se puede modificar el per&iacute;odo de muestreo, y el orden y frecuencia de
+										<p style="margin-bottom:40px;">Se puede modificar el per&iacute;odo de muestreo, y el orden y frecuencia de
 											corte de los
 											filtros (Butterworth) de velocidad y posici&oacute;n.</p>
-										<p style="margin-bottom:40px;">Nota: El video tiene un retardo de 10 segundos
-											aproximadamente.</p>
+										<!-- <p style="margin-bottom:40px;">Nota: El video tiene un retardo de 10 segundos
+											aproximadamente.</p> -->
 										<?php
 										if ($cantidad) {
 											echo '<h1 class="content_r_hst2">	Hay estaciones libres para ejecutar esta pr&aacute;ctica de forma REAL.</h1>';
@@ -197,11 +197,11 @@ if ($hora >= 9 && $hora < 21 && $diaweek > 0 && $diaweek < 6) {
 													<hr>
 
 													<table width="100%" cellpadding="0" cellspacing="0" class="table table-borderless">
-														<tbody class="tbodyA">
+													<tbody class="tbodyA"  style="text-align:left !important;">
 															<tr>
 																<td>Tm:</td>
 																<td>Per&iacute;odo de muestreo (0.001
-																	<=Tm[s]<=1).< /td>
+																	<=Tm[s]<=1).</td>
 															</tr>
 															<tr>
 																<td>Nv:</td>
@@ -282,11 +282,11 @@ if ($hora >= 9 && $hora < 21 && $diaweek > 0 && $diaweek < 6) {
 										<p>El experimento tendr&aacute; una duraci&oacute;n de 10 segundos. Se comienza
 											aplicando un
 											voltaje de -5V al motor y a los 5 segundos de pasa a +5V. </p>
-										<p>Se puede modificar el per&iacute;odo de muestreo, y el orden y frecuencia de
+										<p style="margin-bottom:40px;">Se puede modificar el per&iacute;odo de muestreo, y el orden y frecuencia de
 											corte de los
 											filtros (Butterworth) de velocidad y posici&oacute;n.</p>
-										<p style="margin-bottom:40px;">Nota: El video tiene un retardo de 10 segundos
-											aproximadamente.</p>
+										<!-- <p style="margin-bottom:40px;">Nota: El video tiene un retardo de 10 segundos
+											aproximadamente.</p> -->
 										<?php
 										if ($cantidad) {
 											echo '<h1 class="content_r_hst2">	Hay estaciones libres para ejecutar esta pr&aacute;ctica de forma REAL.</h1>';
@@ -349,11 +349,11 @@ if ($hora >= 9 && $hora < 21 && $diaweek > 0 && $diaweek < 6) {
 													<hr>
 
 													<table width="100%" cellpadding="0" cellspacing="0" class="table table-borderless">
-														<tbody class="tbodyA">
+														<tbody class="tbodyA"  style="text-align:left !important;">
 															<tr>
 																<td>Tm:</td>
-																<td>Per&iacute;odo de muestreo (0.001
-																	<=Tm[s]<=1).< /td>
+																<td>Per&iacute;odo de muestreo (0.001 
+																	<= Tm[s] <= 1).</td>
 															</tr>
 															<tr>
 																<td>Nv:</td>
@@ -441,11 +441,11 @@ if ($hora >= 9 && $hora < 21 && $diaweek > 0 && $diaweek < 6) {
 										<p>El experimento tendr&aacute; una duraci&oacute;n de 10 segundos. Se comienza
 											aplicando un
 											voltaje de -5V al motor y a los 5 segundos de pasa a +5V. </p>
-										<p>Se puede modificar el per&iacute;odo de muestreo, y el orden y frecuencia de
+										<p style="margin-bottom:40px;">Se puede modificar el per&iacute;odo de muestreo, y el orden y frecuencia de
 											corte de los
 											filtros (Butterworth) de velocidad y posici&oacute;n.</p>
-										<p style="margin-bottom:40px;">Nota: El video tiene un retardo de 10 segundos
-											aproximadamente.</p>
+										<!-- <p >Nota: El video tiene un retardo de 10 segundos
+											aproximadamente.</p> -->
 										<?php
 										if ($cantidad) {
 											echo '<h1 class="content_r_hst2">	Hay estaciones libres para ejecutar esta pr&aacute;ctica de forma REAL.</h1>';
@@ -508,11 +508,11 @@ if ($hora >= 9 && $hora < 21 && $diaweek > 0 && $diaweek < 6) {
 													<hr>
 
 													<table width="100%" cellpadding="0" cellspacing="0" class="table table-borderless">
-														<tbody class="tbodyA">
+														<tbody class="tbodyA"  style="text-align:left !important;">
 															<tr>
 																<td>Tm:</td>
 																<td>Per&iacute;odo de muestreo (0.001
-																	<=Tm[s]<=1).< /td>
+																	<=Tm[s]<=1).</td>
 															</tr>
 															<tr>
 																<td>Nv:</td>

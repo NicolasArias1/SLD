@@ -23,7 +23,7 @@
                             <li><a class="dropdown-item" href="../../index.php">Inicio</a></li>
                             <li><a class="dropdown-item" href="../../general/theory.php">Teoría</a></li>
                             <li><a class="dropdown-item" href="../../general/platform.php">Plataforma</a></li>
-                            <li><a class="dropdown-item" href="../../general/notavaible.php">Horarios</a></li>
+                            <!-- <li><a class="dropdown-item" href="../../general/notavaible.php">Horarios</a></li> -->
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
@@ -54,11 +54,11 @@
                     <span class="mr-2 d-none d-sm-inline small hov">Plataforma</span>
                 </a>
             </li>
-            <li class="nav-item dropdown">
+            <!-- <li class="nav-item dropdown">
                 <a class="nav-link " href="../../general/notavaible.php" id="horariosg" role="button">
                     <span class="mr-2 d-none d-sm-inline small hov">Horarios</span>
                 </a>
-            </li>
+            </li> -->
         </div>
     </div>
 

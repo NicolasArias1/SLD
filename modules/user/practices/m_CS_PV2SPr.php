@@ -308,10 +308,10 @@ if ($hora >= 9 && $hora < 21 && $diaweek > 0 && $diaweek < 6) {
 													<h1 class="content_r_hst6" style="margin:0;">Simbolog&iacute;a:</h1>
 													<hr>
 													<table class="table table-borderless">
-														<tbody class="tbodyA">
+													<tbody class="tbodyA"  style="text-align:left !important;">
 															<tr>
 																<td>Tm:</td>
-																<td>Per&iacute;odo de muestreo (0.001<=Tm[s]<=1).< /td>
+																<td>Per&iacute;odo de muestreo (0.001<=Tm[s]<=1).</td>
 															</tr>
 															<tr>
 																<td> SW_sp:</td>
@@ -601,10 +601,10 @@ if ($hora >= 9 && $hora < 21 && $diaweek > 0 && $diaweek < 6) {
 													<h1 class="content_r_hst6" style="margin:0;">Simbolog&iacute;a:</h1>
 													<hr>
 													<table class="table table-borderless">
-														<tbody class="tbodyA">
+														<tbody class="tbodyA"  style="text-align:left !important;">
 															<tr>
 																<td>Tm:</td>
-																<td>Per&iacute;odo de muestreo (0.001<=Tm[s]<=1).< /td>
+																<td>Per&iacute;odo de muestreo (0.001 <= Tm[s] <=1). </td>
 															</tr>
 															<tr>
 																<td> SW_sp:</td>
@@ -898,10 +898,10 @@ if ($hora >= 9 && $hora < 21 && $diaweek > 0 && $diaweek < 6) {
 													<h1 class="content_r_hst6" style="margin:0;">Simbolog&iacute;a:</h1>
 													<hr>
 													<table class="table table-borderless">
-														<tbody class="tbodyA">
+														<tbody class="tbodyA"  style="text-align:left !important;">
 															<tr>
 																<td>Tm:</td>
-																<td>Per&iacute;odo de muestreo (0.001<=Tm[s]<=1).< /td>
+																<td>Per&iacute;odo de muestreo (0.001<=Tm[s]<=1).</td>
 															</tr>
 															<tr>
 																<td> SW_sp:</td>
@@ -946,7 +946,7 @@ if ($hora >= 9 && $hora < 21 && $diaweek > 0 && $diaweek < 6) {
 															</tr>
 															<tr>
 																<td>Fc_pv:</td>
-																<td>Frecuencia de corte (Fc[Hz]&lt;Fm/2).</td>
+																<td>Frecuencia de corte (Fc[Hz] &lt; Fm/2).</td>
 															</tr>
 
 														</tbody>
